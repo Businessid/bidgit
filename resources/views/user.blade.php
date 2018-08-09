@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-sdsdsdsdsd
+
         <!-- Styles -->
         <style>
             html, body {
@@ -79,7 +79,7 @@ sdsdsdsdsd
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Home
+                    Laravel Users
                 </div>
 
             </div>
