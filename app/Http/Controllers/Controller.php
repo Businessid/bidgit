@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,5 +15,9 @@ class Controller extends BaseController
      public function userlist()
     {
         return view('user');
+    }
+     public function post(Request $request)
+    {
+       print_r($request->input()); die;
     }
 }

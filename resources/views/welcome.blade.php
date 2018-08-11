@@ -79,11 +79,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ Form::open(array('url' => 'foo/bar')) }}
+                    {{ Form::open(array('url' => 'post')) }}
                     <form>
-                        <input type="text" name="a">
-                        <input type="text" name="b">
-                        <input type="text" name="c">
+                        <input type="text" name="title">
+                        <input type="text" name="url">
+                        <input type="text" name="description">
                         <input type="submit" name="submit" value="SUBMIT">
                     </form>
                     {{ Form::close() }}

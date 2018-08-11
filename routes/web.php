@@ -36,3 +36,5 @@ Route::post('/submit', function (Request $request) {
 
     return redirect('/');
 });
+
+Route::post('/post', 'Controller@post');
