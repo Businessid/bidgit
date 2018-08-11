@@ -19,5 +19,5 @@ class Controller extends BaseController
      public function post(Request $request)
     {
        print_r($request->input()); die;
-    }
+    } 
 }
