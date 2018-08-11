@@ -65,8 +65,6 @@
         </style>
     </head>
     <body>
-        @extends('layouts.app')
-@section('content')
     <div class="container">
         <div class="row">
             <h1>Submit a link</h1>
@@ -103,6 +101,5 @@
             </form>
         </div>
     </div>
-@endsection
     </body>
 </html>
