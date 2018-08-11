@@ -79,7 +79,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Businessid
+                    {{ Form::open(array('url' => 'foo/bar')) }}
+                    <form>
+                        <input type="text" name="a">
+                        <input type="text" name="b">
+                        <input type="text" name="c">
+                        <input type="submit" name="submit" value="SUBMIT">
+                    </form>
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
