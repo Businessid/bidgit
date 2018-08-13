@@ -24,6 +24,7 @@ Route::get('/', function () {
 */
 Route::get('register', 'RegisterController@index');
 
+Route::post('register/post', 'RegisterController@post');
 /*Route::get('register', 'RegisterController@userlist');*/
 
 
@@ -48,5 +49,3 @@ Route::post('/submit', function (Request $request) {
 
     return redirect('/');
 });
-
-Route::post('register/post', 'RegisterController@post');
