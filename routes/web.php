@@ -16,6 +16,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Register
+|--------------------------------------------------------------------------
+*/
+Route::get('register', 'RegisterController@index');
+
+/*Route::get('register', 'RegisterController@userlist');*/
+
+
+
 Route::get('/home', function () {
     return view('home');
 });
