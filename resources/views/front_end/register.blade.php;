@@ -82,6 +82,7 @@
                           </div>
                      </div>
                   </div>
+                  {{ Form::open(array('url' => 'register/post')) }}
                   <div id="step-2" class="mt-2">
                       <div class="lg-reg reg-form">
                         <div class="row">
@@ -707,6 +708,7 @@
                         </div>
                     </div>
                   </div>
+                  {{ Form::close() }}
               </div>
           </div><!-- Smart-Wizard -->
         </div>
