@@ -1,5 +1,10 @@
 @include('front_end.modules.header-hero-nav')
 @include('front_end.modules.hero-header')
+<style type="text/css">
+  .sw-toolbar-bottom{
+    display: none;
+  }
+</style>
 <div class="container-fluid">
   <div class="row">
     <div class="full-wrap bg-store pb-4">
@@ -72,9 +77,14 @@
                                     </ul>
                                   </div>
                                 </div>
+
                               </div>
                             </div>
                           </div>
+                          <div class="text-right">
+                           <div class="btn-group mr-2 sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                           </div>
+                          </div> 
                         </div>
                       </div>
                       <div id="step-2" class="mt-2">
@@ -207,7 +217,12 @@
                             </div>
                           </div>
                         </div>
-                      {{ Form::close() }}
+
+                      {{ Form::close() }} 
+                      <div class="text-right">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
                       </div>
                       <div id="step-3" class="mt-2">
                         <div class="lg-reg reg-form">
