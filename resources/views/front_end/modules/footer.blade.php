@@ -325,16 +325,16 @@
                                              .addClass('btn cancel-btn-order')
                                              .on('click', function(){ $('#smartwizard,#smartwizard1').smartWizard("reset"); });
 
-           var btnFinish = $('<button class="save-btn-order" data-toggle="modal" data-target="#mmm"></button>').text('Continue')
+           var btnFinish = $('<button class="save-btn-order" data-toggle="modal"></button>').text('Continue')
                                              .addClass('btn btn-info')
                                              .on('click', function(){});                                  
 
             // Please note enabling option "showStepURLhash" will make navigation conflict for multiple wizard in a page.
             // so that option is disabling => showStepURLhash: false
 
-            // Smart Wizard 1
+           
             $('#smartwizard').smartWizard({
-                    selected: 0,
+                    //selected: 0,
                     theme: 'arrows',
                     autoAdjustHeight:'true',
                     transitionEffect:'fade',
@@ -352,6 +352,7 @@
             	 }
             });
 
+         // Smart Wizard 1    
             $("#smartwizard1").smartWizard({
             	 selected: 0,
                     theme: 'arrows',
