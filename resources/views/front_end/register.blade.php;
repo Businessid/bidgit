@@ -1,5 +1,13 @@
 @include('front_end.modules.header-hero-nav')
 @include('front_end.modules.hero-header')
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/prism.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/intlTelInput.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/isValidNumber.css') }}">
+<style type="text/css">
+  .sw-toolbar-bottom{
+    display: none;
+  }
+</style>
 <div class="container-fluid">
   <div class="row">
     <div class="full-wrap bg-store pb-4">
@@ -72,25 +80,28 @@
                                     </ul>
                                   </div>
                                 </div>
+
                               </div>
                             </div>
+                          </div>
+                          <div class="text-right smart-bottom-btn">
+                           <div class="btn-group sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                           </div>
                           </div>
                         </div>
                       </div>
                       <div id="step-2" class="mt-2">
-                      {{ Form::open(array('url' => 'register/post', 'id' => 'registeration')) }}
+                      {{ Form::open(array('url' => 'register/post')) }}
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
-                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
-                                @if ($errors->any())
+                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="name">
+                                @if ($errors->first('name'))
     <div class="alert alert-danger">
         <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+                <li>{{ $errors->first('name') }}</li>
         </ul>
     </div>
 @endif
@@ -107,12 +118,19 @@
   @endforeach
 @endif
                                 </select>
+                                @if ($errors->first('category'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('category') }}</li>
+        </ul>
+    </div>
+@endif
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="activity" class="field-label">Activities:</label>
-                                <select class="form-control js-example-basic-single" id="activity" name="activity"  title="- Select -" multiple="">
+                                <select class="form-control js-example-basic-single" id="activity" name="activity"  multiple="">
                                   <option value="">- Select -</option>
                                   @if(!empty($activities))
   @foreach($activities as $value)
@@ -120,12 +138,26 @@
   @endforeach
 @endif
                                 </select>
+                                @if ($errors->first('activity'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('activity') }}</li>
+        </ul>
+    </div>
+@endif
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="company_email" class="field-label">E-mail:</label>
                                 <input type="email" class="form-control field-control" id="company_email" name="company_email">
+                                @if ($errors->first('company_email'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('company_email') }}</li>
+        </ul>
+    </div>
+@endif
                               </div>
                             </div>
                           </div>
@@ -133,13 +165,20 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="phone" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="phone" id="phone" value="" placeholder="" data-fv-field="first_name">
+                                <input type="text" class="form-control field-control" name="phone" id="phone" value="" placeholder="" data-fv-field="phone">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="company_mobile" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="" placeholder="" data-fv-field="first_name">
+                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="" placeholder="" data-fv-field="company_mobile">
+                                @if ($errors->first('company_mobile'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('company_mobile') }}</li>
+        </ul>
+    </div>
+@endif
                               </div>
                             </div>
                           </div>
@@ -148,26 +187,40 @@
                             <div class="row mt-3">
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">First Name:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="user_first_name" class="field-label">First Name:</label>
+                                  <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="" placeholder="" data-fv-field="user_first_name">
+                                  @if ($errors->first('first_name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('first_name') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="last_name" class="field-label">Last Name:</label>
-                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="" placeholder="" data-fv-field="first_name">
+                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="" placeholder="" data-fv-field="last_name">
+                                  @if ($errors->first('last_name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('last_name') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="designation" class="field-label">Designation:</label>
-                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="" placeholder="" data-fv-field="first_name">
+                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="" placeholder="" data-fv-field="designation">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="mobile" class="field-label">Mobile Number:</label>
-                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="" placeholder="" data-fv-field="first_name">
+                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="" placeholder="" data-fv-field="mobile">
                                 </div>
                               </div>
                             </div>
@@ -175,30 +228,58 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="email" class="field-label">E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="email" id="email" value="" placeholder="" data-fv-field="first_name">
+                                  <input type="email" class="form-control field-control" name="email" id="email" value="" placeholder="" data-fv-field="email">
+                                  @if ($errors->first('email'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('email') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="confirmemail" class="field-label">Confirm E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="confirmemail" id="confirmemail" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="" placeholder="" data-fv-field="confirmemail">
+                                  @if ($errors->first('email_confirmation'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('email_confirmation') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="password" class="field-label">Password:</label>
-                                  <input type="password" class="form-control field-control" name="password" id="password" value="" placeholder="" data-fv-field="first_name">
+                                  <input type="password" class="form-control field-control" name="password" id="password" value="" placeholder="" data-fv-field="password">
+                                  @if ($errors->first('password'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('password') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="confirmpassword" class="field-label">Confirm Password:</label>
-                                  <input type="password" class="form-control field-control" name="confirmpassword" id="confirmpassword" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="password_confirmation" class="field-label">Confirm Password:</label>
+                                  <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="" placeholder="" data-fv-field="confirmpassword">
+                                  @if ($errors->first('password_confirmation'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('password_confirmation') }}</li>
+        </ul>
+    </div>
+@endif
                                 </div>
                               </div>
                             </div>
                             <div class="row mt-2">
-                              <div class="col-md-5 text-center mx-auto note-super">
+                              <div class="col-md-10 text-center mx-auto note-super">
                                 <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
                                 <i class="fa fa-user-secret" aria-hidden="true"></i>
                                 <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
@@ -207,6 +288,11 @@
                             </div>
                           </div>
                         </div>
+
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
                       {{ Form::close() }}
                       </div>
                       <div id="step-3" class="mt-2">
@@ -214,8 +300,8 @@
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Full Name:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="investor_name" class="field-label">Full Name:</label>
+                                <input type="email" class="form-control field-control" name="investor_name" id="investor_name" value="" placeholder="" data-fv-field="investor_name">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -232,7 +318,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Percentage Of Share</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <input type="text" class="form-control field-control" name="percentage" id="percentage" value="" placeholder="" data-fv-field="percentage">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -257,20 +343,20 @@
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="user_mobile" id="user_mobile" value="" placeholder="" data-fv-field="user_mobile">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" name="user_email" id="user_email" value="" placeholder="" data-fv-field="user_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">ID No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_id_no" class="field-label">ID No:</label>
+                                <input type="text" class="form-control field-control" name="user_id_no" id="user_id_no" value="" placeholder="" data-fv-field="user_id_no">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -311,21 +397,21 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">DOB:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="dob" class="field-label">DOB:</label>
+                                <input type="text" class="form-control field-control" name="dob" id="dob" value="" placeholder="" data-fv-field="dob">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Designation:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_designation" class="field-label">Designation:</label>
+                                <input type="text" class="form-control field-control" name="user_designation" id="user_designation" value="" placeholder="" data-fv-field="user_designation">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
+                                <label for="user_mobile" class="field-label">Mobile Number:</label>
                                 <div class="full-wrap mobile-code">
                                   <input type="text" class="form-control field-control col-md-2" placeholder="">
                                   <input type="text" class="form-control field-control col-md-2" placeholder="">
@@ -335,20 +421,20 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" id="usr">
+                                <label for="users_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" id="users_email" name="users_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">Password:</label>
-                                <input type="text" class="form-control field-control" id="usr">
+                                <label for="users_password" class="field-label">Password:</label>
+                                <input type="text" class="form-control field-control" id="users_password" name="users_password">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">Confirm Password:</label>
-                                <input type="text" class="form-control field-control" id="usr">
+                                <label for="users_confirm_password" class="field-label">Confirm Password:</label>
+                                <input type="text" class="form-control field-control" id="users_confirm_password" name="users_confirm_password">
                               </div>
                             </div>
                           </div>
@@ -444,40 +530,40 @@
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Branch Name:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_name" class="field-label">Branch Name:</label>
+                                <input type="text" class="form-control field-control" name="branch_name" id="branch_name" value="" placeholder="" data-fv-field="branch_name">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_phone" class="field-label">Landline Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_phone" id="branch_phone" value="" placeholder="" data-fv-field="branch_phone">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_mobile" id="branch_mobile" value="" placeholder="" data-fv-field="branch_mobile">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Fax Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_fax" class="field-label">Fax Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_fax" id="branch_fax" value="" placeholder="" data-fv-field="branch_fax">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Email:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_email" class="field-label">Email:</label>
+                                <input type="email" class="form-control field-control" name="branch_email" id="branch_email" value="" placeholder="" data-fv-field="branch_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="city" class="field-label">Location:</label>
-                                <select class="form-control js-example-basic-single" id="city1" name="city"  title="Select Current Location">
+                                <label for="branch_city" class="field-label">Location:</label>
+                                <select class="form-control js-example-basic-single" id="branch_city" name="branch_city"  title="Select Current Location">
                                   <option value="">Select Location</option>
                                   <option value="Dubai" >Dubai</option>
                                   <option value="Sharjah" >Sharjah</option>
@@ -492,8 +578,8 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="job_summary" class="field-label">Branch Address:</label>
-                                <textarea class="form-control" name="" id="" placeholder=""></textarea>
+                                <label for="branch_address" class="field-label">Branch Address:</label>
+                                <textarea class="form-control" name="branch_address" id="branch_address" placeholder=""></textarea>
                               </div>
                             </div>
                           </div>
@@ -537,7 +623,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="city" class="field-label">City:</label>
-                                <select class="form-control js-example-basic-single" id="city1" name="city"  title="Select Current Location">
+                                <select class="form-control js-example-basic-single" id="city" name="city"  title="Select Current Location">
                                   <option value="">Select City</option>
                                   <option value="Dubai" >Dubai</option>
                                   <option value="Sharjah" >Sharjah</option>
@@ -574,42 +660,42 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">P.O.Box:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="p_o_box" class="field-label">P.O.Box:</label>
+                                <input type="text" class="form-control field-control" name="p_o_box" id="p_o_box" value="" placeholder="" data-fv-field="p_o_box">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Fax Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="fax" class="field-label">Fax Number:</label>
+                                <input type="text" class="form-control field-control" name="fax" id="fax" value="" placeholder="" data-fv-field="fax">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Latitude:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="latitude" class="field-label">Latitude:</label>
+                                <input type="text" class="form-control field-control" name="latitude" id="latitude" value="" placeholder="" data-fv-field="latitude">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Longitude:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="longitude" class="field-label">Longitude:</label>
+                                <input type="text" class="form-control field-control" name="longitude" id="longitude" value="" placeholder="" data-fv-field="longitude">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Website:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="website" class="field-label">Website:</label>
+                                <input type="email" class="form-control field-control" name="website" id="website" value="" placeholder="" data-fv-field="website">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Address:</label>
-                                <textarea class="form-control" name="" id="" placeholder=""></textarea>
+                                <label for="address" class="field-label">Address:</label>
+                                <textarea class="form-control" name="address" id="address" placeholder=""></textarea>
                               </div>
                             </div>
                           </div>
@@ -669,19 +755,19 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">License No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="license_no" class="field-label">License No:</label>
+                                <input type="text" class="form-control field-control" name="license_no" id="license_no" value="" placeholder="" data-fv-field="license_no">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Registration No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="registration_no" class="field-label">Registration No:</label>
+                                <input type="text" class="form-control field-control" name="registration_no" id="registration_no" value="" placeholder="" data-fv-field="registration_no">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Upload Trade Licence</label>
+                                <label for="inputGroupFile01" class="field-label">Upload Trade Licence</label>
                                 <div class="custom-file upload-reg">
                                   <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
                                   <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
@@ -719,75 +805,8 @@
       });
   });
 </script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-<script>
-    $(document).ready(function () {
-    $('#registeration').validate({ // initialize the plugin
-        rules: {
-            name: {
-                required: true,
-                minlength: 4
-            },
-            category: {
-                required: true
-            },
-            activity: {
-                required: true
-            },
-            company_mobile: {
-                required: true,
-                number: true
-            },
-            company_email: {
-                required: true,
-                email: true
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            number: {
-                required: true,
-                digits: true
-
-            },
-            minlength: {
-                required: true,
-                minlength: 5
-
-            },
-            maxlength: {
-                required: true,
-                maxlength: 8
-
-            },
-            minvalue: {
-                required: true,
-                min: 1
-
-            },
-            maxvalue: {
-                required: true,
-                max: 100
-
-            },
-            range: {
-                required: true,
-                range: [20, 40]
-
-            },
-            url: {
-            required: true,
-            url: true
-            },
-            filename: {
-                required: true,
-                extension: "jpeg|png"
-            },
-        }
-    });
-});
-</script>
+<script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
+<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
+<script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
 </body>
 </html>

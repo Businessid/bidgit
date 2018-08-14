@@ -19,8 +19,20 @@ class RegisterController extends BaseController {
 
 	public function post(Request $request) {
 		$validatedData = $request->validate([
-				'title' => 'required|unique:posts|max:255',
-				'body'  => 'required',
+				'name'                  => 'required|unique:posts|min:8',
+				'category'              => 'required',
+				'activity'              => 'required',
+				'company_email'         => 'required|email',
+				'company_mobile'        => 'required|regex:/(01)[0-9]{9}/',
+				'first_name'            => 'required',
+				'last_name'             => 'required',
+				'mobile'                => 'required|regex:/(01)[0-9]{9}/',
+				'designation'           => 'required',
+				'last_name'             => 'required',
+				'email'                 => 'required|email',
+				'email_confirmation'    => 'required|email|confirmed',
+				'password'              => 'required',
+				'password_confirmation' => 'required|confirmed',
 			]);
 	}
 	public function selectActivities(Request $request) {
