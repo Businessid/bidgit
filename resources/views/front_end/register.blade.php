@@ -81,8 +81,8 @@
                               </div>
                             </div>
                           </div>
-                          <div class="text-right">
-                           <div class="btn-group mr-2 sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                          <div class="text-right smart-bottom-btn">
+                           <div class="btn-group sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
                            </div>
                           </div> 
                         </div>
@@ -205,7 +205,7 @@
                               </div>
                             </div>
                             <div class="row mt-2">
-                              <div class="col-md-5 text-center mx-auto note-super"> 
+                              <div class="col-md-10 text-center mx-auto note-super"> 
                                 <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
                                 <i class="fa fa-user-secret" aria-hidden="true"></i>
                                 <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
@@ -216,7 +216,7 @@
                         </div>
 
                       {{ Form::close() }} 
-                      <div class="text-right">
+                      <div class="text-right smart-bottom-btn">
                         <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
                         </div>
                       </div>
