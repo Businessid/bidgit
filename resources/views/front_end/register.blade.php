@@ -78,71 +78,68 @@
                         </div>
                       </div>
                       <div id="step-2" class="mt-2">
-                      {{ Form::open(array('url' => 'register/post')) }}
+                      {{ Form::open(array('url' => 'register/post', 'id' => 'registeration')) }}
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Company Name:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="name" class="field-label">Company Name:</label>
+                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
+                                @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="city" class="field-label">Activity:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="">
+                                <label for="category" class="field-label">Category:</label>
+                                <select class="form-control js-example-basic-single" id="category" name="category"  title="">
                                   <option value="">- Select -</option>
-                                  <option value="27">Bank</option>
-                                  <option value="26">Business center</option>
-                                  <option value="2">Business Development</option>
-                                  <option value="3">Construction</option>
-                                  <option value="13">consulting </option>
-                                  <option value="10">cosmatics</option>
-                                  <option value="24">Events</option>
-                                  <option value="4">Hospitality</option>
-                                  <option value="17">Import/Export</option>
-                                  <option value="1">Information Technology</option>
-                                  <option value="18">Installation</option>
-                                  <option value="20">Leasing</option>
-                                  <option value="15">manufacturing</option>
-                                  <option value="19">Marketing</option>
-                                  <option value="11">Media</option>
-                                  <option value="9">medical</option>
-                                  <option value="16">Organizing</option>
+                                  @if(!empty($categories))
+  @foreach($categories as $key => $value)
+    <option value="{{ $key }}">{{ $value }}</option>
+  @endforeach
+@endif
                                 </select>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="city" class="field-label">Sub Activity:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="">
+                                <label for="activity" class="field-label">Activities:</label>
+                                <select class="form-control js-example-basic-single" id="activity" name="activity"  title="- Select -" multiple="">
                                   <option value="">- Select -</option>
-                                  <option value="27">Bank</option>
-                                  <option value="26">Business center</option>
-                                  <option value="2">Business Development</option>
-                                  <option value="3">Construction</option>
-                                  <option value="13">consulting </option>
+                                  @if(!empty($activities))
+  @foreach($activities as $value)
+    <option value="{{ $value }}">{{ $value }}</option>
+  @endforeach
+@endif
                                 </select>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" id="usr">
+                                <label for="company_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" id="company_email" name="company_email">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="phone" class="field-label">Landline Number:</label>
+                                <input type="text" class="form-control field-control" name="phone" id="phone" value="" placeholder="" data-fv-field="first_name">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="company_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="" placeholder="" data-fv-field="first_name">
                               </div>
                             </div>
                           </div>
@@ -151,46 +148,52 @@
                             <div class="row mt-3">
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">User Name:</label>
+                                  <label for="first_name" class="field-label">First Name:</label>
                                   <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">Designation:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="last_name" class="field-label">Last Name:</label>
+                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">Mobile Number:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="designation" class="field-label">Designation:</label>
+                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="mobile" class="field-label">Mobile Number:</label>
+                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">Confirm E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="email" class="field-label">E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="email" id="email" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">Password:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="confirmemail" class="field-label">Confirm E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="confirmemail" id="confirmemail" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="first_name" class="field-label">Confirm Password:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                  <label for="password" class="field-label">Password:</label>
+                                  <input type="password" class="form-control field-control" name="password" id="password" value="" placeholder="" data-fv-field="first_name">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="confirmpassword" class="field-label">Confirm Password:</label>
+                                  <input type="password" class="form-control field-control" name="confirmpassword" id="confirmpassword" value="" placeholder="" data-fv-field="first_name">
                                 </div>
                               </div>
                             </div>
@@ -701,5 +704,90 @@
   </div>
 </div>
 @include('front_end.modules.footer')
+<script type="text/javascript">
+  $("select[name='category']").change(function(){
+      var category = $(this).val();
+      var token = $("input[name='_token']").val();
+      $.ajax({
+          url: "<?php echo 'register/selectActivities'; ?>",
+          method: 'POST',
+          data: {category:category, _token:token},
+          success: function(data) {
+            $("select[name='activity'").html('');
+            $("select[name='activity'").html(data.options);
+          }
+      });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script>
+    $(document).ready(function () {
+    $('#registeration').validate({ // initialize the plugin
+        rules: {
+            name: {
+                required: true,
+                minlength: 4
+            },
+            category: {
+                required: true
+            },
+            activity: {
+                required: true
+            },
+            company_mobile: {
+                required: true,
+                number: true
+            },
+            company_email: {
+                required: true,
+                email: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            number: {
+                required: true,
+                digits: true
+                
+            },
+            minlength: {
+                required: true,
+                minlength: 5
+                
+            },
+            maxlength: {
+                required: true,
+                maxlength: 8
+                
+            },
+            minvalue: {
+                required: true,
+                min: 1
+                
+            },
+            maxvalue: {
+                required: true,
+                max: 100
+                
+            },
+            range: {
+                required: true,
+                range: [20, 40]
+                
+            },
+            url: {
+            required: true,
+            url: true
+            },
+            filename: {
+                required: true,
+                extension: "jpeg|png"
+            },
+        }
+    });
+});
+</script>
 </body>
 </html>

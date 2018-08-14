@@ -25,7 +25,8 @@ Route::get('/', function () {
 Route::get('register', 'RegisterController@index');
 
 Route::post('register/post', 'RegisterController@post');
-/*Route::get('register', 'RegisterController@userlist');*/
+
+Route::post('register/selectActivities', 'RegisterController@selectActivities');
 
 
 
