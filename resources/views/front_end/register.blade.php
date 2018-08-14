@@ -215,7 +215,7 @@
                           </div>
                         </div>
 
-                      {{ Form::close() }}
+                      {{ Form::close() }} 
                       <div class="text-right">
                         <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
                         </div>
