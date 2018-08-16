@@ -62,7 +62,11 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
+=======
+                                <input type="text" class="form-control field-control" name="name" id="name" value="{{ old('name') }}" placeholder="" data-fv-field="name">
+>>>>>>> b9c86eaab75b3b66e479a4aca5b241730c515366
                                 @if ($errors->first('name'))
     <div class="alert alert-danger">
         <ul>
@@ -79,7 +83,7 @@
                                   <option value="">- Select -</option>
                                   @if(!empty($categories))
   @foreach($categories as $key => $value)
-    <option value="{{ $key }}">{{ $value }}</option>
+    <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
   @endforeach
 @endif
                                 </select>
@@ -821,8 +825,13 @@
 </div>
 @include('front_end.modules.footer')
 <script type="text/javascript">
+  category();
   $("select[name='category']").change(function(){
-      var category = $(this).val();
+    var category = $(this).val();
+    category(category);
+  });
+  function category(category){
+    alert(category);
       var token = $("input[name='_token']").val();
       $.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
@@ -833,7 +842,8 @@
             $("select[name='activity'").html(data.options);
           }
       });
-  });
+  }
+
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
