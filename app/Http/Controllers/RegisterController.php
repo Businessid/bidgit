@@ -65,7 +65,7 @@ class RegisterController extends BaseController
     {
     	if($request->ajax()){
     		$activities = DB::table('tbl_users_activities')->where('fk_users_category_id',$request->category)->pluck("title","pk_users_activities_id")->all();
-    		$data = '<option>--- Select Activities ---</option>';
+    		$data = '';
 			if(!empty($activities)){
     		foreach($activities as $key => $value){
     		$data .= '<option value="'.$key.'">'.$value.'</option>';
