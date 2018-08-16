@@ -823,25 +823,25 @@
 </div>
 @include('front_end.modules.footer')
 <script type="text/javascript">
-  category();
-  $("select[name='category']").change(function(){
-    var category = $(this).val();
-    category(category);
+  $(document).ready(function(e) {
+    getCategory($("#category").val(),<?php echo @old('activity');?>);
+
+  $('#category').change(function(e) {
+    getCategory(this.value);
   });
-  function category(category){
-    alert(category);
-      var token = $("input[name='_token']").val();
-      $.ajax({
+  });
+  function getCategory(category,activity='') {
+  var token = $("input[name='_token']").val();
+$.ajax({
           url: "<?php echo 'register/selectActivities';?>",
           method: 'POST',
-          data: {category:category, _token:token},
+          data: {category:category, _token:token,activities:activity},
           success: function(data) {
             $("select[name='activity'").html('');
             $("select[name='activity'").html(data.options);
-          }
-      });
-  }
-
+            }
+        });
+}
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>

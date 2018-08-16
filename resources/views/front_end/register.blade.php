@@ -35,9 +35,9 @@
                 <div class="col-md-12 order-box mt-2">
                   <div id="smartwizard1" class="mt-2">
                     <ul>
-                      <li class="text-center"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
-                        <small>Company Main Info</small></a></li>
-                      <li class="text-center"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
+                      <li class="text-center <?php if(@$step==1) echo 'active'; else echo '';?>"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
+                        <small>Company Main Info {{@$step}}</small></a></li>
+                      <li class="text-center <?php if(@$step==2) echo 'active';?>"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
                         <small>Location</small></a></li>
                       <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br />
                         <small>Licence Info</small></a></li>
@@ -55,8 +55,9 @@
                         <small>Verifiy & Payment</small></a> </li>
                     </ul>
                     <div>
-                      <div id="step-2" class="mt-2">
+                      <div id="step-2" class="mt-2" <?php if(@$step==1) echo 'style="display:block;"'; else echo 'style="display:none !important;"'; ?>>
                       {{ Form::open(array('url' => 'register/post')) }}
+                      <input type="hidden" name="tab" value="company_info">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
@@ -110,12 +111,12 @@
         </ul>
     </div>
 @endif
-                              </div>
+                             </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="company_email" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" id="company_email" name="company_email">
+                                <input type="email" class="form-control field-control" id="company_email" name="company_email" value="{{old('company_email')}}">
                                 @if ($errors->first('company_email'))
     <div class="alert alert-danger">
         <ul>
@@ -129,14 +130,8 @@
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="phone" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="phone" id="phone" value="" placeholder="" data-fv-field="phone">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
                                 <label for="company_mobile" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="" placeholder="" data-fv-field="company_mobile">
+                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
                                 @if ($errors->first('company_mobile'))
     <div class="alert alert-danger">
         <ul>
@@ -146,6 +141,13 @@
 @endif
                               </div>
                             </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="phone" class="field-label">Landline Number:</label>
+                                <input type="text" class="form-control field-control" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
+                              </div>
+                            </div>
+                            
                           </div>
                           <div class="full-wrap super-user-wrap">
                             <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
@@ -153,7 +155,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="user_first_name" class="field-label">First Name:</label>
-                                  <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="" placeholder="" data-fv-field="user_first_name">
+                                  <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                                   @if ($errors->first('first_name'))
     <div class="alert alert-danger">
         <ul>
@@ -166,7 +168,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="last_name" class="field-label">Last Name:</label>
-                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="" placeholder="" data-fv-field="last_name">
+                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="{{old('last_name')}}" placeholder="" data-fv-field="last_name">
                                   @if ($errors->first('last_name'))
     <div class="alert alert-danger">
         <ul>
@@ -179,13 +181,13 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="designation" class="field-label">Designation:</label>
-                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="" placeholder="" data-fv-field="designation">
+                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="{{old('designation')}}" placeholder="" data-fv-field="designation">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="mobile" class="field-label">Mobile Number:</label>
-                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="" placeholder="" data-fv-field="mobile">
+                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="{{old('mobile')}}" placeholder="" data-fv-field="mobile">
                                 </div>
                               </div>
                             </div>
@@ -193,7 +195,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="email" class="field-label">E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="email" id="email" value="" placeholder="" data-fv-field="email">
+                                  <input type="email" class="form-control field-control" name="email" id="email" value="{{old('email')}}" placeholder="" data-fv-field="email">
                                   @if ($errors->first('email'))
     <div class="alert alert-danger">
         <ul>
@@ -206,7 +208,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="" placeholder="" data-fv-field="confirmemail">
+                                  <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="confirmemail">
                                   @if ($errors->first('email_confirmation'))
     <div class="alert alert-danger">
         <ul>
@@ -219,7 +221,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="password" class="field-label">Password:</label>
-                                  <input type="password" class="form-control field-control" name="password" id="password" value="" placeholder="" data-fv-field="password">
+                                  <input type="password" class="form-control field-control" name="password" id="password" value="{{old('password')}}" placeholder="" data-fv-field="password">
                                   @if ($errors->first('password'))
     <div class="alert alert-danger">
         <ul>
@@ -232,7 +234,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="password_confirmation" class="field-label">Confirm Password:</label>
-                                  <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="" placeholder="" data-fv-field="confirmpassword">
+                                  <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                                   @if ($errors->first('password_confirmation'))
     <div class="alert alert-danger">
         <ul>
@@ -263,7 +265,9 @@
                       {{ Form::close() }} 
                       </div>
 
-                      <div id="step-5" class="mt-2">
+                      <div id="step-5" class="mt-2" <?php if(@$step==2) echo 'style="display:block;"'; ?>>
+                      {{ Form::open(array('url' => 'register/post')) }}
+                      <input type="hidden" name="tab" value="location">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-12 location-btns"> 
@@ -387,6 +391,7 @@
                         <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary" type="button">Next</button>
                         </div>
                       </div>
+                      {{ Form::close() }} 
                       </div>
 
                       <div id="step-7" class="mt-2">
@@ -821,23 +826,27 @@
 </div>
 @include('front_end.modules.footer')
 <script type="text/javascript">
-  category();
-  $("select[name='category']").change(function(){
-    var category = $(this).val();
-    category(category);
+  $(document).ready(function(e) {
+    getCategory($("#category").val(),<?php echo @old('activity'); ?>);
+  $('#category').change(function(e) {
+    getCategory(this.value);
   });
-  function category(category){
-      var token = $("input[name='_token']").val();
-      $.ajax({
+  });
+  function getCategory(category,activity='') {
+  var token = $("input[name='_token']").val();
+$.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
           method: 'POST',
-          data: {category:category, _token:token},
+          data: {category:category, _token:token,activity:activity},
           success: function(data) {
+            //alert(data);
             $("select[name='activity'").html('');
             $("select[name='activity'").html(data.options);
-          }
-      });
-  }
+            }
+        });
+}
+
+
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 

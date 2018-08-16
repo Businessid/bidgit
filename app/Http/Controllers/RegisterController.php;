@@ -55,7 +55,7 @@ class RegisterController extends BaseController {
 		} else {
 			echo "false";
 		}
-		die;
+		return view('front_end.register');
 	}
 	public function selectActivities(Request $request) {
 		if ($request->ajax()) {
@@ -63,7 +63,10 @@ class RegisterController extends BaseController {
 			$data       = '<option>--- Select Activities ---</option>';
 			if (!empty($activities)) {
 				foreach ($activities as $key => $value) {
-					$data .= '<option value="'.$key.'">'.$value.'</option>';
+					if (in_array($key), $request->activity) {
+						$selected = "selected";
+					}
+					$data .= '<option value="'.$key.'" '.@$selected.'>'.$value.$request->activity.'</option>';
 				}
 			}
 			return response()->json(['options' => $data]);
