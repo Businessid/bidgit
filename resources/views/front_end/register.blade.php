@@ -336,7 +336,8 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Drag Your Location:</label>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.350927162272!2d55.31808257349632!3d25.264682285459234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccf30bc59df%3A0xe1f5b339a2799f6d!2sAl+Muraqqabat+-+Dubai!5e0!3m2!1sen!2sae!4v1530687547937" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <input type="text" class="form-control no-border mat-txt mat-font first-txt" id="map_address" name="map_address" autocomplete="off">
+                                <div class="col-sm-12" id="map" style="height:400px;"></div>
                                 <input type="hidden" name="latitude" id="latitude">
                                 <input type="hidden" name="longitude" id="longitude">
                               </div>
@@ -843,6 +844,36 @@ $(document).on('click','.get-current-location',function(e){
     }
 });
 
+</script>
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
+<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
+<script>
+function updateControls(addressComponents) {
+  $('#country').val(addressComponents.country);
+}
+$('#map').locationpicker({
+  location: {
+    latitude: 25.271452,
+    longitude: 55.3244922 
+  },
+  radius: 300,
+  zoom: 15,
+  onchanged: function (currentLocation, radius, isMarkerDropped) {
+    var addressComponents = $(this).locationpicker('map').location.addressComponents;
+    updateControls(addressComponents);
+  },
+  inputBinding: {
+    latitudeInput: $('#latitude'),
+    longitudeInput: $('#longitude'),
+    radiusInput: $('#us3-radius'),
+    locationNameInput: $('#map_address')
+  },
+  enableAutocomplete: true,
+  oninitialized: function (component) {
+    var addressComponents = $(component).locationpicker('map').location.addressComponents;
+    updateControls(addressComponents);
+  }
+});
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 

@@ -1,2 +1,2 @@
-ALTER TABLE `tbl_user` CHANGE `postal_code` `pobox` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
-ALTER TABLE `tbl_user` ADD `license_file` VARCHAR(255) NOT NULL AFTER `license_number`;
+ALTER TABLE `tbl_users` CHANGE `postal_code` `pobox` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
+ALTER TABLE `tbl_users` ADD `license_file` VARCHAR(255) NOT NULL AFTER `license_number`;

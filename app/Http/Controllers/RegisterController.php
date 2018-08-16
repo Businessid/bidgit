@@ -59,17 +59,7 @@ class RegisterController extends BaseController
          $validatedData = $request->validate([
         'fk_country_id' => 'required',
         'fk_city_id' => 'required',
-        'fk_area_id' => 'required',
-        'company_email' => 'required|email',
-        'company_mobile' => 'required',
-         'user_first_name' => 'required',
-         'last_name' => 'required',
-         'mobile' => 'required',
-         'designation' => 'required',
-         'email' => 'required|email|confirmed',
-         'email_confirmation' => 'required|email',
-         'password' => 'required|confirmed',
-         'password_confirmation' => 'required',
+        'fk_area_id' => 'required'
      ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
