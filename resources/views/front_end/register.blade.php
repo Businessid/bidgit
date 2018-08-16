@@ -434,7 +434,7 @@
                       </div>
 
 
-                      <div id="step-3" class="mt-2">
+                      <div id="step-3" class="mt-2" style="display:block;">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
@@ -826,6 +826,22 @@ $.ajax({
             }
       });
   }
+
+// Get Current location //
+$(document).on('click','.get-current-location',function(e){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }else{ 
+        x.innerHTML = "Geolocation is not supported by this mobile.";
+    }
+    function showPosition(position){
+        var lat=position.coords.latitude;
+        var lot=position.coords.longitude;
+        window.localStorage.setItem("latitude",lat);
+        window.localStorage.setItem("longitude",lot);
+        initMap();
+    }
+});
 
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
