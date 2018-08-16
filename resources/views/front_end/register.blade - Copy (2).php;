@@ -29,7 +29,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="full-wrap bg-store pb-4"> 
+            <div class="full-wrap bg-store pb-4">
               <!-- <div class="container"> -->
               <div class="row">
                 <div class="col-md-12 order-box mt-2">
@@ -63,7 +63,6 @@
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
                                 <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
-                                <input type="text" class="form-control field-control" name="name" id="name" value="{{ old('name') }}" placeholder="" data-fv-field="name">
                                 @if ($errors->first('name'))
     <div class="alert alert-danger">
         <ul>
@@ -80,7 +79,9 @@
                                   <option value="">- Select -</option>
                                   @if(!empty($categories))
   @foreach($categories as $key => $value)
-    <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
+    <option value="{{ $key }}" <?php if (old('category') == $key) {echo "selected";
+}
+?>>{{ $value }}</option>
   @endforeach
 @endif
                                 </select>
@@ -245,8 +246,8 @@
                               </div>
                             </div>
                             <div class="row mt-2">
-                              <div class="col-md-10 text-center mx-auto note-super"> 
-                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
+                              <div class="col-md-10 text-center mx-auto note-super">
+                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
                                 <i class="fa fa-user-secret" aria-hidden="true"></i>
                                 <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
                                 <p>Businessid.net will generate a personal account for this user. </p>
@@ -261,13 +262,13 @@
 
                         </div>
 
-                      {{ Form::close() }} 
+                      {{ Form::close() }}
                       </div>
 
                       <div id="step-5" class="mt-2">
                         <div class="lg-reg reg-form">
                           <div class="row">
-                            <div class="col-md-12 location-btns"> 
+                            <div class="col-md-12 location-btns">
                               <!-- <button class="switch-acc">Add New</button> -->
                               <button class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</button>
                             </div>
@@ -443,9 +444,9 @@
                         <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
                         </div>
                       </div>
-                      </div> 
+                      </div>
                       <div id="step-8">
-                        <div class="lg-reg reg-form"> 
+                        <div class="lg-reg reg-form">
                           <!--  <h2 class="reg-sec-header user-info"><i class="fa fa-user-circle" aria-hidden="true"></i>User Info</h2> -->
                           <div class="row">
                             <div class="col-md-12 mx-auto">
@@ -453,7 +454,7 @@
                                 <div class="col-md-6 pr-0">
                                   <div class="full-wrap full-register-box first"> <a href="" class="btn mx-auto complete-reg">Register Now</a>
                                     <p class="first-desc"> If you registered with this stage you can't get BID's all facility ,and you will not verfied by us until complete necessary requirements.However you will get the basic facility of the BID. </p>
-                                    <div class="or-box"> 
+                                    <div class="or-box">
                                       <!-- <i class="fa fa-hand-o-right" aria-hidden="true"></i> -->OR </div>
                                   </div>
                                 </div>
@@ -476,7 +477,7 @@
                           <div class="text-right smart-bottom-btn">
                            <div class="btn-group sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
                            </div>
-                          </div> 
+                          </div>
                         </div>
                       </div>
 
@@ -810,7 +811,7 @@
                       </div>
                       </div>
                   </div>
-                  <!-- Smart-Wizard --> 
+                  <!-- Smart-Wizard -->
                 </div>
               </div>
             </div>
@@ -828,9 +829,10 @@
     category(category);
   });
   function category(category){
+    alert(category);
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'register/selectActivities'; ?>",
+          url: "<?php echo 'register/selectActivities';?>",
           method: 'POST',
           data: {category:category, _token:token},
           success: function(data) {
@@ -841,8 +843,8 @@
   }
 
 </script>
-<script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
-<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
+<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
 </body>
 </html>
