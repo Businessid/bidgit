@@ -19,8 +19,9 @@ class RegisterController extends BaseController
     {
     	$categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
         $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
+        $legalstatus = DB::table('tbl_users_legal_status')->where('title_en','<>','')->orderBy('title_en')->pluck("title_en","pk_users_legal_status_id")->all();
         $data['step']="1";
-        return view('front_end.register',compact('categories','countries'),$data);
+        return view('front_end.register',compact('categories','countries','legalstatus'),$data);
     }
     
      public function post(Request $request)
