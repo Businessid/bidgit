@@ -839,7 +839,6 @@
           }
       });
   }
-
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
