@@ -62,7 +62,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
-                                <input type="text" class="form-control field-control" name="name" id="name" value="@if(isset($request->post[1])) {{@$request->input(1)}} @endif" placeholder="" data-fv-field="name">
+                                <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
                                 @if ($errors->first('name'))
     <div class="alert alert-danger">
         <ul>
