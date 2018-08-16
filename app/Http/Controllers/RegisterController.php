@@ -18,8 +18,9 @@ class RegisterController extends BaseController
      public function index()
     {
     	$categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
+        $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
         $data['step']="1";
-        return view('front_end.register',compact('categories'),$data);
+        return view('front_end.register',compact('categories','countries'),$data);
     }
     
      public function post(Request $request)
@@ -113,10 +114,29 @@ class RegisterController extends BaseController
             $selected = "selected"; 
             }
             }
-    		$data .= '<option value="'.$key.'" '.@$selected.'>'.$value.$request->activity.'</option>';
+    		$data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
   			}
 			}			
     		return response()->json(['options'=>$data]);
     	}
+    }
+    public function selectCities(Request $request)
+    {
+        if($request->ajax()){
+            $cities = DB::table('tbl_countries')->where('parent_id',$request->fk_country_id)->pluck("name","pk_countries_id")->all();
+            $data = '';
+            if(!empty($cities)){
+            foreach($cities as $key => $value){
+            $selected="";
+            if($request->fk_country_id){
+            if($request->fk_country_id==$key) {
+            $selected = "selected"; 
+            }
+            }
+            $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+            }
+            }           
+            return response()->json(['options'=>$data]);
+        }
     }
 }
