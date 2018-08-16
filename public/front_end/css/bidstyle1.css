@@ -4260,6 +4260,11 @@ input[type="text"].big-search::-webkit-input-placeholder {
     vertical-align: middle;
     color: #ee6e73;
  }
+ #goto-next3{
+    float: none;
+    padding: 0 11px;
+    line-height: 32px;
+ }
  .complete-reg{
     background-color: #d11d2f;
     color: #ffffff;
@@ -4515,7 +4520,7 @@ input[type="text"].big-search::-webkit-input-placeholder {
     font-size: 13px;
     font-weight: 500;
     margin-top: 4px;
-    color: #d11d2f;
+    color: #191919;
 }
 .list-for-user{
     margin-top: 1em;

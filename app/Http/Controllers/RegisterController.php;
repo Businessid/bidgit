@@ -19,21 +19,43 @@ class RegisterController extends BaseController {
 
 	public function post(Request $request) {
 		$validatedData = $request->validate([
-				'name'                  => 'required|unique:posts|min:8',
+				'name'                  => 'required|min:8',
 				'category'              => 'required',
 				'activity'              => 'required',
 				'company_email'         => 'required|email',
-				'company_mobile'        => 'required|regex:/(01)[0-9]{9}/',
-				'first_name'            => 'required',
+				'company_mobile'        => 'required',
+				'user_first_name'       => 'required',
 				'last_name'             => 'required',
-				'mobile'                => 'required|regex:/(01)[0-9]{9}/',
+				'mobile'                => 'required',
 				'designation'           => 'required',
-				'last_name'             => 'required',
-				'email'                 => 'required|email',
-				'email_confirmation'    => 'required|email|confirmed',
-				'password'              => 'required',
-				'password_confirmation' => 'required|confirmed',
+				'email'                 => 'required|email|confirmed',
+				'email_confirmation'    => 'required|email',
+				'password'              => 'required|confirmed',
+				'password_confirmation' => 'required',
 			]);
+
+		$name            = $request->input('name');
+		$category        = $request->input('category');
+		$activity        = $request->input('activity');
+		$company_email   = $request->input('company_email');
+		$company_mobile  = $request->input('company_mobile');
+		$user_first_name = $request->input('user_first_name');
+		$last_name       = $request->input('last_name');
+		$mobile          = $request->input('mobile');
+		$designation     = $request->input('designation');
+		$password        = $request->input('password');
+		$email           = $request->input('email');
+		$data            = array('user_type' => 'company', 'name' => $name, "category" => $category, "activity" => $activity, "company_email" => $company_email, "company_mobile" => $company_mobile, "first_name" => $user_first_name, "last_name" => $last_name, "mobile" => $mobile, "designation" => $designation, "email" => $email, "password" => $password);
+		$result          = DB::table('tbl_users')->insert($data);
+		//DB::enableQueryLog();
+		if ($result) {
+			$data['step'] = "1";
+
+			return view('front_end.register', $data);
+		} else {
+			echo "false";
+		}
+		die;
 	}
 	public function selectActivities(Request $request) {
 		if ($request->ajax()) {
