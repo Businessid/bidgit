@@ -827,7 +827,7 @@
     category(category);
   });
   function category(category){
-    alert(category); 
+    alert(category);
       var token = $("input[name='_token']").val();
       $.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
