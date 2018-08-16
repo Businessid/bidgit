@@ -55,7 +55,7 @@
                         <small>Verifiy & Payment</small></a> </li>
                     </ul>
                     <div>
-                      <div id="step-2" class="mt-2" <?php if(@$step==1) echo 'style="display:block;"'; else echo 'style="display:none !important;"'; ?>>
+                    <div id="step-2" class="mt-2" style="display:none !important"; >
                       {{ Form::open(array('url' => 'register/post')) }}
                       <input type="hidden" name="tab" value="company_info">
                         <div class="lg-reg reg-form">
@@ -265,7 +265,7 @@
                       {{ Form::close() }} 
                       </div>
 
-                      <div id="step-5" class="mt-2" <?php if(@$step==2) echo 'style="display:block;"'; ?>>
+                      <div id="step-5" class="mt-2" style="display:block;">
                       {{ Form::open(array('url' => 'register/post')) }}
                       <input type="hidden" name="tab" value="location">
                         <div class="lg-reg reg-form">
@@ -279,27 +279,20 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="country" class="field-label">Country:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="Select Current Country">
+                                <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Current Country">
                                   <option value="">Select Country</option>
-                                  <option value="AF" >Afghanistan</option>
-                                  <option value="AL" >Albania</option>
-                                  <option value="AG" >Algeria</option>
-                                  <option value="AS" >American Samoa</option>
-                                  <option value="AD" >Andorra</option>
-                                  <option value="AO" >Angola</option>
-                                  <option value="AI" >Anguilla</option>
-                                  <option value="AQ" >Antarctica</option>
-                                  <option value="AB" >Antigua and Barbuda</option>
-                                  <option value="AR" >Argentina</option>
-                                  <option value="AM" >Armenia</option>
-                                  <option value="AW" >Aruba</option>
+                                  @if(!empty($countries))
+  @foreach($countries as $key => $value)
+    <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
                                 </select>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="city" class="field-label">City:</label>
-                                <select class="form-control js-example-basic-single" id="city" name="city"  title="Select Current Location">
+                                <select class="form-control js-example-basic-single" id="fk_city_id" name="fk_city_id"  title="Select Current Location">
                                   <option value="">Select City</option>
                                   <option value="Dubai" >Dubai</option>
                                   <option value="Sharjah" >Sharjah</option>
@@ -315,7 +308,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="location" class="field-label">Area:</label>
-                                <select class="form-control js-example-basic-single" name="" id="">
+                                <select class="form-control js-example-basic-single" name="fk_area_id" id="fk_area_id">
                                   <optgroup label="United Arab Emirates">
                                   <option value="">Select Area</option>
                                   <option value="Abu Baker Al Siddique Road" selected>Abu Baker Al Siddique Road</option>
@@ -838,6 +831,27 @@ $.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
           method: 'POST',
           data: {category:category, _token:token,activity:activity},
+          success: function(data) {
+            //alert(data);
+            $("select[name='activity'").html('');
+            $("select[name='activity'").html(data.options);
+            }
+        });
+}
+
+//Location 
+  $(document).ready(function(e) {
+    getCategory($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
+  $('#fk_country_id').change(function(e) {
+    getCity(this.value);
+  });
+  });
+  function getCity(countryid='',cityid='') {
+  var token = $("input[name='_token']").val();
+  $.ajax({
+          url: "<?php echo 'register/selectCities'; ?>",
+          method: 'POST',
+          data: {fk_country_id:fk_country_id, _token:token,fk_city_id:fk_city_id},
           success: function(data) {
             //alert(data);
             $("select[name='activity'").html('');
