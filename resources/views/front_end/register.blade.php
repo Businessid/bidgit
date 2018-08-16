@@ -293,15 +293,7 @@
                               <div class="form-group">
                                 <label for="city" class="field-label">City:</label>
                                 <select class="form-control js-example-basic-single" id="fk_city_id" name="fk_city_id"  title="Select Current Location">
-                                  <option value="">Select City</option>
-                                  <option value="Dubai" >Dubai</option>
-                                  <option value="Sharjah" >Sharjah</option>
-                                  <option value="Abu Dhabi" >Abu Dhabi</option>
-                                  <option value="Ras Al Khaimah" >Ras Al Khaimah</option>
-                                  <option value="Fujairah" >Fujairah</option>
-                                  <option value="Ajman" >Ajman</option>
-                                  <option value="Umm Al Qawain" >Umm Al Qawain</option>
-                                  <option value="Al Ain" >Al Ain</option>
+                                  <option value="">Select City</option>                                  
                                 </select>
                               </div>
                             </div>
@@ -309,21 +301,7 @@
                               <div class="form-group">
                                 <label for="location" class="field-label">Area:</label>
                                 <select class="form-control js-example-basic-single" name="fk_area_id" id="fk_area_id">
-                                  <optgroup label="United Arab Emirates">
                                   <option value="">Select Area</option>
-                                  <option value="Abu Baker Al Siddique Road" selected>Abu Baker Al Siddique Road</option>
-                                  <option value="Abu Dhabi Gate City" selected>Abu Dhabi Gate City</option>
-                                  <option value="Abu Hail" selected>Abu Hail</option>
-                                  <option value="Abu shagara" selected>Abu Shagara</option>
-                                  <option value="Ain Ajman" selected>Ain Ajman</option>
-                                  <option value="Airport Road" selected>Airport Road</option>
-                                  <option value="Ajman Corniche Road" selected>Ajman Corniche Road</option>
-                                  <option value="Ajman Downtown" selected>Ajman Downtown</option>
-                                  <option value="Ajman Industrial Area" selected>Ajman Industrial Area</option>
-                                  <option value="Ajman Marina" selected>Ajman Marina</option>
-                                  <option value="Ajman Meadows" selected>Ajman Meadows</option>
-                                  <option value="Ajman Uptown" selected>Ajman Uptown</option>
-                                  </optgroup>
                                 </select>
                               </div>
                             </div>
@@ -824,6 +802,14 @@
   $('#category').change(function(e) {
     getCategory(this.value);
   });
+getCity($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
+$('#fk_country_id').change(function(e){
+getCity(this.value,);
+});
+getArea($("#fk_city_id").val(),<?php echo @old('fk_area_id'); ?>);
+$('#fk_city_id').change(function(e){
+getArea(this.value,);
+});
   });
   function getCategory(category,activity='') {
   var token = $("input[name='_token']").val();
@@ -838,28 +824,30 @@ $.ajax({
             }
         });
 }
-
-//Location 
-  $(document).ready(function(e) {
-    getCategory($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
-  $('#fk_country_id').change(function(e) {
-    getCity(this.value);
-  });
-  });
-  function getCity(countryid='',cityid='') {
-  var token = $("input[name='_token']").val();
-  $.ajax({
+  function getCity(countryid,cityid='') {
+      var token = $("input[name='_token']").val();
+      $.ajax({
           url: "<?php echo 'register/selectCities'; ?>",
           method: 'POST',
-          data: {fk_country_id:fk_country_id, _token:token,fk_city_id:fk_city_id},
+          data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
           success: function(data) {
-            //alert(data);
-            $("select[name='activity'").html('');
-            $("select[name='activity'").html(data.options);
+            $("select[name='fk_city_id'").html('');
+            $("select[name='fk_city_id'").html(data.options);
             }
-        });
-}
-
+      });
+  }
+  function getArea(cityid,areaid='') {
+      var token = $("input[name='_token']").val();
+      $.ajax({
+          url: "<?php echo 'register/selectAreas'; ?>",
+          method: 'POST',
+          data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
+          success: function(data) {
+            $("select[name='fk_area_id'").html('');
+            $("select[name='fk_area_id'").html(data.options);
+            }
+      });
+  }
 
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 

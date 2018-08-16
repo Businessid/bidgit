@@ -26,21 +26,21 @@ class RegisterController extends BaseController
      public function post(Request $request)
     {
        if($request->input('tab')=='company_info'){
-         $validatedData = $request->validate([
-        'name' => 'required|min:8',
-        'category' => 'required',
-        'activity' => 'required',
-        'company_email' => 'required|email',
-        'company_mobile' => 'required',
-         'user_first_name' => 'required',
-         'last_name' => 'required',
-         'mobile' => 'required',
-         'designation' => 'required',
-         'email' => 'required|email|confirmed',
-         'email_confirmation' => 'required|email',
-         'password' => 'required|confirmed',
-         'password_confirmation' => 'required',
-     ]);
+     //     $validatedData = $request->validate([
+     //    'name' => 'required|min:8',
+     //    'category' => 'required',
+     //    'activity' => 'required',
+     //    'company_email' => 'required|email',
+     //    'company_mobile' => 'required',
+     //     'user_first_name' => 'required',
+     //     'last_name' => 'required',
+     //     'mobile' => 'required',
+     //     'designation' => 'required',
+     //     'email' => 'required|email|confirmed',
+     //     'email_confirmation' => 'required|email',
+     //     'password' => 'required|confirmed',
+     //     'password_confirmation' => 'required',
+     // ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
     $data['activity'] = $request->input('activity');
@@ -56,9 +56,9 @@ class RegisterController extends BaseController
     }
     if($request->input('tab')=='location'){
          $validatedData = $request->validate([
-        'name' => 'required|min:8',
-        'category' => 'required',
-        'activity' => 'required',
+        'fk_country_id' => 'required',
+        'fk_city_id' => 'required',
+        'fk_area_id' => 'required',
         'company_email' => 'required|email',
         'company_mobile' => 'required',
          'user_first_name' => 'required',
@@ -123,13 +123,32 @@ class RegisterController extends BaseController
     public function selectCities(Request $request)
     {
         if($request->ajax()){
-            $cities = DB::table('tbl_countries')->where('parent_id',$request->fk_country_id)->pluck("name","pk_countries_id")->all();
-            $data = '';
+            $cities = DB::table('tbl_countries')->where('parent_id',$request->fk_country_id)->pluck("location","pk_countries_id")->all();
+            $data = '<option value="">Select City</option> ';
             if(!empty($cities)){
             foreach($cities as $key => $value){
             $selected="";
-            if($request->fk_country_id){
-            if($request->fk_country_id==$key) {
+            if($request->fk_city_id){
+            if($request->fk_city_id==$key) {
+            $selected = "selected"; 
+            }
+            }
+            $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+            }
+            }           
+            return response()->json(['options'=>$data]);
+        }
+    }
+    public function selectAreas(Request $request)
+    {
+        if($request->ajax()){
+            $area = DB::table('tbl_countries')->where('parent_id',$request->fk_city_id)->pluck("location","pk_countries_id")->all();
+            $data = '<option value="">Select Area</option> ';
+            if(!empty($area)){
+            foreach($area as $key => $value){
+            $selected="";
+            if($request->fk_area_id){
+            if($request->fk_area_id==$key) {
             $selected = "selected"; 
             }
             }
