@@ -842,6 +842,8 @@ initMap();
 function initMap(lat='',lot=''){
   if(isNaN(lat)) lat=25.271452;
   if(isNaN(lot)) lot=55.3244922;
+  $('#latitude').val(lat);
+  $('#longitude').val(lot);
   $('#map').locationpicker({
     location: {
       latitude:lat,
@@ -866,7 +868,6 @@ function initMap(lat='',lot=''){
     }
   });
 }
-  
 
 // Get Current location //
 $(document).on('click','.get-current-location',function(e){
