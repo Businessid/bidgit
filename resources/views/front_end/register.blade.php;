@@ -317,8 +317,8 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="p_o_box" class="field-label">P.O.Box:</label>
-                                <input type="text" class="form-control field-control" name="p_o_box" id="p_o_box" value="" placeholder="" data-fv-field="p_o_box">
+                                <label for="pobox" class="field-label">P.O.Box:</label>
+                                <input type="text" class="form-control field-control" name="pobox" id="pobox" value="" placeholder="" data-fv-field="pobox">
                               </div>
                             </div>
                           </div>
@@ -331,24 +331,10 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="latitude" class="field-label">Latitude:</label>
-                                <input type="text" class="form-control field-control" name="latitude" id="latitude" value="" placeholder="" data-fv-field="latitude">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="longitude" class="field-label">Longitude:</label>
-                                <input type="text" class="form-control field-control" name="longitude" id="longitude" value="" placeholder="" data-fv-field="longitude">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
                                 <label for="website" class="field-label">Website:</label>
                                 <input type="email" class="form-control field-control" name="website" id="website" value="" placeholder="" data-fv-field="website">
                               </div>
                             </div>
-                          </div>
-                          <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="address" class="field-label">Address:</label>
@@ -360,7 +346,10 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Drag Your Location:</label>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.350927162272!2d55.31808257349632!3d25.264682285459234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccf30bc59df%3A0xe1f5b339a2799f6d!2sAl+Muraqqabat+-+Dubai!5e0!3m2!1sen!2sae!4v1530687547937" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <input type="text" class="form-control no-border mat-txt mat-font first-txt" id="map_address" name="map_address" autocomplete="off">
+                                <div class="col-sm-12" id="map" style="height:400px;"></div>
+                                <input type="hidden" name="latitude" id="latitude">
+                                <input type="hidden" name="longitude" id="longitude">
                               </div>
                             </div>
                           </div>
@@ -375,49 +364,41 @@
                       {{ Form::close() }}
                       </div>
 
-                      <div id="step-7" class="mt-2">
+                      <div id="step-7" class="mt-2" style="display:block;">
                         <div class="lg-reg reg-form pb-5">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="city" class="field-label">Legal Status:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="">
+                                <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
                                   <option value="" data-select2-id="12">Select Legal Status</option>
-                                  <option value="1" data-select2-id="641">LLC</option>
-                                  <option value="2" data-select2-id="642">Service Agency</option>
-                                  <option value="3" data-select2-id="643">FZE</option>
-                                  <option value="4" data-select2-id="644">Group</option>
-                                  <option value="5" data-select2-id="645">FZ-LLC</option>
-                                  <option value="6" data-select2-id="646">Civil company</option>
-                                  <option value="7" data-select2-id="647">Partnership Company</option>
-                                  <option value="8" data-select2-id="648">Foreign Recognized Company</option>
-                                  <option value="9" data-select2-id="649">Private Joint Stock Company</option>
-                                  <option value="10" data-select2-id="650">Public Joint Stock Company</option>
-                                  <option value="11" data-select2-id="651">Holding Company</option>
-                                  <option value="12" data-select2-id="652">Sole Proprietorship</option>
-                                  <option value="13" data-select2-id="653">Professional Trade Licence</option>
-                                  <option value="14" data-select2-id="654">Professional Freelance Licence</option>
-                                  <option value="15" data-select2-id="655">LLP</option>
+                                 @if(!empty($legalstatus))
+  @foreach($legalstatus as $key => $value)
+    <option value="{{ $key }}" <?php if (old('fk_country_id') == $key) {echo "selected";
+}
+?>>{{ $value }}</option>
+  @endforeach
+@endif
                                 </select>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="license_no" class="field-label">License No:</label>
-                                <input type="text" class="form-control field-control" name="license_no" id="license_no" value="" placeholder="" data-fv-field="license_no">
+                                <input type="text" class="form-control field-control" name="license_number" id="license_number" value="" placeholder="" data-fv-field="license_number">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="registration_no" class="field-label">Registration No:</label>
-                                <input type="text" class="form-control field-control" name="registration_no" id="registration_no" value="" placeholder="" data-fv-field="registration_no">
+                                <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="" placeholder="" data-fv-field="registration_number">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="inputGroupFile01" class="field-label">Upload Trade Licence</label>
                                 <div class="custom-file upload-reg">
-                                  <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
+                                  <input type="file" class="custom-file-input form-control field-control" name="license_file" id="license_file">
                                   <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                   <span class="text-muted">*We will not share with this except the account holder </span> </div>
                               </div>
@@ -862,6 +843,36 @@ $.ajax({
       });
   }
 
+</script>
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script>
+<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script>
+<script>
+function updateControls(addressComponents) {
+  $('#country').val(addressComponents.country);
+}
+$('#map').locationpicker({
+  location: {
+    latitude: 25.271452,
+    longitude: 55.3244922
+  },
+  radius: 300,
+  zoom: 15,
+  onchanged: function (currentLocation, radius, isMarkerDropped) {
+    var addressComponents = $(this).locationpicker('map').location.addressComponents;
+    updateControls(addressComponents);
+  },
+  inputBinding: {
+    latitudeInput: $('#latitude'),
+    longitudeInput: $('#longitude'),
+    radiusInput: $('#us3-radius'),
+    locationNameInput: $('#map_address')
+  },
+  enableAutocomplete: true,
+  oninitialized: function (component) {
+    var addressComponents = $(component).locationpicker('map').location.addressComponents;
+    updateControls(addressComponents);
+  }
+});
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
