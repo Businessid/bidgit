@@ -272,7 +272,7 @@
                           <div class="row">
                             <div class="col-md-12 location-btns"> 
                               <!-- <button class="switch-acc">Add New</button> -->
-                              <button class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</button>
+                              <div class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</div>
                             </div>
                           </div>
                           <div class="row mt-3">
@@ -828,6 +828,43 @@ $.ajax({
       });
   }
 
+</script>
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
+<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
+<script>
+function updateControls(addressComponents) {
+  $('#country').val(addressComponents.country);
+}
+initMap();
+function initMap(lat='',lot=''){
+  if(isNaN(lat)) lat=25.271452;
+  if(isNaN(lot)) lot=55.3244922;
+  $('#map').locationpicker({
+    location: {
+      latitude:lat,
+      longitude:lot 
+    },
+    radius: 300,
+    zoom: 15,
+    onchanged: function (currentLocation, radius, isMarkerDropped) {
+      var addressComponents = $(this).locationpicker('map').location.addressComponents;
+      updateControls(addressComponents);
+    },
+    inputBinding: {
+      latitudeInput: $('#latitude'),
+      longitudeInput: $('#longitude'),
+      radiusInput: $('#us3-radius'),
+      locationNameInput: $('#map_address')
+    },
+    enableAutocomplete: true,
+    oninitialized: function (component) {
+      var addressComponents = $(component).locationpicker('map').location.addressComponents;
+      updateControls(addressComponents);
+    }
+  });
+}
+  
+
 // Get Current location //
 $(document).on('click','.get-current-location',function(e){
     if (navigator.geolocation){
@@ -838,41 +875,8 @@ $(document).on('click','.get-current-location',function(e){
     function showPosition(position){
         var lat=position.coords.latitude;
         var lot=position.coords.longitude;
-        window.localStorage.setItem("latitude",lat);
-        window.localStorage.setItem("longitude",lot);
-        initMap();
+        initMap(lat,lot);
     }
-});
-
-</script>
-<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
-<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
-<script>
-function updateControls(addressComponents) {
-  $('#country').val(addressComponents.country);
-}
-$('#map').locationpicker({
-  location: {
-    latitude: 25.271452,
-    longitude: 55.3244922 
-  },
-  radius: 300,
-  zoom: 15,
-  onchanged: function (currentLocation, radius, isMarkerDropped) {
-    var addressComponents = $(this).locationpicker('map').location.addressComponents;
-    updateControls(addressComponents);
-  },
-  inputBinding: {
-    latitudeInput: $('#latitude'),
-    longitudeInput: $('#longitude'),
-    radiusInput: $('#us3-radius'),
-    locationNameInput: $('#map_address')
-  },
-  enableAutocomplete: true,
-  oninitialized: function (component) {
-    var addressComponents = $(component).locationpicker('map').location.addressComponents;
-    updateControls(addressComponents);
-  }
 });
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
