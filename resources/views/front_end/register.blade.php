@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ URL::asset('front_end/css/intlTelInput.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('front_end/css/isValidNumber.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/reg-wizard.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker3.min.css') }}">
 <style type="text/css">
   .store-cat-nav{
     display: none;
@@ -26,51 +28,51 @@
                 <div class="f1-progress">
                   <div class="f1-progress-line" data-now-value="6" data-number-of-steps="4" style="width: 6%;"></div>
                 </div>
-                <div class="f1-step active">
+                <div class="f1-step <?php if(@$step==1) echo 'active'; elseif(@$step>1) echo 'activated'; else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
                   <p>Company Information</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==2) echo 'active'; elseif(@$step>2) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
                   <p>Licence </br>Information</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==3) echo 'active'; elseif(@$step>3) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                   <p>Location</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==4) echo 'active'; elseif(@$step>4) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></div>
                   <p>Quick Registration</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==5) echo 'active'; elseif(@$step>5) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
                   <p>Create Users</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==6) echo 'active'; elseif(@$step>6) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                   <p>Owner / Share Holder Information</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==7) echo 'active'; elseif(@$step>7) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-sitemap" aria-hidden="true"></i></div>
                   <p>Branches</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==8) echo 'active'; elseif(@$step>8) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>
                   <p>Upload Documents</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==9) echo 'active'; elseif(@$step>9) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
                   <p>Verifiy</p>
                 </div>
-                <div class="f1-step">
+                <div class="f1-step <?php if(@$step==10) echo 'active'; elseif(@$step>10) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-credit-card" aria-hidden="true"></i></div>
                   <p>Payment</p>
                 </div>
               </div>
-              <fieldset>
-                {{ Form::open(array('url' => 'register/post')) }}
-                <div class="lg-reg reg-form">
+              <fieldset class="company_info">
+                {{ Form::open(array('url' => 'register/post', 'id' => 'company_info')) }}
                   <input type="hidden" name="tab" value="company_info">
+                <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
@@ -124,12 +126,12 @@
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="company_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" id="company_email" name="company_email" value="{{old('company_email')}}">
-                        @if ($errors->first('company_email'))
+                        <label for="email" class="field-label">E-mail:</label>
+                        <input type="email" class="form-control field-control" id="email" name="email" value="{{old('email')}}">
+                        @if ($errors->first('email'))
                         <div class="alert alert-danger">
                           <ul>
-                            <li>{{ $errors->first('company_email') }}</li>
+                            <li>{{ $errors->first('email') }}</li>
                           </ul>
                         </div>
                         @endif </div>
@@ -138,12 +140,12 @@
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="company_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
-                        @if ($errors->first('company_mobile'))
+                        <label for="mobile" class="field-label">Mobile Number:</label>
+                        <input type="text" class="form-control field-control mobile" name="mobile" id="mobile" value="{{old('mobile')}}" placeholder="" data-fv-field="mobile">
+                        @if ($errors->first('mobile'))
                         <div class="alert alert-danger">
                           <ul>
-                            <li>{{ $errors->first('company_mobile') }}</li>
+                            <li>{{ $errors->first('mobile') }}</li>
                           </ul>
                         </div>
                         @endif </div>
@@ -151,7 +153,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="phone" class="field-label">Landline Number:</label>
-                        <input type="text" class="form-control field-control" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
+                        <input type="text" class="form-control field-control mobile" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
                       </div>
                     </div>
                   </div>
@@ -223,13 +225,13 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_mobile" class="field-label">Mobile Number:</label>
-                          <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
+                          <input type="text" class="form-control field-control mobile" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_phone" class="field-label">Landline Number:</label>
-                          <input type="text" class="form-control field-control" name="company_phone" id="company_phone" value="{{old('company_phone')}}" placeholder="" data-fv-field="company_phone">
+                          <input type="text" class="form-control field-control mobile" name="company_phone" id="company_phone" value="{{old('company_phone')}}" placeholder="" data-fv-field="company_phone">
                         </div>
                       </div>
                     </div>
@@ -257,22 +259,22 @@
                         <div class="form-group">
                           <label for="company_email" class="field-label">E-mail:</label>
                           <input type="email" class="form-control field-control" name="company_email" id="company_email" value="{{old('company_email')}}" placeholder="" data-fv-field="company_email">
-                          @if ($errors->first('email'))
+                          @if ($errors->first('company_email'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('email') }}</li>
+                              <li>{{ $errors->first('company_email') }}</li>
                             </ul>
                           </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
-                          <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="company_email_confirmation">
-                          @if ($errors->first('company_email_confirmation'))
+                          <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
+                          <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="email_confirmation">
+                          @if ($errors->first('email_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('company_email_confirmation') }}</li>
+                              <li>{{ $errors->first('email_confirmation') }}</li>
                             </ul>
                           </div>
                           @endif </div>
@@ -315,11 +317,15 @@
                   </div>
                 </div>
                 <div class="f1-buttons">
+<<<<<<< HEAD
                   <button type="submit" class="btn">Next</button>
+=======
+                  <button type="submit" class="btn btn-next">Next</button>
+>>>>>>> eceb2d1b74632a256cfedf3c1d04ddbfe547d566
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset>
+              <fieldset class="licence">
                 {{ Form::open(array('url' => 'register/post')) }}
                 <input type="hidden" name="tab" value="licence">
                 <div class="lg-reg reg-form pb-5">
@@ -366,7 +372,7 @@
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset>
+              <fieldset class="location">
                 {{ Form::open(array('url' => 'register/post')) }}
                 <div class="lg-reg reg-form">
                   <input type="hidden" name="tab" value="location">
@@ -454,7 +460,7 @@
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset>
+              <fieldset class="">
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-12 mx-auto">
@@ -487,7 +493,7 @@
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
               </fieldset>
-              <fieldset>
+              <fieldset class="users">
                 <div class="lg-reg reg-form"> 
                 {{ Form::open(array('url' => 'register/post')) }}
                   <input type="hidden" name="tab" value="users">
@@ -733,7 +739,7 @@
                   {{ Form::close() }} 
                   </div>
               </fieldset>
-              <fieldset>
+              <fieldset class="investors">
                 {{ Form::open(array('url' => 'register/post')) }}
                   <input type="hidden" name="tab" value="investors">
                 <div class="lg-reg reg-form">
@@ -817,7 +823,7 @@
                 </div>
                   {{ Form::close() }} 
               </fieldset>
-              <fieldset>
+              <fieldset class="branches">
                 {{ Form::open(array('url' => 'register/post')) }}
                   <input type="hidden" name="tab" value="branches">
                 <div class="lg-reg reg-form">
@@ -890,7 +896,26 @@
                 </div>
                   {{ Form::close() }} 
               </fieldset>
-              <fieldset>
+              <fieldset class="verify">
+                <div class="lg-reg reg-form">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="company_logo" class="field-label">Upload Logo</label>
+                        <div class="custom-file upload-reg">
+                          <input type="file" class="custom-file-input form-control field-control" id="company_logo" name="company_logo">
+                          <label class="custom-file-label" for="company_logo">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-previous">Previous</button>
+                  <button type="button" class="btn btn-next">Next</button>
+                </div>
+              </fieldset>
+              <fieldset class="logo">
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
@@ -916,19 +941,27 @@
     </div>
   </div>
 </div>
-@include('front_end.modules.footer') 
+@include('front_end.modules.footer')
+<script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript">
   // Manage step    //
   if({{$step}}=='1'){
-    alert("okk");
+	  $('.company_info').show();
   }else if({{$step}}=='2'){
+	  $('.licence').show();
   }else if({{$step}}=='3'){
+	  $('.location').show();
   }else if({{$step}}=='4'){
-  }else({{$step}}=='5'){
+	  $('.users').show();
+  }else if({{$step}}=='5'){
+	  $('.investors').show();
   }
 
 
   $(document).ready(function(e) {
+	  $('#company_dob').datepicker({
+		format: 'yyyy-mm-dd'
+	  }); 
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
