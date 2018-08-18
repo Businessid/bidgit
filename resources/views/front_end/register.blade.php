@@ -956,10 +956,8 @@
 
   $(document).ready(function(e) {
 	  $('#company_dob').datepicker({
-	format: 'yyyy-mm-dd'
-}).on('changeDate', function(){
-	$('#company_info').formValidation('revalidateField', 'company_dob');
-}); 
+		format: 'yyyy-mm-dd'
+	  }); 
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
