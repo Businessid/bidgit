@@ -315,7 +315,7 @@
                   </div>
                 </div>
                 <div class="f1-buttons">
-                  <button type="button" class="btn btn-next">Next</button>
+                  <button type="submit" class="btn">Next</button>
                 </div>
                 {{ Form::close() }}
               </fieldset>

@@ -1,0 +1,1 @@
+ALTER TABLE `tbl_users` ADD `nationality` VARCHAR(255) NOT NULL AFTER `website`;
