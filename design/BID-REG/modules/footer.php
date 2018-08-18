@@ -1,598 +1,139 @@
-<script>
-	// Set the date we're counting down to
-	var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+<footer class="page-footer font-small unique-color-dark">
 
-	// Update the count down every 1 second
-	var x = setInterval(function() {
+    <div style="background-color: #bf1e2e;">
+            <div class="container">
+                
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
 
-	    // Get todays date and time
-	    var now = new Date().getTime();
-	    
-	    // Find the distance between now an the count down date
-	    var distance = countDownDate - now;
-	    
-	    // Time calculations for days, hours, minutes and seconds
-	    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-	    
-	    // Output the result in an element with id="demo"
-	    document.getElementById("Count-down-bx").innerHTML =hours + "&nbsp;:"
-	    + minutes + "&nbsp;:" + seconds + "&nbsp;";
-	    
-	    // If the count down is over, write some text 
-	    if (distance < 0) {
-	        clearInterval(x);
-	        document.getElementById("Count-down-bx").innerHTML = "EXPIRED";
-	    }
-	}, 1000);
-</script>
-<script>
-	 function initMap() {
-        var myLatLng = {lat: 25.1972, lng: 55.2744};
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 class="mb-0">Get connected with us on social networks!</h6>
+                </div>
+                <!-- Grid column -->
 
-        var map = new google.maps.Map(document.getElementById('bx-emp-map'), {
-          zoom: 6,
-          center: myLatLng,
-          styles:[
-				  {
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#ebe3cd"
-				      }
-				    ]
-				  },
-				  {
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#523735"
-				      }
-				    ]
-				  },
-				  {
-				    "elementType": "labels.text.stroke",
-				    "stylers": [
-				      {
-				        "color": "#f5f1e6"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "administrative",
-				    "elementType": "geometry.stroke",
-				    "stylers": [
-				      {
-				        "color": "#c9b2a6"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "administrative.land_parcel",
-				    "elementType": "geometry.stroke",
-				    "stylers": [
-				      {
-				        "color": "#dcd2be"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "administrative.land_parcel",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#ae9e90"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "landscape.natural",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#dfd2ae"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "poi",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#dfd2ae"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "poi",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#93817c"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "poi.park",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      {
-				        "color": "#a5b076"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "poi.park",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#447530"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#f5f1e6"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.arterial",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#fdfcf8"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.arterial",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      {
-				        "color": "#c0c0c0"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.highway",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#f8c967"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.highway",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      {
-				        "color": "#d11d2f"
-				      },
-				      {
-				        "weight": 1.5
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.highway",
-				    "elementType": "geometry.stroke",
-				    "stylers": [
-				      {
-				        "color": "#e9bc62"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.highway.controlled_access",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#e98d58"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.highway.controlled_access",
-				    "elementType": "geometry.stroke",
-				    "stylers": [
-				      {
-				        "color": "#db8555"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "road.local",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#806b63"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "transit.line",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#dfd2ae"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "transit.line",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#8f7d77"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "transit.line",
-				    "elementType": "labels.text.stroke",
-				    "stylers": [
-				      {
-				        "color": "#ebe3cd"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "transit.station",
-				    "elementType": "geometry",
-				    "stylers": [
-				      {
-				        "color": "#dfd2ae"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "water",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      {
-				        "color": "#b9d3c2"
-				      }
-				    ]
-				  },
-				  {
-				    "featureType": "water",
-				    "elementType": "labels.text.fill",
-				    "stylers": [
-				      {
-				        "color": "#92998d"
-				      }
-				    ]
-				  }
-				]
-        });
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
-      }
+                    <!-- Facebook -->
+                    <a class="fb-ic">
+                        <i class="fa fa-facebook white-text mr-4"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a class="tw-ic">
+                        <i class="fa fa-twitter white-text mr-4"> </i>
+                    </a>
+                    <!-- Google +-->
+                    <a class="gplus-ic">
+                        <i class="fa fa-google-plus white-text mr-4"> </i>
+                    </a>
+                    <!--Linkedin -->
+                    <a class="li-ic">
+                        <i class="fa fa-linkedin white-text mr-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fa fa-instagram white-text"> </i>
+                    </a>
 
-    </script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeo_cGQozovWzJ-PjvvvCnC0hToHdP2RI&callback=initMap"></script> -->
-<!-- <script src="js/jquery-3.3.1.min.js"></script> -->
-<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script> 	
-<script src="bootstrap/js/popper.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- Include SmartWizard JavaScript source -->
-<script type="text/javascript" src="js/jquery.smartWizard.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
+                </div>
+                <!-- Grid column -->
 
-            // Step show event
-            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-               //alert("You are on step "+stepNumber+" now");
-               if(stepPosition === 'first'){
-                   $("#prev-btn").addClass('disabled');
-               }else if(stepPosition === 'final'){
-                   $("#next-btn").addClass('disabled');
-               }else{
-                   $("#prev-btn").removeClass('disabled');
-                   $("#next-btn").removeClass('disabled');
-               }
-            });
+            </div>
+            <!-- Grid row-->
 
+        </div>
+    </div>
 
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
 
+        <!-- Grid row -->
+        <div class="row mt-3">
 
-            // Toolbar extra buttons
-            
-            var btnCancel = $('<button></button>').text('Cancel')
-                                             .addClass('btn cancel-btn-order')
-                                             .on('click', function(){ $('#smartwizard,#smartwizard1').smartWizard("reset"); });
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-           var btnFinish = $('<button class="save-btn-order" data-toggle="modal" data-target="#mmm"></button>').text('Continue')
-                                             .addClass('btn btn-info')
-                                             .on('click', function(){});                                  
+                <!-- Content -->
+                <h6 class="text-uppercase font-weight-bold">Business id</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-            // Please note enabling option "showStepURLhash" will make navigation conflict for multiple wizard in a page.
-            // so that option is disabling => showStepURLhash: false
+            </div>
+            <!-- Grid column -->
 
-            // Smart Wizard 1
-            $('#smartwizard').smartWizard({
-                    selected: 0,
-                    theme: 'arrows',
-                    autoAdjustHeight:'true',
-                    transitionEffect:'fade',
-                    showStepURLhash: false,
-                    toolbarSettings: {toolbarPosition: 'both',
-                                      toolbarExtraButtons: [btnFinish, btnCancel]
-                                    }
-            });
-            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
-            	 if(stepNumber==3 && stepDirection == 'forward'){
-            	 		$('.sw-btn-group-extra').hide();
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-            	 }else{
-            	 	$('.sw-btn-group-extra').show();
-            	 }
-            });
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Products</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="#!">Latest products</a>
+                </p>
+                <p>
+                    <a href="#!">Most viewed products</a>
+                </p>
+                <p>
+                    <a href="#!">most purchased</a>
+                </p>
+                <p>
+                    <a href="#!">Store</a>
+                </p>
 
-            $("#smartwizard1").smartWizard({
-            	 selected: 0,
-                    theme: 'arrows',
-                    autoAdjustHeight:'true',
-                    transitionEffect:'fade',
-                    showStepURLhash: false,
-                    toolbarSettings: {toolbarPosition: 'both',
-                                      toolbarExtraButtons: [btnFinish, btnCancel]
-                                    }
-            });
+            </div>
+            <!-- Grid column -->
 
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="#!">Your Account</a>
+                </p>
+                <p>
+                    <a href="#!">Payments</a>
+                </p>
+                <p>
+                    <a href="#!">Shipping Rates</a>
+                </p>
+                <p>
+                    <a href="#!">FAQ</a>
+                </p>
 
-        });
-    </script>
-<script src="js/owl.carousel.js"></script>
-<script src="js/zoom-slider.js"></script>
-<script type="text/javascript">
-        $(document).ready( function () {
-            //If your <ul> has the id "glasscase"
-            $('#glasscase').glassCase({ 'thumbsPosition': 'bottom', 'widthDisplay' : 560});
-        });
-    </script>
-<script type="text/javascript">
-	$(document).ready(function(){
-            //-- Click on QUANTITY
-            $(".btn-minus").on("click",function(){
-                var now = $(".section > div > input").val();
-                if ($.isNumeric(now)){
-                    if (parseInt(now) -1 > 0){ now--;}
-                    $(".section > div > input").val(now);
-                }else{
-                    $(".section > div > input").val("1");
-                }
-            })            
-            $(".btn-plus").on("click",function(){
-                var now = $(".section > div > input").val();
-                if ($.isNumeric(now)){
-                    $(".section > div > input").val(parseInt(now)+1);
-                }else{
-                    $(".section > div > input").val("1");
-                }
-            })                        
-        }) 
-</script>    
-<script src="js/jquery.justifiedGallery.min.js"></script>
-<script src="js/jquery.lazy.min.js"></script>
-<script src="js/select2.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-     //$('#pages').show();
-});
-</script>
-<script>
-$(document).ready(function() {
-     $('#hot-deals,#best-seller').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    dots:false,
-	    nav:true,
-	    navText: ["<span class='slide-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='slide-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:1
-	});  
-     
-});
+            </div>
+            <!-- Grid column -->
 
-$(document).ready(function() {
-	// $("#iii").click(function () {
-	// 	alert(1);
- //    $(".wsmenu-submenu").show();
-	// });
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
-	// $(document).click(function (e) {
-	//     if (!$(e.target).hasClass("iii") 
-	//         && $(e.target).parents(".wsmenu-submenu").length === 0) 
-	//     {
-	//         $(".wsmenu-submenu").hide();
-	//     }
-	// });
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fa fa-home mr-3"></i> Sal Al Din, Dubai, UAE</p>
+                <p>
+                    <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p>
+                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
 
-	$("#wsmenu-submenu-more").click(function(e){
-    $(".wsmenu-submenu").show();
-     e.stopPropagation();
-});
+            </div>
+            <!-- Grid column -->
 
-$(".wsmenu-submenu").click(function(e){
-    e.stopPropagation();
-});
+        </div>
+        <!-- Grid row -->
 
-$(document).click(function(){
-    $(".wsmenu-submenu").hide();
-});
+    </div>
+    <!-- Footer Links -->
 
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="#"> business id</a>
+    </div>
+    <!-- Copyright -->
 
-});
-
-</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-
-
-    $("#new-address").click(function(){
-    $("#adding-new-address").show();
-	}); 
-
-    $("#reset-pass").click(function(){
-    $(".reset-password-sec").show();
-	}); 
-   	$(".btn-secondary").click(function(){
-    $(".reset-password-sec").hide();
-	}); 
-
-	$("#add-address").click(function(){
-    $("#addnew-address").show();
-	}); 
-   	$("#remove-address").click(function(){
-    $("#addnew-address").hide();
-	});
-
-	$("#qualification-add-btn").click(function(){
-    $("#new-qualification").show();
-	}); 
-   	$("#remove-qualific").click(function(){
-    $("#new-qualification").hide();
-	}); 
-
-	$("#add-address").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#addnew-address").offset().top},
-        'slow');
-	});
-
-	$("#remove-address").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#addnew-address").offset().top},
-        'slow');
-	});
-
-	$("#edit-cv-btn").click(function(){
-    $("#edit-cv-form").show();
-    $("#hero-cv").hide();
-	}); 
-
-	// $("#order-decline").click(function(){
- //    $(".decline-option-wrap").show();
- //    $(this).addClass("decline-active");
-	// }); 
-
-});
-</script>
-<script src="js/jquery.nice-select.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-  $('.nice-select').niceSelect();
-});
-</script>
-<script>
-
-$(document).ready(function() {
-	$('.lazy').lazy({
-      effect: "fadeIn",
-      effectTime: 2000,
-      threshold: 0
-    });
-      var boxParentHeight = $('.vert-algn-mdl-cnt').parent().innerHeight();
-      var boxHeigth = $('.vert-algn-mdl-cnt').innerHeight();
-      var maginTop= (boxParentHeight-boxHeigth)/2;
-      $('.vert-algn-mdl-cnt').parent().css('padding-top', maginTop+'px');
-
-
-      $("#bx-tp-js-gallery").justifiedGallery(
-	      {
-			rowHeight : 100,
-			lastRow : 'justify',
-			margins : 1
-	      }
-      );
-      $("#bx-tp-js-gallery-2").justifiedGallery(
-	      {
-			rowHeight : 100,
-			lastRow : 'justify',
-			margins : 1
-	      }
-      )
-      $('#bx-tp-rl-img-glry').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:4,
-	    lazyLoad: true
-	});
-      $('#bx-tp-rl-vdo-glry').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:4,
-	    lazyLoad: true
-	});
-      $('#product-slider-tp-1').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:2,
-	    lazyLoad: true
-	});
-        $('#product-slider-tp-2').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:2,
-	    lazyLoad: true
-	});
-        $('#product-slider-tp-3').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:2,
-	    lazyLoad: true
-	});
-        $('#product-slider-tp-4').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:2,
-	    lazyLoad: true
-	});
-           $('#new-account-box').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    nav:true,
-	    navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-	    items:3,
-	    lazyLoad: true
-	});
-});
-</script>
-
+</footer>

@@ -1,6 +1,6 @@
 <?php include 'modules/header-hero-nav.php';?>
 <?php include 'modules/hero-header.php';?>
-<?php include 'modules/header.php';?>
+<?php include 'modules/header1.php';?>
     <div class="container-fluid">
       <div class="row">
   <div class="full-wrap bg-store pb-4">     
@@ -32,7 +32,8 @@
           <div id="smartwizard1" class="mt-2">
               <ul>
                   <li class="text-center"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br /><small>Company Main Info</small></a></li>
-                   <li class="text-center"><a href="#step-1"><i class="fa fa-user-circle" aria-hidden="true"></i><br /><small>User Info
+                   <li class="text-center"><a href="#step-8"><i class="fa fa-id-card-o" aria-hidden="true"></i><br /><small>Quick Registration</small></a></li>
+                   <li class="text-center"><a href="#step-1"><i class="fa fa-user-circle" aria-hidden="true"></i><br /><small>Create Users
                    </small></a></li>
                   <li class="text-center"><a href="#step-3"><i class="fa fa-money" aria-hidden="true"></i><br /><small>Owner / Share Holder Info
                   </small></a></li>
@@ -40,115 +41,17 @@
                   <li class="text-center"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br /><small>Location</small></a></li>
                    <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br /><small>Licence Info</small></a></li>
                   <li class="text-center"><a href="#step-6"><i class="fa fa-upload" aria-hidden="true"></i><br /><small>Upload Documents</small></a></li>
+                   <li class="text-center"><a href="#step-9"><i class="fa fa-credit-card" aria-hidden="true"></i><br /><small>Verifiy & Payment</small></a>
+                   </li>
               </ul>
-
               <div>
-                  <div id="step-1" class="mt-2">
+                  <div id="step-8">
                      <div class="lg-reg reg-form">
-                       <!--  <h2 class="reg-sec-header user-info"><i class="fa fa-user-circle" aria-hidden="true"></i>User Info</h2> -->
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                <label for="first_name" class="field-label">First Name:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                <label for="first_name" class="field-label">Last Name:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                <label for="first_name" class="field-label">DOB:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                <label for="first_name" class="field-label">Designation:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                        </div>
-
-                       <div class="row">
-                        <div class="col-md-3">
-                                    <div class="form-group">
-                                    <label for="first_name" class="field-label">Mobile Number:</label>
-                                    <div class="full-wrap mobile-code">
-                                      <input type="text" class="form-control field-control col-md-2" placeholder="">
-                                      <input type="text" class="form-control field-control col-md-2" placeholder="">
-                                      <input type="text" class="form-control field-control col-md-8">
-                                    </div>
-                                  </div>
-                              </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="usr" class="field-label">E-mail:</label>
-                              <input type="email" class="form-control field-control" id="usr">
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="usr" class="field-label">Password:</label>
-                              <input type="text" class="form-control field-control" id="usr">
-                            </div>
-                          </div>
-                           <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="usr" class="field-label">Confirm Password:</label>
-                              <input type="text" class="form-control field-control" id="usr">
-                            </div>
-                            </div>
-                                 
-                         
-                       </div>   
-                        <div class="row">
-                         
-                        
-                       <!--  <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="usr" class="field-label">BID Expiry Date:</label>
-                              <input type="text" class="form-control field-control" id="usr">
-                            </div>
-                        </div> -->
-                      </div>
-
-                       <div class="row">
-                          <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
-                            <button class="switch-acc">Delete</button>
-                            <button class="switch-acc">Add</button>
-                          </div>
-                        </div>
-
-
-                          <div class="row">
-                            <!-- <div class="col-md-6">
-                              <div class="full-wrap full-register-box">
-                                <p>
-                                  If you registered with this information your account will not be verified. And you can't add your products
-                                </p>
-                              </div>
-                              
-                            </div>
-                            <div class="col-md-6">
-                              <div class="full-wrap full-register-box">
-                                <div class="head">You Will Get With <span>Complete Registration </span></div>
-                                  <ul>
-                                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Add Your Product</li>
-                                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Manage Product</li>
-                                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Dashboard</li>
-                                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Advertisnment</li>
-                                  </ul>
-                                  <a href="" class="btn mx-auto complete-reg">go to, &nbsp;<span>Next Step</span></a>
-                              </div>
-                          </div> -->
                             <div class="col-md-12 mx-auto">
                             <div class="row">
                               <div class="col-md-6 pr-0">
-                                <div class="full-wrap full-register-box">
+                                <div class="full-wrap full-register-box first">
                                 <a href="" class="btn mx-auto complete-reg">Register Now</a>
                                   <p class="first-desc">
                                   If you registered with this stage you can't get BID's all facility ,and you will not verfied by us until complete necessary requirements.However you will get the basic facility of the BID.
@@ -161,7 +64,7 @@
                             </div>
 
                             <div class="col-md-6 pl-0">
-                                <div class="full-wrap full-register-box border-left-0">
+                                <div class="full-wrap full-register-box border-left-0 second">
                                    <a href="" class="btn mx-auto complete-reg">Go to, &nbsp;<span>Next Step</span></a>
                                     <p class="first-desc pl-4">
                                       If you willing for complete registration , You are able to use all facility , our support , and guidness (Some of other Facilities) 
@@ -177,22 +80,9 @@
                                   </ul>
                                 </div>
                             </div>    
-
-
-
-
                             </div>
-                         
                           </div>
-
-
-
-                            
-                          </div>
-
-
-
-                
+                        </div>
                      </div>
                   </div>
                   <div id="step-2" class="mt-2">
@@ -271,15 +161,75 @@
 
                            </div>  
 
+                       <div class="full-wrap super-user-wrap">     
+                           <div class="full-wrap">
+                            <img src="images/icon/super.png" class="d-inline-block">
+                            <span class="super-user d-inline-block align-middle">Main User Details</span>
+                           </div>
 
+                            <div class="row mt-3">
+                           <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">User Name:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                        
 
-                          
+                           <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">Designation:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
 
+                           </div>
 
+                           <div class="row">
+                             <div class="col-md-3">
+                                  <div class="form-group">
+                                  <label for="first_name" class="field-label">Confirm E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                </div>
+                              </div>  
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                  <label for="first_name" class="field-label">Password:</label>
+                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                </div>
+                              </div> 
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                  <label for="first_name" class="field-label">Confirm Password:</label>
+                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                </div>
+                              </div>   
+                          </div>
 
+                          <div class="row mt-2">
+                            <div class="col-md-9 text-center mx-auto note-super">
+                              <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
+                              <i class="fa fa-user-secret" aria-hidden="true"></i>
+                              <p>This user has full limit of BID account. In addition he can add and manage sub user who can manage your company account. </p>
+                              
+                            </div>
+                            
+                          </div>
 
-
-                      </div>      
+                     </div>     
+                  </div>      
                   </div>
                   <div id="step-3" class="mt-2">
                      <div class="lg-reg reg-form">
@@ -332,13 +282,19 @@
                            <div class="col-md-3">
                                 <div class="form-group">
                                 <label for="first_name" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">E-mail:</label>
                                 <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
                               </div>
                           </div>
                           <div class="col-md-3">
                                 <div class="form-group">
                                 <label for="first_name" class="field-label">ID No:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
                               </div>
                           </div>
 
@@ -357,7 +313,7 @@
                         </div> 
 
                         <div class="row">
-                          <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
+                          <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-4">
                             <button class="switch-acc">Delete</button>
                             <button class="switch-acc">Add</button>
                           </div>
@@ -367,6 +323,177 @@
                       </div>
                       
                   </div>
+                  <div id="step-1" class="mt-2">
+                    <div class="lg-reg reg-form">
+                       <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">Upload Your Photo</label>
+                                <div class="custom-file upload-reg">
+                                <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">Full Name:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">DOB:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                <label for="first_name" class="field-label">Designation:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                        </div>
+
+                       <div class="row">
+                        <div class="col-md-3">
+                                    <div class="form-group">
+                                    <label for="first_name" class="field-label">Mobile Number:</label>
+                                    <div class="full-wrap mobile-code">
+                                      <input type="text" class="form-control field-control col-md-2" placeholder="">
+                                      <input type="text" class="form-control field-control col-md-2" placeholder="">
+                                      <input type="text" class="form-control field-control col-md-8">
+                                    </div>
+                                  </div>
+                              </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                              <label for="usr" class="field-label">E-mail:</label>
+                              <input type="email" class="form-control field-control" id="usr">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <div class="form-group">
+                              <label for="usr" class="field-label">Password:</label>
+                              <input type="text" class="form-control field-control" id="usr">
+                            </div>
+                          </div>
+                           <div class="col-md-3">
+                            <div class="form-group">
+                              <label for="usr" class="field-label">Confirm Password:</label>
+                              <input type="text" class="form-control field-control" id="usr">
+                            </div>
+                            </div>
+                       </div>
+
+                       <div class="row">
+                          <div class="lg-reg reg-form col-md-12">
+                            <div class="full-wrap user-action-part mt-4">
+                              <div class="label-head"><img src="images/icon/allow.png" class="mr-1"><span class="d-inline-block">This user authorized to :</span></div>
+                            
+                          <div class="full-wrap mt-2">
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
+                               <input type="radio" id="1" name="customRadioInline1" class="custom-control-input">
+                               <label class="custom-control-label" for="1">Delegation of using all the businessid.net functions, facilities and actions.</label>
+                            </div>
+                            <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-4">
+                               <input type="radio" id="2" name="customRadioInline1" class="custom-control-input">
+                               <label class="custom-control-label" for="2">All E-commerce:</label>
+                            </div> 
+                            <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>  
+                                <ul class="list-for-user mt-4">
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e1" type="checkbox" checked="">
+                                      <label for="e1">Add product / Delete product / Manage Product / Edit product… etc.</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e2" type="checkbox">
+                                      <label for="e2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e3" type="checkbox">
+                                      <label for="e3">Buy from supplier /   product / Edit the buying order… etc. </label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e4" type="checkbox">
+                                      <label for="e4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e5" type="checkbox">
+                                      <label for="e5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
+                                    </div>
+                                  </li>
+                                  <li class="ml-3">
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="e6" type="checkbox">
+                                      <label for="e6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
+                                    </div>
+                                  </li>
+                                   
+                                </ul>
+                          </div>
+
+                          <div class="full-wrap mt-2">
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-2 ml-1">
+                               <input type="radio" id="s0" name="customRadioInline1" class="custom-control-input">
+                               <label class="custom-control-label" for="s0">All Social Media</label>
+                            </div>
+                            <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
+                                <ul class="list-for-user">
+                                  <li class="ml-3">
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="s1" type="checkbox" checked="">
+                                      <label for="s1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="checkbox-edit checkbox-primary">
+                                      <input id="s2" type="checkbox" checked="">
+                                      <label for="s2">Chat / Send message</label>
+                                    </div>
+                                  </li>
+                                </ul>
+                          </div>
+                                    <div class="user-for-msg text-center">
+                                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                      All user will have a personal account with same user name and password
+                                    </div>    
+
+                            </div>
+                          </div>
+                         
+                       </div>
+
+
+
+
+
+                       <div class="full-wrap text-right send-author-wrap">
+                        <span>* This user has to authorized by  <a href="">[Name]</a></span>
+                        <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
+                         
+                       </div>
+                       <div class="row">
+                          <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
+                            <button class="switch-acc">Delete</button>
+                            <button class="switch-acc">Add</button> 
+                          </div>
+                        </div>
+                    </div>
+                  </div>     
+
+
+
                   <div id="step-4" class="mt-2">
                     <div class="lg-reg reg-form">
                         <div class="row">
@@ -649,7 +776,9 @@
 
 
               </div>
-          </div>
+          </div><!-- Smart-Wizard -->
+
+         
 
          
         </div>  
@@ -658,7 +787,6 @@
       
 
     </div>
-  <!-- </div> -->
 </div>
 
              
@@ -682,18 +810,6 @@
 </div>
 
 
-<?php include 'modules/footer.php';?>
-<script type="text/javascript">
-  $(".fltr-hd-2").click(
-    function(){
-      $(this).next("div").slideToggle();
-      $(this).find("span").toggleClass("fa-minus-square-o fa-plus-square-o");
-    }
-  );
-
-  $(document).ready(function() {
-    $(".dropdown-toggle").dropdown();
-  });
-</script>
+<?php include 'modules/footer2.php';?>
 </body>
 </html>
