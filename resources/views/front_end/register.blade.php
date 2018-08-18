@@ -96,14 +96,16 @@
                                 <label for="name" class="field-label">Company Name:</label>
                                 <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
                                 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
+                                
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
                               </div>
                             </div>
                             <div class="col-md-3">

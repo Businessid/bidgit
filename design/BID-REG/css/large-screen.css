@@ -3004,8 +3004,6 @@ input[type="text"].field-control::-webkit-input-placeholder,textarea.field-contr
 }
 .custom-radio-wrap{
     width: 100%;
-    border-bottom: 1px solid #ced4da;
-    padding-bottom: 5px;
 }
 .custom-radio-wrap .custom-radio{
     width: auto;
