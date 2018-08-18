@@ -27,21 +27,21 @@ class RegisterController extends BaseController
      public function post(Request $request)
     {
        if($request->input('tab')=='company_info'){
-     //     $validatedData = $request->validate([
-     //    'name' => 'required|min:8',
-     //    'category' => 'required',
-     //    'activity' => 'required',
-     //    'company_email' => 'required|email',
-     //    'company_mobile' => 'required',
-     //     'user_first_name' => 'required',
-     //     'last_name' => 'required',
-     //     'mobile' => 'required',
-     //     'designation' => 'required',
-     //     'email' => 'required|email|confirmed',
-     //     'email_confirmation' => 'required|email',
-     //     'password' => 'required|confirmed',
-     //     'password_confirmation' => 'required',
-     // ]);
+         $validatedData = $request->validate([
+        'name' => 'required|min:8',
+        'category' => 'required',
+        'activity' => 'required',
+        'company_email' => 'required|email',
+        'company_mobile' => 'required',
+         'user_first_name' => 'required',
+         'last_name' => 'required',
+         'mobile' => 'required',
+         'designation' => 'required',
+         'email' => 'required|email|confirmed',
+         'email_confirmation' => 'required|email',
+         'password' => 'required|confirmed',
+         'password_confirmation' => 'required',
+     ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
     $data['activity'] = $request->input('activity');
@@ -54,7 +54,32 @@ class RegisterController extends BaseController
     $data['password'] = $request->input('password');
     $data['email'] = $request->input('email');
     $request->session()->put('company_info',$data);
+    $data['step']="2";
+    return view('front_end.register',$data); die; 
     }
+
+    if($request->input('tab')=='licence'){
+         $validatedData = $request->validate([
+        'fk_country_id' => 'required',
+        'fk_city_id' => 'required',
+        'fk_area_id' => 'required'
+     ]);
+    $data['name'] = $request->input('name');
+    $data['category'] = $request->input('category');
+    $data['activity'] = $request->input('activity');
+    $data['company_email'] = $request->input('company_email');
+    $data['company_mobile'] = $request->input('company_mobile');
+    $data['user_first_name'] = $request->input('user_first_name');
+    $data['last_name'] = $request->input('last_name');
+    $data['mobile'] = $request->input('mobile');
+    $data['designation'] = $request->input('designation');
+    $data['password'] = $request->input('password');
+    $data['email'] = $request->input('email');
+    $request->session()->put('licence_info',$data);
+    $data['step']="3";
+    return view('front_end.register',$data); die; 
+    }
+
     if($request->input('tab')=='location'){
          $validatedData = $request->validate([
         'fk_country_id' => 'required',
@@ -72,25 +97,27 @@ class RegisterController extends BaseController
     $data['designation'] = $request->input('designation');
     $data['password'] = $request->input('password');
     $data['email'] = $request->input('email');
-    $request->session()->put('company_info',$data);
+    $request->session()->put('location_info',$data);
+    $data['step']="4";
+    return view('front_end.register',$data); die; 
     }
-    
 
-
-
-    //$data=array('user_type'=>'company','name'=>$name,"category"=>$category,"activity"=>$activity,"company_email"=>$company_email,"company_mobile"=>$company_mobile,"first_name"=>$user_first_name,"last_name"=>$last_name,"mobile"=>$mobile,"designation"=>$designation,"email"=>$email,"password"=>$password);
-    //$result =DB::table('tbl_users')->insert($data);
-    //DB::enableQueryLog();
-    // if($result){
-    //  $data['step']="1";
-     
-    //  return view('front_end.register',$data); 
-    // }else{
-    //     echo "false";
-    // }
-    //$company_info=$request->session()->get('company_info');
-    $data['step']="2";
-    return view('front_end.register',$data); 
+    if($request->input('tab')=='register'){
+        $dataArr=Array();
+        $company_info=$request->session()->get('company_info');
+         $licence_info=$request->session()->get('licence_info');
+          $location_info=$request->session()->get('location_info');
+        $dataArr=array_merge($company_info,$licence_info,$location_info);
+        $result =DB::table('tbl_users')->insert($dataArr);
+        DB::enableQueryLog();
+        if($result){
+         $data['step']="5";
+         return view('front_end.register',$data); 
+        }else{
+            return redirect('RegisterController');
+        }
+    }
+   
     } 
     public function selectActivities(Request $request)
     {
