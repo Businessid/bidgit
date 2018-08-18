@@ -63,21 +63,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
-<<<<<<< HEAD
-                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
-                                @if ($errors->any())
-
-                                
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                              @endforeach
-                          </ul>
-                      </div>
-                  @endif
-=======
-                                <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
+                                <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="first_name">
                                 @if ($errors->first('name'))
     <div class="alert alert-danger">
         <ul>
@@ -85,7 +71,6 @@
         </ul>
     </div>
 @endif
->>>>>>> beb77b7282b67e61c0ddfaa2b52339b069fbf888
                               </div>
                             </div>
                             <div class="col-md-3">
