@@ -31,28 +31,41 @@ class RegisterController extends BaseController
         'name' => 'required|min:8',
         'category' => 'required',
         'activity' => 'required',
-        'company_email' => 'required|email',
         'company_mobile' => 'required',
-         'user_first_name' => 'required',
-         'last_name' => 'required',
-         'mobile' => 'required',
-         'designation' => 'required',
-         'email' => 'required|email|confirmed',
-         'email_confirmation' => 'required|email',
-         'password' => 'required|confirmed',
-         'password_confirmation' => 'required',
+        'email' => 'required|email|confirmed',
+        'company_email' => 'required|email',
+            'company_first_name' => 'required|min:2',
+            'company_last_name' => 'required|min:2',
+            'company_gender' => 'required',
+            'company_designation' => 'required',
+            'company_dob' => 'required',
+            'company_nationality' => 'required',
+            'user_first_name' => 'required',
+            'last_name' => 'required',
+            'mobile' => 'required',
+            'designation' => 'required',
+            'email' => 'required|email|confirmed',
+            'email_confirmation' => 'required|email',
+            'company_password' => 'required|confirmed',
+            'company_password_confirmation' => 'required',
      ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
     $data['activity'] = $request->input('activity');
+    $data['first_name'] = $request->input('company_first_name');
+    $data['last_name'] = $request->input('company_last_name');
+    $data['gender'] = $request->input('company_gender');
+    $data['designation'] = $request->input('company_designation');
+    $data['birthday'] = $request->input('company_dob');
     $data['company_email'] = $request->input('company_email');
     $data['company_mobile'] = $request->input('company_mobile');
-    $data['user_first_name'] = $request->input('user_first_name');
-    $data['last_name'] = $request->input('last_name');
-    $data['mobile'] = $request->input('mobile');
-    $data['designation'] = $request->input('designation');
-    $data['password'] = $request->input('password');
+    $data['nationality'] = $request->input('company_nationality');
+    $data['phone'] = $request->input('phone');
     $data['email'] = $request->input('email');
+    $data['mobile'] = $request->input('mobile');
+    $data['password'] = $request->input('password');
+    
+    
     $request->session()->put('company_info',$data);
     $data['step']="2";
     return view('front_end.register',$data); die; 
@@ -108,7 +121,7 @@ class RegisterController extends BaseController
         $dataArr['modified_date']=$now;
         $dataArr['status']=1;
         print_r($dataArr); die;
-        
+
         $result =DB::table('tbl_users')->insert($dataArr);
         DB::enableQueryLog();
         if($result){
