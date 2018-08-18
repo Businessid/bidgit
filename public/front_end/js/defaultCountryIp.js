@@ -16,7 +16,7 @@
   },
   utilsScript: "{{ URL::asset('front_end/js/utils.js') }}" // just for formatting/placeholders etc
 });
- $("#personal_mobile").intlTelInput({
+ $(".mobile").intlTelInput({
   hiddenInput: "full_phone",
   initialCountry: "auto",
   preferredCountries:["ae"],
@@ -36,7 +36,7 @@ var telInput = $("#company_mobile"),
   errorMsg = $("#error-msg"),
   validMsg = $("#valid-msg");
   
-  var tel2Input = $("#personal_mobile"),
+  var tel2Input = $(".mobile"),
   perrorMsg = $("#p-error-msg"),
   pvalidMsg = $("#p-valid-msg");
 
