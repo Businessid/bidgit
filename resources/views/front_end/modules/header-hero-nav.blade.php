@@ -30,8 +30,6 @@
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/bidstyle1.css?v=1.2') }}" />
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/responsive.css?v=1.2') }}" />
   <!-- shejin -->
-  <link href="{{ URL::asset('front_end/css/smart_wizard.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ URL::asset('front_end/css/smart_wizard_theme_arrows.css') }}" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/cv-style.css') }}"> 
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/zoom-slider.css') }}">

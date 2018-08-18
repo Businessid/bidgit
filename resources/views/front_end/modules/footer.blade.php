@@ -251,15 +251,12 @@
       }
 
     </script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeo_cGQozovWzJ-PjvvvCnC0hToHdP2RI&callback=initMap"></script> -->
-<!-- <script src="js/jquery-3.3.1.min.js"></script> -->
-<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script> 	
+<!--<script src="{{ URL::asset('front_end/js/jquery-3.3.1.min.js') }}"></script>-->
+<script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="{{ URL::asset('front_end/bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/tether.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('front_end/js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('front_end/js/step.js') }}"></script>
 <script>
     $(function(){
@@ -267,76 +264,6 @@
             effect: 'slide'
         });
     });
-    </script>
-<!-- Include SmartWizard JavaScript source -->
-<script type="text/javascript" src="{{ URL::asset('front_end/js/jquery.smartWizard.min.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            // Step show event
-            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-               //alert("You are on step "+stepNumber+" now");
-               if(stepPosition === 'first'){
-                   $("#prev-btn").addClass('disabled');
-               }else if(stepPosition === 'final'){
-                   $("#next-btn").addClass('disabled');
-               }else{
-                   $("#prev-btn").removeClass('disabled');
-                   $("#next-btn").removeClass('disabled');
-               }
-            });
-
-
-
-
-            // Toolbar extra buttons
-            
-            var btnCancel = $('<button></button>').text('Cancel')
-                                             .addClass('btn cancel-btn-order')
-                                             .on('click', function(){ $('#smartwizard,#smartwizard1').smartWizard("reset"); });
-
-           var btnFinish = $('<button class="save-btn-order" data-toggle="modal"></button>').text('Continue')
-                                             .addClass('btn btn-info')
-                                             .on('click', function(){});                                  
-
-            // Please note enabling option "showStepURLhash" will make navigation conflict for multiple wizard in a page.
-            // so that option is disabling => showStepURLhash: false
-
-           
-            $('#smartwizard').smartWizard({
-                    //selected: 0,
-                    theme: 'arrows',
-                    autoAdjustHeight:'true',
-                    transitionEffect:'fade',
-                    showStepURLhash: false,
-                    toolbarSettings: {toolbarPosition: 'both',
-                                      toolbarExtraButtons: [btnFinish, btnCancel]
-                                    }
-            });
-            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
-            	 if(stepNumber==3 && stepDirection == 'forward'){
-            	 		$('.sw-btn-group-extra').hide();
-
-            	 }else{
-            	 	$('.sw-btn-group-extra').show();
-            	 }
-            });
-
-         // Smart Wizard 1    
-            $("#smartwizard1").smartWizard({
-            	 selected: 0,
-                    theme: 'arrows',
-                    autoAdjustHeight:'true',
-                    transitionEffect:'fade',
-                    showStepURLhash: false,
-                    toolbarSettings: {toolbarPosition: 'both',
-                                      toolbarExtraButtons: [btnFinish, btnCancel]
-                                    }
-            });
-
-
-
-        });
     </script>
 <script src="{{ URL::asset('front_end/js/owl.carousel.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/zoom-slider.js') }}"></script>
@@ -367,7 +294,7 @@
                 }
             })                        
         }) 
-</script>    
+</script>
 <script src="{{ URL::asset('front_end/js/jquery.justifiedGallery.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/jquery.lazy.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/select2.min.js') }}"></script>
@@ -574,4 +501,3 @@ $(document).ready(function() {
 	});
 });
 </script>
-

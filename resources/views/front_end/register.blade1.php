@@ -30,21 +30,15 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="full-wrap bg-store pb-4">
+            <div class="full-wrap bg-store pb-4"> 
               <!-- <div class="container"> -->
               <div class="row">
                 <div class="col-md-12 order-box mt-2">
                   <div id="smartwizard1" class="mt-2">
                     <ul>
-                      <li class="text-center <?php if (@$step == 1) {echo 'active';
-} else {
-	echo '';
-}
-?>"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
+                      <li class="text-center <?php if(@$step==1) echo 'active'; else echo '';?>"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
                         <small>Company Main Info {{@$step}}</small></a></li>
-                      <li class="text-center <?php if (@$step == 2) {echo 'active';
-}
-?>"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
+                      <li class="text-center <?php if(@$step==2) echo 'active';?>"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
                         <small>Location</small></a></li>
                       <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br />
                         <small>Licence Info</small></a></li>
@@ -62,9 +56,8 @@
                         <small>Verifiy & Payment</small></a> </li>
                     </ul>
                     <div>
-                    <div id="step-2" class="mt-2" style="display:none !important"; >
-                      {{ Form::open(array('url' => 'register/post')) }}
-                      <input type="hidden" name="tab" value="company_info">
+                      <div id="step-2" class="mt-2" style="display:none !important"; > {{ Form::open(array('url' => 'register/post')) }}
+                        <input type="hidden" name="tab" value="company_info">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
@@ -72,80 +65,80 @@
                                 <label for="name" class="field-label">Company Name:</label>
                                 <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
                                 @if ($errors->any())
-
-
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                              @endforeach
-                          </ul>
-                      </div>
-                  @endif
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                  </ul>
+                                </div>
+                                @endif
                                 <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
                                 @if ($errors->first('name'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('name') }}</li>
-        </ul>
-    </div>
-@endif
-                              </div>
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    <li>{{ $errors->first('name') }}</li>
+                                  </ul>
+                                </div>
+                                @endif </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="category" class="field-label">Main Activity:</label>
                                 <select class="form-control js-example-basic-single" id="category" name="category"  title="">
                                   <option value="">- Select -</option>
+                                  
                                   @if(!empty($categories))
   @foreach($categories as $key => $value)
-    <option value="{{ $key }}" <?php if (old('category') == $key) {echo "selected";
-}
-?>>{{ $value }}</option>
+    
+                                  <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
+                                  
   @endforeach
 @endif
+                                
                                 </select>
                                 @if ($errors->first('category'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('category') }}</li>
-        </ul>
-    </div>
-@endif
-                              </div>
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    <li>{{ $errors->first('category') }}</li>
+                                  </ul>
+                                </div>
+                                @endif </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="activity" class="field-label">Sub Activities:</label>
                                 <select class="form-control js-example-basic-single" id="activity" name="activity"  multiple="">
                                   <option value="">- Select -</option>
+                                  
                                   @if(!empty($activities))
   @foreach($activities as $value)
-    <option value="{{ $value }}">{{ $value }}</option>
+    
+                                  <option value="{{ $value }}">{{ $value }}</option>
+                                  
   @endforeach
 @endif
+                                
                                 </select>
                                 @if ($errors->first('activity'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('activity') }}</li>
-        </ul>
-    </div>
-@endif
-                             </div>
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    <li>{{ $errors->first('activity') }}</li>
+                                  </ul>
+                                </div>
+                                @endif </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="company_email" class="field-label">E-mail:</label>
                                 <input type="email" class="form-control field-control" id="company_email" name="company_email" value="{{old('company_email')}}">
                                 @if ($errors->first('company_email'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('company_email') }}</li>
-        </ul>
-    </div>
-@endif
-                              </div>
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    <li>{{ $errors->first('company_email') }}</li>
+                                  </ul>
+                                </div>
+                                @endif </div>
                             </div>
                           </div>
                           <div class="row">
@@ -154,13 +147,12 @@
                                 <label for="company_mobile" class="field-label">Mobile Number:</label>
                                 <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
                                 @if ($errors->first('company_mobile'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('company_mobile') }}</li>
-        </ul>
-    </div>
-@endif
-                              </div>
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    <li>{{ $errors->first('company_mobile') }}</li>
+                                  </ul>
+                                </div>
+                                @endif </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
@@ -168,7 +160,6 @@
                                 <input type="text" class="form-control field-control" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
                               </div>
                             </div>
-
                           </div>
                           <div class="full-wrap super-user-wrap">
                             <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
@@ -178,26 +169,24 @@
                                   <label for="user_first_name" class="field-label">First Name:</label>
                                   <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                                   @if ($errors->first('first_name'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('first_name') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('first_name') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="last_name" class="field-label">Last Name:</label>
                                   <input type="text" class="form-control field-control" name="last_name" id="last_name" value="{{old('last_name')}}" placeholder="" data-fv-field="last_name">
                                   @if ($errors->first('last_name'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('last_name') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('last_name') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
@@ -218,80 +207,72 @@
                                   <label for="email" class="field-label">E-mail:</label>
                                   <input type="email" class="form-control field-control" name="email" id="email" value="{{old('email')}}" placeholder="" data-fv-field="email">
                                   @if ($errors->first('email'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('email') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('email') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
                                   <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="confirmemail">
                                   @if ($errors->first('email_confirmation'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('email_confirmation') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('email_confirmation') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="password" class="field-label">Password:</label>
                                   <input type="password" class="form-control field-control" name="password" id="password" value="{{old('password')}}" placeholder="" data-fv-field="password">
                                   @if ($errors->first('password'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('password') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('password') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="password_confirmation" class="field-label">Confirm Password:</label>
                                   <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                                   @if ($errors->first('password_confirmation'))
-    <div class="alert alert-danger">
-        <ul>
-                <li>{{ $errors->first('password_confirmation') }}</li>
-        </ul>
-    </div>
-@endif
-                                </div>
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      <li>{{ $errors->first('password_confirmation') }}</li>
+                                    </ul>
+                                  </div>
+                                  @endif </div>
                               </div>
                             </div>
                             <div class="row mt-2">
-                              <div class="col-md-10 text-center mx-auto note-super">
-                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
+                              <div class="col-md-10 text-center mx-auto note-super"> 
+                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
                                 <i class="fa fa-user-secret" aria-hidden="true"></i>
                                 <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
                                 <p>Businessid.net will generate a personal account for this user. </p>
                               </div>
                             </div>
                           </div>
-
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          <div class="text-right smart-bottom-btn">
+                            <div class="btn-group  sw-btn-group" role="group">
+                              <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                              <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-
-                        </div>
-
-                      {{ Form::close() }}
-                      </div>
-
-                      <div id="step-5" class="mt-2" style="display:block;">
-                      {{ Form::open(array('url' => 'register/post')) }}
-                      <input type="hidden" name="tab" value="location">
+                        {{ Form::close() }} </div>
+                      <div id="step-5" class="mt-2" style="display:block;"> {{ Form::open(array('url' => 'register/post')) }}
+                        <input type="hidden" name="tab" value="location">
                         <div class="lg-reg reg-form">
                           <div class="row">
-                            <div class="col-md-12 location-btns">
+                            <div class="col-md-12 location-btns"> 
                               <!-- <button class="switch-acc">Add New</button> -->
                               <div class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</div>
                             </div>
@@ -302,13 +283,15 @@
                                 <label for="country" class="field-label">Country:</label>
                                 <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Current Country">
                                   <option value="">Select Country</option>
+                                  
                                   @if(!empty($countries))
   @foreach($countries as $key => $value)
-    <option value="{{ $key }}" <?php if (old('fk_country_id') == $key) {echo "selected";
-}
-?>>{{ $value }}</option>
+    
+                                  <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+                                  
   @endforeach
 @endif
+                                
                                 </select>
                               </div>
                             </div>
@@ -360,9 +343,9 @@
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Drag Your Location:</label>
                                 <div class="form-group bmd-form-group">
-                      <label for="map_address" class="bmd-label-floating">Search Location:</label>
-                                <input type="text" class="form-control col-sm-6" id="map_address" name="map_address" autocomplete="off">
-                    </div>
+                                  <label for="map_address" class="bmd-label-floating">Search Location:</label>
+                                  <input type="text" class="form-control col-sm-6" id="map_address" name="map_address" autocomplete="off">
+                                </div>
                                 <div class="col-sm-12" id="map" style="height:400px;"></div>
                                 <input type="hidden" name="latitude" id="latitude">
                                 <input type="hidden" name="longitude" id="longitude">
@@ -371,30 +354,32 @@
                           </div>
                           <!-- <div>
                             <button class="switch-acc mt-2">Add New location</button>
-                          </div> -->
+                          </div> --> 
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary" type="button">Next</button>
+                          </div>
                         </div>
-                      </div>
-                      {{ Form::close() }}
-                      </div>
-
+                        {{ Form::close() }} </div>
                       <div id="step-7" class="mt-2" style="display:block;">
                         <div class="lg-reg reg-form pb-5">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="city" class="field-label">Legal Status:</label>
+                                <label for="legal_status" class="field-label">Legal Status:</label>
                                 <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
                                   <option value="" data-select2-id="12">Select Legal Status</option>
+                                  
                                  @if(!empty($legalstatus))
   @foreach($legalstatus as $key => $value)
-    <option value="{{ $key }}" <?php if (old('fk_country_id') == $key) {echo "selected";
-}
-?>>{{ $value }}</option>
+    
+                                  <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+                                  
   @endforeach
 @endif
+                                
                                 </select>
                               </div>
                             </div>
@@ -421,13 +406,15 @@
                             </div>
                           </div>
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          </div>
                         </div>
                       </div>
-                      </div>
                       <div id="step-8">
-                        <div class="lg-reg reg-form">
+                        <div class="lg-reg reg-form"> 
                           <!--  <h2 class="reg-sec-header user-info"><i class="fa fa-user-circle" aria-hidden="true"></i>User Info</h2> -->
                           <div class="row">
                             <div class="col-md-12 mx-auto">
@@ -435,7 +422,7 @@
                                 <div class="col-md-6 pr-0">
                                   <div class="full-wrap full-register-box first"> <a href="" class="btn mx-auto complete-reg">Register Now</a>
                                     <p class="first-desc"> If you registered with this stage you can't get BID's all facility ,and you will not verfied by us until complete necessary requirements.However you will get the basic facility of the BID. </p>
-                                    <div class="or-box">
+                                    <div class="or-box"> 
                                       <!-- <i class="fa fa-hand-o-right" aria-hidden="true"></i> -->OR </div>
                                   </div>
                                 </div>
@@ -451,18 +438,16 @@
                                     </ul>
                                   </div>
                                 </div>
-
                               </div>
                             </div>
                           </div>
                           <div class="text-right smart-bottom-btn">
-                           <div class="btn-group sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
-                           </div>
+                            <div class="btn-group sw-btn-group" role="group">
+                              <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-
-
                       <div id="step-3" class="mt-2" style="display:block;">
                         <div class="lg-reg reg-form">
                           <div class="row">
@@ -544,10 +529,12 @@
                             </div>
                           </div>
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          </div>
                         </div>
-                      </div>
                       </div>
                       <div id="step-1" class="mt-2">
                         <div class="lg-reg reg-form">
@@ -833,12 +820,13 @@
                               <button class="switch-acc">Add</button>
                             </div>
                           </div>
-
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          </div>
                         </div>
-                      </div>
                       </div>
                       <div id="step-4" class="mt-2">
                         <div class="lg-reg reg-form">
@@ -905,10 +893,12 @@
                             </div>
                           </div>
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          </div>
                         </div>
-                      </div>
                       </div>
                       <div id="step-6" class="mt-2">
                         <div class="lg-reg reg-form">
@@ -924,14 +914,16 @@
                             </div>
                           </div>
                         </div>
-                      <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        <div class="text-right smart-bottom-btn">
+                          <div class="btn-group  sw-btn-group" role="group">
+                            <button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                          </div>
                         </div>
                       </div>
-                      </div>
-                      </div>
+                    </div>
                   </div>
-                  <!-- Smart-Wizard -->
+                  <!-- Smart-Wizard --> 
                 </div>
               </div>
             </div>
@@ -941,21 +933,18 @@
     </div>
   </div>
 </div>
-@include('front_end.modules.footer')
+@include('front_end.modules.footer') 
 <script type="text/javascript">
   $(document).ready(function(e) {
-    getCategory($("#category").val(),<?php echo @old('activity');?>);
-
+    getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
   });
-getCity($("#fk_country_id").val(),<?php echo @old('fk_city_id');?>);
-
+getCity($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
 $('#fk_country_id').change(function(e){
 getCity(this.value,);
 });
-getArea($("#fk_city_id").val(),<?php echo @old('fk_area_id');?>);
-
+getArea($("#fk_city_id").val(),<?php echo @old('fk_area_id'); ?>);
 $('#fk_city_id').change(function(e){
 getArea(this.value,);
 });
@@ -963,7 +952,7 @@ getArea(this.value,);
   function getCategory(category,activity='') {
   var token = $("input[name='_token']").val();
 $.ajax({
-          url: "<?php echo 'register/selectActivities';?>",
+          url: "<?php echo 'register/selectActivities'; ?>",
           method: 'POST',
           data: {category:category, _token:token,activity:activity},
           success: function(data) {
@@ -976,7 +965,7 @@ $.ajax({
   function getCity(countryid,cityid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'register/selectCities';?>",
+          url: "<?php echo 'register/selectCities'; ?>",
           method: 'POST',
           data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
           success: function(data) {
@@ -988,7 +977,7 @@ $.ajax({
   function getArea(cityid,areaid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'register/selectAreas';?>",
+          url: "<?php echo 'register/selectAreas'; ?>",
           method: 'POST',
           data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
           success: function(data) {
@@ -998,9 +987,9 @@ $.ajax({
       });
   }
 
-</script>
-<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script>
-<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script>
+</script> 
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
+<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
 <script>
 function updateControls(addressComponents) {
   $('#country').val(addressComponents.country);
@@ -1012,7 +1001,7 @@ function initMap(lat='',lot=''){
   $('#map').locationpicker({
     location: {
       latitude:lat,
-      longitude:lot
+      longitude:lot 
     },
     radius: 300,
     zoom: 15,
@@ -1038,7 +1027,7 @@ function initMap(lat='',lot=''){
 $(document).on('click','.get-current-location',function(e){
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition);
-    }else{
+    }else{ 
         x.innerHTML = "Geolocation is not supported by this mobile.";
     }
     function showPosition(position){
@@ -1050,10 +1039,9 @@ $(document).on('click','.get-current-location',function(e){
 
 
 
-</script>
-</script>
-<script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
-<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
+</script> 
+</script> 
+<script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
-</body>
-</html>
+</body></html>
