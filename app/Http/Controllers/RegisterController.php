@@ -31,7 +31,7 @@ class RegisterController extends BaseController
         'name' => 'required|min:4',
         'category' => 'required',
         'activity' => 'required',
-        'email' => 'required|email|confirmed',
+        'email' => 'required|email',
         'mobile' => 'required',
         'phone' => 'required',
             'company_first_name' => 'required|min:2',
