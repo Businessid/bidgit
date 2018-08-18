@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ URL::asset('front_end/css/intlTelInput.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('front_end/css/isValidNumber.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/reg-wizard.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker3.min.css') }}">
 <style type="text/css">
   .store-cat-nav{
     display: none;
@@ -68,7 +70,7 @@
                 </div>
               </div>
               <fieldset class="company_info">
-                {{ Form::open(array('url' => 'register/post')) }}
+                {{ Form::open(array('url' => 'register/post', 'id' => 'company_info')) }}
                   <input type="hidden" name="tab" value="company_info">
                 <div class="lg-reg reg-form">
                   <div class="row">
@@ -124,12 +126,12 @@
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="company_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" id="company_email" name="company_email" value="{{old('company_email')}}">
-                        @if ($errors->first('company_email'))
+                        <label for="email" class="field-label">E-mail:</label>
+                        <input type="email" class="form-control field-control" id="email" name="email" value="{{old('email')}}">
+                        @if ($errors->first('email'))
                         <div class="alert alert-danger">
                           <ul>
-                            <li>{{ $errors->first('company_email') }}</li>
+                            <li>{{ $errors->first('email') }}</li>
                           </ul>
                         </div>
                         @endif </div>
@@ -255,12 +257,12 @@
                     </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="email" class="field-label">E-mail:</label>
-                          <input type="email" class="form-control field-control" name="email" id="email" value="{{old('email')}}" placeholder="" data-fv-field="email">
-                          @if ($errors->first('email'))
+                          <label for="company_email" class="field-label">E-mail:</label>
+                          <input type="email" class="form-control field-control" name="company_email" id="company_email" value="{{old('company_email')}}" placeholder="" data-fv-field="company_email">
+                          @if ($errors->first('company_email'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('email') }}</li>
+                              <li>{{ $errors->first('company_email') }}</li>
                             </ul>
                           </div>
                           @endif </div>
@@ -935,7 +937,8 @@
     </div>
   </div>
 </div>
-@include('front_end.modules.footer') 
+@include('front_end.modules.footer')
+<script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript">
   // Manage step    //
   if({{$step}}=='1'){
@@ -952,6 +955,11 @@
 
 
   $(document).ready(function(e) {
+	  $('#company_dob').datepicker({
+	format: 'yyyy-mm-dd'
+}).on('changeDate', function(){
+	$('#company_info').formValidation('revalidateField', 'company_dob');
+}); 
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
