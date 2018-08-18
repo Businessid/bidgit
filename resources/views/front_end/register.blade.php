@@ -321,7 +321,7 @@
               </fieldset>
               <fieldset>
                 {{ Form::open(array('url' => 'register/post')) }}
-                <input type="hidden" name="tab" value="license">
+                <input type="hidden" name="tab" value="licence">
                 <div class="lg-reg reg-form pb-5">
                   <div class="row">
                     <div class="col-md-3">
@@ -918,6 +918,16 @@
 </div>
 @include('front_end.modules.footer') 
 <script type="text/javascript">
+  // Manage step    //
+  if({{$step}}=='1'){
+    alert("okk");
+  }else if({{$step}}=='2'){
+  }else if({{$step}}=='3'){
+  }else if({{$step}}=='4'){
+  }else({{$step}}=='5'){
+  }
+
+
   $(document).ready(function(e) {
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
