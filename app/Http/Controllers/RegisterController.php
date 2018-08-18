@@ -28,44 +28,42 @@ class RegisterController extends BaseController
     {
        if($request->input('tab')=='company_info'){
          $validatedData = $request->validate([
-        'name' => 'required|min:8',
+        'name' => 'required|min:4',
         'category' => 'required',
         'activity' => 'required',
-        'company_mobile' => 'required',
         'email' => 'required|email|confirmed',
-        'company_email' => 'required|email',
+        'mobile' => 'required',
+        'phone' => 'required',
             'company_first_name' => 'required|min:2',
-            'company_last_name' => 'required|min:2',
+            'company_last_name' => 'required',
+            'company_designation' => 'required',
             'company_gender' => 'required',
             'company_designation' => 'required',
             'company_dob' => 'required',
+            'company_mobile' => 'required',
+            'company_phone' => 'required',
             'company_nationality' => 'required',
-            'user_first_name' => 'required',
-            'last_name' => 'required',
-            'mobile' => 'required',
-            'designation' => 'required',
             'email' => 'required|email|confirmed',
             'email_confirmation' => 'required|email',
             'company_password' => 'required|confirmed',
-            'company_password_confirmation' => 'required',
+            'company_password_confirmation' => 'required'  
      ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
     $data['activity'] = $request->input('activity');
-    $data['first_name'] = $request->input('company_first_name');
-    $data['last_name'] = $request->input('company_last_name');
-    $data['gender'] = $request->input('company_gender');
-    $data['designation'] = $request->input('company_designation');
-    $data['birthday'] = $request->input('company_dob');
-    $data['company_email'] = $request->input('company_email');
-    $data['company_mobile'] = $request->input('company_mobile');
-    $data['nationality'] = $request->input('company_nationality');
-    $data['phone'] = $request->input('phone');
-    $data['email'] = $request->input('email');
-    $data['mobile'] = $request->input('mobile');
-    $data['password'] = $request->input('password');
-    
-    
+    $data['company_email'] = $request->input('email');
+    $data['company_mobile'] = $request->input('phone');
+    $data['company_phone'] = $request->input('phone');
+        $data['first_name'] = $request->input('company_first_name');
+        $data['last_name'] = $request->input('company_last_name');
+        $data['designation'] = $request->input('company_designation');
+        $data['gender'] = $request->input('company_gender');
+        $data['birthday'] = $request->input('company_dob');
+        $data['mobile'] = $request->input('company_mobile');
+        $data['phone'] = $request->input('company_phone');
+        $data['nationality'] = $request->input('company_nationality');
+        $data['email'] = $request->input('company_email');
+        $data['password'] = $request->input('company_password');
     $request->session()->put('company_info',$data);
     $data['step']="2";
     return view('front_end.register',$data); die; 
