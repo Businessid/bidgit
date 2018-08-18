@@ -741,13 +741,13 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_name" class="field-label">Full Name:</label>
-                        <input type="email" class="form-control field-control" name="investor_name" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
+                        <input type="email" class="form-control field-control" name="investor_name[]" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_type" class="field-label">Type:</label>
-                        <select class="form-control js-example-basic-single" name="investor_type" id="investor_type">
+                        <select class="form-control js-example-basic-single" name="investor_type[]" id="investor_type">
                           <option value="" data-select2-id="20">Select Type</option>
                           <option value="1" data-select2-id="1212">Local Sponsor</option>
                           <option value="2" data-select2-id="1213">Owner</option>
@@ -758,24 +758,19 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="share" class="field-label">Percentage Of Share</label>
-                        <input type="text" class="form-control field-control" name="share" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
+                        <input type="text" class="form-control field-control" name="share[]" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_nationality" class="field-label">Nationality:</label>
-                        <select class="form-control js-example-basic-single" name="investor_nationality" id="investor_nationality">
-                          <optgroup label="United Arab Emirates">
-                          <option value="1" data-select2-id="953">Afghanistan</option>
-                          <option value="2" data-select2-id="954">Albania</option>
-                          <option value="3" data-select2-id="955">Algeria</option>
-                          <option value="4" data-select2-id="956">American Samoa</option>
-                          <option value="5" data-select2-id="957">Andorra</option>
-                          <option value="6" data-select2-id="958">Angola</option>
-                          <option value="7" data-select2-id="959">Anguilla</option>
-                          <option value="8" data-select2-id="960">Antarctica</option>
-                          <option value="9" data-select2-id="961">Antigua and Barbuda</option>
-                          </optgroup>
+                       <select class="form-control js-example-basic-single" id="investor_nationality" name="investor_nationality[]"  title="">
+                          <option value="">- Select -</option> 
+                                   @if(!empty($countries))
+  @foreach($countries as $key => $value)    
+                          <option value="{{ $key }}" <?php if(old('investor_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
                         </select>
                       </div>
                     </div>
@@ -784,19 +779,19 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="investor_mobile" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
+                        <input type="text" class="form-control field-control" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" name="investor_email" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
+                        <input type="email" class="form-control field-control" name="investor_email[]" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_id_no" class="field-label">ID No:</label>
-                        <input type="text" class="form-control field-control" name="investor_id_no" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
+                        <input type="text" class="form-control field-control" name="investor_id_no[]" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -830,25 +825,25 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_name" class="field-label">Branch Name:</label>
-                        <input type="text" class="form-control field-control" name="branch_name" id="branch_name" value="{{old('branch_name')}}" placeholder="" data-fv-field="branch_name">
+                        <input type="text" class="form-control field-control" name="branch_name[]" id="branch_name" value="{{old('branch_name')}}" placeholder="" data-fv-field="branch_name">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_phone" class="field-label">Landline Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_phone" id="branch_phone" value="{{old('branch_phone')}}" placeholder="" data-fv-field="branch_phone">
+                        <input type="text" class="form-control field-control" name="branch_phone[]" id="branch_phone" value="{{old('branch_phone')}}" placeholder="" data-fv-field="branch_phone">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_mobile" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
+                        <input type="text" class="form-control field-control" name="branch_mobile[]" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_fax" class="field-label">Fax Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_fax" id="branch_fax" value="{{old('branch_fax')}}" placeholder="" data-fv-field="branch_fax">
+                        <input type="text" class="form-control field-control" name="branch_fax[]" id="branch_fax" value="{{old('branch_fax')}}" placeholder="" data-fv-field="branch_fax">
                       </div>
                     </div>
                   </div>
@@ -856,13 +851,13 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_email" class="field-label">Email:</label>
-                        <input type="email" class="form-control field-control" name="branch_email" id="branch_email" value="{{old('branch_email')}}" placeholder="" data-fv-field="branch_email">
+                        <input type="email" class="form-control field-control" name="branch_email[]" id="branch_email" value="{{old('branch_email')}}" placeholder="" data-fv-field="branch_email">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_city" class="field-label">Location:</label>
-                        <select class="form-control js-example-basic-single" id="branch_city" name="branch_city" title="Select Current Location">
+                        <select class="form-control js-example-basic-single" id="branch_city" name="branch_city[]" title="Select Current Location">
                           <option value="">Select Location</option>
                           <option value="Dubai" <?php if(old('branch_city')=="Dubai") echo "selected"; ?>>Dubai</option>
                           <option value="Sharjah" <?php if(old('branch_city')=="Sharjah") echo "selected"; ?>>Sharjah</option>
@@ -878,7 +873,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_address" class="field-label">Branch Address:</label>
-                        <textarea class="form-control" name="branch_address" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
+                        <textarea class="form-control" name="branch_address[]" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
                       </div>
                     </div>
                   </div>
