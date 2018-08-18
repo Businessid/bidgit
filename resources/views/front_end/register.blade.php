@@ -664,7 +664,7 @@
                           <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
                             <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
                           </div>
-<div class="row">
+                          <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Upload Your Photo</label>
@@ -1022,27 +1022,7 @@ $(document).on('click','.get-current-location',function(e){
 });
 
 
-$(document).ready(function() {
-    var max_users      = 5;
-    var wrapper_users         = $(".add-more-users"); 
-    var add_users      = $(".add-users"); 
-  
-    var x = 0; 
-  var y = 0;
-    $(add_users).click(function(e){ 
-        e.preventDefault();
-        if(x < max_branch){ 
-            x++; 
-      var options_con = '';
-      
-            $(wrapper_branch).append('<div><div class="col-md-12">&nbsp;</div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_name">Branch Name:</label><input type="text" class="form-control" id="branch_name" name="branch_name[]" placeholder="Branch Name"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_phone">Phone Number:</label><input type="text" class="form-control" id="branch_phone" name="branch_phone[]" placeholder="Phone Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_mobile">Mobile Number:</label><input type="text" class="form-control" id="branch_mobile" name="branch_mobile[]" placeholder="Mobile Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_fax">Fax Number:</label><input type="text" class="form-control" id="branch_fax" name="branch_fax[]" placeholder="Fax Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_location">Location:</label><select class="form-control" id="branch_location" name="branch_location[]" title="Select Location"></select></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_address">Branch Address:</label><input type="text" class="form-control" id="branch_address" name="branch_address[]" placeholder="Branch Address"></div></div><div class="col-md-12 mx-auto"><div class="form-group"><button type="button" class="btn emailto pull-right removebranch"><i class="fa fa-times">&nbsp;</i>Remove</button></div></div></div>'); 
-        }
-    });
-   
-  $(wrapper_branch).on("click",".removebranch", function(e){ 
-        e.preventDefault(); $(this).parent().parent().parent().remove(); x--;
-    })
-});
+
 </script>
 </script>
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
