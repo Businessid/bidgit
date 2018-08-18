@@ -69,7 +69,7 @@
                   <p>Payment</p>
                 </div>
               </div>
-              <fieldset class="company_info">
+              <fieldset <?php if(@$step==1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                 {{ Form::open(array('url' => 'register/post', 'id' => 'company_info')) }}
                   <input type="hidden" name="tab" value="company_info">
                 <div class="lg-reg reg-form">
@@ -206,6 +206,13 @@
                               <label class="custom-control-label" for="company_gender1">Female</label>
                             </div>
                           </div>
+                          @if ($errors->first('company_gender'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('company_gender') }}</li>
+                            </ul>
+                          </div>
+                          @endif
                         </div>
                       </div>
                     </div>
@@ -317,15 +324,11 @@
                   </div>
                 </div>
                 <div class="f1-buttons">
-<<<<<<< HEAD
                   <button type="submit" class="btn">Next</button>
-=======
-                  <button type="submit" class="btn btn-next">Next</button>
->>>>>>> eceb2d1b74632a256cfedf3c1d04ddbfe547d566
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset class="licence">
+              <fieldset <?php if(@$step==2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                 {{ Form::open(array('url' => 'register/post')) }}
                 <input type="hidden" name="tab" value="licence">
                 <div class="lg-reg reg-form pb-5">
@@ -945,7 +948,7 @@
 <script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript">
   // Manage step    //
-  if({{$step}}=='1'){
+  /*if({{$step}}=='1'){
 	  $('.company_info').show();
   }else if({{$step}}=='2'){
 	  $('.licence').show();
@@ -955,7 +958,7 @@
 	  $('.users').show();
   }else if({{$step}}=='5'){
 	  $('.investors').show();
-  }
+  }*/
 
 
   $(document).ready(function(e) {
