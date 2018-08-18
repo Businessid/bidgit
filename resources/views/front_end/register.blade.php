@@ -181,7 +181,7 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="lcompany_ast_name" class="field-label">Last Name:</label>
+                          <label for="company_last_name" class="field-label">Last Name:</label>
                           <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="{{old('company_last_name')}}" placeholder="" data-fv-field="company_last_name">
                           @if ($errors->first('company_last_name'))
                           <div class="alert alert-danger">
@@ -289,6 +289,8 @@
                           </div>
                           @endif </div>
                       </div>
+                    </div>
+                    <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_password_confirmation" class="field-label">Confirm Password:</label>
@@ -301,8 +303,6 @@
                           </div>
                           @endif </div>
                       </div>
-                    </div>
-                    <div class="row">
                     </div>
                     <div class="row mt-2">
                       <div class="col-md-9 text-center mx-auto note-super"> 
@@ -409,7 +409,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="pobox" class="field-label">P.O.Box:</label>
-                        <input type="text" class="form-control field-control" name="pobox" id="pobox" value="" placeholder="" data-fv-field="pobox">
+                        <input type="text" class="form-control field-control" name="pobox" id="pobox" value="{{old('pobox')}}" placeholder="" data-fv-field="pobox">
                       </div>
                     </div>
                   </div>
@@ -417,19 +417,19 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="fax" class="field-label">Fax Number:</label>
-                        <input type="text" class="form-control field-control" name="fax" id="fax" value="" placeholder="" data-fv-field="fax">
+                        <input type="text" class="form-control field-control" name="fax" id="fax" value="{{old('fax')}}" placeholder="" data-fv-field="fax">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="website" class="field-label">Website:</label>
-                        <input type="email" class="form-control field-control" name="website" id="website" value="" placeholder="" data-fv-field="website">
+                        <input type="email" class="form-control field-control" name="website" id="website" value="{{old('website')}}" placeholder="" data-fv-field="website">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="address" class="field-label">Address:</label>
-                        <textarea class="form-control" name="address" id="address" placeholder=""></textarea>
+                        <textarea class="form-control" name="address" id="address" placeholder="">{{old('address')}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -442,8 +442,8 @@
                           <input type="text" class="form-control col-sm-6" id="map_address" name="map_address" autocomplete="off">
                         </div>
                         <div class="col-sm-12" id="map" style="height:400px;"></div>
-                        <input type="hidden" name="latitude" id="latitude">
-                        <input type="hidden" name="longitude" id="longitude">
+                        <input type="hidden" name="latitude" id="latitude" value="{{old('latitude')}}">
+                        <input type="hidden" name="longitude" id="longitude" value="{{old('longitude')}}">
                       </div>
                     </div>
                   </div>
@@ -488,70 +488,159 @@
                 </div>
               </fieldset>
               <fieldset>
-                <div class="lg-reg reg-form"> {{ Form::open(array('url' => 'register/post')) }}
+                <div class="lg-reg reg-form"> 
+                {{ Form::open(array('url' => 'register/post')) }}
                   <input type="hidden" name="tab" value="users">
                   <div class="user-for-msg text-center mt-2 mb-4 border-0"> 
                     <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> --> 
                     ( You can add multiple users in your account with unlimited facilities for each user or you can specify the area where your user can work on it  …  If not you can <b>skip</b> from this step ) </div>
-                  <div class="row">
+                    <div class="row mt-3">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Upload Your Photo</label>
+                        <label for="user_userimage" class="field-label">Upload Your Photo</label>
                         <div class="custom-file upload-reg">
-                          <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <input type="file" class="custom-file-input form-control field-control" id="user_userimage" name="user_userimage[]">
+                          <label class="custom-file-label" for="user_userimage">Choose file</label>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="first_name" class="field-label">Full Name:</label>
-                        <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_first_name" class="field-label">First Name:</label>
+                          <input type="text" class="form-control field-control" name="user_first_name[]" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
+                          @if ($errors->first('user_first_name'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('user_first_name') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="dob" class="field-label">DOB:</label>
-                        <input type="text" class="form-control field-control" name="dob" id="dob" value="" placeholder="" data-fv-field="dob">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_last_name" class="field-label">Last Name:</label>
+                          <input type="text" class="form-control field-control" name="user_last_name[]" id="user_last_name" value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
+                          @if ($errors->first('user_last_name'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('user_last_name') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="user_designation" class="field-label">Designation:</label>
-                        <input type="text" class="form-control field-control" name="user_designation" id="user_designation" value="" placeholder="" data-fv-field="user_designation">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="user_mobile" class="field-label">Mobile Number:</label>
-                        <div class="full-wrap mobile-code">
-                          <input type="text" class="form-control field-control col-md-2" placeholder="">
-                          <input type="text" class="form-control field-control col-md-2" placeholder="">
-                          <input type="text" class="form-control field-control col-md-8">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="gender" class="field-label">Gender : </label>
+                          <div class="custom-radio-wrap">
+                            <div class="custom-control custom-radio mr-3">
+                              <input type="radio" id="user_gender" name="user_gender[]" class="custom-control-input" value="Male">
+                              <label class="custom-control-label" for="gender">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio pull-right">
+                              <input type="radio" id="user_gender1" name="user_gender[]" class="custom-control-input" value="Female">
+                              <label class="custom-control-label" for="user_gender1">Female</label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_designation" class="field-label">Designation:</label>
+                          <input type="text" class="form-control field-control" name="user_designation[]" id="user_designation" value="{{old('user_designation')}}" placeholder="" data-fv-field="user_designation">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
                       <div class="form-group">
-                        <label for="users_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" id="users_email" name="users_email">
+                        <label for="user_dob" class="field-label">DOB:</label>
+                        <input type="text" class="form-control field-control" name="user_dob[]" id="user_dob" value="" placeholder="" data-fv-field="user_dob">
                       </div>
                     </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="users_password" class="field-label">Password:</label>
-                        <input type="text" class="form-control field-control" id="users_password" name="users_password">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_mobile" class="field-label">Mobile Number:</label>
+                          <input type="text" class="form-control field-control" name="user_mobile[]" id="user_mobile" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_phone" class="field-label">Landline Number:</label>
+                          <input type="text" class="form-control field-control" name="user_phone[]" id="user_phone" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
+                        </div>
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="row">
+                      <div class="col-md-3">
                       <div class="form-group">
-                        <label for="users_confirm_password" class="field-label">Confirm Password:</label>
-                        <input type="text" class="form-control field-control" id="users_confirm_password" name="users_confirm_password">
+                        <label for="user_nationality" class="field-label">Nationality:</label>
+                        <select class="form-control js-example-basic-single" id="user_nationality" name="user_nationality[]"  title="">
+                          <option value="">- Select -</option> 
+                                   @if(!empty($countries))
+  @foreach($countries as $key => $value)    
+                          <option value="{{ $key }}" <?php if(old('user_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
+                        </select>
+                        @if ($errors->first('nationality'))
+                        <div class="alert alert-danger">
+                          <ul>
+                            <li>{{ $errors->first('nationality') }}</li>
+                          </ul>
+                        </div>
+                        @endif </div>
+                    </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_email" class="field-label">E-mail:</label>
+                          <input type="email" class="form-control field-control" name="user_email[]" id="user_email" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
+                          @if ($errors->first('email'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('email') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_email_confirmation" class="field-label">Confirm E-mail:</label>
+                          <input type="email" class="form-control field-control" name="user_email_confirmation" id="user_email_confirmation" value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
+                          @if ($errors->first('user_email_confirmation'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('user_email_confirmation') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_password" class="field-label">Password:</label>
+                          <input type="password" class="form-control field-control" name="user_password[]" id="user_password" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
+                          @if ($errors->first('user_password'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('user_password') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
                       </div>
                     </div>
-                  </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_password_confirmation" class="field-label">Confirm Password:</label>
+                          <input type="password" class="form-control field-control" name="user_password_confirmation" id="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
+                          @if ($errors->first('user_password_confirmation'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('user_password_confirmation') }}</li>
+                            </ul>
+                          </div>
+                          @endif </div>
+                      </div>
+                    </div>
                   <div class="row">
                     <div class="lg-reg reg-form col-md-12">
                       <div class="full-wrap user-action-part mt-4">
@@ -641,21 +730,24 @@
                     <button type="button" class="btn btn-previous">Previous</button>
                     <button type="button" class="btn btn-next">Next</button>
                   </div>
-                  {{ Form::close() }} </div>
+                  {{ Form::close() }} 
+                  </div>
               </fieldset>
               <fieldset>
+                {{ Form::open(array('url' => 'register/post')) }}
+                  <input type="hidden" name="tab" value="investors">
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_name" class="field-label">Full Name:</label>
-                        <input type="email" class="form-control field-control" name="investor_name" id="investor_name" value="" placeholder="" data-fv-field="investor_name">
+                        <input type="email" class="form-control field-control" name="investor_name" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Type:</label>
-                        <select class="form-control js-example-basic-single" name="" id="">
+                        <label for="investor_type" class="field-label">Type:</label>
+                        <select class="form-control js-example-basic-single" name="investor_type" id="investor_type">
                           <option value="" data-select2-id="20">Select Type</option>
                           <option value="1" data-select2-id="1212">Local Sponsor</option>
                           <option value="2" data-select2-id="1213">Owner</option>
@@ -665,14 +757,14 @@
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Percentage Of Share</label>
-                        <input type="text" class="form-control field-control" name="percentage" id="percentage" value="" placeholder="" data-fv-field="percentage">
+                        <label for="share" class="field-label">Percentage Of Share</label>
+                        <input type="text" class="form-control field-control" name="share" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Nationality:</label>
-                        <select class="form-control js-example-basic-single" name="" id="">
+                        <label for="investor_nationality" class="field-label">Nationality:</label>
+                        <select class="form-control js-example-basic-single" name="investor_nationality" id="investor_nationality">
                           <optgroup label="United Arab Emirates">
                           <option value="1" data-select2-id="953">Afghanistan</option>
                           <option value="2" data-select2-id="954">Albania</option>
@@ -691,28 +783,28 @@
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="user_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="user_mobile" id="user_mobile" value="" placeholder="" data-fv-field="user_mobile">
+                        <label for="investor_mobile" class="field-label">Mobile Number:</label>
+                        <input type="text" class="form-control field-control" name="investor_mobile" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="user_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" name="user_email" id="user_email" value="" placeholder="" data-fv-field="user_email">
+                        <label for="investor_email" class="field-label">E-mail:</label>
+                        <input type="email" class="form-control field-control" name="investor_email" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="user_id_no" class="field-label">ID No:</label>
-                        <input type="text" class="form-control field-control" name="user_id_no" id="user_id_no" value="" placeholder="" data-fv-field="user_id_no">
+                        <label for="investor_id_no" class="field-label">ID No:</label>
+                        <input type="text" class="form-control field-control" name="investor_id_no" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Upload Your ID</label>
+                        <label for="investor_image" class="field-label">Upload Your ID</label>
                         <div class="custom-file upload-reg">
-                          <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <input type="file" class="custom-file-input form-control field-control" id="investor_image" name="investor_image">
+                          <label class="custom-file-label" for="investor_image">Choose file</label>
                           <span class="text-muted">*This will not be share with  anyone </span> </div>
                       </div>
                     </div>
@@ -728,32 +820,35 @@
                   <button type="button" class="btn btn-previous">Previous</button>
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
+                  {{ Form::close() }} 
               </fieldset>
               <fieldset>
+                {{ Form::open(array('url' => 'register/post')) }}
+                  <input type="hidden" name="tab" value="branches">
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_name" class="field-label">Branch Name:</label>
-                        <input type="text" class="form-control field-control" name="branch_name" id="branch_name" value="" placeholder="" data-fv-field="branch_name">
+                        <input type="text" class="form-control field-control" name="branch_name" id="branch_name" value="{{old('branch_name')}}" placeholder="" data-fv-field="branch_name">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_phone" class="field-label">Landline Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_phone" id="branch_phone" value="" placeholder="" data-fv-field="branch_phone">
+                        <input type="text" class="form-control field-control" name="branch_phone" id="branch_phone" value="{{old('branch_phone')}}" placeholder="" data-fv-field="branch_phone">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_mobile" id="branch_mobile" value="" placeholder="" data-fv-field="branch_mobile">
+                        <input type="text" class="form-control field-control" name="branch_mobile" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_fax" class="field-label">Fax Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_fax" id="branch_fax" value="" placeholder="" data-fv-field="branch_fax">
+                        <input type="text" class="form-control field-control" name="branch_fax" id="branch_fax" value="{{old('branch_fax')}}" placeholder="" data-fv-field="branch_fax">
                       </div>
                     </div>
                   </div>
@@ -761,29 +856,29 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_email" class="field-label">Email:</label>
-                        <input type="email" class="form-control field-control" name="branch_email" id="branch_email" value="" placeholder="" data-fv-field="branch_email">
+                        <input type="email" class="form-control field-control" name="branch_email" id="branch_email" value="{{old('branch_email')}}" placeholder="" data-fv-field="branch_email">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_city" class="field-label">Location:</label>
-                        <select class="form-control js-example-basic-single" id="branch_city" name="branch_city"  title="Select Current Location">
+                        <select class="form-control js-example-basic-single" id="branch_city" name="branch_city" title="Select Current Location">
                           <option value="">Select Location</option>
-                          <option value="Dubai" >Dubai</option>
-                          <option value="Sharjah" >Sharjah</option>
-                          <option value="Abu Dhabi" >Abu Dhabi</option>
-                          <option value="Ras Al Khaimah" >Ras Al Khaimah</option>
-                          <option value="Fujairah" >Fujairah</option>
-                          <option value="Ajman" >Ajman</option>
-                          <option value="Umm Al Qawain" >Umm Al Qawain</option>
-                          <option value="Al Ain" >Al Ain</option>
+                          <option value="Dubai" <?php if(old('branch_city')=="Dubai") echo "selected"; ?>>Dubai</option>
+                          <option value="Sharjah" <?php if(old('branch_city')=="Sharjah") echo "selected"; ?>>Sharjah</option>
+                          <option value="Abu Dhabi" <?php if(old('branch_city')=="Abu Dhabi") echo "selected"; ?>>Abu Dhabi</option>
+                          <option value="Ras Al Khaimah" <?php if(old('branch_city')=="Ras Al Khaimah") echo "selected"; ?>>Ras Al Khaimah</option>
+                          <option value="Fujairah" <?php if(old('branch_city')=="Fujairah") echo "selected"; ?>>Fujairah</option>
+                          <option value="Ajman" <?php if(old('branch_city')=="Ajman") echo "selected"; ?>>Ajman</option>
+                          <option value="Umm Al Qawain" <?php if(old('branch_city')=="Umm Al Qawain") echo "selected"; ?>>Umm Al Qawain</option>
+                          <option value="Al Ain" <?php if(old('branch_city')=="Al Ain") echo "selected"; ?>>Al Ain</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_address" class="field-label">Branch Address:</label>
-                        <textarea class="form-control" name="branch_address" id="branch_address" placeholder=""></textarea>
+                        <textarea class="form-control" name="branch_address" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -798,16 +893,17 @@
                   <button type="button" class="btn btn-previous">Previous</button>
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
+                  {{ Form::close() }} 
               </fieldset>
               <fieldset>
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="first_name" class="field-label">Upload Logo</label>
+                        <label for="company_logo" class="field-label">Upload Logo</label>
                         <div class="custom-file upload-reg">
-                          <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <input type="file" class="custom-file-input form-control field-control" id="company_logo" name="company_logo">
+                          <label class="custom-file-label" for="company_logo">Choose file</label>
                         </div>
                       </div>
                     </div>
