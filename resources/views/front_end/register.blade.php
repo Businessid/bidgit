@@ -82,6 +82,7 @@
               <li>{{ $errors->first('name') }}</li>
             </ul>
           </div>
+<<<<<<< HEAD
           @endif </div>
       </div>
       <div class="col-md-3">
@@ -91,6 +92,60 @@
             <option value="">- Select -</option>
             
             
+=======
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="full-wrap bg-store pb-4"> 
+              <!-- <div class="container"> -->
+              <div class="row">
+                <div class="col-md-12 order-box mt-2">
+                  <div id="smartwizard1" class="mt-2">
+                    <ul>
+                      <li class="text-center <?php if(@$step==1) echo 'active'; else echo '';?>"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
+                        <small>Company Main Info {{@$step}}</small></a></li>
+                      <li class="text-center <?php if(@$step==2) echo 'active';?>"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
+                        <small>Location</small></a></li>
+                      <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br />
+                        <small>Licence Info</small></a></li>
+                      <li class="text-center"><a href="#step-8"><i class="fa fa-id-card-o" aria-hidden="true"></i><br />
+                        <small>Quick Registration</small></a></li>
+                      <li class="text-center"><a href="#step-1"><i class="fa fa-user-circle" aria-hidden="true"></i><br />
+                        <small>Create Users </small></a></li>
+                      <li class="text-center"><a href="#step-3"><i class="fa fa-money" aria-hidden="true"></i><br />
+                        <small>Owner / Share Holder Info </small></a></li>
+                      <li class="text-center"><a href="#step-4"><i class="fa fa-sitemap" aria-hidden="true"></i><br />
+                        <small>Branches</small></a></li>
+                      <li class="text-center"><a href="#step-6"><i class="fa fa-upload" aria-hidden="true"></i><br />
+                        <small>Upload Documents</small></a></li>
+                      <li class="text-center"><a href="#step-9"><i class="fa fa-credit-card" aria-hidden="true"></i><br />
+                        <small>Verifiy & Payment</small></a> </li>
+                    </ul>
+                    <div>
+                    <div id="step-2" class="mt-2" style="display:none !important"; >
+                      {{ Form::open(array('url' => 'register/post')) }}
+                      <input type="hidden" name="tab" value="company_info">
+                        <div class="lg-reg reg-form">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="name" class="field-label">Company Name:</label>
+                                <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="first_name">
+                                @if ($errors->first('name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('name') }}</li>
+        </ul>
+    </div>
+@endif
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="category" class="field-label">Main Activity:</label>
+                                <select class="form-control js-example-basic-single" id="category" name="category"  title="">
+                                  <option value="">- Select -</option>
+>>>>>>> 11bba87ed4209c5409a9a22dc5c7d50935fee68f
                                   @if(!empty($categories))
   @foreach($categories as $key => $value)
                             
