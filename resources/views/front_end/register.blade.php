@@ -19,7 +19,7 @@
       <div class="row"> 
         <!-- Top content -->
         <div class="top-content">
-          <div class="head">Please Follow the step for registration :</div>
+          <div class="head">Follow the registration steps</div>
           <div class="row">
             <div class="col-md-12 form-box f1">
               <div class="f1-steps">
@@ -28,11 +28,11 @@
                 </div>
                 <div class="f1-step active">
                   <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
-                  <p>Company Main Info</p>
+                  <p>Company Information</p>
                 </div>
                 <div class="f1-step">
                   <div class="f1-step-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                  <p>Licence Info</p>
+                  <p>Licence </br>Information</p>
                 </div>
                 <div class="f1-step">
                   <div class="f1-step-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="f1-step">
                   <div class="f1-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                  <p>Owner / Share Holder Info</p>
+                  <p>Owner / Share Holder Information</p>
                 </div>
                 <div class="f1-step">
                   <div class="f1-step-icon"><i class="fa fa-sitemap" aria-hidden="true"></i></div>
@@ -849,7 +849,7 @@
   });
   function getCategory(category,activity='') {
   var token = $("input[name='_token']").val();
-$.ajax({
+  $.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
           method: 'POST',
           data: {category:category, _token:token,activity:activity},
