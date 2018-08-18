@@ -195,11 +195,11 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="gender" class="field-label">Gender : </label>
+                          <label class="field-label">Gender : </label>
                           <div class="custom-radio-wrap">
                             <div class="custom-control custom-radio mr-3">
                               <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male">
-                              <label class="custom-control-label" for="gender">Male</label>
+                              <label class="custom-control-label" for="company_gender">Male</label>
                             </div>
                             <div class="custom-control custom-radio pull-right">
                               <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female">
@@ -957,7 +957,9 @@
   $(document).ready(function(e) {
 	  $('#company_dob').datepicker({
 		format: 'yyyy-mm-dd'
-	  }); 
+	  }).on('changeDate', function(ev){
+    $(this).datepicker('hide');
+}); 
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
