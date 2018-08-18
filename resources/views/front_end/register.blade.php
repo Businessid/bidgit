@@ -88,23 +88,12 @@
                       <div class="form-group">
                         <label for="category" class="field-label">Main Activity:</label>
                         <select class="form-control js-example-basic-single" id="category" name="category"  title="">
-                          <option value="">- Select -</option>
-                          
-            
+                          <option value="">- Select -</option> 
                                   @if(!empty($categories))
   @foreach($categories as $key => $value)
-                            
-            
-            
                           <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
-                          
-            
-            
   @endforeach
 @endif
-                          
-          
-          
                         </select>
                         @if ($errors->first('category'))
                         <div class="alert alert-danger">
@@ -119,27 +108,11 @@
                         <label for="activity" class="field-label">Sub Activity:</label>
                         <select class="form-control js-example-basic-single" id="activity" name="activity"  multiple="">
                           <option value="">- Select -</option>
-                          
-            
-            
-                            
                                   @if(!empty($activities))
   @foreach($activities as $value)
-    
-                            
-            
-            
                           <option value="{{ $value }}">{{ $value }}</option>
-                          
-            
-            
-                            
   @endforeach
 @endif
-                                
-                          
-          
-          
                         </select>
                         @if ($errors->first('activity'))
                         <div class="alert alert-danger">
@@ -185,26 +158,35 @@
                   <div class="full-wrap super-user-wrap">
                     <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
                     <div class="row mt-3">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="first_name" class="field-label">Upload Your Photo</label>
+                        <div class="custom-file upload-reg">
+                          <input type="file" class="custom-file-input form-control field-control" id="company_userimage" name="company_userimage">
+                          <label class="custom-file-label" for="company_user_image">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_first_name" class="field-label">First Name:</label>
-                          <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
-                          @if ($errors->first('first_name'))
+                          <input type="text" class="form-control field-control" name="company_first_name" id="company_first_name" value="{{old('company_first_name')}}"  placeholder="" data-fv-field="company_first_name">
+                          @if ($errors->first('company_first_name'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('first_name') }}</li>
+                              <li>{{ $errors->first('company_first_name') }}</li>
                             </ul>
                           </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="last_name" class="field-label">Last Name:</label>
-                          <input type="text" class="form-control field-control" name="last_name" id="last_name" value="{{old('last_name')}}" placeholder="" data-fv-field="last_name">
-                          @if ($errors->first('last_name'))
+                          <label for="lcompany_ast_name" class="field-label">Last Name:</label>
+                          <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="{{old('company_last_name')}}" placeholder="" data-fv-field="company_last_name">
+                          @if ($errors->first('company_last_name'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('last_name') }}</li>
+                              <li>{{ $errors->first('company_last_name') }}</li>
                             </ul>
                           </div>
                           @endif </div>
@@ -214,34 +196,67 @@
                           <label for="gender" class="field-label">Gender : </label>
                           <div class="custom-radio-wrap">
                             <div class="custom-control custom-radio mr-3">
-                              <input type="radio" id="gender" name="gender" class="custom-control-input" value="Male">
+                              <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male">
                               <label class="custom-control-label" for="gender">Male</label>
                             </div>
                             <div class="custom-control custom-radio pull-right">
-                              <input type="radio" id="gender1" name="gender" class="custom-control-input" value="Female">
-                              <label class="custom-control-label" for="gender1">Female</label>
+                              <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female">
+                              <label class="custom-control-label" for="company_gender1">Female</label>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="designation" class="field-label">Designation:</label>
-                          <input type="text" class="form-control field-control" name="designation" id="designation" value="{{old('designation')}}" placeholder="" data-fv-field="designation">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="mobile" class="field-label">Mobile Number:</label>
-                          <input type="text" class="form-control field-control" name="mobile" id="mobile" value="{{old('mobile')}}" placeholder="" data-fv-field="mobile">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="email" class="field-label">E-mail:</label>
-                          <input type="email" class="form-control field-control" name="email" id="email" value="{{old('email')}}" placeholder="" data-fv-field="email">
+                          <label for="company_designation" class="field-label">Designation:</label>
+                          <input type="text" class="form-control field-control" name="company_designation" id="company_designation" value="{{old('company_designation')}}" placeholder="" data-fv-field="company_designation">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="company_dob" class="field-label">DOB:</label>
+                        <input type="text" class="form-control field-control" name="company_dob" id="company_dob" value="" placeholder="" data-fv-field="company_dob">
+                      </div>
+                    </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="company_mobile" class="field-label">Mobile Number:</label>
+                          <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="company_phone" class="field-label">Landline Number:</label>
+                          <input type="text" class="form-control field-control" name="company_phone" id="company_phone" value="{{old('company_phone')}}" placeholder="" data-fv-field="company_phone">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="company_nationality" class="field-label">Nationality:</label>
+                        <select class="form-control js-example-basic-single" id="company_nationality" name="company_nationality"  title="">
+                          <option value="">- Select -</option> 
+                                  @if(!empty($nationality))
+  @foreach($nationality as $key => $value)
+                          <option value="{{ $key }}" <?php if(old('nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
+                        </select>
+                        @if ($errors->first('nationality'))
+                        <div class="alert alert-danger">
+                          <ul>
+                            <li>{{ $errors->first('nationality') }}</li>
+                          </ul>
+                        </div>
+                        @endif </div>
+                    </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="company_email" class="field-label">E-mail:</label>
+                          <input type="email" class="form-control field-control" name="company_email" id="company_email" value="{{old('company_email')}}" placeholder="" data-fv-field="company_email">
                           @if ($errors->first('email'))
                           <div class="alert alert-danger">
                             <ul>
@@ -252,40 +267,42 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
-                          <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="confirmemail">
-                          @if ($errors->first('email_confirmation'))
+                          <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
+                          <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="company_email_confirmation">
+                          @if ($errors->first('company_email_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('email_confirmation') }}</li>
+                              <li>{{ $errors->first('company_email_confirmation') }}</li>
                             </ul>
                           </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="password" class="field-label">Password:</label>
-                          <input type="password" class="form-control field-control" name="password" id="password" value="{{old('password')}}" placeholder="" data-fv-field="password">
-                          @if ($errors->first('password'))
+                          <label for="company_password" class="field-label">Password:</label>
+                          <input type="password" class="form-control field-control" name="company_password" id="company_password" value="{{old('company_password')}}" placeholder="" data-fv-field="password">
+                          @if ($errors->first('company_password'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('password') }}</li>
+                              <li>{{ $errors->first('company_password') }}</li>
                             </ul>
                           </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="password_confirmation" class="field-label">Confirm Password:</label>
-                          <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
-                          @if ($errors->first('password_confirmation'))
+                          <label for="company_password_confirmation" class="field-label">Confirm Password:</label>
+                          <input type="password" class="form-control field-control" name="company_password_confirmation" id="company_password_confirmation" value="{{old('company_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
+                          @if ($errors->first('company_password_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('password_confirmation') }}</li>
+                              <li>{{ $errors->first('company_password_confirmation') }}</li>
                             </ul>
                           </div>
                           @endif </div>
                       </div>
+                    </div>
+                    <div class="row">
                     </div>
                     <div class="row mt-2">
                       <div class="col-md-9 text-center mx-auto note-super"> 
@@ -312,31 +329,24 @@
                         <label for="legal_status" class="field-label">Legal Status:</label>
                         <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
                           <option value="" data-select2-id="12">Select Legal Status</option>
-                          
-                                    
                                  @if(!empty($legalstatus))
   @foreach($legalstatus as $key => $value)
-  
-  
-                          <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
-                          
-  
+                          <option value="{{ $key }}" <?php if(old('legal_status')==$key) echo "selected"; ?>>{{ $value }}</option>                          
   @endforeach
-@endif                        
-  
+@endif                     
                         </select>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="license_no" class="field-label"> License No: </label>
-                        <input type="text" class="form-control field-control" name="license_number" id="license_number" value="" placeholder="" data-fv-field="license_number">
+                        <input type="text" class="form-control field-control" name="license_number" id="license_number" value="{{old('license_number')}}" placeholder="" data-fv-field="license_number">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="registration_no" class="field-label"> Registration No: </label>
-                        <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="" placeholder="" data-fv-field="registration_number">
+                        <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="{{old('registration_number')}}" placeholder="" data-fv-field="registration_number">
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -372,27 +382,11 @@
                         <label for="country" class="field-label">Country:</label>
                         <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Current Country">
                           <option value="">Select Country</option>
-                          
-            
-            
-                                  
                                   @if(!empty($countries))
-  @foreach($countries as $key => $value)
-    
-                                  
-            
-            
+  @foreach($countries as $key => $value)    
                           <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
-                          
-            
-            
-                                  
   @endforeach
 @endif
-                                
-                                
-          
-          
                         </select>
                       </div>
                     </div>
