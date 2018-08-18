@@ -1,5 +1,8 @@
 @include('front_end.modules.header-hero-nav')
 @include('front_end.modules.hero-header')
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/prism.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/intlTelInput.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/isValidNumber.css') }}">
 <style type="text/css">
   .sw-toolbar-bottom{
     display: none;
@@ -32,8 +35,12 @@
                 <div class="col-md-12 order-box mt-2">
                   <div id="smartwizard1" class="mt-2">
                     <ul>
-                      <li class="text-center"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
-                        <small>Company Main Info</small></a></li>
+                      <li class="text-center <?php if(@$step==1) echo 'active'; else echo '';?>"><a href="#step-2"><i class="fa fa-copyright" aria-hidden="true"></i><br />
+                        <small>Company Main Info {{@$step}}</small></a></li>
+                      <li class="text-center <?php if(@$step==2) echo 'active';?>"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
+                        <small>Location</small></a></li>
+                      <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br />
+                        <small>Licence Info</small></a></li>
                       <li class="text-center"><a href="#step-8"><i class="fa fa-id-card-o" aria-hidden="true"></i><br />
                         <small>Quick Registration</small></a></li>
                       <li class="text-center"><a href="#step-1"><i class="fa fa-user-circle" aria-hidden="true"></i><br />
@@ -42,16 +49,373 @@
                         <small>Owner / Share Holder Info </small></a></li>
                       <li class="text-center"><a href="#step-4"><i class="fa fa-sitemap" aria-hidden="true"></i><br />
                         <small>Branches</small></a></li>
-                      <li class="text-center"><a href="#step-5"><i class="fa fa-map-marker" aria-hidden="true"></i><br />
-                        <small>Location</small></a></li>
-                      <li class="text-center"><a href="#step-7"><i class="fa fa-file-text-o" aria-hidden="true"></i><br />
-                        <small>Licence Info</small></a></li>
                       <li class="text-center"><a href="#step-6"><i class="fa fa-upload" aria-hidden="true"></i><br />
                         <small>Upload Documents</small></a></li>
                       <li class="text-center"><a href="#step-9"><i class="fa fa-credit-card" aria-hidden="true"></i><br />
                         <small>Verifiy & Payment</small></a> </li>
                     </ul>
                     <div>
+                    <div id="step-2" class="mt-2" style="display:none !important"; >
+                      {{ Form::open(array('url' => 'register/post')) }}
+                      <input type="hidden" name="tab" value="company_info">
+                        <div class="lg-reg reg-form">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="name" class="field-label">Company Name:</label>
+<<<<<<< HEAD
+                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
+                                @if ($errors->any())
+
+                                
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
+=======
+                                <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
+                                @if ($errors->first('name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('name') }}</li>
+        </ul>
+    </div>
+@endif
+>>>>>>> beb77b7282b67e61c0ddfaa2b52339b069fbf888
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="category" class="field-label">Main Activity:</label>
+                                <select class="form-control js-example-basic-single" id="category" name="category"  title="">
+                                  <option value="">- Select -</option>
+                                  @if(!empty($categories))
+  @foreach($categories as $key => $value)
+    <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
+                                </select>
+                                @if ($errors->first('category'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('category') }}</li>
+        </ul>
+    </div>
+@endif
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="activity" class="field-label">Sub Activities:</label>
+                                <select class="form-control js-example-basic-single" id="activity" name="activity"  multiple="">
+                                  <option value="">- Select -</option>
+                                  @if(!empty($activities))
+  @foreach($activities as $value)
+    <option value="{{ $value }}">{{ $value }}</option>
+  @endforeach
+@endif
+                                </select>
+                                @if ($errors->first('activity'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('activity') }}</li>
+        </ul>
+    </div>
+@endif
+                             </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="company_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" id="company_email" name="company_email" value="{{old('company_email')}}">
+                                @if ($errors->first('company_email'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('company_email') }}</li>
+        </ul>
+    </div>
+@endif
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="company_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
+                                @if ($errors->first('company_mobile'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('company_mobile') }}</li>
+        </ul>
+    </div>
+@endif
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="phone" class="field-label">Landline Number:</label>
+                                <input type="text" class="form-control field-control" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="full-wrap super-user-wrap">
+                            <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
+                            <div class="row mt-3">
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="user_first_name" class="field-label">First Name:</label>
+                                  <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
+                                  @if ($errors->first('first_name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('first_name') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="last_name" class="field-label">Last Name:</label>
+                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="{{old('last_name')}}" placeholder="" data-fv-field="last_name">
+                                  @if ($errors->first('last_name'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('last_name') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="designation" class="field-label">Designation:</label>
+                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="{{old('designation')}}" placeholder="" data-fv-field="designation">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="mobile" class="field-label">Mobile Number:</label>
+                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="{{old('mobile')}}" placeholder="" data-fv-field="mobile">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="email" class="field-label">E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="email" id="email" value="{{old('email')}}" placeholder="" data-fv-field="email">
+                                  @if ($errors->first('email'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('email') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="confirmemail">
+                                  @if ($errors->first('email_confirmation'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('email_confirmation') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="password" class="field-label">Password:</label>
+                                  <input type="password" class="form-control field-control" name="password" id="password" value="{{old('password')}}" placeholder="" data-fv-field="password">
+                                  @if ($errors->first('password'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('password') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label for="password_confirmation" class="field-label">Confirm Password:</label>
+                                  <input type="password" class="form-control field-control" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
+                                  @if ($errors->first('password_confirmation'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ $errors->first('password_confirmation') }}</li>
+        </ul>
+    </div>
+@endif
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <div class="col-md-10 text-center mx-auto note-super"> 
+                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
+                                <i class="fa fa-user-secret" aria-hidden="true"></i>
+                                <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
+                                <p>Businessid.net will generate a personal account for this user. </p>
+                              </div>
+                            </div>
+                          </div>
+
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
+
+                        </div>
+
+                      {{ Form::close() }} 
+                      </div>
+
+                      <div id="step-5" class="mt-2" style="display:block;">
+                      {{ Form::open(array('url' => 'register/post')) }}
+                      <input type="hidden" name="tab" value="location">
+                        <div class="lg-reg reg-form">
+                          <div class="row">
+                            <div class="col-md-12 location-btns"> 
+                              <!-- <button class="switch-acc">Add New</button> -->
+                              <div class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</div>
+                            </div>
+                          </div>
+                          <div class="row mt-3">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="country" class="field-label">Country:</label>
+                                <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Current Country">
+                                  <option value="">Select Country</option>
+                                  @if(!empty($countries))
+  @foreach($countries as $key => $value)
+    <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="city" class="field-label">City:</label>
+                                <select class="form-control js-example-basic-single" id="fk_city_id" name="fk_city_id"  title="Select Current Location">
+                                  <option value="">Select City</option>                                  
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="location" class="field-label">Area:</label>
+                                <select class="form-control js-example-basic-single" name="fk_area_id" id="fk_area_id">
+                                  <option value="">Select Area</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="pobox" class="field-label">P.O.Box:</label>
+                                <input type="text" class="form-control field-control" name="pobox" id="pobox" value="" placeholder="" data-fv-field="pobox">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="fax" class="field-label">Fax Number:</label>
+                                <input type="text" class="form-control field-control" name="fax" id="fax" value="" placeholder="" data-fv-field="fax">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="website" class="field-label">Website:</label>
+                                <input type="email" class="form-control field-control" name="website" id="website" value="" placeholder="" data-fv-field="website">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="address" class="field-label">Address:</label>
+                                <textarea class="form-control" name="address" id="address" placeholder=""></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="first_name" class="field-label">Drag Your Location:</label>
+                                <div class="form-group bmd-form-group">
+                      <label for="map_address" class="bmd-label-floating">Search Location:</label>
+                                <input type="text" class="form-control col-sm-6" id="map_address" name="map_address" autocomplete="off">
+                    </div>
+                                <div class="col-sm-12" id="map" style="height:400px;"></div>
+                                <input type="hidden" name="latitude" id="latitude">
+                                <input type="hidden" name="longitude" id="longitude">
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div>
+                            <button class="switch-acc mt-2">Add New location</button>
+                          </div> -->
+                        </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary" type="button">Next</button>
+                        </div>
+                      </div>
+                      {{ Form::close() }} 
+                      </div>
+
+                      <div id="step-7" class="mt-2" style="display:block;">
+                        <div class="lg-reg reg-form pb-5">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="city" class="field-label">Legal Status:</label>
+                                <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
+                                  <option value="" data-select2-id="12">Select Legal Status</option>
+                                 @if(!empty($legalstatus))
+  @foreach($legalstatus as $key => $value)
+    <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @endforeach
+@endif
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="license_no" class="field-label">License No:</label>
+                                <input type="text" class="form-control field-control" name="license_number" id="license_number" value="" placeholder="" data-fv-field="license_number">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="registration_no" class="field-label">Registration No:</label>
+                                <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="" placeholder="" data-fv-field="registration_number">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="inputGroupFile01" class="field-label">Upload Trade Licence</label>
+                                <div class="custom-file upload-reg">
+                                  <input type="file" class="custom-file-input form-control field-control" name="license_file" id="license_file">
+                                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                  <span class="text-muted">*We will not share with this except the account holder </span> </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
+                      </div> 
                       <div id="step-8">
                         <div class="lg-reg reg-form"> 
                           <!--  <h2 class="reg-sec-header user-info"><i class="fa fa-user-circle" aria-hidden="true"></i>User Info</h2> -->
@@ -87,154 +451,15 @@
                           </div> 
                         </div>
                       </div>
-                      <div id="step-2" class="mt-2">
-                      {{ Form::open(array('url' => 'register/post', 'id' => 'registeration')) }}
+
+
+                      <div id="step-3" class="mt-2" style="display:block;">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="name" class="field-label">Company Name:</label>
-                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
-                                @if ($errors->any())
-
-                                
-                      <div class="alert alert-danger">
-                          <ul>
-                              @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                              @endforeach
-                          </ul>
-                      </div>
-                  @endif
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="category" class="field-label">Category:</label>
-                                <select class="form-control js-example-basic-single" id="category" name="category"  title="">
-                                  <option value="">- Select -</option>
-                                  @if(!empty($categories))
-  @foreach($categories as $key => $value)
-    <option value="{{ $key }}">{{ $value }}</option>
-  @endforeach
-@endif
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="activity" class="field-label">Activities:</label>
-                                <select class="form-control js-example-basic-single" id="activity" name="activity"  title="- Select -" multiple="">
-                                  <option value="">- Select -</option>
-                                  @if(!empty($activities))
-  @foreach($activities as $value)
-    <option value="{{ $value }}">{{ $value }}</option>
-  @endforeach
-@endif
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="company_email" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" id="company_email" name="company_email">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="phone" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="phone" id="phone" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="company_mobile" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="company_mobile" id="company_mobile" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="full-wrap super-user-wrap">
-                            <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
-                            <div class="row mt-3">
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="first_name" class="field-label">First Name:</label>
-                                  <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="last_name" class="field-label">Last Name:</label>
-                                  <input type="text" class="form-control field-control" name="last_name" id="last_name" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="designation" class="field-label">Designation:</label>
-                                  <input type="text" class="form-control field-control" name="designation" id="designation" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="mobile" class="field-label">Mobile Number:</label>
-                                  <input type="text" class="form-control field-control" name="mobile" id="mobile" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="email" class="field-label">E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="email" id="email" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="confirmemail" class="field-label">Confirm E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="confirmemail" id="confirmemail" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="password" class="field-label">Password:</label>
-                                  <input type="password" class="form-control field-control" name="password" id="password" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <label for="confirmpassword" class="field-label">Confirm Password:</label>
-                                  <input type="password" class="form-control field-control" name="confirmpassword" id="confirmpassword" value="" placeholder="" data-fv-field="first_name">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mt-2">
-                              <div class="col-md-10 text-center mx-auto note-super"> 
-                                <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
-                                <i class="fa fa-user-secret" aria-hidden="true"></i>
-                                <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
-                                <p>Businessid.net will generate a personal account for this user. </p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="text-right smart-bottom-btn">
-                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
-                        </div>
-                      </div>
-
-                        </div>
-
-                      {{ Form::close() }} 
-                      </div>
-                      <div id="step-3" class="mt-2">
-                        <div class="lg-reg reg-form">
-                          <div class="row">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Full Name:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="investor_name" class="field-label">Full Name:</label>
+                                <input type="email" class="form-control field-control" name="investor_name" id="investor_name" value="" placeholder="" data-fv-field="investor_name">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -251,7 +476,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="first_name" class="field-label">Percentage Of Share</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <input type="text" class="form-control field-control" name="percentage" id="percentage" value="" placeholder="" data-fv-field="percentage">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -276,20 +501,20 @@
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="user_mobile" id="user_mobile" value="" placeholder="" data-fv-field="user_mobile">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" name="user_email" id="user_email" value="" placeholder="" data-fv-field="user_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">ID No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_id_no" class="field-label">ID No:</label>
+                                <input type="text" class="form-control field-control" name="user_id_no" id="user_id_no" value="" placeholder="" data-fv-field="user_id_no">
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -309,6 +534,10 @@
                             </div>
                           </div>
                         </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
                       </div>
                       <div id="step-1" class="mt-2">
                         <div class="lg-reg reg-form">
@@ -330,21 +559,21 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">DOB:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="dob" class="field-label">DOB:</label>
+                                <input type="text" class="form-control field-control" name="dob" id="dob" value="" placeholder="" data-fv-field="dob">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Designation:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="user_designation" class="field-label">Designation:</label>
+                                <input type="text" class="form-control field-control" name="user_designation" id="user_designation" value="" placeholder="" data-fv-field="user_designation">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
+                                <label for="user_mobile" class="field-label">Mobile Number:</label>
                                 <div class="full-wrap mobile-code">
                                   <input type="text" class="form-control field-control col-md-2" placeholder="">
                                   <input type="text" class="form-control field-control col-md-2" placeholder="">
@@ -354,20 +583,158 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">E-mail:</label>
-                                <input type="email" class="form-control field-control" id="usr">
+                                <label for="users_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" id="users_email" name="users_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">Password:</label>
-                                <input type="text" class="form-control field-control" id="usr">
+                                <label for="users_password" class="field-label">Password:</label>
+                                <input type="text" class="form-control field-control" id="users_password" name="users_password">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="usr" class="field-label">Confirm Password:</label>
-                                <input type="text" class="form-control field-control" id="usr">
+                                <label for="users_confirm_password" class="field-label">Confirm Password:</label>
+                                <input type="text" class="form-control field-control" id="users_confirm_password" name="users_confirm_password">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="lg-reg reg-form col-md-12">
+                              <div class="full-wrap user-action-part mt-4">
+                                <div class="label-head"><img src="{{ URL::asset('front_end/images/icon/allow.png') }}" class="mr-1"><span class="d-inline-block">This user authorized to :</span></div>
+                                <div class="full-wrap mt-2">
+                                  <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
+                                    <input type="radio" id="1" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="1">Delegation of using all the businessid.net functions, facilities and actions.</label>
+                                  </div>
+                                  <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
+                                    <input type="radio" id="2" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="2">All E-commerce:</label>
+                                  </div>
+                                  <ul class="list-for-user">
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e1" type="checkbox" checked="">
+                                        <label for="e1">Add product / Delete product / Manage Product / Edit product… etc.</label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e2" type="checkbox">
+                                        <label for="e2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e3" type="checkbox">
+                                        <label for="e3">Buy from supplier /   product / Edit the buying order… etc. </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e4" type="checkbox">
+                                        <label for="e4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e5" type="checkbox">
+                                        <label for="e5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
+                                      </div>
+                                    </li>
+                                    <li class="ml-3">
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="e6" type="checkbox">
+                                        <label for="e6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="full-wrap mt-2">
+                                  <div class="custom-control custom-radio d-inline-block acc-choose mt-2 ml-1">
+                                    <input type="radio" id="s0" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="s0">All Social Media</label>
+                                  </div>
+                                  <ul class="list-for-user">
+                                    <li class="ml-3">
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="s1" type="checkbox" checked="">
+                                        <label for="s1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="checkbox-edit checkbox-primary">
+                                        <input id="s2" type="checkbox" checked="">
+                                        <label for="s2">Chat / Send message</label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="user-for-msg text-center"> <i class="fa fa-info-circle" aria-hidden="true"></i> All user will have a personal account with same user name and password </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
+                            <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
+                          </div>
+<div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="first_name" class="field-label">Upload Your Photo</label>
+                                <div class="custom-file upload-reg">
+                                  <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
+                                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="first_name" class="field-label">Full Name:</label>
+                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="dob" class="field-label">DOB:</label>
+                                <input type="text" class="form-control field-control" name="dob" id="dob" value="" placeholder="" data-fv-field="dob">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="user_designation" class="field-label">Designation:</label>
+                                <input type="text" class="form-control field-control" name="user_designation" id="user_designation" value="" placeholder="" data-fv-field="user_designation">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="user_mobile" class="field-label">Mobile Number:</label>
+                                <div class="full-wrap mobile-code">
+                                  <input type="text" class="form-control field-control col-md-2" placeholder="">
+                                  <input type="text" class="form-control field-control col-md-2" placeholder="">
+                                  <input type="text" class="form-control field-control col-md-8">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="users_email" class="field-label">E-mail:</label>
+                                <input type="email" class="form-control field-control" id="users_email" name="users_email">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="users_password" class="field-label">Password:</label>
+                                <input type="text" class="form-control field-control" id="users_password" name="users_password">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="users_confirm_password" class="field-label">Confirm Password:</label>
+                                <input type="text" class="form-control field-control" id="users_confirm_password" name="users_confirm_password">
                               </div>
                             </div>
                           </div>
@@ -456,47 +823,52 @@
                               <button class="switch-acc">Add</button>
                             </div>
                           </div>
+
                         </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
+                        </div>
+                      </div>
                       </div>
                       <div id="step-4" class="mt-2">
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Branch Name:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_name" class="field-label">Branch Name:</label>
+                                <input type="text" class="form-control field-control" name="branch_name" id="branch_name" value="" placeholder="" data-fv-field="branch_name">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Landline Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_phone" class="field-label">Landline Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_phone" id="branch_phone" value="" placeholder="" data-fv-field="branch_phone">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Mobile Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_mobile" class="field-label">Mobile Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_mobile" id="branch_mobile" value="" placeholder="" data-fv-field="branch_mobile">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Fax Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_fax" class="field-label">Fax Number:</label>
+                                <input type="text" class="form-control field-control" name="branch_fax" id="branch_fax" value="" placeholder="" data-fv-field="branch_fax">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="first_name" class="field-label">Email:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
+                                <label for="branch_email" class="field-label">Email:</label>
+                                <input type="email" class="form-control field-control" name="branch_email" id="branch_email" value="" placeholder="" data-fv-field="branch_email">
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="city" class="field-label">Location:</label>
-                                <select class="form-control js-example-basic-single" id="city1" name="city"  title="Select Current Location">
+                                <label for="branch_city" class="field-label">Location:</label>
+                                <select class="form-control js-example-basic-single" id="branch_city" name="branch_city"  title="Select Current Location">
                                   <option value="">Select Location</option>
                                   <option value="Dubai" >Dubai</option>
                                   <option value="Sharjah" >Sharjah</option>
@@ -511,8 +883,8 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                <label for="job_summary" class="field-label">Branch Address:</label>
-                                <textarea class="form-control" name="" id="" placeholder=""></textarea>
+                                <label for="branch_address" class="field-label">Branch Address:</label>
+                                <textarea class="form-control" name="branch_address" id="branch_address" placeholder=""></textarea>
                               </div>
                             </div>
                           </div>
@@ -523,127 +895,10 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div id="step-5" class="mt-2">
-                        <div class="lg-reg reg-form">
-                          <div class="row">
-                            <div class="col-md-12 location-btns"> 
-                              <!-- <button class="switch-acc">Add New</button> -->
-                              <button class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</button>
-                            </div>
-                          </div>
-                          <div class="row mt-3">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="country" class="field-label">Country:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="Select Current Country">
-                                  <option value="">Select Country</option>
-                                  <option value="AF" >Afghanistan</option>
-                                  <option value="AL" >Albania</option>
-                                  <option value="AG" >Algeria</option>
-                                  <option value="AS" >American Samoa</option>
-                                  <option value="AD" >Andorra</option>
-                                  <option value="AO" >Angola</option>
-                                  <option value="AI" >Anguilla</option>
-                                  <option value="AQ" >Antarctica</option>
-                                  <option value="AB" >Antigua and Barbuda</option>
-                                  <option value="AR" >Argentina</option>
-                                  <option value="AM" >Armenia</option>
-                                  <option value="AW" >Aruba</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="city" class="field-label">City:</label>
-                                <select class="form-control js-example-basic-single" id="city1" name="city"  title="Select Current Location">
-                                  <option value="">Select City</option>
-                                  <option value="Dubai" >Dubai</option>
-                                  <option value="Sharjah" >Sharjah</option>
-                                  <option value="Abu Dhabi" >Abu Dhabi</option>
-                                  <option value="Ras Al Khaimah" >Ras Al Khaimah</option>
-                                  <option value="Fujairah" >Fujairah</option>
-                                  <option value="Ajman" >Ajman</option>
-                                  <option value="Umm Al Qawain" >Umm Al Qawain</option>
-                                  <option value="Al Ain" >Al Ain</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="location" class="field-label">Area:</label>
-                                <select class="form-control js-example-basic-single" name="" id="">
-                                  <optgroup label="United Arab Emirates">
-                                  <option value="">Select Area</option>
-                                  <option value="Abu Baker Al Siddique Road" selected>Abu Baker Al Siddique Road</option>
-                                  <option value="Abu Dhabi Gate City" selected>Abu Dhabi Gate City</option>
-                                  <option value="Abu Hail" selected>Abu Hail</option>
-                                  <option value="Abu shagara" selected>Abu Shagara</option>
-                                  <option value="Ain Ajman" selected>Ain Ajman</option>
-                                  <option value="Airport Road" selected>Airport Road</option>
-                                  <option value="Ajman Corniche Road" selected>Ajman Corniche Road</option>
-                                  <option value="Ajman Downtown" selected>Ajman Downtown</option>
-                                  <option value="Ajman Industrial Area" selected>Ajman Industrial Area</option>
-                                  <option value="Ajman Marina" selected>Ajman Marina</option>
-                                  <option value="Ajman Meadows" selected>Ajman Meadows</option>
-                                  <option value="Ajman Uptown" selected>Ajman Uptown</option>
-                                  </optgroup>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">P.O.Box:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Fax Number:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Latitude:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Longitude:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Website:</label>
-                                <input type="email" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Address:</label>
-                                <textarea class="form-control" name="" id="" placeholder=""></textarea>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Drag Your Location:</label>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.350927162272!2d55.31808257349632!3d25.264682285459234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccf30bc59df%3A0xe1f5b339a2799f6d!2sAl+Muraqqabat+-+Dubai!5e0!3m2!1sen!2sae!4v1530687547937" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <button class="switch-acc mt-2">Add New location</button>
-                          </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
                         </div>
+                      </div>
                       </div>
                       <div id="step-6" class="mt-2">
                         <div class="lg-reg reg-form">
@@ -659,57 +914,11 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div id="step-7" class="mt-2">
-                        <div class="lg-reg reg-form pb-5">
-                          <div class="row">
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="city" class="field-label">Legal Status:</label>
-                                <select class="form-control js-example-basic-single" id="" name=""  title="">
-                                  <option value="" data-select2-id="12">Select Legal Status</option>
-                                  <option value="1" data-select2-id="641">LLC</option>
-                                  <option value="2" data-select2-id="642">Service Agency</option>
-                                  <option value="3" data-select2-id="643">FZE</option>
-                                  <option value="4" data-select2-id="644">Group</option>
-                                  <option value="5" data-select2-id="645">FZ-LLC</option>
-                                  <option value="6" data-select2-id="646">Civil company</option>
-                                  <option value="7" data-select2-id="647">Partnership Company</option>
-                                  <option value="8" data-select2-id="648">Foreign Recognized Company</option>
-                                  <option value="9" data-select2-id="649">Private Joint Stock Company</option>
-                                  <option value="10" data-select2-id="650">Public Joint Stock Company</option>
-                                  <option value="11" data-select2-id="651">Holding Company</option>
-                                  <option value="12" data-select2-id="652">Sole Proprietorship</option>
-                                  <option value="13" data-select2-id="653">Professional Trade Licence</option>
-                                  <option value="14" data-select2-id="654">Professional Freelance Licence</option>
-                                  <option value="15" data-select2-id="655">LLP</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">License No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Registration No:</label>
-                                <input type="text" class="form-control field-control" name="first_name" id="first_name" value="" placeholder="" data-fv-field="first_name">
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label for="first_name" class="field-label">Upload Trade Licence</label>
-                                <div class="custom-file upload-reg">
-                                  <input type="file" class="custom-file-input form-control field-control" id="inputGroupFile01">
-                                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                  <span class="text-muted">*We will not share with this except the account holder </span> </div>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="text-right smart-bottom-btn">
+                        <div class="btn-group  sw-btn-group" role="group"><button class="btn btn-secondary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-secondary sw-btn-next" type="button">Next</button>
                         </div>
-                      </div> 
+                      </div>
+                      </div>
                       </div>
                   </div>
                   <!-- Smart-Wizard --> 
@@ -724,89 +933,136 @@
 </div>
 @include('front_end.modules.footer')
 <script type="text/javascript">
-  $("select[name='category']").change(function(){
-      var category = $(this).val();
-      var token = $("input[name='_token']").val();
-      $.ajax({
+  $(document).ready(function(e) {
+    getCategory($("#category").val(),<?php echo @old('activity'); ?>);
+  $('#category').change(function(e) {
+    getCategory(this.value);
+  });
+getCity($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
+$('#fk_country_id').change(function(e){
+getCity(this.value,);
+});
+getArea($("#fk_city_id").val(),<?php echo @old('fk_area_id'); ?>);
+$('#fk_city_id').change(function(e){
+getArea(this.value,);
+});
+  });
+  function getCategory(category,activity='') {
+  var token = $("input[name='_token']").val();
+$.ajax({
           url: "<?php echo 'register/selectActivities'; ?>",
           method: 'POST',
-          data: {category:category, _token:token},
+          data: {category:category, _token:token,activity:activity},
           success: function(data) {
+            //alert(data);
             $("select[name='activity'").html('');
             $("select[name='activity'").html(data.options);
-          }
+            }
+        });
+}
+  function getCity(countryid,cityid='') {
+      var token = $("input[name='_token']").val();
+      $.ajax({
+          url: "<?php echo 'register/selectCities'; ?>",
+          method: 'POST',
+          data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
+          success: function(data) {
+            $("select[name='fk_city_id'").html('');
+            $("select[name='fk_city_id'").html(data.options);
+            }
       });
-  });
+  }
+  function getArea(cityid,areaid='') {
+      var token = $("input[name='_token']").val();
+      $.ajax({
+          url: "<?php echo 'register/selectAreas'; ?>",
+          method: 'POST',
+          data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
+          success: function(data) {
+            $("select[name='fk_area_id'").html('');
+            $("select[name='fk_area_id'").html(data.options);
+            }
+      });
+  }
+
 </script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
+<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
 <script>
-    $(document).ready(function () {
-    $('#registeration').validate({ // initialize the plugin
-        rules: {
-            name: {
-                required: true,
-                minlength: 4
-            },
-            category: {
-                required: true
-            },
-            activity: {
-                required: true
-            },
-            company_mobile: {
-                required: true,
-                number: true
-            },
-            company_email: {
-                required: true,
-                email: true
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            number: {
-                required: true,
-                digits: true
-                
-            },
-            minlength: {
-                required: true,
-                minlength: 5
-                
-            },
-            maxlength: {
-                required: true,
-                maxlength: 8
-                
-            },
-            minvalue: {
-                required: true,
-                min: 1
-                
-            },
-            maxvalue: {
-                required: true,
-                max: 100
-                
-            },
-            range: {
-                required: true,
-                range: [20, 40]
-                
-            },
-            url: {
-            required: true,
-            url: true
-            },
-            filename: {
-                required: true,
-                extension: "jpeg|png"
-            },
+function updateControls(addressComponents) {
+  $('#country').val(addressComponents.country);
+}
+initMap();
+function initMap(lat='',lot=''){
+  if(isNaN(lat)) lat=25.271452;
+  if(isNaN(lot)) lot=55.3244922;
+  $('#latitude').val(lat);
+  $('#longitude').val(lot);
+  $('#map').locationpicker({
+    location: {
+      latitude:lat,
+      longitude:lot 
+    },
+    radius: 300,
+    zoom: 15,
+    onchanged: function (currentLocation, radius, isMarkerDropped) {
+      var addressComponents = $(this).locationpicker('map').location.addressComponents;
+      updateControls(addressComponents);
+    },
+    inputBinding: {
+      latitudeInput: $('#latitude'),
+      longitudeInput: $('#longitude'),
+      radiusInput: $('#us3-radius'),
+      locationNameInput: $('#map_address')
+    },
+    enableAutocomplete: true,
+    oninitialized: function (component) {
+      var addressComponents = $(component).locationpicker('map').location.addressComponents;
+      updateControls(addressComponents);
+    }
+  });
+}
+
+// Get Current location //
+$(document).on('click','.get-current-location',function(e){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }else{ 
+        x.innerHTML = "Geolocation is not supported by this mobile.";
+    }
+    function showPosition(position){
+        var lat=position.coords.latitude;
+        var lot=position.coords.longitude;
+        initMap(lat,lot);
+    }
+});
+
+
+$(document).ready(function() {
+    var max_users      = 5;
+    var wrapper_users         = $(".add-more-users"); 
+    var add_users      = $(".add-users"); 
+  
+    var x = 0; 
+  var y = 0;
+    $(add_users).click(function(e){ 
+        e.preventDefault();
+        if(x < max_branch){ 
+            x++; 
+      var options_con = '';
+      
+            $(wrapper_branch).append('<div><div class="col-md-12">&nbsp;</div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_name">Branch Name:</label><input type="text" class="form-control" id="branch_name" name="branch_name[]" placeholder="Branch Name"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_phone">Phone Number:</label><input type="text" class="form-control" id="branch_phone" name="branch_phone[]" placeholder="Phone Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_mobile">Mobile Number:</label><input type="text" class="form-control" id="branch_mobile" name="branch_mobile[]" placeholder="Mobile Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_fax">Fax Number:</label><input type="text" class="form-control" id="branch_fax" name="branch_fax[]" placeholder="Fax Number"></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_location">Location:</label><select class="form-control" id="branch_location" name="branch_location[]" title="Select Location"></select></div></div><div class="col-md-4 mx-auto"><div class="form-group"><label for="branch_address">Branch Address:</label><input type="text" class="form-control" id="branch_address" name="branch_address[]" placeholder="Branch Address"></div></div><div class="col-md-12 mx-auto"><div class="form-group"><button type="button" class="btn emailto pull-right removebranch"><i class="fa fa-times">&nbsp;</i>Remove</button></div></div></div>'); 
         }
     });
+   
+  $(wrapper_branch).on("click",".removebranch", function(e){ 
+        e.preventDefault(); $(this).parent().parent().parent().remove(); x--;
+    })
 });
 </script>
+</script>
+<script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
 </body>
 </html>

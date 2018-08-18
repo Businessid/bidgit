@@ -28,6 +28,9 @@ Route::post('register/post', 'RegisterController@post');
 
 Route::post('register/selectActivities', 'RegisterController@selectActivities');
 
+Route::post('register/selectCities', 'RegisterController@selectCities');
+
+Route::post('register/selectAreas', 'RegisterController@selectAreas');
 
 
 Route::get('/home', function () {
