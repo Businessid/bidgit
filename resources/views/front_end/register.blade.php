@@ -239,9 +239,9 @@
                         <label for="company_nationality" class="field-label">Nationality:</label>
                         <select class="form-control js-example-basic-single" id="company_nationality" name="company_nationality"  title="">
                           <option value="">- Select -</option> 
-                                  @if(!empty($nationality))
-  @foreach($nationality as $key => $value)
-                          <option value="{{ $key }}" <?php if(old('nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+                                   @if(!empty($countries))
+  @foreach($countries as $key => $value)    
+                          <option value="{{ $key }}" <?php if(old('company_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
   @endforeach
 @endif
                         </select>
