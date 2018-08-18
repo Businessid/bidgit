@@ -17,8 +17,6 @@
   <link href="css/bootstrap-glyphicons.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/bidstyle1.css?v=1.2" />
- <!--  <link rel="stylesheet" href="css/home.css?v=1.3" /> -->
   <link rel="stylesheet" href="css/zoom-slider.css">
   <link rel="stylesheet" href="css/hero-nav.css">
   </head>

@@ -63,6 +63,20 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="name" class="field-label">Company Name:</label>
+<<<<<<< HEAD
+                                <input type="text" class="form-control field-control" name="name" id="name" value="" placeholder="" data-fv-field="first_name">
+                                @if ($errors->any())
+
+                                
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
+=======
                                 <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
                                 @if ($errors->first('name'))
     <div class="alert alert-danger">
@@ -71,6 +85,7 @@
         </ul>
     </div>
 @endif
+>>>>>>> beb77b7282b67e61c0ddfaa2b52339b069fbf888
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -981,6 +996,8 @@ initMap();
 function initMap(lat='',lot=''){
   if(isNaN(lat)) lat=25.271452;
   if(isNaN(lot)) lot=55.3244922;
+  $('#latitude').val(lat);
+  $('#longitude').val(lot);
   $('#map').locationpicker({
     location: {
       latitude:lat,
@@ -1005,7 +1022,6 @@ function initMap(lat='',lot=''){
     }
   });
 }
-  
 
 // Get Current location //
 $(document).on('click','.get-current-location',function(e){

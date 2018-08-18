@@ -8,9 +8,10 @@
     background-color: #fff;
 }
 .sw-btn-group{
-    position: absolute;
+    /*position: absolute;
     right: 0px;
-    top: 7px;
+    bottom: 8px;*/
+    position: relative;
 }
 .sw-btn-prev{
     padding: 0 17px;
@@ -33,9 +34,9 @@
 }
 .sw-btn-next{
     padding: 0 17px;
-     height: 32px; 
+    height: 32px;
     border-radius: 2px;
-    border: 1px solid #e0e0e0 !important;
+    border: 1px solid #2874f0 !important;
     font-size: 14px;
     font-weight: 500;
     margin-left: auto;
@@ -43,6 +44,7 @@
     text-transform: uppercase;
     display: inline-block;
     float: right;
+    background: #2874f0;
 }
 .sw-theme-arrows > .sw-container {
     min-height: 200px;
@@ -58,8 +60,9 @@
 }
 
 .sw-theme-arrows .sw-toolbar {
-    padding: 10px;
+    padding: 25px;
     margin-bottom: 0 !important;
+    padding-top: 1em;
 }
 
 .sw-theme-arrows > .sw-toolbar-top {
@@ -67,6 +70,8 @@
 }
 
 .sw-theme-arrows > .sw-toolbar-bottom {
+     width: 100%;
+     padding-right: 15px;
 }
 
 .sw-theme-arrows > ul.step-anchor {
@@ -90,7 +95,7 @@
 .sw-theme-arrows > ul.step-anchor > li > a, .sw-theme-arrows > ul.step-anchor > li > a:hover {
     color: #bbb;
     text-decoration: none;
-    padding: 5px 0 5px 45px;
+    padding: 5px 0 5px 35px;
     position: relative;
     display: block;
     border: 0 !important;
