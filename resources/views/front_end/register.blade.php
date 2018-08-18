@@ -317,11 +317,7 @@
                   </div>
                 </div>
                 <div class="f1-buttons">
-<<<<<<< HEAD
                   <button type="submit" class="btn">Next</button>
-=======
-                  <button type="submit" class="btn btn-next">Next</button>
->>>>>>> eceb2d1b74632a256cfedf3c1d04ddbfe547d566
                 </div>
                 {{ Form::close() }}
               </fieldset>
