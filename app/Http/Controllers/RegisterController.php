@@ -31,22 +31,22 @@ class RegisterController extends BaseController
         'name' => 'required|min:4',
         'category' => 'required',
         'activity' => 'required',
-        'email' => 'required|email|confirmed',
+        'email' => 'required|email',
         'mobile' => 'required',
         'phone' => 'required',
-            'company_first_name' => 'required|min:2',
-            'company_last_name' => 'required',
-            'company_designation' => 'required',
-            'company_gender' => 'required',
-            'company_designation' => 'required',
-            'company_dob' => 'required',
-            'company_mobile' => 'required',
-            'company_phone' => 'required',
-            'company_nationality' => 'required',
-            'email' => 'required|email|confirmed',
-            'email_confirmation' => 'required|email',
-            'company_password' => 'required|confirmed',
-            'company_password_confirmation' => 'required'  
+		'company_first_name' => 'required|min:2',
+		'company_last_name' => 'required',
+		'company_designation' => 'required',
+		'company_gender' => 'required',
+		'company_designation' => 'required',
+		'company_dob' => 'required',
+		'company_mobile' => 'required',
+		'company_phone' => 'required',
+		'company_nationality' => 'required',
+		'company_email' => 'required|email|confirmed',
+		'email_confirmation' => 'required|email',
+		'company_password' => 'required|confirmed',
+		'company_password_confirmation' => 'required'  
      ]);
     $data['name'] = $request->input('name');
     $data['category'] = $request->input('category');
@@ -66,7 +66,7 @@ class RegisterController extends BaseController
         $data['password'] = $request->input('company_password');
     $request->session()->put('company_info',$data);
     $data['step']="2";
-    return view('front_end.register',$data); die; 
+    return redirect('register'); die; 
     }
 
     if($request->input('tab')=='licence'){
