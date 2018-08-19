@@ -30,7 +30,7 @@
                 </div>
                 <div class="f1-step <?php if(@$step==1) echo 'active'; elseif(@$step>1) echo 'activated'; else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
-                  <p>Company Information</p>
+                  <p>Company Information <?php echo @$step; ?></p>
                 </div>
                 <div class="f1-step <?php if(@$step==2) echo 'active'; elseif(@$step>2) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
@@ -198,11 +198,11 @@
                           <label class="field-label">Gender : </label>
                           <div class="custom-radio-wrap">
                             <div class="custom-control custom-radio mr-3">
-                              <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male">
+                              <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male" <?php if(old('company_gender')=="Male") echo "checked"; ?>>
                               <label class="custom-control-label" for="company_gender">Male</label>
                             </div>
                             <div class="custom-control custom-radio pull-right">
-                              <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female">
+                              <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female" <?php if(old('company_gender')=="Female") echo "checked"; ?>>
                               <label class="custom-control-label" for="company_gender1">Female</label>
                             </div>
                           </div>
@@ -226,7 +226,7 @@
                       <div class="col-md-3">
                       <div class="form-group">
                         <label for="company_dob" class="field-label">DOB:</label>
-                        <input type="text" class="form-control field-control" name="company_dob" id="company_dob" value="" placeholder="" data-fv-field="company_dob">
+                        <input type="text" class="form-control field-control" name="company_dob" id="company_dob" value="{{old('company_dob')}}" placeholder="" data-fv-field="company_dob">
                       </div>
                     </div>
                       <div class="col-md-3">
