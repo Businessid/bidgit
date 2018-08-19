@@ -153,7 +153,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="phone" class="field-label">Landline Number:</label>
-                        <input type="text" class="form-control field-control mobile" name="phone" id="phone" value="{{old('phone')}}" placeholder="" data-fv-field="phone">
+                        <input type="text" class="form-control field-control mobile" name="phone" id="phone" value="{{old('phone')}}" placeholder="local number" data-fv-field="phone">
                       </div>
                     </div>
                   </div>
@@ -238,7 +238,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_phone" class="field-label">Landline Number:</label>
-                          <input type="text" class="form-control field-control mobile" name="company_phone" id="company_phone" value="{{old('company_phone')}}" placeholder="" data-fv-field="company_phone">
+                          <input type="text" class="form-control field-control mobile" name="company_phone" id="company_phone" value="{{old('company_phone')}}" placeholder="local number" data-fv-field="company_phone">
                         </div>
                       </div>
                     </div>
@@ -983,7 +983,7 @@
   function getCategory(category,activity='') {
   var token = $("input[name='_token']").val();
   $.ajax({
-          url: "<?php echo 'register/selectActivities'; ?>",
+          url: "<?php echo 'selectActivities'; ?>",
           method: 'POST',
           data: {category:category, _token:token,activity:activity},
           success: function(data) {
@@ -996,7 +996,7 @@
   function getCity(countryid,cityid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'register/selectCities'; ?>",
+          url: "<?php echo 'selectCities'; ?>",
           method: 'POST',
           data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
           success: function(data) {
@@ -1008,7 +1008,7 @@
   function getArea(cityid,areaid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'register/selectAreas'; ?>",
+          url: "<?php echo 'selectAreas'; ?>",
           method: 'POST',
           data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
           success: function(data) {
