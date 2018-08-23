@@ -79,10 +79,8 @@
                         <label for="name" class="field-label">Company Name:</label>
                         <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
                         @if ($errors->first('name'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('name') }}</li>
-                          </ul>
+                        <div class="alert-error">
+                            {{ $errors->first('name') }}
                         </div>
                         @endif </div>
                     </div>
@@ -98,10 +96,8 @@
 @endif
                         </select>
                         @if ($errors->first('category'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('category') }}</li>
-                          </ul>
+                         <div class="alert-error">
+                            {{ $errors->first('category') }}
                         </div>
                         @endif </div>
                     </div>
@@ -117,10 +113,8 @@
 @endif
                         </select>
                         @if ($errors->first('activity'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('activity') }}</li>
-                          </ul>
+                        <div class="alert-error">
+                            {{ $errors->first('activity') }}
                         </div>
                         @endif </div>
                     </div>
@@ -129,10 +123,8 @@
                         <label for="email" class="field-label">E-mail:</label>
                         <input type="email" class="form-control field-control" id="email" name="email" value="{{old('email')}}">
                         @if ($errors->first('email'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('email') }}</li>
-                          </ul>
+                        <div class="alert-error">
+                            {{ $errors->first('email') }}
                         </div>
                         @endif </div>
                     </div>
@@ -143,10 +135,8 @@
                         <label for="mobile" class="field-label">Mobile Number:</label>
                         <input type="text" class="form-control field-control mobile" name="mobile" id="mobile" value="{{old('mobile')}}" placeholder="" data-fv-field="mobile">
                         @if ($errors->first('mobile'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('mobile') }}</li>
-                          </ul>
+                        <div class="alert-error">
+                            {{ $errors->first('mobile') }}
                         </div>
                         @endif </div>
                     </div>
@@ -174,10 +164,8 @@
                           <label for="user_first_name" class="field-label">First Name:</label>
                           <input type="text" class="form-control field-control" name="company_first_name" id="company_first_name" value="{{old('company_first_name')}}"  placeholder="" data-fv-field="company_first_name">
                           @if ($errors->first('company_first_name'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_first_name') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_first_name') }}
                           </div>
                           @endif </div>
                       </div>
@@ -186,10 +174,8 @@
                           <label for="company_last_name" class="field-label">Last Name:</label>
                           <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="{{old('company_last_name')}}" placeholder="" data-fv-field="company_last_name">
                           @if ($errors->first('company_last_name'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_last_name') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_last_name') }}
                           </div>
                           @endif 
                         </div>
@@ -208,10 +194,8 @@
                             </div>
                           </div>
                           @if ($errors->first('company_gender'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_gender') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_gender') }}
                           </div>
                           @endif
                         </div>
@@ -223,10 +207,8 @@
                           <label for="company_designation" class="field-label">Designation:</label>
                           <input type="text" class="form-control field-control" name="company_designation" id="company_designation" value="{{old('company_designation')}}" placeholder="" data-fv-field="company_designation">
                           @if ($errors->first('company_designation'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_designation') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_designation') }}
                           </div>
                           @endif 
                         </div>
@@ -236,10 +218,8 @@
                         <label for="company_dob" class="field-label">DOB:</label>
                         <input type="text" class="form-control field-control" name="company_dob" id="company_dob" value="{{old('company_dob')}}" placeholder="" data-fv-field="company_dob">
                         @if ($errors->first('company_dob'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_dob') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_dob') }}
                           </div>
                         @endif 
                       </div>
@@ -249,10 +229,8 @@
                           <label for="company_mobile" class="field-label">Mobile Number:</label>
                           <input type="text" class="form-control field-control mobile" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
                           @if ($errors->first('company_mobile'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_mobile') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_mobile') }}
                           </div>
                           @endif 
                         </div>
@@ -277,11 +255,9 @@
 @endif
                         </select>
                         @if ($errors->first('company_nationality'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('company_nationality') }}</li>
-                          </ul>
-                        </div>
+                        <div class="alert-error">
+                            {{ $errors->first('company_nationality') }}
+                          </div>
                         @endif </div>
                     </div>
                       <div class="col-md-3">
@@ -289,10 +265,8 @@
                           <label for="company_email" class="field-label">E-mail:</label>
                           <input type="email" class="form-control field-control" name="company_email" id="company_email" value="{{old('company_email')}}" placeholder="" data-fv-field="company_email">
                           @if ($errors->first('company_email'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_email') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_email') }}
                           </div>
                           @endif </div>
                       </div>
@@ -301,10 +275,8 @@
                           <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
                           <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="company_email_confirmation">
                           @if ($errors->first('company_email_confirmation'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_email_confirmation') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_email_confirmation') }}
                           </div>
                           @endif </div>
                       </div>
@@ -313,10 +285,8 @@
                           <label for="company_password" class="field-label">Password:</label>
                           <input type="password" class="form-control field-control" name="company_password" id="company_password" value="{{old('company_password')}}" placeholder="" data-fv-field="password">
                           @if ($errors->first('company_password'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_password') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_password') }}
                           </div>
                           @endif </div>
                       </div>
@@ -327,10 +297,8 @@
                           <label for="company_password_confirmation" class="field-label">Confirm Password:</label>
                           <input type="password" class="form-control field-control" name="company_password_confirmation" id="company_password_confirmation" value="{{old('company_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                           @if ($errors->first('company_password_confirmation'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('company_password_confirmation') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('company_password_confirmation') }}
                           </div>
                           @endif </div>
                       </div>
@@ -367,10 +335,8 @@
                         </select>
                       </div>
                          @if ($errors->first('legal_status'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('legal_status') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('legal_status') }}
                           </div>
                           @endif 
                     </div>
@@ -380,10 +346,8 @@
                         <input type="text" class="form-control field-control" name="license_number" id="license_number" value="{{old('license_number')}}" placeholder="" data-fv-field="license_number">
                       </div>
                       @if ($errors->first('license_number'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('license_number') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('license_number') }}
                           </div>
                           @endif 
                     </div>
@@ -393,10 +357,8 @@
                         <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="{{old('registration_number')}}" placeholder="" data-fv-field="registration_number">
                       </div>
                       @if ($errors->first('registration_number'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('registration_number') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('registration_number') }}
                           </div>
                           @endif 
                     </div>
@@ -440,10 +402,8 @@
                         </select>
                       </div>
                           @if ($errors->first('fk_country_id'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('fk_country_id') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('fk_country_id') }}
                           </div>
                           @endif 
                     </div>
@@ -455,11 +415,9 @@
                         </select>
                       </div>
                         @if ($errors->first('fk_city_id'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('fk_city_id') }}</li>
-                          </ul>
-                        </div>
+                        <div class="alert-error">
+                            {{ $errors->first('fk_city_id') }}
+                          </div>
                         @endif 
                     </div>
                     <div class="col-md-3">
@@ -470,10 +428,8 @@
                         </select>
                       </div>
                           @if ($errors->first('fk_area_id'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('fk_area_id') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('fk_area_id') }}
                           </div>
                           @endif
                     </div>
@@ -483,10 +439,8 @@
                         <input type="text" class="form-control field-control" name="pobox" id="pobox" value="{{old('pobox')}}" placeholder="" data-fv-field="pobox">
                       </div>
                           @if ($errors->first('pobox'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('pobox') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('pobox') }}
                           </div>
                           @endif
                     </div>
@@ -498,10 +452,8 @@
                         <input type="email" class="form-control field-control" name="location_email" id="location_email" value="{{old('location_email')}}" placeholder="" data-fv-field="location_email">
                       </div>
                           @if ($errors->first('location_email'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('location_email') }}</li>
-                            </ul>
+                         <div class="alert-error">
+                            {{ $errors->first('location_email') }}
                           </div>
                           @endif
                     </div>
@@ -511,10 +463,8 @@
                         <input type="text" class="form-control field-control mobile" name="location_mobile" id="location_mobile" value="{{old('location_mobile')}}" placeholder="" data-fv-field="location_mobile">
                       </div>
                           @if ($errors->first('mobile'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('mobile') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('mobile') }}
                           </div>
                           @endif
                     </div>
@@ -525,11 +475,9 @@
                         <input type="text" class="form-control field-control" name="street" id="street" value="{{old('street')}}" placeholder="" data-fv-field="street">
                       </div>
                           @if ($errors->first('street'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('street') }}</li>
-                            </ul>
-                          </div>k
+                          <div class="alert-error">
+                            {{ $errors->first('street') }}
+                          </div>
                           @endif
                     </div>
                     <div class="col-md-3">
@@ -538,10 +486,8 @@
                         <textarea class="form-control" name="address" id="address" placeholder="">{{old('address')}}</textarea>
                       </div>
                          @if ($errors->first('address'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('address') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('address') }}
                           </div>
                           @endif
                     </div>
@@ -622,10 +568,8 @@
                           <label for="user_first_name" class="field-label">First Name:</label>
                           <input type="text" class="form-control field-control" name="user_first_name[]" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                           @if ($errors->first('user_first_name'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('user_first_name') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('user_first_name') }}
                           </div>
                           @endif </div>
                       </div>
@@ -634,10 +578,8 @@
                           <label for="user_last_name" class="field-label">Last Name:</label>
                           <input type="text" class="form-control field-control" name="user_last_name[]" id="user_last_name" value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
                           @if ($errors->first('user_last_name'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('user_last_name') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('user_last_name') }}
                           </div>
                           @endif </div>
                       </div>
@@ -696,11 +638,9 @@
 @endif
                         </select>
                         @if ($errors->first('nationality'))
-                        <div class="alert alert-danger">
-                          <ul>
-                            <li>{{ $errors->first('nationality') }}</li>
-                          </ul>
-                        </div>
+                        <div class="alert-error">
+                            {{ $errors->first('nationality') }}
+                          </div>
                         @endif </div>
                     </div>
                       <div class="col-md-3">
@@ -708,10 +648,8 @@
                           <label for="user_email" class="field-label">E-mail:</label>
                           <input type="email" class="form-control field-control" name="user_email[]" id="user_email" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
                           @if ($errors->first('email'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('email') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('email') }}
                           </div>
                           @endif </div>
                       </div>
@@ -720,10 +658,8 @@
                           <label for="user_email_confirmation" class="field-label">Confirm E-mail:</label>
                           <input type="email" class="form-control field-control" name="user_email_confirmation" id="user_email_confirmation" value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
                           @if ($errors->first('user_email_confirmation'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('user_email_confirmation') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('user_email_confirmation') }}
                           </div>
                           @endif </div>
                       </div>
@@ -732,10 +668,8 @@
                           <label for="user_password" class="field-label">Password:</label>
                           <input type="password" class="form-control field-control" name="user_password[]" id="user_password" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
                           @if ($errors->first('user_password'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('user_password') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('user_password') }}
                           </div>
                           @endif </div>
                       </div>
@@ -746,10 +680,8 @@
                           <label for="user_password_confirmation" class="field-label">Confirm Password:</label>
                           <input type="password" class="form-control field-control" name="user_password_confirmation" id="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                           @if ($errors->first('user_password_confirmation'))
-                          <div class="alert alert-danger">
-                            <ul>
-                              <li>{{ $errors->first('user_password_confirmation') }}</li>
-                            </ul>
+                          <div class="alert-error">
+                            {{ $errors->first('user_password_confirmation') }}
                           </div>
                           @endif </div>
                       </div>

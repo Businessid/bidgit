@@ -46,10 +46,10 @@ class RegisterController extends BaseController
             'company_gender' => 'required',
             'company_designation' => 'required',
             'company_dob' => 'required',
-            'company_mobile' => 'required',
+            'company_mobile' => 'required|unique:tbl_users,mobile',
             'company_phone' => 'required',
             'company_nationality' => 'required',
-            'company_email' => 'required|email|confirmed',
+            'company_email' => 'required|email|confirmed|unique:tbl_users,email',
             'company_email_confirmation' => 'required|email',
             'company_password' => 'required|confirmed',
             'company_password_confirmation' => 'required'  
