@@ -26,7 +26,6 @@ class RegisterController extends BaseController
     
      public function company()
     {
-<<<<<<< HEAD
        if($request->input('tab')=='company_info'){
          $validatedData = $request->validate([
         'name' => 'required|min:4',
@@ -70,11 +69,9 @@ class RegisterController extends BaseController
     $data['step']="2";
     return redirect('register'); die; 
     }
-=======
         $categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
         $data['step']=1;
         return view('front_end.register',compact('categories','countries','legalstatus'),$data);
->>>>>>> 1828429d8ac07fe3008bc1b10e91c09e66cd556f
 
     }
      public function insert_company(Request $request)

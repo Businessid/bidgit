@@ -299,11 +299,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
-<<<<<<< HEAD
-                          <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="email_confirmation">
-=======
                           <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="company_email_confirmation">
->>>>>>> 1828429d8ac07fe3008bc1b10e91c09e66cd556f
                           @if ($errors->first('company_email_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
@@ -512,7 +508,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="location_mobile" class="field-label">Mobile:</label>
-                        <input type="text" class="form-control field-control" name="location_mobile" id="location_mobile" value="{{old('location_mobile')}}" placeholder="" data-fv-field="location_mobile">
+                        <input type="text" class="form-control field-control mobile" name="location_mobile" id="location_mobile" value="{{old('location_mobile')}}" placeholder="" data-fv-field="location_mobile">
                       </div>
                           @if ($errors->first('mobile'))
                           <div class="alert alert-danger">
@@ -677,7 +673,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_mobile" class="field-label">Mobile Number:</label>
-                          <input type="text" class="form-control field-control" name="user_mobile[]" id="user_mobile" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
+                          <input type="text" class="form-control field-control mobile" name="user_mobile[]" id="user_mobile" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -896,7 +892,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="investor_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
+                        <input type="text" class="form-control field-control mobile" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -954,7 +950,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="branch_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_mobile[]" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
+                        <input type="text" class="form-control field-control mobile" name="branch_mobile[]" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
