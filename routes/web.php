@@ -24,13 +24,32 @@ Route::get('/', function () {
 */
 Route::get('register', 'RegisterController@index');
 
-Route::post('register/post', 'RegisterController@post');
+Route::get('register/company', 'RegisterController@company');
+Route::post('register/insert_company', 'RegisterController@insert_company');
+
+Route::get('register/licence', 'RegisterController@licence');
+Route::post('register/insert_licence', 'RegisterController@insert_licence');
+
+Route::get('register/location', 'RegisterController@location');
+Route::post('register/insert_location', 'RegisterController@insert_location');
+
+Route::get('register/qregister', 'RegisterController@qregister');
 
 Route::post('register/selectActivities', 'RegisterController@selectActivities');
 
 Route::post('register/selectCities', 'RegisterController@selectCities');
 
 Route::post('register/selectAreas', 'RegisterController@selectAreas');
+
+/*Fetch current location */
+Route::post('register/getCurrentCountry', 'RegisterController@getCurrentCountry');
+Route::post('register/getCurrentCity', 'RegisterController@getCurrentCity');
+Route::post('register/getCurrentArea', 'RegisterController@getCurrentArea');
+
+
+
+
+
 
 
 Route::get('/home', function () {

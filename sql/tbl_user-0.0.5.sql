@@ -1,0 +1,2 @@
+ALTER TABLE `tbl_users` ADD `street` VARCHAR(100) NOT NULL AFTER `address`;
+ALTER TABLE `tbl_users` CHANGE `license_file` `license_file` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;

@@ -69,8 +69,8 @@
                   <p>Payment</p>
                 </div>
               </div>
-              <fieldset <?php if(@$step==1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
-                {{ Form::open(array('url' => 'register/post', 'id' => 'company_info')) }}
+              <fieldset class="company_info" <?php if(@$step==1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                {{ Form::open(array('url' => 'register/insert_company', 'id' => 'company_info')) }}
                   <input type="hidden" name="tab" value="company_info">
                 <div class="lg-reg reg-form">
                   <div class="row">
@@ -191,7 +191,8 @@
                               <li>{{ $errors->first('company_last_name') }}</li>
                             </ul>
                           </div>
-                          @endif </div>
+                          @endif 
+                        </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
@@ -221,18 +222,39 @@
                         <div class="form-group">
                           <label for="company_designation" class="field-label">Designation:</label>
                           <input type="text" class="form-control field-control" name="company_designation" id="company_designation" value="{{old('company_designation')}}" placeholder="" data-fv-field="company_designation">
+                          @if ($errors->first('company_designation'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('company_designation') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                         </div>
                       </div>
                       <div class="col-md-3">
                       <div class="form-group">
                         <label for="company_dob" class="field-label">DOB:</label>
                         <input type="text" class="form-control field-control" name="company_dob" id="company_dob" value="{{old('company_dob')}}" placeholder="" data-fv-field="company_dob">
+                        @if ($errors->first('company_dob'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('company_dob') }}</li>
+                            </ul>
+                          </div>
+                        @endif 
                       </div>
                     </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="company_mobile" class="field-label">Mobile Number:</label>
                           <input type="text" class="form-control field-control mobile" name="company_mobile" id="company_mobile" value="{{old('company_mobile')}}" placeholder="" data-fv-field="company_mobile">
+                          @if ($errors->first('company_mobile'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('company_mobile') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -254,10 +276,10 @@
   @endforeach
 @endif
                         </select>
-                        @if ($errors->first('nationality'))
+                        @if ($errors->first('company_nationality'))
                         <div class="alert alert-danger">
                           <ul>
-                            <li>{{ $errors->first('nationality') }}</li>
+                            <li>{{ $errors->first('company_nationality') }}</li>
                           </ul>
                         </div>
                         @endif </div>
@@ -276,12 +298,12 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
-                          <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="email_confirmation">
-                          @if ($errors->first('email_confirmation'))
+                          <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
+                          <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="company_email_confirmation">
+                          @if ($errors->first('company_email_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('email_confirmation') }}</li>
+                              <li>{{ $errors->first('company_email_confirmation') }}</li>
                             </ul>
                           </div>
                           @endif </div>
@@ -328,9 +350,8 @@
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset <?php if(@$step==2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
-                {{ Form::open(array('url' => 'register/post')) }}
-                <input type="hidden" name="tab" value="licence">
+              <fieldset class="licence" <?php if(@$step==2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                {{ Form::open(array('url' => 'register/insert_licence')) }}
                 <div class="lg-reg reg-form pb-5">
                   <div class="row">
                     <div class="col-md-3">
@@ -345,18 +366,39 @@
 @endif                     
                         </select>
                       </div>
+                         @if ($errors->first('legal_status'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('legal_status') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="license_no" class="field-label"> License No: </label>
                         <input type="text" class="form-control field-control" name="license_number" id="license_number" value="{{old('license_number')}}" placeholder="" data-fv-field="license_number">
                       </div>
+                      @if ($errors->first('license_number'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('license_number') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="registration_no" class="field-label"> Registration No: </label>
                         <input type="text" class="form-control field-control" name="registration_number" id="registration_number" value="{{old('registration_number')}}" placeholder="" data-fv-field="registration_number">
                       </div>
+                      @if ($errors->first('registration_number'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('registration_number') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -371,14 +413,13 @@
                 </div>
                 <div class="f1-buttons">
                   <button type="button" class="btn btn-previous"> Previous </button>
-                  <button type="button" class="btn btn-next"> Next </button>
+                  <button type="submit" class="btn"> Next </button>
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset class="location">
-                {{ Form::open(array('url' => 'register/post')) }}
+              <fieldset class="location" <?php if(@$step==3) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                {{ Form::open(array('url' => 'register/insert_location')) }}
                 <div class="lg-reg reg-form">
-                  <input type="hidden" name="tab" value="location">
                   <div class="row">
                     <div class="col-md-12 location-btns"> 
                       <!-- <button class="switch-acc">Add New</button> -->
@@ -389,7 +430,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="country" class="field-label">Country:</label>
-                        <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Current Country">
+                        <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Country">
                           <option value="">Select Country</option>
                                   @if(!empty($countries))
   @foreach($countries as $key => $value)    
@@ -398,48 +439,111 @@
 @endif
                         </select>
                       </div>
+                          @if ($errors->first('fk_country_id'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('fk_country_id') }}</li>
+                            </ul>
+                          </div>
+                          @endif 
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="city" class="field-label">City:</label>
-                        <select class="form-control js-example-basic-single" id="fk_city_id" name="fk_city_id"  title="Select Current Location">
+                        <select class="form-control js-example-basic-single" id="fk_city_id" name="fk_city_id"  title="Select City">
                           <option value="">Select City</option>
                         </select>
                       </div>
+                        @if ($errors->first('fk_city_id'))
+                        <div class="alert alert-danger">
+                          <ul>
+                            <li>{{ $errors->first('fk_city_id') }}</li>
+                          </ul>
+                        </div>
+                        @endif 
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="location" class="field-label">Area:</label>
-                        <select class="form-control js-example-basic-single" name="fk_area_id" id="fk_area_id">
+                        <select class="form-control js-example-basic-single" name="fk_area_id" id="fk_area_id" title="Select Area">
                           <option value="">Select Area</option>
                         </select>
                       </div>
+                          @if ($errors->first('fk_area_id'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('fk_area_id') }}</li>
+                            </ul>
+                          </div>
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="pobox" class="field-label">P.O.Box:</label>
                         <input type="text" class="form-control field-control" name="pobox" id="pobox" value="{{old('pobox')}}" placeholder="" data-fv-field="pobox">
                       </div>
+                          @if ($errors->first('pobox'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('pobox') }}</li>
+                            </ul>
+                          </div>
+                          @endif
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="fax" class="field-label">Fax Number:</label>
-                        <input type="text" class="form-control field-control" name="fax" id="fax" value="{{old('fax')}}" placeholder="" data-fv-field="fax">
+                        <label for="location_email" class="field-label">Email:</label>
+                        <input type="email" class="form-control field-control" name="location_email" id="location_email" value="{{old('location_email')}}" placeholder="" data-fv-field="location_email">
                       </div>
+                          @if ($errors->first('location_email'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('location_email') }}</li>
+                            </ul>
+                          </div>
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="website" class="field-label">Website:</label>
-                        <input type="email" class="form-control field-control" name="website" id="website" value="{{old('website')}}" placeholder="" data-fv-field="website">
+                        <label for="location_mobile" class="field-label">Mobile:</label>
+                        <input type="text" class="form-control field-control" name="location_mobile" id="location_mobile" value="{{old('location_mobile')}}" placeholder="" data-fv-field="location_mobile">
                       </div>
+                          @if ($errors->first('mobile'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('mobile') }}</li>
+                            </ul>
+                          </div>
+                          @endif
+                    </div>
+                    
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="street" class="field-label">Street:</label>
+                        <input type="text" class="form-control field-control" name="street" id="street" value="{{old('street')}}" placeholder="" data-fv-field="street">
+                      </div>
+                          @if ($errors->first('street'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('street') }}</li>
+                            </ul>
+                          </div>k
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="address" class="field-label">Address:</label>
                         <textarea class="form-control" name="address" id="address" placeholder="">{{old('address')}}</textarea>
                       </div>
+                         @if ($errors->first('address'))
+                          <div class="alert alert-danger">
+                            <ul>
+                              <li>{{ $errors->first('address') }}</li>
+                            </ul>
+                          </div>
+                          @endif
                     </div>
                   </div>
                   <div class="row">
@@ -448,22 +552,22 @@
                         <label for="first_name" class="field-label">Drag Your Location:</label>
                         <div class="form-group bmd-form-group">
                           <label for="map_address" class="bmd-label-floating">Search Location:</label>
-                          <input type="text" class="form-control col-sm-6" id="map_address" name="map_address" autocomplete="off">
+                          <input type="text" class="form-control col-sm-12" id="map_address" name="map_address" autocomplete="off">
                         </div>
                         <div class="col-sm-12" id="map" style="height:400px;"></div>
-                        <input type="hidden" name="latitude" id="latitude" value="{{old('latitude')}}">
-                        <input type="hidden" name="longitude" id="longitude" value="{{old('longitude')}}">
+                        <input type="hidden" name="latitude" id="latitude">
+                        <input type="hidden" name="longitude" id="longitude">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="f1-buttons">
                   <button type="button" class="btn btn-previous">Previous</button>
-                  <button type="button" class="btn btn-next">Next</button>
+                  <button type="submit" class="btn">Next</button>
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset class="">
+              <fieldset class="quickregister" <?php if(@$step==5) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-12 mx-auto">
@@ -944,46 +1048,35 @@
     </div>
   </div>
 </div>
+<!-- Get Map adress -->
+<p id='address'></p> 
+
 @include('front_end.modules.footer')
 <script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript">
-  // Manage step    //
-  /*if({{$step}}=='1'){
-	  $('.company_info').show();
-  }else if({{$step}}=='2'){
-	  $('.licence').show();
-  }else if({{$step}}=='3'){
-	  $('.location').show();
-  }else if({{$step}}=='4'){
-	  $('.users').show();
-  }else if({{$step}}=='5'){
-	  $('.investors').show();
-  }*/
-
-
   $(document).ready(function(e) {
-	  $('#company_dob').datepicker({
-		format: 'yyyy-mm-dd'
-	  }).on('changeDate', function(ev){
-    $(this).datepicker('hide');
-}); 
+  	  $('#company_dob').datepicker({
+  		format: 'yyyy-mm-dd'
+  	  }).on('changeDate', function(ev){
+      $(this).datepicker('hide');
+  }); 
     getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
   });
-  getCity($("#fk_country_id").val(),<?php echo @old('fk_city_id'); ?>);
-  $('#fk_country_id').change(function(e){
+  getCity($("#fk_country_id").val(),<?= @old('fk_city_id'); ?>);
+  $('#fk_country_id').change(function(e) {
   getCity(this.value,);
   });
-  getArea($("#fk_city_id").val(),<?php echo @old('fk_area_id'); ?>);
-  $('#fk_city_id').change(function(e){
+  getArea($("#fk_city_id").val(),<?= @old('fk_area_id'); ?>);
+  $('#fk_city_id').change(function(e) {
   getArea(this.value,);
   });
   });
   function getCategory(category,activity='') {
   var token = $("input[name='_token']").val();
   $.ajax({
-          url: "<?php echo 'selectActivities'; ?>",
+          url: "<?php echo URL::to('/').'/register/selectActivities'; ?>",
           method: 'POST',
           data: {category:category, _token:token,activity:activity},
           success: function(data) {
@@ -996,7 +1089,7 @@
   function getCity(countryid,cityid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'selectCities'; ?>",
+          url: "<?php echo URL::to('/').'/register/selectCities'; ?>",
           method: 'POST',
           data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
           success: function(data) {
@@ -1008,7 +1101,7 @@
   function getArea(cityid,areaid='') {
       var token = $("input[name='_token']").val();
       $.ajax({
-          url: "<?php echo 'selectAreas'; ?>",
+          url: "<?php echo URL::to('/').'/register/selectAreas'; ?>",
           method: 'POST',
           data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
           success: function(data) {
@@ -1061,12 +1154,87 @@ $(document).on('click','.get-current-location',function(e){
     }else{ 
         x.innerHTML = "Geolocation is not supported by this mobile.";
     }
-    function showPosition(position){
+/*    function showPosition(position){
         var lat=position.coords.latitude;
         var lot=position.coords.longitude;
         initMap(lat,lot);
-    }
+    }*/
+
+    function showPosition(position){ 
+    location.latitude=position.coords.latitude;
+    location.longitude=position.coords.longitude;
+    initMap(location.latitude,location.longitude);
+    var geocoder = new google.maps.Geocoder();
+    var latLng = new google.maps.LatLng(location.latitude, location.longitude);
+
+    if (geocoder) {
+    geocoder.geocode({ 'latLng': latLng}, function (results, status) {
+       if (status == google.maps.GeocoderStatus.OK) {
+         console.log(results); 
+         $('#address').html(results[0].formatted_address);
+         var street = results[1].formatted_address;
+         var res = street.split("-");
+         $('#street').val(res[0]);
+         var country = results[5].formatted_address;
+         var city = res[1]; 
+         var areastr = results[2].formatted_address;
+         var ar = areastr.split("-");
+         var area = ar[0]; 
+         /* Country */
+         country=country.trim();
+         city=city.trim();
+         area=area.trim();
+         $("#fk_country_id").html("<option>"+country+"</option>");
+         $("#fk_city_id").html("<option>"+city+"</option>");
+         $("#fk_area_id").html("<option>"+area+"</option>");
+
+         var token = $("input[name='_token']").val();
+         $.ajax({
+          url: "<?php echo URL::to('/').'/register/getCurrentCountry'; ?>",
+          method: 'POST',
+          data: {country:country, _token:token},
+          success: function(data) {
+            $("select[name='fk_country_id'").html('');
+            $("select[name='fk_country_id'").html(data.options);
+            fetch_current_city(data.pk_countries_id,city,area);
+            }
+          });
+       }
+       else {
+        $('#address').html('Geocoding failed: '+status);
+        console.log("Geocoding failed: " + status);
+       }
+    }); //geocoder.geocode()
+  }      
+} //showPosition
+
 });
+
+function fetch_current_city(countryid,city,area){
+         var token = $("input[name='_token']").val();
+         $.ajax({
+          url: "<?php echo URL::to('/').'/register/getCurrentCity'; ?>",
+          method: 'POST',
+          data: {fk_country_id:countryid, _token:token,fk_city_id:city},
+          success: function(data) {
+            $("select[name='fk_city_id'").html('');
+            $("select[name='fk_city_id'").html(data.options);
+            fetch_current_area(data.fk_city_id,area);
+            }
+          });
+}
+function fetch_current_area(cityid,area){
+         var token = $("input[name='_token']").val();
+         $.ajax({
+          url: "<?php echo URL::to('/').'/register/getCurrentArea'; ?>",
+          method: 'POST',
+          data: {fk_city_id:cityid, _token:token,fk_area_id:area},
+          success: function(data) {
+            $("select[name='fk_area_id'").html('');
+            $("select[name='fk_area_id'").html(data.options);
+            }
+          });
+}
 
 
 
@@ -1075,5 +1243,7 @@ $(document).on('click','.get-current-location',function(e){
 <script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
 <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
+<script type="text/javascript">
+</script>
 </body>
 </html>

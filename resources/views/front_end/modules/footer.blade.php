@@ -403,9 +403,9 @@ $(document).click(function(){
 	}); 
 
 	// $("#order-decline").click(function(){
- //    $(".decline-option-wrap").show();
- //    $(this).addClass("decline-active");
-	// }); 
+   // $(".decline-option-wrap").show();
+  // $(this).addClass("decline-active");
+ // }); 
 
 });
 </script>
@@ -427,8 +427,7 @@ $(document).ready(function() {
       var boxHeigth = $('.vert-algn-mdl-cnt').innerHeight();
       var maginTop= (boxParentHeight-boxHeigth)/2;
       $('.vert-algn-mdl-cnt').parent().css('padding-top', maginTop+'px');
-
-
+      
       $("#bx-tp-js-gallery").justifiedGallery(
 	      {
 			rowHeight : 100,
@@ -443,7 +442,7 @@ $(document).ready(function() {
 			margins : 1
 	      }
       )
-      $('#bx-tp-rl-img-glry').owlCarousel({
+       $('#bx-tp-rl-img-glry').owlCarousel({
 	    loop:false,
 	    margin:10,
 	    nav:true,
@@ -451,7 +450,7 @@ $(document).ready(function() {
 	    items:4,
 	    lazyLoad: true
 	});
-      $('#bx-tp-rl-vdo-glry').owlCarousel({
+        $('#bx-tp-rl-vdo-glry').owlCarousel({
 	    loop:false,
 	    margin:10,
 	    nav:true,
@@ -459,7 +458,7 @@ $(document).ready(function() {
 	    items:4,
 	    lazyLoad: true
 	});
-      $('#product-slider-tp-1').owlCarousel({
+        $('#product-slider-tp-1').owlCarousel({
 	    loop:false,
 	    margin:10,
 	    nav:true,
@@ -491,7 +490,7 @@ $(document).ready(function() {
 	    items:2,
 	    lazyLoad: true
 	});
-           $('#new-account-box').owlCarousel({
+        $('#new-account-box').owlCarousel({
 	    loop:false,
 	    margin:10,
 	    nav:true,
