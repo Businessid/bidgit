@@ -35,7 +35,7 @@ jQuery(document).ready(function() {
     /*
         Form
     */
-    $('.f1 fieldset:first').fadeIn('slow');
+    //$('.f1 fieldset:first').fadeIn('slow');
     
     $('.f1 input[type="text"], .f1 input[type="password"], .f1 textarea').on('focus', function() {
     	$(this).removeClass('input-error');
