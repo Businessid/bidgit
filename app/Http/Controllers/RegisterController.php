@@ -26,6 +26,52 @@ class RegisterController extends BaseController
     
      public function company()
     {
+<<<<<<< HEAD
+=======
+       if($request->input('tab')=='company_info'){
+         $validatedData = $request->validate([
+        'name' => 'required|min:4',
+        'category' => 'required',
+        'activity' => 'required',
+        'email' => 'required|email',
+        'mobile' => 'required',
+        'phone' => 'required',
+		'company_first_name' => 'required|min:2',
+		'company_last_name' => 'required',
+		'company_designation' => 'required',
+		'company_gender' => 'required',
+		'company_designation' => 'required',
+		'company_dob' => 'required',
+		'company_mobile' => 'required',
+		'company_phone' => 'required',
+		'company_nationality' => 'required',
+		'company_email' => 'required|email|confirmed',
+		'company_email_confirmation' => 'required|email',
+		'company_password' => 'required|confirmed',
+		'company_password_confirmation' => 'required'  
+     ]);
+    $data['name'] = $request->input('name');
+    $data['category'] = $request->input('category');
+    $data['activity'] = $request->input('activity');
+    $data['company_email'] = $request->input('email');
+    $data['company_mobile'] = $request->input('phone');
+    $data['company_phone'] = $request->input('phone');
+        $data['first_name'] = $request->input('company_first_name');
+        $data['last_name'] = $request->input('company_last_name');
+        $data['designation'] = $request->input('company_designation');
+        $data['gender'] = $request->input('company_gender');
+        $data['birthday'] = $request->input('company_dob');
+        $data['mobile'] = $request->input('company_mobile');
+        $data['phone'] = $request->input('company_phone');
+        $data['nationality'] = $request->input('company_nationality');
+        $data['email'] = $request->input('company_email');
+        $data['password'] = $request->input('company_password');
+		$data['step']="2";
+    $request->session()->put('company_info',$data);
+    $data['step']="2";
+    return redirect('register'); die; 
+    }
+>>>>>>> bd1dd7431bb98f3f106157662bc260517a35ca3c
         $categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
         $data['step']=1;
         return view('front_end.register',compact('categories','countries','legalstatus'),$data);
