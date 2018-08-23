@@ -276,12 +276,12 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="email_confirmation" class="field-label">Confirm E-mail:</label>
-                          <input type="email" class="form-control field-control" name="email_confirmation" id="email_confirmation" value="{{old('email_confirmation')}}" placeholder="" data-fv-field="email_confirmation">
-                          @if ($errors->first('email_confirmation'))
+                          <label for="company_email_confirmation" class="field-label">Confirm E-mail:</label>
+                          <input type="email" class="form-control field-control" name="company_email_confirmation" id="company_email_confirmation" value="{{old('company_email_confirmation')}}" placeholder="" data-fv-field="email_confirmation">
+                          @if ($errors->first('company_email_confirmation'))
                           <div class="alert alert-danger">
                             <ul>
-                              <li>{{ $errors->first('email_confirmation') }}</li>
+                              <li>{{ $errors->first('company_email_confirmation') }}</li>
                             </ul>
                           </div>
                           @endif </div>

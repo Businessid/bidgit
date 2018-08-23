@@ -44,7 +44,7 @@ class RegisterController extends BaseController
 		'company_phone' => 'required',
 		'company_nationality' => 'required',
 		'company_email' => 'required|email|confirmed',
-		'email_confirmation' => 'required|email',
+		'company_email_confirmation' => 'required|email',
 		'company_password' => 'required|confirmed',
 		'company_password_confirmation' => 'required'  
      ]);
@@ -64,6 +64,7 @@ class RegisterController extends BaseController
         $data['nationality'] = $request->input('company_nationality');
         $data['email'] = $request->input('company_email');
         $data['password'] = $request->input('company_password');
+		$data['step']="2";
     $request->session()->put('company_info',$data);
     $data['step']="2";
     return redirect('register'); die; 
