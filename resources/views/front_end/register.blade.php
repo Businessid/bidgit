@@ -90,8 +90,8 @@
                         <select class="form-control js-example-basic-single" id="category" name="category"  title="">
                           <option value="">- Select -</option> 
                                   @if(!empty($categories))
-  @foreach($categories as $key => $value)
-                          <option value="{{ $key }}" <?php if(old('category')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @foreach($categories as $val)
+                          <option value="{{ $categorie->pk_users_category_id }}" <?php if(old('category')==$val->pk_users_category_id) echo "selected"; ?>>{{ $val->category_name }}</option>
   @endforeach
 @endif
                         </select>

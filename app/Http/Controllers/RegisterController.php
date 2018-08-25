@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use App\Users_Category;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class RegisterController extends BaseController
@@ -19,7 +20,9 @@ class RegisterController extends BaseController
 
      public function index(Request $request)
     {
-    	$categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
+       $categories =  Users_Category::all()->orderBy('category_name');
+
+    	// $categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
         $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
         $data['step']=1;
         return view('front_end.register',compact('categories','countries','legalstatus'),$data);
@@ -74,7 +77,7 @@ class RegisterController extends BaseController
                 $image = $this->isUploadProfile($request,'company_userimage');
                 $data['profile_small'] = storage_path('app/upload/profile/sm/'.$image);
                 $data['profile_medium'] = storage_path('app/upload/profile/md/'.$image);
-                $data['profile_large'] = storage_path('app/upload/profile/'.$image);
+                $data['profile_original'] = storage_path('app/upload/profile/'.$image);
                 $request->session()->put('company_info',$data);
             return Redirect::to('register/licence')->withInput();
     }
@@ -270,16 +273,14 @@ class RegisterController extends BaseController
     }
         public function isUploadProfile($request,$image)
     {
-        $newname=$request->input('company_first_name').'-'.$request->input('company_dob').'.png';
+        $newname=time().'-'.$request->input('name').'.png';
         $path=$request->file($image)->storeAs('upload/profile',$newname);
         if($request->hasFile($image)) {
             $image_sm = Image::make(storage_path('app/upload/profile/'.$newname));          
-            $image_sm->resize(150,150);
+            $image_sm->resize(150,150);            //$image_sm->crop(300, 300, 300, 300);
             $image_sm->save(storage_path('app/upload/profile/sm/'.$newname));
-        }
-        if($request->hasFile($image)) {
             $image_md = Image::make(storage_path('app/upload/profile/'.$newname));          
-            $image_md->resize(400,300);
+            $image_md->resize(400,400);
             $image_md->save(storage_path('app/upload/profile/md/'.$newname));
         }
         return $newname;
