@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Users_Category;
+use App\Countries;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class RegisterController extends BaseController
@@ -20,12 +21,10 @@ class RegisterController extends BaseController
 
      public function index(Request $request)
     {
-       $categories =  Users_Category::all()->orderBy('category_name');
-
-    	// $categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
-        $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
-        $data['step']=1;
-        return view('front_end.register',compact('categories','countries','legalstatus'),$data);
+       $categories =  Users_Category::all()->orderBy('category_name','ASC');
+       $categories =  Countries::all()->where('name','<>','')->orderBy('category_name','ASC');
+       $data['step']=1;
+       return view('front_end.register',compact('categories','countries','legalstatus'),$data);
     }
     
      public function company()

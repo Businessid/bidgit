@@ -249,8 +249,8 @@
                         <select class="form-control js-example-basic-single" id="company_nationality" name="company_nationality"  title="">
                           <option value="">- Select -</option> 
                                    @if(!empty($countries))
-  @foreach($countries as $key => $value)    
-                          <option value="{{ $key }}" <?php if(old('company_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @foreach($countries as $val)    
+                          <option value="{{ $val->pk_countries_id }}" <?php if(old('company_nationality')==$val->pk_countries_id) echo "selected"; ?>>{{ $val->name }}</option>
   @endforeach
 @endif
                         </select>
