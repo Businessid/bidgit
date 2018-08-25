@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2018 at 01:30 PM
+-- Generation Time: Aug 25, 2018 at 02:01 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -77,7 +77,7 @@ INSERT INTO `tbl_countries` (`pk_countries_id`, `name`, `code`, `currency`, `par
 (33, NULL, NULL, NULL, 7, 'Al Jaddaf'),
 (34, NULL, NULL, NULL, 7, 'Al Jafiliya'),
 (35, NULL, NULL, NULL, 7, 'Al Karama'),
-(36, NULL, NULL, NULL, 7, 'Al Khabisi'),
+(36, NULL, NULL, NULL, 7, 'Al Khabaisi'),
 (37, NULL, NULL, NULL, 7, 'Al Khwaneej First'),
 (38, NULL, NULL, NULL, 7, 'Al Khwaneej Second'),
 (39, NULL, NULL, NULL, 7, 'Al Kifaf'),
