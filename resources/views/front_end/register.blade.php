@@ -91,7 +91,7 @@
                           <option value="">- Select -</option> 
                                   @if(!empty($categories))
   @foreach($categories as $val)
-                          <option value="{{ $categorie->pk_users_category_id }}" <?php if(old('category')==$val->pk_users_category_id) echo "selected"; ?>>{{ $val->category_name }}</option>
+                          <option value="{{ $val->pk_users_category_id }}" <?php if(old('category')==$val->pk_users_category_id) echo "selected"; ?>>{{ $val->category_name }}</option>
   @endforeach
 @endif
                         </select>
@@ -328,8 +328,8 @@
                         <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
                           <option value="">Select Legal Status</option>
                                  @if(!empty($legalstatus))
-  @foreach($legalstatus as $key => $value)
-                          <option value="{{ $key }}" <?php if(old('legal_status')==$key) echo "selected"; ?>>{{ $value }}</option>                          
+  @foreach($legalstatus as  $value)
+                          <option value="{{ $value->pk_users_legal_status_id }}" <?php if(old('legal_status')==$value->title_en) echo "selected"; ?>>{{ $value->title_en }}</option>
   @endforeach
 @endif                     
                         </select>

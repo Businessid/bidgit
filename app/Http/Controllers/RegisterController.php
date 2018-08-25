@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Users_Category;
 use App\Countries;
+use App\Users_Legal_Status;
+use App\Users;
+use App\Users_Activities;
+use File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class RegisterController extends BaseController
@@ -21,15 +26,15 @@ class RegisterController extends BaseController
 
      public function index(Request $request)
     {
-       $categories =  Users_Category::all()->orderBy('category_name','ASC');
-       $categories =  Countries::all()->where('name','<>','')->orderBy('category_name','ASC');
+       $categories =  Users_Category::orderBy('category_name','ASC')->get();
+       $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
        $data['step']=1;
-       return view('front_end.register',compact('categories','countries','legalstatus'),$data);
+       return view('front_end.register',compact('categories','countries'),$data);
     }
     
      public function company()
     {
-        $categories = DB::table('tbl_users_category')->orderBy('category_name')->pluck("category_name","pk_users_category_id")->all();
+        $categories =  $categories =  Users_Category::orderBy('category_name','ASC')->get();
         $data['step']=1;
         return view('front_end.register',compact('categories','countries','legalstatus'),$data);
 
@@ -82,7 +87,7 @@ class RegisterController extends BaseController
     }
      public function licence()
     {
-        $legalstatus = DB::table('tbl_users_legal_status')->where('title_en','<>','')->orderBy('title_en')->pluck("title_en","pk_users_legal_status_id")->all();
+        $legalstatus=   Users_Legal_Status::where('title_en','<>','')->orderBy('title_en')->get();
         $data['step']=2;
         return view('front_end.register',compact('legalstatus'),$data); 
     }
@@ -101,7 +106,7 @@ class RegisterController extends BaseController
     }
      public function location()
     {
-        $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
+        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
         $data['step']=3;
         return view('front_end.register',compact('countries'),$data); 
     }
@@ -145,8 +150,11 @@ class RegisterController extends BaseController
         $dataArr['added_date']=$now;
         $dataArr['modified_date']=$now;
         $dataArr['status']=1;
-        $result =DB::table('tbl_users')->insert($dataArr);
-        DB::enableQueryLog();
+
+        $user =new Users();
+        $user->fill( $dataArr);
+        $result = $user->save();
+
         if($result){
            $data['step']="6";
            return view('front_end.register',$data); 
@@ -157,17 +165,17 @@ class RegisterController extends BaseController
     public function selectActivities(Request $request)
     {
     	if($request->ajax()){
-    		$activities = DB::table('tbl_users_activities')->where('fk_users_category_id',$request->category)->pluck("title","pk_users_activities_id")->all();
-    		$data = '';
+            $activities =  Users_Activities::where('fk_users_category_id',$request->category)->get();
+    			$data = '';
 			if(!empty($activities)){
-    		foreach($activities as $key => $value){
+    		foreach($activities as $value){
             $selected="";
             if($request->activity){
-            if($request->activity==$key) {
+            if($request->activity == $value->fk_users_category_id) {
             $selected = "selected"; 
             }
             }
-    		$data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+    		$data .= '<option value="'.$value->fk_users_category_id.'" '.@$selected.'>'.$value->title.'</option>';
   			}
 			}			
     		return response()->json(['options'=>$data]);
@@ -272,6 +280,10 @@ class RegisterController extends BaseController
     }
         public function isUploadProfile($request,$image)
     {
+        $SM_Path = storage_path('app/upload/profile/sm/');
+        $MD_Path = storage_path('app/upload/profile/md/');
+        File::isDirectory($SM_Path) or File::makeDirectory($SM_Path, 0777, true, true);
+        File::isDirectory($MD_Path) or File::makeDirectory($MD_Path, 0777, true, true);
         $newname=time().'-'.$request->input('name').'.png';
         $path=$request->file($image)->storeAs('upload/profile',$newname);
         if($request->hasFile($image)) {
