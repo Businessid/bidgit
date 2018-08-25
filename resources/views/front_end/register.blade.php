@@ -30,7 +30,7 @@
                 </div>
                 <div class="f1-step <?php if(@$step==1) echo 'active'; elseif(@$step>1) echo 'activated'; else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
-                  <p>Company Information <?php echo @$step; ?></p>
+                  <p>Company Information</p>
                 </div>
                 <div class="f1-step <?php if(@$step==2) echo 'active'; elseif(@$step>2) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
@@ -108,7 +108,7 @@
                           <option value="">- Select -</option>
                                   @if(!empty($activities))
   @foreach($activities as $value)
-                          <option value="{{ $value }}">{{ $value }}</option>
+                          <option value="{{ $value }}" <?php if(old('activity')==$value) echo "selected"; ?>>{{ $value }}</option>
   @endforeach
 @endif
                         </select>
@@ -326,7 +326,7 @@
                       <div class="form-group">
                         <label for="legal_status" class="field-label">Legal Status:</label>
                         <select class="form-control js-example-basic-single" id="legal_status" name="legal_status">
-                          <option value="" data-select2-id="12">Select Legal Status</option>
+                          <option value="">Select Legal Status</option>
                                  @if(!empty($legalstatus))
   @foreach($legalstatus as $key => $value)
                           <option value="{{ $key }}" <?php if(old('legal_status')==$key) echo "selected"; ?>>{{ $value }}</option>                          
@@ -793,10 +793,10 @@
                       <div class="form-group">
                         <label for="investor_type" class="field-label">Type:</label>
                         <select class="form-control js-example-basic-single" name="investor_type[]" id="investor_type">
-                          <option value="" data-select2-id="20">Select Type</option>
-                          <option value="1" data-select2-id="1212">Local Sponsor</option>
-                          <option value="2" data-select2-id="1213">Owner</option>
-                          <option value="3" data-select2-id="1214">Partner</option>
+                          <option value="">Select Type</option>
+                          <option value="1">Local Sponsor</option>
+                          <option value="2">Owner</option>
+                          <option value="3">Partner</option>
                         </select>
                       </div>
                     </div>
@@ -992,17 +992,17 @@
   	  }).on('changeDate', function(ev){
       $(this).datepicker('hide');
   }); 
-    getCategory($("#category").val(),<?php echo @old('activity'); ?>);
+  getCategory($("#category").val(),<?php echo @old('activity'); ?>);
   $('#category').change(function(e) {
     getCategory(this.value);
   });
   getCity($("#fk_country_id").val(),<?= @old('fk_city_id'); ?>);
   $('#fk_country_id').change(function(e) {
-  getCity(this.value,);
+  	getCity(this.value,);
   });
   getArea($("#fk_city_id").val(),<?= @old('fk_area_id'); ?>);
   $('#fk_city_id').change(function(e) {
-  getArea(this.value,);
+  	getArea(this.value,);
   });
   });
   function getCategory(category,activity='') {
@@ -1044,7 +1044,7 @@
   }
 
 </script> 
-<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script> 
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCSHFS1ww5AOq1xAz1DAicbxn7XnAzFOfk&sensor=false&libraries=places'></script> 
 <script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
 <script>
 function updateControls(addressComponents) {
