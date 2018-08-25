@@ -24,21 +24,31 @@ class RegisterController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-     public function index(Request $request)
-    {
-       $categories =  Users_Category::orderBy('category_name','ASC')->get();
-       $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-       $data['step']=1;
-       return view('front_end.register',compact('categories','countries'),$data);
-    }
+//     public function index(Request $request)
+//    {
+////        $request->session()->forget('complete_step');
+////        $request->session()->flush();
+//         $complete_step = $request->session()->get('complete_step');
+//         $company_info = $request->session()->get('company_info');
+//         $categories =  Users_Category::orderBy('category_name','ASC')->get();
+//         $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+//         $data['step']=1;
+//         $data['complete_step'] = $complete_step;
+//         return view('front_end.register',compact('categories','countries'),$data);
+//    }
     
-     public function company()
+     public function company(Request $request)
     {
-        $categories =  $categories =  Users_Category::orderBy('category_name','ASC')->get();
+        $complete_step = $request->session()->get('complete_step');
+        $company_info = $request->session()->get('company_info');
+        $categories =  Users_Category::orderBy('category_name','ASC')->get();
+        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
         $data['step']=1;
-        return view('front_end.register',compact('categories','countries','legalstatus'),$data);
-
+        $data['complete_step'] = $complete_step;
+        return view('front_end.register',compact('categories','countries','company_info'),$data);
     }
+
+
      public function insert_company(Request $request)
     {
         $validatedData = $request->validate([
@@ -62,12 +72,12 @@ class RegisterController extends BaseController
             'company_password' => 'required|confirmed',
             'company_password_confirmation' => 'required'  
         ]);
-            $data['name'] = $request->input('name');
-            $data['category'] = $request->input('category');
-            $data['activity'] = $request->input('activity');
-            $data['company_email'] = $request->input('email');
-            $data['company_mobile'] = $request->input('phone');
-            $data['company_phone'] = $request->input('phone');
+                $data['name'] = $request->input('name');
+                $data['category'] = $request->input('category');
+                $data['activity'] = $request->input('activity');
+                $data['company_email'] = $request->input('email');
+                $data['company_mobile'] = $request->input('phone');
+                $data['company_phone'] = $request->input('phone');
                 $data['first_name'] = $request->input('company_first_name');
                 $data['last_name'] = $request->input('company_last_name');
                 $data['designation'] = $request->input('company_designation');
@@ -83,13 +93,27 @@ class RegisterController extends BaseController
                 $data['profile_medium'] = storage_path('app/upload/profile/md/'.$image);
                 $data['profile_original'] = storage_path('app/upload/profile/'.$image);
                 $request->session()->put('company_info',$data);
+                $request->session()->put('complete_step',1);
             return Redirect::to('register/licence')->withInput();
     }
-     public function licence()
+
+
+     public function licence(Request $request)
     {
-        $legalstatus=   Users_Legal_Status::where('title_en','<>','')->orderBy('title_en')->get();
-        $data['step']=2;
-        return view('front_end.register',compact('legalstatus'),$data); 
+        $complete_step = $request->session()->get('complete_step');
+        $licence_info = $request->session()->get('licence_info');
+        if ($complete_step < 1 ){
+            return Redirect::to('register')->withInput();
+        }else{
+            $legalstatus=   Users_Legal_Status::where('title_en','<>','')->orderBy('title_en')->get();
+            $data['step']=2;
+            $data['complete_step'] = $complete_step;
+            return view('front_end.register',compact('legalstatus','licence_info'),$data);
+        }
+
+
+
+
     }
      public function insert_licence(Request $request)
     {
@@ -102,14 +126,28 @@ class RegisterController extends BaseController
         $data['license_number'] = $request->input('license_number');
         $data['registration_number'] = $request->input('registration_number');
         $request->session()->put('licence_info',$data);
+        $request->session()->put('complete_step',2);
         return Redirect::to('register/location')->withInput();
     }
-     public function location()
+
+
+
+     public function location(Request $request)
     {
-        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']=3;
-        return view('front_end.register',compact('countries'),$data); 
+        $complete_step =$request->session()->get('complete_step');
+        $location_info = $request->session()->get('location_info');
+        if ($complete_step < 2 ){
+            return Redirect::to('register/licence')->withInput();
+        }else{
+            $request->session()->put('complete_step',2);
+            $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+            $data['step']=3;
+            $data['complete_step'] = $complete_step;
+            return view('front_end.register',compact('countries','location_info'),$data);
+        }
+
     }
+
      public function insert_location(Request $request)
     {
         $validatedData = $request->validate([
@@ -129,13 +167,21 @@ class RegisterController extends BaseController
     $data['latitude'] = $request->input('latitude');
     $data['longitude'] = $request->input('longitude');
     $request->session()->put('location_info',$data);
+    $request->session()->put('complete_step',3);
     return Redirect::to('register/qregister')->withInput();
     }
 
      public function qregister(Request $request)
     {
-           $data['step']="5";
-           return view('front_end.register',$data); 
+        $complete_step =$request->session()->get('complete_step');
+        if ($complete_step < 3 ){
+            return Redirect::to('register/location')->withInput();
+        }else{
+            $data['step']= 4 ;
+            $data['complete_step'] = $complete_step;
+            return view('front_end.register',$data);
+        }
+
     } 
      public function insert_qregister(Request $request)
     {
@@ -156,12 +202,19 @@ class RegisterController extends BaseController
         $result = $user->save();
 
         if($result){
+            $request->session()->put('complete_step',4);
            $data['step']="6";
            return view('front_end.register',$data); 
         }else{
            return redirect('register');
         }
-    } 
+    }
+
+
+
+
+
+
     public function selectActivities(Request $request)
     {
     	if($request->ajax()){
@@ -219,6 +272,7 @@ class RegisterController extends BaseController
             return response()->json(['options'=>$data]);
         }
     }
+
     public function getCurrentCountry(Request $request)
     {
         if($request->ajax()){
@@ -278,7 +332,8 @@ class RegisterController extends BaseController
             return response()->json(['options'=>$data]);
         }
     }
-        public function isUploadProfile($request,$image)
+
+    public function isUploadProfile($request,$image)
     {
         $SM_Path = storage_path('app/upload/profile/sm/');
         $MD_Path = storage_path('app/upload/profile/md/');

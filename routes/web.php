@@ -22,29 +22,35 @@ Route::get('/', function () {
 | Register
 |--------------------------------------------------------------------------
 */
-Route::get('register', 'RegisterController@index');
+Route::get('register', 'RegisterController@company');
 
+// Company Data From  Register Page
 Route::get('register/company', 'RegisterController@company');
 Route::post('register/insert_company', 'RegisterController@insert_company');
 
+// licence Data From  Register Page
 Route::get('register/licence', 'RegisterController@licence');
 Route::post('register/insert_licence', 'RegisterController@insert_licence');
 
+// location Data From  Register Page
 Route::get('register/location', 'RegisterController@location');
 Route::post('register/insert_location', 'RegisterController@insert_location');
 
+
+// Complete Register Page ( Quick Registration )
 Route::get('register/qregister', 'RegisterController@qregister');
 
-Route::post('register/selectActivities', 'RegisterController@selectActivities');
 
-Route::post('register/selectCities', 'RegisterController@selectCities');
 
-Route::post('register/selectAreas', 'RegisterController@selectAreas');
+/* Select Ajax From Register Page  */
+Route::post('register/selectActivities', 'AjaxController@selectActivities');
+Route::post('register/selectCities', 'AjaxController@selectCities');
+Route::post('register/selectAreas', 'AjaxController@selectAreas');
 
-/*Fetch current location */
-Route::post('register/getCurrentCountry', 'RegisterController@getCurrentCountry');
-Route::post('register/getCurrentCity', 'RegisterController@getCurrentCity');
-Route::post('register/getCurrentArea', 'RegisterController@getCurrentArea');
+/*Fetch current location  From Register Page  */
+Route::post('register/getCurrentCountry', 'AjaxController@getCurrentCountry');
+Route::post('register/getCurrentCity', 'AjaxController@getCurrentCity');
+Route::post('register/getCurrentArea', 'AjaxController@getCurrentArea');
 
 
 

@@ -28,42 +28,60 @@
                 <div class="f1-progress">
                   <div class="f1-progress-line" data-now-value="6" data-number-of-steps="4" style="width: 6%;"></div>
                 </div>
-                <div class="f1-step <?php if(@$step==1) echo 'active'; elseif(@$step>1) echo 'activated'; else echo '';?>">
-                  <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
-                  <p>Company Information</p>
-                </div>
+
+                <a   href="@if($complete_step > 1 && $complete_step < 4) {{url('/register')}} @else # @endif">
+                  <div class="f1-step <?php if(@$step==1) echo 'active'; elseif(@$step>1) echo 'activated'; else echo '';?>">
+                    <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i></div>
+                    <p>Company Information</p>
+                  </div>
+                </a>
+                <a   href="@if($complete_step > 2 && $complete_step < 4) {{url('/register/licence')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==2) echo 'active'; elseif(@$step>2) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
                   <p>Licence </br>Information</p>
                 </div>
+                </a>
+                <a   href="@if($complete_step > 3 && $complete_step < 4) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==3) echo 'active'; elseif(@$step>3) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                   <p>Location</p>
                 </div>
+                </a>
                 <div class="f1-step <?php if(@$step==4) echo 'active'; elseif(@$step>4) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></div>
                   <p>Quick Registration</p>
                 </div>
+
+                <a   href="@if($step > 5) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==5) echo 'active'; elseif(@$step>5) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
                   <p>Create Users</p>
                 </div>
+                </a>
+                <a   href="@if($step > 6) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==6) echo 'active'; elseif(@$step>6) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                   <p>Owner / Share Holder Information</p>
                 </div>
+                </a>
+                <a   href="@if($step > 7) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==7) echo 'active'; elseif(@$step>7) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-sitemap" aria-hidden="true"></i></div>
                   <p>Branches</p>
                 </div>
+                </a>
+                <a   href="@if($step > 8) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==8) echo 'active'; elseif(@$step>8) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>
                   <p>Upload Documents</p>
                 </div>
+                </a>
+                <a   href="@if($step > 9) {{url('/register/location')}} @else # @endif">
                 <div class="f1-step <?php if(@$step==9) echo 'active'; elseif(@$step>9) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
                   <p>Verifiy</p>
                 </div>
+                </a>
                 <div class="f1-step <?php if(@$step==10) echo 'active'; elseif(@$step>10) echo 'activated';else echo '';?>">
                   <div class="f1-step-icon"><i class="fa fa-credit-card" aria-hidden="true"></i></div>
                   <p>Payment</p>
@@ -77,13 +95,14 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="name" class="field-label">Company Name:</label>
-                        <input type="text" class="form-control field-control" name="name" id="name" value="{{old('name')}}" placeholder="" data-fv-field="name">
+                        <input type="text" class="form-control field-control" name="name" id="name" value="@if(isset($company_info['name'])) {{$company_info['name']}} @else {{old('name')}} @endif"  placeholder="" data-fv-field="name">
                         @if ($errors->first('name'))
                         <div class="alert-error">
                             {{ $errors->first('name') }}
                         </div>
                         @endif </div>
                     </div>
+
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="category" class="field-label">Main Activity:</label>
@@ -91,7 +110,7 @@
                           <option value="">- Select -</option> 
                                   @if(!empty($categories))
   @foreach($categories as $val)
-                          <option value="{{ $val->pk_users_category_id }}" <?php if(old('category')==$val->pk_users_category_id) echo "selected"; ?>>{{ $val->category_name }}</option>
+                          <option value="{{ $val->pk_users_category_id }}" @if(isset($company_info['category'])) @if($company_info['category'] == $val->pk_users_category_id ) selected @endif @else  @if(old('category')== $val->pk_users_category_id) selected @endif @endif >{{ $val->category_name }}</option>
   @endforeach
 @endif
                         </select>
@@ -108,7 +127,7 @@
                           <option value="">- Select -</option>
                                   @if(!empty($activities))
   @foreach($activities as $value)
-                          <option value="{{ $value }}" <?php if(old('activity')==$value) echo "selected"; ?>>{{ $value }}</option>
+                          <option value="{{ $value }}"  <?php if(old('activity')==$value) echo "selected"; ?>>{{ $value }}</option>
   @endforeach
 @endif
                         </select>
@@ -146,6 +165,15 @@
                         <input type="text" class="form-control field-control mobile" name="phone" id="phone" value="{{old('phone')}}" placeholder="local number" data-fv-field="phone">
                       </div>
                     </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="first_name" class="field-label">Upload Company Logo</label>
+                        <div class="custom-file upload-reg">
+                          <input type="file" class="custom-file-input form-control field-control" id="company_logo" name="company_logo">
+                          <label class="custom-file-label" for="company_user_image">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="full-wrap super-user-wrap">
                     <div class="full-wrap"> <img src="{{ URL::asset('front_end/images/icon/super.png') }}" class="d-inline-block"> <span class="super-user d-inline-block align-middle">Main User Details</span> </div>
@@ -162,7 +190,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_first_name" class="field-label">First Name:</label>
-                          <input type="text" class="form-control field-control" name="company_first_name" id="company_first_name" value="{{old('company_first_name')}}"  placeholder="" data-fv-field="company_first_name">
+                          <input type="text" class="form-control field-control" name="company_first_name" id="company_first_name" value="@if(isset($company_info['first_name'])) {{$company_info['first_name']}} @else {{old('company_first_name')}} @endif"   placeholder="" data-fv-field="company_first_name">
                           @if ($errors->first('company_first_name'))
                           <div class="alert-error">
                             {{ $errors->first('company_first_name') }}
@@ -171,8 +199,13 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
+
+
+
+
+
                           <label for="company_last_name" class="field-label">Last Name:</label>
-                          <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="{{old('company_last_name')}}" placeholder="" data-fv-field="company_last_name">
+                          <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="@if(isset($company_info['name'])) {{$company_info['name']}} @else {{old('company_last_name')}} @endif" placeholder="" data-fv-field="company_last_name">
                           @if ($errors->first('company_last_name'))
                           <div class="alert-error">
                             {{ $errors->first('company_last_name') }}
@@ -185,11 +218,11 @@
                           <label class="field-label">Gender : </label>
                           <div class="custom-radio-wrap">
                             <div class="custom-control custom-radio mr-3">
-                              <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male" <?php if(old('company_gender')=="Male") echo "checked"; ?>>
+                              <input type="radio" id="company_gender" name="company_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('company_gender')== "Male") checked @endif @endif >
                               <label class="custom-control-label" for="company_gender">Male</label>
                             </div>
                             <div class="custom-control custom-radio pull-right">
-                              <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female" <?php if(old('company_gender')=="Female") echo "checked"; ?>>
+                              <input type="radio" id="company_gender1" name="company_gender" class="custom-control-input" value="Female"   @if(isset($company_info['gender'])) @if($company_info['gender'] == "Female") checked @endif @else @if(old('company_gender') == "Female") checked @endif @endif >
                               <label class="custom-control-label" for="company_gender1">Female</label>
                             </div>
                           </div>
@@ -395,8 +428,8 @@
                         <select class="form-control js-example-basic-single" id="fk_country_id" name="fk_country_id"  title="Select Country">
                           <option value="">Select Country</option>
                                   @if(!empty($countries))
-  @foreach($countries as $key => $value)    
-                          <option value="{{ $key }}" <?php if(old('fk_country_id')==$key) echo "selected"; ?>>{{ $value }}</option>
+  @foreach($countries as  $value)
+                          <option value="{{ $value->pk_countries_id }}" <?php if(old('fk_country_id')== $value->pk_countries_id) echo "selected"; ?>>{{ $value->name }}</option>
   @endforeach
 @endif
                         </select>
