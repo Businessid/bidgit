@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class RegisterController extends BaseController
 {
@@ -70,7 +71,11 @@ class RegisterController extends BaseController
                 $data['nationality'] = $request->input('company_nationality');
                 $data['email'] = $request->input('company_email');
                 $data['password'] = $request->input('company_password');
-            $request->session()->put('company_info',$data);
+                $image = $this->isUploadProfile($request,'company_userimage');
+                $data['profile_small'] = storage_path('app/upload/profile/sm/'.$image);
+                $data['profile_medium'] = storage_path('app/upload/profile/md/'.$image);
+                $data['profile_large'] = storage_path('app/upload/profile/'.$image);
+                $request->session()->put('company_info',$data);
             return Redirect::to('register/licence')->withInput();
     }
      public function licence()
@@ -262,6 +267,22 @@ class RegisterController extends BaseController
             }           
             return response()->json(['options'=>$data]);
         }
+    }
+        public function isUploadProfile($request,$image)
+    {
+        $newname=$request->input('company_first_name').'-'.$request->input('company_dob').'.png';
+        $path=$request->file($image)->storeAs('upload/profile',$newname);
+        if($request->hasFile($image)) {
+            $image_sm = Image::make(storage_path('app/upload/profile/'.$newname));          
+            $image_sm->resize(150,150);
+            $image_sm->save(storage_path('app/upload/profile/sm/'.$newname));
+        }
+        if($request->hasFile($image)) {
+            $image_md = Image::make(storage_path('app/upload/profile/'.$newname));          
+            $image_md->resize(400,300);
+            $image_md->save(storage_path('app/upload/profile/md/'.$newname));
+        }
+        return $newname;
     }
 
     

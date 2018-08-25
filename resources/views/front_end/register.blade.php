@@ -70,7 +70,7 @@
                 </div>
               </div>
               <fieldset class="company_info" <?php if(@$step==1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
-                {{ Form::open(array('url' => 'register/insert_company', 'id' => 'company_info')) }}
+                {{ Form::open(array('url' => 'register/insert_company', 'id' => 'company_info', 'enctype' => 'multipart/form-data')) }}
                   <input type="hidden" name="tab" value="company_info">
                 <div class="lg-reg reg-form">
                   <div class="row">
@@ -319,7 +319,7 @@
                 {{ Form::close() }}
               </fieldset>
               <fieldset class="licence" <?php if(@$step==2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
-                {{ Form::open(array('url' => 'register/insert_licence')) }}
+                {{ Form::open(array('url' => 'register/insert_licence', 'enctype' => 'multipart/form-data')) }}
                 <div class="lg-reg reg-form pb-5">
                   <div class="row">
                     <div class="col-md-3">
@@ -380,7 +380,7 @@
                 {{ Form::close() }}
               </fieldset>
               <fieldset class="location" <?php if(@$step==3) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
-                {{ Form::open(array('url' => 'register/insert_location')) }}
+                {{ Form::open(array('url' => 'register/insert_location', 'enctype' => 'multipart/form-data')) }}
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-12 location-btns"> 
@@ -548,7 +548,7 @@
               </fieldset>
               <fieldset class="users">
                 <div class="lg-reg reg-form"> 
-                {{ Form::open(array('url' => 'register/post')) }}
+                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
                   <input type="hidden" name="tab" value="users">
                   <div class="user-for-msg text-center mt-2 mb-4 border-0"> 
                     <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> --> 
@@ -779,7 +779,7 @@
                   </div>
               </fieldset>
               <fieldset class="investors">
-                {{ Form::open(array('url' => 'register/post')) }}
+                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
                   <input type="hidden" name="tab" value="investors">
                 <div class="lg-reg reg-form">
                   <div class="row">
@@ -863,7 +863,7 @@
                   {{ Form::close() }} 
               </fieldset>
               <fieldset class="branches">
-                {{ Form::open(array('url' => 'register/post')) }}
+                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
                   <input type="hidden" name="tab" value="branches">
                 <div class="lg-reg reg-form">
                   <div class="row">
