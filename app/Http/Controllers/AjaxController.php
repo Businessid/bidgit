@@ -34,17 +34,17 @@ class AjaxController extends Controller
     public function selectCities(Request $request)
     {
         if($request->ajax()){
-            $cities = DB::table('tbl_countries')->where('parent_id',$request->fk_country_id)->pluck("location","pk_countries_id")->all();
+            $cities =  Countries::where('parent_id',$request->fk_country_id)->get();
             $data = '<option value="">Select City</option> ';
             if(!empty($cities)){
-                foreach($cities as $key => $value){
+                foreach($cities as $citie){
                     $selected="";
-                    if($request->fk_city_id){
-                        if($request->fk_city_id==$key) {
+                    if($request->fk_country_id){
+                        if($request->fk_country_id==$citie->location) {
                             $selected = "selected";
                         }
                     }
-                    $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+                    $data .= '<option value="'.$citie->pk_countries_id .'" '.@$selected.'>'.$citie->location.'</option>';
                 }
             }
             return response()->json(['options'=>$data]);
@@ -52,59 +52,62 @@ class AjaxController extends Controller
     }
     public function selectAreas(Request $request)
     {
+
         if($request->ajax()){
-            $area = DB::table('tbl_countries')->where('parent_id',$request->fk_city_id)->pluck("location","pk_countries_id")->all();
+            $area = Countries::where('parent_id',$request->fk_city_id)->get();
             $data = '<option value="">Select Area</option> ';
             if(!empty($area)){
-                foreach($area as $key => $value){
+                foreach($area as  $value){
                     $selected="";
                     if($request->fk_area_id){
-                        if($request->fk_area_id==$key) {
+                        if($request->fk_area_id==$value->pk_countries_id) {
                             $selected = "selected";
                         }
                     }
-                    $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+                    $data .= '<option value="'.$value->pk_countries_id.'" '.@$selected.'>'.$value->location.'</option>';
                 }
             }
             return response()->json(['options'=>$data]);
         }
+
     }
 
     public function getCurrentCountry(Request $request)
     {
         if($request->ajax()){
-            $countries = DB::table('tbl_countries')->where('name','<>','')->orderBy('name')->pluck("name","pk_countries_id")->all();
+            $countries = Countries::where('name','<>','')->orderBy('name')->get();
             $data = '<option value="">Select Country</option> ';
             if(!empty($countries)){
-                foreach($countries as $key => $value){
+                foreach($countries as  $value){
                     $selected="";
                     if($request->country){
-                        if($request->country==$value) {
+                        if($request->country==$value->name) {
                             $selected = "selected";
-                            $pk_countries_id=$key;
+                            $pk_countries_id=$value->pk_countries_id;
                         }
                     }
-                    $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+                    $data .= '<option value="'.$value->pk_countries_id.'" '.@$selected.'>'.$value->name.'</option>';
                 }
             }
             return response()->json(['options'=>$data,'pk_countries_id'=>$pk_countries_id]);
         }
+
     }
     public function getCurrentCity(Request $request)
     {
         if($request->ajax()){
-            $cities = DB::table('tbl_countries')->where('parent_id',$request->fk_country_id)->pluck("location","pk_countries_id")->all();
+            $cities =  Countries::where('parent_id',$request->fk_country_id)->get();
             $data = '<option value="">Select City</option> ';
             if(!empty($cities)){
-                foreach($cities as $key => $value){
+                foreach($cities as $value){
                     $selected="";
                     if($request->fk_city_id){
-                        if($request->fk_city_id==$value){
+                        if($request->fk_city_id==$value->location){
                             $selected = "selected";
-                            $fk_city_id= $key;
+                            $fk_city_id= $value->pk_countries_id;
                         }
                     }
-                    $data .= '<option value="'.$key.'" '.@$selected.'>'.$value.'</option>';
+                    $data .= '<option value="'.$value->pk_countries_id.'" '.@$selected.'>'.$value->location.'</option>';
                 }
             }
             return response()->json(['options'=>$data,'fk_city_id'=>$fk_city_id]);

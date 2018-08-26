@@ -18,7 +18,7 @@
 <div class="row">
   <div class="full-wrap bg-store pb-4">
     <div class="cmn-container-reg">
-      <div class="row"> 
+      <div class="row">
         <!-- Top content -->
         <div class="top-content">
           <div class="head">Follow the registration steps</div>
@@ -107,7 +107,7 @@
                       <div class="form-group">
                         <label for="category" class="field-label">Main Activity:</label>
                         <select class="form-control js-example-basic-single" id="category" name="category"  title="">
-                          <option value="">- Select -</option> 
+                          <option value="">- Select -</option>
                                   @if(!empty($categories))
   @foreach($categories as $val)
                           <option value="{{ $val->pk_users_category_id }}" @if(isset($company_info['category'])) @if($company_info['category'] == $val->pk_users_category_id ) selected @endif @else  @if(old('category')== $val->pk_users_category_id) selected @endif @endif >{{ $val->category_name }}</option>
@@ -201,16 +201,13 @@
                         <div class="form-group">
 
 
-
-
-
                           <label for="company_last_name" class="field-label">Last Name:</label>
                           <input type="text" class="form-control field-control" name="company_last_name" id="company_last_name" value="@if(isset($company_info['name'])) {{$company_info['name']}} @else {{old('company_last_name')}} @endif" placeholder="" data-fv-field="company_last_name">
                           @if ($errors->first('company_last_name'))
                           <div class="alert-error">
                             {{ $errors->first('company_last_name') }}
                           </div>
-                          @endif 
+                          @endif
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -243,7 +240,7 @@
                           <div class="alert-error">
                             {{ $errors->first('company_designation') }}
                           </div>
-                          @endif 
+                          @endif
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -254,7 +251,7 @@
                           <div class="alert-error">
                             {{ $errors->first('company_dob') }}
                           </div>
-                        @endif 
+                        @endif
                       </div>
                     </div>
                       <div class="col-md-3">
@@ -265,7 +262,7 @@
                           <div class="alert-error">
                             {{ $errors->first('company_mobile') }}
                           </div>
-                          @endif 
+                          @endif
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -280,9 +277,9 @@
                       <div class="form-group">
                         <label for="company_nationality" class="field-label">Nationality:</label>
                         <select class="form-control js-example-basic-single" id="company_nationality" name="company_nationality"  title="">
-                          <option value="">- Select -</option> 
+                          <option value="">- Select -</option>
                                    @if(!empty($countries))
-  @foreach($countries as $val)    
+  @foreach($countries as $val)
                           <option value="{{ $val->pk_countries_id }}" <?php if(old('company_nationality')==$val->pk_countries_id) echo "selected"; ?>>{{ $val->name }}</option>
   @endforeach
 @endif
@@ -337,8 +334,8 @@
                       </div>
                     </div>
                     <div class="row mt-2">
-                      <div class="col-md-9 text-center mx-auto note-super"> 
-                        <!-- <i class="fa fa-lock" aria-hidden="true"></i> --> 
+                      <div class="col-md-9 text-center mx-auto note-super">
+                        <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
                         <i class="fa fa-user-secret" aria-hidden="true"></i>
                         <p>This user has full limit  to use all facilities and functions in your company account in Businessid.net. In addition he can add and manage sub user who can manage your company account. </p>
                         <p>Businessid.net will generate a personal account for this user. </p>
@@ -364,14 +361,14 @@
   @foreach($legalstatus as  $value)
                           <option value="{{ $value->pk_users_legal_status_id }}" <?php if(old('legal_status')==$value->title_en) echo "selected"; ?>>{{ $value->title_en }}</option>
   @endforeach
-@endif                     
+@endif
                         </select>
                       </div>
                          @if ($errors->first('legal_status'))
                           <div class="alert-error">
                             {{ $errors->first('legal_status') }}
                           </div>
-                          @endif 
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -382,7 +379,7 @@
                           <div class="alert-error">
                             {{ $errors->first('license_number') }}
                           </div>
-                          @endif 
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -393,7 +390,7 @@
                           <div class="alert-error">
                             {{ $errors->first('registration_number') }}
                           </div>
-                          @endif 
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -416,7 +413,7 @@
                 {{ Form::open(array('url' => 'register/insert_location', 'enctype' => 'multipart/form-data')) }}
                 <div class="lg-reg reg-form">
                   <div class="row">
-                    <div class="col-md-12 location-btns"> 
+                    <div class="col-md-12 location-btns">
                       <!-- <button class="switch-acc">Add New</button> -->
                       <div class="get-current-location"><i class="fa fa-paper-plane" aria-hidden="true"></i>Use my current location</div>
                     </div>
@@ -438,7 +435,7 @@
                           <div class="alert-error">
                             {{ $errors->first('fk_country_id') }}
                           </div>
-                          @endif 
+                          @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -451,7 +448,7 @@
                         <div class="alert-error">
                             {{ $errors->first('fk_city_id') }}
                           </div>
-                        @endif 
+                        @endif
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -501,7 +498,7 @@
                           </div>
                           @endif
                     </div>
-                    
+
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="street" class="field-label">Street:</label>
@@ -546,7 +543,7 @@
                 </div>
                 {{ Form::close() }}
               </fieldset>
-              <fieldset class="quickregister" <?php if(@$step==5) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+              <fieldset class="quickregister"  @if($step==4) style="display:block" @else  style="display:none !important" @endif >
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-12 mx-auto">
@@ -554,7 +551,7 @@
                         <div class="col-md-6 pr-0">
                           <div class="full-wrap full-register-box first"> <a href="" class="btn mx-auto complete-reg">Register Now</a>
                             <p class="first-desc"> If you registered with this stage you can't get BID's all facility ,and you will not verfied by us until complete necessary requirements.However you will get the basic facility of the BID. </p>
-                            <div class="or-box"> 
+                            <div class="or-box">
                               <!-- <i class="fa fa-hand-o-right" aria-hidden="true"></i> -->OR </div>
                           </div>
                         </div>
@@ -579,31 +576,33 @@
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
               </fieldset>
-              <fieldset class="users">
-                <div class="lg-reg reg-form"> 
-                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
+              <fieldset class="users"  @if($step==5) style="display:block" @else  style="display:none !important" @endif >
+                <div class="lg-reg reg-form">
+                  {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
+                  <div id="users_repeater">
+                    <div data-repeater-list="">
+                      <div data-repeater-item="">
                   <input type="hidden" name="tab" value="users">
-                  <div class="user-for-msg text-center mt-2 mb-4 border-0"> 
-                    <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> --> 
+                  <div class="user-for-msg text-center mt-2 mb-4 border-0">
+                    <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
                     ( You can add multiple users in your account with unlimited facilities for each user or you can specify the area where your user can work on it  …  If not you can <b>skip</b> from this step ) </div>
+                  <div class="add-more-user">
                     <div class="row mt-3">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="user_userimage" class="field-label">Upload Your Photo</label>
-                        <div class="custom-file upload-reg">
-                          <input type="file" class="custom-file-input form-control field-control" id="user_userimage" name="user_userimage[]">
-                          <label class="custom-file-label" for="user_userimage">Choose file</label>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="user_userimage" class="field-label">Upload Your Photo</label>
+                          <div class="custom-file upload-reg">
+                            <input type="file" class="custom-file-input form-control field-control" id="user_userimage" name="user_userimage[]">
+                            <label class="custom-file-label" for="user_userimage">Choose file</label>
+                          </div>
                         </div>
                       </div>
-                    </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_first_name" class="field-label">First Name:</label>
                           <input type="text" class="form-control field-control" name="user_first_name[]" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                           @if ($errors->first('user_first_name'))
-                          <div class="alert-error">
-                            {{ $errors->first('user_first_name') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('user_first_name') }} </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
@@ -611,9 +610,7 @@
                           <label for="user_last_name" class="field-label">Last Name:</label>
                           <input type="text" class="form-control field-control" name="user_last_name[]" id="user_last_name" value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
                           @if ($errors->first('user_last_name'))
-                          <div class="alert-error">
-                            {{ $errors->first('user_last_name') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('user_last_name') }} </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
@@ -640,11 +637,11 @@
                         </div>
                       </div>
                       <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="user_dob" class="field-label">DOB:</label>
-                        <input type="text" class="form-control field-control" name="user_dob[]" id="user_dob" value="" placeholder="" data-fv-field="user_dob">
+                        <div class="form-group">
+                          <label for="user_dob" class="field-label">DOB:</label>
+                          <input type="text" class="form-control field-control datepicker" name="user_dob[]" id="user_dob" value="" placeholder="" data-fv-field="user_dob">
+                        </div>
                       </div>
-                    </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_mobile" class="field-label">Mobile Number:</label>
@@ -660,30 +657,30 @@
                     </div>
                     <div class="row">
                       <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="user_nationality" class="field-label">Nationality:</label>
-                        <select class="form-control js-example-basic-single" id="user_nationality" name="user_nationality[]"  title="">
-                          <option value="">- Select -</option> 
-                                   @if(!empty($countries))
-  @foreach($countries as $key => $value)    
-                          <option value="{{ $key }}" <?php if(old('user_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
-  @endforeach
-@endif
-                        </select>
-                        @if ($errors->first('nationality'))
-                        <div class="alert-error">
-                            {{ $errors->first('nationality') }}
-                          </div>
-                        @endif </div>
-                    </div>
+                        <div class="form-group">
+                          <label for="user_nationality" class="field-label">Nationality:</label>
+                          <select class="form-control js-example-basic-single" id="user_nationality" name="user_nationality[]"  title="">
+                            <option value="">- Select -</option>
+
+                            @if(!empty($countries))
+                              @foreach($countries as $key => $value)
+
+                                <option value="{{ $key }}" <?php if(old('user_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+
+                              @endforeach
+                            @endif
+
+                          </select>
+                          @if ($errors->first('nationality'))
+                            <div class="alert-error"> {{ $errors->first('nationality') }} </div>
+                          @endif </div>
+                      </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="user_email" class="field-label">E-mail:</label>
                           <input type="email" class="form-control field-control" name="user_email[]" id="user_email" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
                           @if ($errors->first('email'))
-                          <div class="alert-error">
-                            {{ $errors->first('email') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('email') }} </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
@@ -691,9 +688,7 @@
                           <label for="user_email_confirmation" class="field-label">Confirm E-mail:</label>
                           <input type="email" class="form-control field-control" name="user_email_confirmation" id="user_email_confirmation" value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
                           @if ($errors->first('user_email_confirmation'))
-                          <div class="alert-error">
-                            {{ $errors->first('user_email_confirmation') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('user_email_confirmation') }} </div>
                           @endif </div>
                       </div>
                       <div class="col-md-3">
@@ -701,9 +696,7 @@
                           <label for="user_password" class="field-label">Password:</label>
                           <input type="password" class="form-control field-control" name="user_password[]" id="user_password" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
                           @if ($errors->first('user_password'))
-                          <div class="alert-error">
-                            {{ $errors->first('user_password') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('user_password') }} </div>
                           @endif </div>
                       </div>
                     </div>
@@ -713,262 +706,324 @@
                           <label for="user_password_confirmation" class="field-label">Confirm Password:</label>
                           <input type="password" class="form-control field-control" name="user_password_confirmation" id="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                           @if ($errors->first('user_password_confirmation'))
-                          <div class="alert-error">
-                            {{ $errors->first('user_password_confirmation') }}
-                          </div>
+                            <div class="alert-error"> {{ $errors->first('user_password_confirmation') }} </div>
                           @endif </div>
                       </div>
                     </div>
-                  <div class="row">
-                    <div class="lg-reg reg-form col-md-12">
-                      <div class="full-wrap user-action-part mt-4">
-                        <div class="label-head"><img src="{{ URL::asset('front_end/images/icon/allow.png') }}" class="mr-1"><span class="d-inline-block">This user authorized to :</span></div>
-                        <div class="full-wrap mt-2">
-                          <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
-                            <input type="radio" id="1" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="1">Delegation of using all the businessid.net functions, facilities and actions.</label>
+                    <div class="row">
+                      <div class="lg-reg reg-form col-md-12">
+                        <div class="full-wrap user-action-part mt-4">
+                          <div class="label-head"><img src="{{ URL::asset('front_end/images/icon/allow.png') }}" class="mr-1"><span class="d-inline-block">This user authorized to :</span></div>
+                          <div class="full-wrap mt-2">
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
+                              <input type="radio" id="permission_type_1" name="permission_type" class="custom-control-input permission_type" value="1">
+                              <label class="custom-control-label" for="permission_type_1">Delegation of using all the businessid.net functions, facilities and actions.</label>
+                            </div>
+                            <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
                           </div>
-                          <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
-                            <input type="radio" id="2" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="2">All E-commerce:</label>
+                          <div class="full-wrap mt-2">
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
+                              <input type="radio" id="permission_type_2" name="permission_type" class="custom-control-input permission_type" value="2">
+                              <label class="custom-control-label" for="permission_type_2">All E-commerce:</label>
+                            </div>
+                            <ul class="list-for-user">
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="products" name="products" type="checkbox" class="checkboxes">
+                                  <label for="products">Add product / Delete product / Manage Product / Edit product… etc.</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="orders" type="checkbox" name="orders" class="checkboxes">
+                                  <label for="orders">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="buying" type="checkbox" name="buying" class="checkboxes">
+                                  <label for="buying">Buy from supplier /   product / Edit the buying order… etc. </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="tender" type="checkbox" name="tender" class="checkboxes">
+                                  <label for="tender">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="jobs" type="checkbox" name="jobs" class="checkboxes">
+                                  <label for="jobs">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
+                                </div>
+                              </li>
+                              <li class="ml-3">
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="advertising" type="checkbox" name="advertising" class="checkboxes">
+                                  <label for="advertising">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
+                                </div>
+                              </li>
+                            </ul>
+                            <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
                           </div>
-                          <ul class="list-for-user">
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e1" type="checkbox" checked="">
-                                <label for="e1">Add product / Delete product / Manage Product / Edit product… etc.</label>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e2" type="checkbox">
-                                <label for="e2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e3" type="checkbox">
-                                <label for="e3">Buy from supplier /   product / Edit the buying order… etc. </label>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e4" type="checkbox">
-                                <label for="e4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e5" type="checkbox">
-                                <label for="e5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
-                              </div>
-                            </li>
-                            <li class="ml-3">
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="e6" type="checkbox">
-                                <label for="e6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
-                              </div>
-                            </li>
-                          </ul>
+                          <div class="full-wrap mt-2">
+                            <div class="custom-control custom-radio d-inline-block acc-choose mt-2 ml-1">
+                              <input type="radio" id="permission_type_3" name="permission_type" class="custom-control-input permission_type" value="3">
+                              <label class="custom-control-label" for="permission_type_3">All Social Media</label>
+                            </div>
+                            <ul class="list-for-user">
+                              <li class="ml-3">
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="social" type="checkbox" name="social" class="checkboxes">
+                                  <label for="social">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox-edit checkbox-primary">
+                                  <input id="chat" type="checkbox" name="chat" class="checkboxes">
+                                  <label for="chat">Chat / Send message</label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="user-for-msg text-center"> <i class="fa fa-info-circle" aria-hidden="true"></i> All user will have a personal account with same user name and password </div>
                         </div>
-                        <div class="full-wrap mt-2">
-                          <div class="custom-control custom-radio d-inline-block acc-choose mt-2 ml-1">
-                            <input type="radio" id="s0" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="s0">All Social Media</label>
-                          </div>
-                          <ul class="list-for-user">
-                            <li class="ml-3">
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="s1" type="checkbox" checked="">
-                                <label for="s1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="checkbox-edit checkbox-primary">
-                                <input id="s2" type="checkbox" checked="">
-                                <label for="s2">Chat / Send message</label>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="user-for-msg text-center"> <i class="fa fa-info-circle" aria-hidden="true"></i> All user will have a personal account with same user name and password </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
-                    <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
-                      <button class="switch-acc">Delete</button>
-                      <button class="switch-acc">Add</button>
+                    <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
+                      <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
+                      <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc"><i class="fa fa-envelope-o" aria-hidden="true"></i> Delete</a>
                     </div>
+                  </div>
+                      </div>
+                    </div>
+
                   </div>
                   <div class="f1-buttons">
                     <button type="button" class="btn btn-previous">Previous</button>
                     <button type="button" class="btn btn-next">Next</button>
                   </div>
-                  {{ Form::close() }} 
-                  </div>
+                  {{ Form::close() }}
+
+                </div>
               </fieldset>
-              <fieldset class="investors">
+              <fieldset class="investors"  @if($step==6) style="display:block" @else  style="display:none !important" @endif>
                 {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
-                  <input type="hidden" name="tab" value="investors">
+                <div id="investors_repeater">
+                  <div data-repeater-list="">
+                    <div data-repeater-item="">
+                <input type="hidden" name="tab" value="investors">
+                <div class="lg-reg reg-form">
+                  <div class="add-more-investor">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_name" class="field-label">Full Name:</label>
+                          <input type="email" class="form-control field-control" name="investor_name[]" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_type" class="field-label">Type:</label>
+                          <select class="form-control js-example-basic-single" name="investor_type[]" id="investor_type">
+                            <option value="">Select Type</option>
+                            <option value="1">Local Sponsor</option>
+                            <option value="2">Owner</option>
+                            <option value="3">Partner</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="share" class="field-label">Percentage Of Share</label>
+                          <input type="text" class="form-control field-control" name="share[]" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_nationality" class="field-label">Nationality:</label>
+                          <select class="form-control js-example-basic-single" id="investor_nationality" name="investor_nationality[]"  title="">
+                            <option value="">- Select -</option>
+
+                            @if(!empty($countries))
+                              @foreach($countries as $key => $value)
+
+                                <option value="{{ $key }}" <?php if(old('investor_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+
+                              @endforeach
+                            @endif
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_mobile" class="field-label">Mobile Number:</label>
+                          <input type="text" class="form-control field-control mobile" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_email" class="field-label">E-mail:</label>
+                          <input type="email" class="form-control field-control" name="investor_email[]" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_id_no" class="field-label">ID No:</label>
+                          <input type="text" class="form-control field-control" name="investor_id_no[]" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="investor_image" class="field-label">Upload Your ID</label>
+                          <div class="custom-file upload-reg">
+                            <input type="file" class="custom-file-input form-control field-control" id="investor_image" name="investor_image[]">
+                            <label class="custom-file-label" for="investor_image">Choose file</label>
+                            <span class="text-muted">*This will not be share with  anyone </span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class=" row" style="margin-bottom: 40px;">
+                      <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc"><i class="fa fa-envelope-o" aria-hidden="true"></i> Delete</a>
+                    </div>
+                  </div>
+                </div>
+                    </div>
+                </div>
+                  <div class="row">
+                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
+                      <a href="javascript:void(0);" data-repeater-create="" class="switch-acc add-user">Add</a>
+                    </div>
+                  </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-previous">Previous</button>
+                  <button type="button" class="btn btn-next">Next</button>
+                </div>
+                </div>
+                {{ Form::close() }}
+              </fieldset>
+              <fieldset class="branches"  @if($step==7) style="display:block" @else  style="display:none !important" @endif>
+                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
+                <div id="branches_repeater">
+                  <div data-repeater-list="">
+                    <div data-repeater-item="">
+                <input type="hidden" name="tab" value="branches">
+                <div class="lg-reg reg-form">
+                  <div class="add-more-branch">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_name" class="field-label">Branch Name:</label>
+                          <input type="text" class="form-control field-control" name="branch_name[]" id="branch_name" value="{{old('branch_name')}}" placeholder="" data-fv-field="branch_name">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_phone" class="field-label">Landline Number:</label>
+                          <input type="text" class="form-control field-control" name="branch_phone[]" id="branch_phone" value="{{old('branch_phone')}}" placeholder="" data-fv-field="branch_phone">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_mobile" class="field-label">Mobile Number:</label>
+                          <input type="text" class="form-control field-control mobile" name="branch_mobile[]" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_fax" class="field-label">Fax Number:</label>
+                          <input type="text" class="form-control field-control" name="branch_fax[]" id="branch_fax" value="{{old('branch_fax')}}" placeholder="" data-fv-field="branch_fax">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_email" class="field-label">Email:</label>
+                          <input type="email" class="form-control field-control" name="branch_email[]" id="branch_email" value="{{old('branch_email')}}" placeholder="" data-fv-field="branch_email">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_city" class="field-label">Location:</label>
+                          <select class="form-control js-example-basic-single" id="branch_city" name="branch_city[]" title="Select Current Location">
+                            <option value="">Select Location</option>
+                            <option value="Dubai" <?php if(old('branch_city')=="Dubai") echo "selected"; ?>>Dubai</option>
+                            <option value="Sharjah" <?php if(old('branch_city')=="Sharjah") echo "selected"; ?>>Sharjah</option>
+                            <option value="Abu Dhabi" <?php if(old('branch_city')=="Abu Dhabi") echo "selected"; ?>>Abu Dhabi</option>
+                            <option value="Ras Al Khaimah" <?php if(old('branch_city')=="Ras Al Khaimah") echo "selected"; ?>>Ras Al Khaimah</option>
+                            <option value="Fujairah" <?php if(old('branch_city')=="Fujairah") echo "selected"; ?>>Fujairah</option>
+                            <option value="Ajman" <?php if(old('branch_city')=="Ajman") echo "selected"; ?>>Ajman</option>
+                            <option value="Umm Al Qawain" <?php if(old('branch_city')=="Umm Al Qawain") echo "selected"; ?>>Umm Al Qawain</option>
+                            <option value="Al Ain" <?php if(old('branch_city')=="Al Ain") echo "selected"; ?>>Al Ain</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="branch_address" class="field-label">Branch Address:</label>
+                          <textarea class="form-control" name="branch_address[]" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class=" row" style="margin-bottom: 40px;">
+                      <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc"><i class="fa fa-envelope-o" aria-hidden="true"></i> Delete</a>
+                    </div>
+                  </div>
+
+                </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
+                      <a href="javascript:void(0);" data-repeater-create="" class="switch-acc add-user">Add</a>
+                    </div>
+                  </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-previous">Previous</button>
+                  <button type="button" class="btn btn-next">Next</button>
+                </div>
+                    </div>
+                {{ Form::close() }}
+              </fieldset>
+              <fieldset class="upload_document" @if($step==8) style="display:block" @else  style="display:none !important" @endif >
+                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
+                <div id="upload_document_repeater">
+                  <div data-repeater-list="">
+                    <div data-repeater-item="">
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="investor_name" class="field-label">Full Name:</label>
-                        <input type="email" class="form-control field-control" name="investor_name[]" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_type" class="field-label">Type:</label>
-                        <select class="form-control js-example-basic-single" name="investor_type[]" id="investor_type">
-                          <option value="">Select Type</option>
-                          <option value="1">Local Sponsor</option>
-                          <option value="2">Owner</option>
-                          <option value="3">Partner</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="share" class="field-label">Percentage Of Share</label>
-                        <input type="text" class="form-control field-control" name="share[]" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_nationality" class="field-label">Nationality:</label>
-                       <select class="form-control js-example-basic-single" id="investor_nationality" name="investor_nationality[]"  title="">
-                          <option value="">- Select -</option> 
-                                   @if(!empty($countries))
-  @foreach($countries as $key => $value)    
-                          <option value="{{ $key }}" <?php if(old('investor_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
-  @endforeach
-@endif
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control mobile" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_email" class="field-label">E-mail:</label>
-                        <input type="email" class="form-control field-control" name="investor_email[]" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_id_no" class="field-label">ID No:</label>
-                        <input type="text" class="form-control field-control" name="investor_id_no[]" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="investor_image" class="field-label">Upload Your ID</label>
+                        <label for="company_logo" class="field-label">Upload Logo</label>
                         <div class="custom-file upload-reg">
-                          <input type="file" class="custom-file-input form-control field-control" id="investor_image" name="investor_image">
-                          <label class="custom-file-label" for="investor_image">Choose file</label>
-                          <span class="text-muted">*This will not be share with  anyone </span> </div>
+                          <input type="file" class="custom-file-input form-control field-control" id="company_logo" name="company_logo">
+                          <label class="custom-file-label" for="company_logo">Choose file</label>
+                        </div>
+                        <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc"><i class="fa fa-envelope-o" aria-hidden="true"></i> Delete</a>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-4">
-                      <button class="switch-acc">Delete</button>
-                      <button class="switch-acc">Add</button>
+                </div>
                     </div>
                   </div>
-                </div>
+                  <div class="row">
+                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
+                      <a href="javascript:void(0);" data-repeater-create="" class="switch-acc add-user">Add</a>
+                    </div>
+                  </div>
+
                 <div class="f1-buttons">
                   <button type="button" class="btn btn-previous">Previous</button>
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
-                  {{ Form::close() }} 
+                    </div>
+                {{ Form::close() }}
               </fieldset>
-              <fieldset class="branches">
-                {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
-                  <input type="hidden" name="tab" value="branches">
-                <div class="lg-reg reg-form">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_name" class="field-label">Branch Name:</label>
-                        <input type="text" class="form-control field-control" name="branch_name[]" id="branch_name" value="{{old('branch_name')}}" placeholder="" data-fv-field="branch_name">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_phone" class="field-label">Landline Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_phone[]" id="branch_phone" value="{{old('branch_phone')}}" placeholder="" data-fv-field="branch_phone">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_mobile" class="field-label">Mobile Number:</label>
-                        <input type="text" class="form-control field-control mobile" name="branch_mobile[]" id="branch_mobile" value="{{old('branch_mobile')}}" placeholder="" data-fv-field="branch_mobile">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_fax" class="field-label">Fax Number:</label>
-                        <input type="text" class="form-control field-control" name="branch_fax[]" id="branch_fax" value="{{old('branch_fax')}}" placeholder="" data-fv-field="branch_fax">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_email" class="field-label">Email:</label>
-                        <input type="email" class="form-control field-control" name="branch_email[]" id="branch_email" value="{{old('branch_email')}}" placeholder="" data-fv-field="branch_email">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_city" class="field-label">Location:</label>
-                        <select class="form-control js-example-basic-single" id="branch_city" name="branch_city[]" title="Select Current Location">
-                          <option value="">Select Location</option>
-                          <option value="Dubai" <?php if(old('branch_city')=="Dubai") echo "selected"; ?>>Dubai</option>
-                          <option value="Sharjah" <?php if(old('branch_city')=="Sharjah") echo "selected"; ?>>Sharjah</option>
-                          <option value="Abu Dhabi" <?php if(old('branch_city')=="Abu Dhabi") echo "selected"; ?>>Abu Dhabi</option>
-                          <option value="Ras Al Khaimah" <?php if(old('branch_city')=="Ras Al Khaimah") echo "selected"; ?>>Ras Al Khaimah</option>
-                          <option value="Fujairah" <?php if(old('branch_city')=="Fujairah") echo "selected"; ?>>Fujairah</option>
-                          <option value="Ajman" <?php if(old('branch_city')=="Ajman") echo "selected"; ?>>Ajman</option>
-                          <option value="Umm Al Qawain" <?php if(old('branch_city')=="Umm Al Qawain") echo "selected"; ?>>Umm Al Qawain</option>
-                          <option value="Al Ain" <?php if(old('branch_city')=="Al Ain") echo "selected"; ?>>Al Ain</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="branch_address" class="field-label">Branch Address:</label>
-                        <textarea class="form-control" name="branch_address[]" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-1">
-                      <button class="switch-acc">Delete</button>
-                      <button class="switch-acc">Add</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="f1-buttons">
-                  <button type="button" class="btn btn-previous">Previous</button>
-                  <button type="button" class="btn btn-next">Next</button>
-                </div>
-                  {{ Form::close() }} 
-              </fieldset>
-              <fieldset class="verify">
+              <fieldset class="verify" @if($step==9) style="display:block" @else  style="display:none !important" @endif >
                 <div class="lg-reg reg-form">
                   <div class="row">
                     <div class="col-md-3">
@@ -987,6 +1042,7 @@
                   <button type="button" class="btn btn-next">Next</button>
                 </div>
               </fieldset>
+
               <fieldset class="logo">
                 <div class="lg-reg reg-form">
                   <div class="row">
@@ -1014,201 +1070,261 @@
   </div>
 </div>
 <!-- Get Map adress -->
-<p id='address'></p> 
+<p id='address'></p>
 
 @include('front_end.modules.footer')
-<script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
-<script type="text/javascript">
-  $(document).ready(function(e) {
-  	  $('#company_dob').datepicker({
-  		format: 'yyyy-mm-dd'
-  	  }).on('changeDate', function(ev){
-      $(this).datepicker('hide');
-  }); 
-  getCategory($("#category").val(),<?php echo @old('activity'); ?>);
-  $('#category').change(function(e) {
-    getCategory(this.value);
-  });
-  getCity($("#fk_country_id").val(),<?= @old('fk_city_id'); ?>);
-  $('#fk_country_id').change(function(e) {
-  	getCity(this.value,);
-  });
-  getArea($("#fk_city_id").val(),<?= @old('fk_area_id'); ?>);
-  $('#fk_city_id').change(function(e) {
-  	getArea(this.value,);
-  });
-  });
-  function getCategory(category,activity='') {
-  var token = $("input[name='_token']").val();
-  $.ajax({
-          url: "<?php echo URL::to('/').'/register/selectActivities'; ?>",
-          method: 'POST',
-          data: {category:category, _token:token,activity:activity},
-          success: function(data) {
-            //alert(data);
-            $("select[name='activity'").html('');
-            $("select[name='activity'").html(data.options);
-            }
-        });
-}
-  function getCity(countryid,cityid='') {
-      var token = $("input[name='_token']").val();
-      $.ajax({
-          url: "<?php echo URL::to('/').'/register/selectCities'; ?>",
-          method: 'POST',
-          data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
-          success: function(data) {
-            $("select[name='fk_city_id'").html('');
-            $("select[name='fk_city_id'").html(data.options);
-            }
+  <script src="{{ URL::asset('front_end/js/jquery.repeter.js') }}"></script>
+  <script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
+  <script type="text/javascript">
+      $(document).ready(function(e) {
+          $('#company_dob').datepicker({
+              format: 'yyyy-mm-dd'
+          }).on('changeDate', function(ev){
+              $(this).datepicker('hide');
+          });
+          $(".permission_type").click(function() {
+              $(this).closest("input").find(".checkboxes").attr('checked', this.checked);
+          });
+          $('.datepicker').datepicker({
+              format: 'yyyy-mm-dd'
+          }).on('changeDate', function(ev){
+              $(this).datepicker('hide');
+          });
+          getCategory($("#category").val(),<?php echo @old('activity'); ?>);
+          $('#category').change(function(e) {
+              getCategory(this.value);
+          });
+          getCity($("#fk_country_id").val(),<?= @old('fk_city_id'); ?>);
+          $('#fk_country_id').change(function(e) {
+              getCity(this.value,);
+          });
+          getArea($("#fk_city_id").val(),<?= @old('fk_area_id'); ?>);
+          $('#fk_city_id').change(function(e) {
+              getArea(this.value,);
+          });
       });
-  }
-  function getArea(cityid,areaid='') {
-      var token = $("input[name='_token']").val();
-      $.ajax({
-          url: "<?php echo URL::to('/').'/register/selectAreas'; ?>",
-          method: 'POST',
-          data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
-          success: function(data) {
-            $("select[name='fk_area_id'").html('');
-            $("select[name='fk_area_id'").html(data.options);
-            }
+      function getCategory(category,activity='') {
+          var token = $("input[name='_token']").val();
+          $.ajax({
+              url: "<?php echo URL::to('/').'/register/selectActivities'; ?>",
+              method: 'POST',
+              data: {category:category, _token:token,activity:activity},
+              success: function(data) {
+                  //alert(data);
+                  $("select[name='activity'").html('');
+                  $("select[name='activity'").html(data.options);
+              }
+          });
+      }
+      function getCity(countryid,cityid='') {
+          var token = $("input[name='_token']").val();
+          $.ajax({
+              url: "<?php echo URL::to('/').'/register/selectCities'; ?>",
+              method: 'POST',
+              data: {fk_country_id:countryid, _token:token,fk_city_id:cityid},
+              success: function(data) {
+                  $("select[name='fk_city_id'").html('');
+                  $("select[name='fk_city_id'").html(data.options);
+              }
+          });
+      }
+      function getArea(cityid,areaid='') {
+          var token = $("input[name='_token']").val();
+          $.ajax({
+              url: "<?php echo URL::to('/').'/register/selectAreas'; ?>",
+              method: 'POST',
+              data: {fk_city_id:cityid, _token:token,fk_area_id:areaid},
+              success: function(data) {
+                  $("select[name='fk_area_id'").html('');
+                  $("select[name='fk_area_id'").html(data.options);
+              }
+          });
+      }
+
+  </script>
+  <script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCb8mnr3T1fcU8UgpCWylaH3rqfVdBsPbk&sensor=false&libraries=places'></script>
+  <script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script>
+  <script>
+      function updateControls(addressComponents) {
+          $('#country').val(addressComponents.country);
+      }
+      initMap();
+      function initMap(lat='',lot=''){
+          if(isNaN(lat)) lat=25.271452;
+          if(isNaN(lot)) lot=55.3244922;
+          $('#map').locationpicker({
+              location: {
+                  latitude:lat,
+                  longitude:lot
+              },
+              radius: 300,
+              zoom: 15,
+              onchanged: function (currentLocation, radius, isMarkerDropped) {
+                  var addressComponents = $(this).locationpicker('map').location.addressComponents;
+                  updateControls(addressComponents);
+              },
+              inputBinding: {
+                  latitudeInput: $('#latitude'),
+                  longitudeInput: $('#longitude'),
+                  radiusInput: $('#us3-radius'),
+                  locationNameInput: $('#map_address')
+              },
+              enableAutocomplete: true,
+              oninitialized: function (component) {
+                  var addressComponents = $(component).locationpicker('map').location.addressComponents;
+                  updateControls(addressComponents);
+              }
+          });
+      }
+
+      // Get Current location //
+      $(document).on('click','.get-current-location',function(e){
+          if (navigator.geolocation){
+              navigator.geolocation.getCurrentPosition(showPosition);
+          }else{
+              x.innerHTML = "Geolocation is not supported by this mobile.";
+          }
+          /*    function showPosition(position){
+                  var lat=position.coords.latitude;
+                  var lot=position.coords.longitude;
+                  initMap(lat,lot);
+              }*/
+
+          function showPosition(position){
+              location.latitude=position.coords.latitude;
+              location.longitude=position.coords.longitude;
+              initMap(location.latitude,location.longitude);
+              var geocoder = new google.maps.Geocoder();
+              var latLng = new google.maps.LatLng(location.latitude, location.longitude);
+
+              if (geocoder) {
+                  geocoder.geocode({ 'latLng': latLng}, function (results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+                          console.log(results);
+                          $('#address').html(results[0].formatted_address);
+                          var street = results[1].formatted_address;
+                          var res = street.split("-");
+                          $('#street').val(res[0]);
+                          var country = results[5].formatted_address;
+                          var city = res[1];
+                          var areastr = results[2].formatted_address;
+                          var ar = areastr.split("-");
+                          var area = ar[0];
+                          /* Country */
+                          country=country.trim();
+                          city=city.trim();
+                          area=area.trim();
+                          $("#fk_country_id").html("<option>"+country+"</option>");
+                          $("#fk_city_id").html("<option>"+city+"</option>");
+                          $("#fk_area_id").html("<option>"+area+"</option>");
+
+                          var token = $("input[name='_token']").val();
+                          $.ajax({
+                              url: "<?php echo URL::to('/').'/register/getCurrentCountry'; ?>",
+                              method: 'POST',
+                              data: {country:country, _token:token},
+                              success: function(data) {
+                                  $("select[name='fk_country_id'").html('');
+                                  $("select[name='fk_country_id'").html(data.options);
+                                  fetch_current_city(data.pk_countries_id,city,area);
+                              }
+                          });
+                      }
+                      else {
+                          $('#address').html('Geocoding failed: '+status);
+                          console.log("Geocoding failed: " + status);
+                      }
+                  }); //geocoder.geocode()
+              }
+          } //showPosition
+
       });
-  }
 
-</script> 
-<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyCSHFS1ww5AOq1xAz1DAicbxn7XnAzFOfk&sensor=false&libraries=places'></script> 
-<script src="{{ URL::asset('front_end/js/locationpicker.jquery.js') }}"></script> 
-<script>
-function updateControls(addressComponents) {
-  $('#country').val(addressComponents.country);
-}
-initMap();
-function initMap(lat='',lot=''){
-  if(isNaN(lat)) lat=25.271452;
-  if(isNaN(lot)) lot=55.3244922;
-  $('#map').locationpicker({
-    location: {
-      latitude:lat,
-      longitude:lot 
-    },
-    radius: 300,
-    zoom: 15,
-    onchanged: function (currentLocation, radius, isMarkerDropped) {
-      var addressComponents = $(this).locationpicker('map').location.addressComponents;
-      updateControls(addressComponents);
-    },
-    inputBinding: {
-      latitudeInput: $('#latitude'),
-      longitudeInput: $('#longitude'),
-      radiusInput: $('#us3-radius'),
-      locationNameInput: $('#map_address')
-    },
-    enableAutocomplete: true,
-    oninitialized: function (component) {
-      var addressComponents = $(component).locationpicker('map').location.addressComponents;
-      updateControls(addressComponents);
-    }
-  });
-}
-
-// Get Current location //
-$(document).on('click','.get-current-location',function(e){
-    if (navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }else{ 
-        x.innerHTML = "Geolocation is not supported by this mobile.";
-    }
-/*    function showPosition(position){
-        var lat=position.coords.latitude;
-        var lot=position.coords.longitude;
-        initMap(lat,lot);
-    }*/
-
-    function showPosition(position){ 
-    location.latitude=position.coords.latitude;
-    location.longitude=position.coords.longitude;
-    initMap(location.latitude,location.longitude);
-    var geocoder = new google.maps.Geocoder();
-    var latLng = new google.maps.LatLng(location.latitude, location.longitude);
-
-    if (geocoder) {
-    geocoder.geocode({ 'latLng': latLng}, function (results, status) {
-       if (status == google.maps.GeocoderStatus.OK) {
-         console.log(results); 
-         $('#address').html(results[0].formatted_address);
-         var street = results[1].formatted_address;
-         var res = street.split("-");
-         $('#street').val(res[0]);
-         var country = results[5].formatted_address;
-         var city = res[1]; 
-         var areastr = results[2].formatted_address;
-         var ar = areastr.split("-");
-         var area = ar[0]; 
-         /* Country */
-         country=country.trim();
-         city=city.trim();
-         area=area.trim();
-         $("#fk_country_id").html("<option>"+country+"</option>");
-         $("#fk_city_id").html("<option>"+city+"</option>");
-         $("#fk_area_id").html("<option>"+area+"</option>");
-
-         var token = $("input[name='_token']").val();
-         $.ajax({
-          url: "<?php echo URL::to('/').'/register/getCurrentCountry'; ?>",
-          method: 'POST',
-          data: {country:country, _token:token},
-          success: function(data) {
-            $("select[name='fk_country_id'").html('');
-            $("select[name='fk_country_id'").html(data.options);
-            fetch_current_city(data.pk_countries_id,city,area);
-            }
+      function fetch_current_city(countryid,city,area){
+          var token = $("input[name='_token']").val();
+          $.ajax({
+              url: "<?php echo URL::to('/').'/register/getCurrentCity'; ?>",
+              method: 'POST',
+              data: {fk_country_id:countryid, _token:token,fk_city_id:city},
+              success: function(data) {
+                  $("select[name='fk_city_id'").html('');
+                  $("select[name='fk_city_id'").html(data.options);
+                  fetch_current_area(data.fk_city_id,area);
+              }
           });
-       }
-       else {
-        $('#address').html('Geocoding failed: '+status);
-        console.log("Geocoding failed: " + status);
-       }
-    }); //geocoder.geocode()
-  }      
-} //showPosition
-
-});
-
-function fetch_current_city(countryid,city,area){
-         var token = $("input[name='_token']").val();
-         $.ajax({
-          url: "<?php echo URL::to('/').'/register/getCurrentCity'; ?>",
-          method: 'POST',
-          data: {fk_country_id:countryid, _token:token,fk_city_id:city},
-          success: function(data) {
-            $("select[name='fk_city_id'").html('');
-            $("select[name='fk_city_id'").html(data.options);
-            fetch_current_area(data.fk_city_id,area);
-            }
+      }
+      function fetch_current_area(cityid,area){
+          var token = $("input[name='_token']").val();
+          $.ajax({
+              url: "<?php echo URL::to('/').'/register/getCurrentArea'; ?>",
+              method: 'POST',
+              data: {fk_city_id:cityid, _token:token,fk_area_id:area},
+              success: function(data) {
+                  $("select[name='fk_area_id'").html('');
+                  $("select[name='fk_area_id'").html(data.options);
+              }
           });
-}
-function fetch_current_area(cityid,area){
-         var token = $("input[name='_token']").val();
-         $.ajax({
-          url: "<?php echo URL::to('/').'/register/getCurrentArea'; ?>",
-          method: 'POST',
-          data: {fk_city_id:cityid, _token:token,fk_area_id:area},
-          success: function(data) {
-            $("select[name='fk_area_id'").html('');
-            $("select[name='fk_area_id'").html(data.options);
-            }
+      }
+
+
+      $(document).ready(function () {
+          $('#users_repeater').repeater({repeaters: [{
+                  // (Required)
+                  // Specify the jQuery selector for this nested repeater
+                  selector: '.inner-repeater'
+              }],
+              show:function(){$(this).slideDown()},
+              hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
+
           });
-}
+
+          $('#investors_repeater').repeater({repeaters: [{
+                  // (Required)
+                  // Specify the jQuery selector for this nested repeater
+                  selector: '.inner-repeater'
+              }],
+              show:function(){$(this).slideDown()},
+              hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
+
+          });
+
+
+          $('#branches_repeater').repeater({repeaters: [{
+                  // (Required)
+                  // Specify the jQuery selector for this nested repeater
+                  selector: '.inner-repeater'
+              }],
+              show:function(){$(this).slideDown()},
+              hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
+
+          });
+
+
+          $('#upload_document_repeater').repeater({repeaters: [{
+                  // (Required)
+                  // Specify the jQuery selector for this nested repeater
+                  selector: '.inner-repeater'
+              }],
+              show:function(){$(this).slideDown()},
+              hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
+
+          });
 
 
 
-</script> 
-</script> 
-<script src="{{ URL::asset('front_end/js/prism.js') }}"></script> 
-<script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script> 
-<script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
-<script type="text/javascript">
-</script>
+
+      });
+
+
+
+
+
+  </script>
+
+  <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
+  <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
+  <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
+  <script type="text/javascript">
+  </script>
 </body>
 </html>

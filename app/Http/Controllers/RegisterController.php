@@ -43,7 +43,7 @@ class RegisterController extends BaseController
         $company_info = $request->session()->get('company_info');
         $categories =  Users_Category::orderBy('category_name','ASC')->get();
         $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']=1;
+        $data['step']= 5 ;
         $data['complete_step'] = $complete_step;
         return view('front_end.register',compact('categories','countries','company_info'),$data);
     }
