@@ -13,7 +13,7 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('tbl_companies', function (Blueprint $table) {
             $table->increments('pk_companies_id')->nullable();
             $table->string('name', 100)->nullable();
             $table->string('category')->nullable();

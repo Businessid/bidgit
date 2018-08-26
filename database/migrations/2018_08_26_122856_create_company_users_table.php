@@ -13,8 +13,8 @@ class CreateCompanyUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_users', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tbl_company_users', function (Blueprint $table) {
+            $table->increments('pk_company_users_id');
             $table->string('fk_users_id');
             $table->string('fk_companies_id');
             $table->string('creator');
