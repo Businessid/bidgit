@@ -40,14 +40,25 @@ class RegisterController extends BaseController
     
      public function company(Request $request)
     {
-        $complete_step = $request->session()->get('complete_step');
-        $company_info = $request->session()->get('company_info');
-        $categories =  Users_Category::orderBy('category_name','ASC')->get();
-        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']= 5 ;
-        $data['complete_step'] = $complete_step;
-        return view('front_end.register',compact('categories','countries','company_info'),$data);
+//        $complete_step = $request->session()->get('complete_step');
+//        $company_info = $request->session()->get('company_info');
+//        $categories =  Users_Category::orderBy('category_name','ASC')->get();
+//        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+//        $data['step']= 5 ;
+//        $data['complete_step'] = $complete_step;
+//        return view('front_end.register',compact('categories','countries','company_info'),$data);
 
+         $data = "[{\"pk_users_legal_status_id\":1,\"orderby\":1,\"title_en\":\"LLC\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2014-05-06 00:00:00\"},{\"pk_users_legal_status_id\":2,\"orderby\":2,\"title_en\":\"Service Agency\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2014-05-06 00:00:00\"},{\"pk_users_legal_status_id\":3,\"orderby\":3,\"title_en\":\"FZE\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2014-08-28 15:06:26\"},{\"pk_users_legal_status_id\":4,\"orderby\":4,\"title_en\":\"Group\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2015-01-08 13:49:22\"},{\"pk_users_legal_status_id\":5,\"orderby\":5,\"title_en\":\"FZ-LLC\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2015-01-28 11:24:06\"},{\"pk_users_legal_status_id\":6,\"orderby\":6,\"title_en\":\"Civil company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2015-02-24 12:14:04\"},{\"pk_users_legal_status_id\":7,\"orderby\":7,\"title_en\":\"Partnership Company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2015-03-05 14:18:27\"},{\"pk_users_legal_status_id\":8,\"orderby\":8,\"title_en\":\"Foreign Recognized Company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2015-03-15 16:58:42\"},{\"pk_users_legal_status_id\":9,\"orderby\":9,\"title_en\":\"Private Joint Stock Company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2017-12-19 00:00:00\"},{\"pk_users_legal_status_id\":10,\"orderby\":10,\"title_en\":\"Public Joint Stock Company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2017-12-19 00:00:12\"},{\"pk_users_legal_status_id\":11,\"orderby\":11,\"title_en\":\"Holding Company\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"2017-12-19 06:14:15\"},{\"pk_users_legal_status_id\":12,\"orderby\":12,\"title_en\":\"Sole Proprietorship\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"0000-00-00 00:00:00\"},{\"pk_users_legal_status_id\":13,\"orderby\":13,\"title_en\":\"Professional Trade Licence\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"0000-00-00 00:00:00\"},{\"pk_users_legal_status_id\":14,\"orderby\":14,\"title_en\":\"Professional Freelance Licence\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"0000-00-00 00:00:00\"},{\"pk_users_legal_status_id\":15,\"orderby\":15,\"title_en\":\"LLP\",\"description_en\":\"\",\"is_active\":\"Y\",\"added_date\":\"0000-00-00 00:00:00\"}]";
+         $data = json_decode($data, true);
+         for($i= 0; $i < count($data) ; $i++){
+             echo "[";
+             foreach ($data[$i] as $key => $value){
+                 if($key != "added_date"){
+                 echo ' "'.$key.'" => "'. $value . '",';
+                 }
+             }
+             echo "],";
+         }
 
 
     }

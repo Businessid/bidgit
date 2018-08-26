@@ -78,3 +78,10 @@ Route::post('/submit', function (Request $request) {
 
     return redirect('/');
 });
+
+
+
+
+
+
+Route::get('countries', 'AjaxController@AllCountry');
