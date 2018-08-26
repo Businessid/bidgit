@@ -17,6 +17,7 @@ use App\Countries;
 use App\Users_Legal_Status;
 use App\Users;
 use App\Users_Activities;
+use App\UsersCompanies;
 use File;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -39,13 +40,20 @@ class RegisterController extends BaseController
     
      public function company(Request $request)
     {
-        $complete_step = $request->session()->get('complete_step');
-        $company_info = $request->session()->get('company_info');
-        $categories =  Users_Category::orderBy('category_name','ASC')->get();
-        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']= 5 ;
-        $data['complete_step'] = $complete_step;
-        return view('front_end.register',compact('categories','countries','company_info'),$data);
+//        $complete_step = $request->session()->get('complete_step');
+//        $company_info = $request->session()->get('company_info');
+//        $categories =  Users_Category::orderBy('category_name','ASC')->get();
+//        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+//        $data['step']= 5 ;
+//        $data['complete_step'] = $complete_step;
+//        return view('front_end.register',compact('categories','countries','company_info'),$data);
+
+         $UsersCompany = UsersCompanies::where('fk_companies_id',"1")->first();
+         dd($UsersCompany->Users_List);
+
+
+
+
     }
 
 
