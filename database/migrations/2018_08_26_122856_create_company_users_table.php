@@ -15,10 +15,10 @@ class CreateCompanyUsersTable extends Migration
     {
         Schema::create('company_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('user_id');
-            $table->increments('company_id');
-            $table->increments('creator');
-            $table->increments('permissions');
+            $table->string('user_id');
+            $table->string('company_id');
+            $table->string('creator');
+            $table->string('permissions');
             $table->timestamps();
         });
     }
