@@ -17,22 +17,7 @@ class AjaxController extends Controller
         $activities =  Users_Legal_Status::all();
 
         return response()->json($activities);
-//        if($request->ajax()){
-//            $activities =  Users_Activities::where('fk_users_category_id',$request->category)->get();
-//            $data = '';
-//            if(!empty($activities)){
-//                foreach($activities as $value){
-//                    $selected="";
-//                    if($request->activity){
-//                        if($request->activity == $value->fk_users_category_id) {
-//                            $selected = "selected";
-//                        }
-//                    }
-//                    $data .= '<option value="'.$value->fk_users_category_id.'" '.@$selected.'>'.$value->title.'</option>';
-//                }
-//            }
-//            return response()->json(['options'=>$data]);
-//        }
+
     }
 
     public function selectActivities(Request $request)
