@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Database\Seeds\Activities_Table_Seed;
+use Database\Seeds\Categories_Table_Seed;
+use Database\Seeds\Countries_Table_Seed;
+use Database\Seeds\Legal_Status_Table_Seed;
+
 
 class DatabaseSeeder extends Seeder
 {
