@@ -19,6 +19,7 @@ class MoreRegisterController extends Controller
         $validatedData = $request->validate([
             'user_first_name' => 'required'
         ]);
-        return request()->all(); die;
+        $name=$request->input('user_first_name');
+        print_r($name);die;
     }
 }

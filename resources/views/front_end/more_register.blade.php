@@ -97,7 +97,7 @@ top: 5px;
                               <div class="form-group">
                                 <label for="user_userimage" class="field-label">Upload Your Photo</label>
                                 <div class="custom-file upload-reg">
-                                  <input type="file" class="custom-file-input form-control field-control" id="user_userimage" name="user_userimage[]">
+                                  <input type="file" class="custom-file-input form-control field-control" name="user_userimage[]">
                                   <label class="custom-file-label" for="user_userimage">Choose file</label>
                                 </div>
                               </div>
@@ -105,14 +105,14 @@ top: 5px;
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="user_first_name" class="field-label">First Name:</label>
-                                <input type="text" class="form-control field-control" name="user_first_name" id="user_first_name" value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
+                                <input type="text" class="form-control field-control" name="user_first_name[]"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                              
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="user_last_name" class="field-label">Last Name:</label>
-                                <input type="text" class="form-control field-control" name="user_last_name[]" id="user_last_name" value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
+                                <input type="text" class="form-control field-control" name="user_last_name[]"  value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
                                 @if ($errors->first('user_last_name'))
                                 <div class="alert-error"> {{ $errors->first('user_last_name') }} </div>
                               @endif </div>
@@ -122,7 +122,7 @@ top: 5px;
                                 <label class="field-label">Gender : </label>
                                 <div class="custom-radio-wrap">
                                   <div class="custom-control custom-radio mr-3">
-                                    <input type="radio" id="user_gender" name="user_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('user_gender')== "Male") checked @endif @endif >
+                                    <input type="radio" name="user_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('user_gender')== "Male") checked @endif @endif >
                                     <label class="custom-control-label" for="user_gender">Male</label>
                                   </div>
                                   <div class="custom-control custom-radio pull-right">
@@ -142,7 +142,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_designation" class="field-label">Designation:</label>
-                            <input type="text" class="form-control field-control" name="user_designation[]" id="user_designation" value="{{old('user_designation')}}" placeholder="" data-fv-field="user_designation">
+                            <input type="text" class="form-control field-control" name="user_designation[]" value="{{old('user_designation')}}" placeholder="" data-fv-field="user_designation">
                             @if ($errors->first('user_designation'))
                             <div class="alert-error">
                               {{ $errors->first('user_designation') }}
@@ -153,7 +153,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_dob" class="field-label">DOB:</label>
-                            <input type="text" class="form-control field-control datepicker" name="user_dob[]" id="user_dob" value="" placeholder="" data-fv-field="user_dob">
+                            <input type="text" class="form-control field-control datepicker" name="user_dob[]" value="" placeholder="" data-fv-field="user_dob">
                             @if ($errors->first('user_dob'))
                             <div class="alert-error">
                               {{ $errors->first('user_dob') }}
@@ -164,7 +164,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_mobile" class="field-label">Mobile Number:</label>
-                            <input type="text" class="form-control field-control mobile" name="user_mobile[]" id="user_mobile" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
+                            <input type="text" class="form-control field-control mobile" name="user_mobile[]" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
                             @if ($errors->first('user_mobile'))
                             <div class="alert-error">
                               {{ $errors->first('user_mobile') }}
@@ -175,7 +175,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_phone" class="field-label">Landline Number:</label>
-                            <input type="text" class="form-control field-control" name="user_phone[]" id="user_phone" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
+                            <input type="text" class="form-control field-control" name="user_phone[]" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
                             @if ($errors->first('user_phone'))
                             <div class="alert-error">
                               {{ $errors->first('user_phone') }}
@@ -188,7 +188,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_nationality" class="field-label">Nationality:</label>
-                            <select class="form-control js-example-basic-single" id="user_nationality" name="user_nationality[]"  title="">
+                            <select class="form-control js-example-basic-single" name="user_nationality[]"  title="">
                               <option value="">- Select -</option>
                               @if(!empty($countries))
                               @foreach($countries as $val)
@@ -203,7 +203,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_email" class="field-label">E-mail:</label>
-                            <input type="email" class="form-control field-control" name="user_email[]" id="user_email" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
+                            <input type="email" class="form-control field-control" name="user_email[]" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
                             @if ($errors->first('user_email'))
                             <div class="alert-error"> {{ $errors->first('user_email') }} </div>
                           @endif </div>
@@ -211,7 +211,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_email_confirmation" class="field-label">Confirm E-mail:</label>
-                            <input type="email" class="form-control field-control" name="user_email_confirmation" id="user_email_confirmation" value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
+                            <input type="email" class="form-control field-control" name="user_email_confirmation"  value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
                             @if ($errors->first('user_email_confirmation'))
                             <div class="alert-error"> {{ $errors->first('user_email_confirmation') }} </div>
                           @endif </div>
@@ -219,7 +219,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_password" class="field-label">Password:</label>
-                            <input type="password" class="form-control field-control" name="user_password[]" id="user_password" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
+                            <input type="password" class="form-control field-control" name="user_password[]" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
                             @if ($errors->first('user_password'))
                             <div class="alert-error"> {{ $errors->first('user_password') }} </div>
                           @endif </div>
@@ -229,7 +229,7 @@ top: 5px;
                         <div class="col-md-3">
                           <div class="form-group">
                             <label for="user_password_confirmation" class="field-label">Confirm Password:</label>
-                            <input type="password" class="form-control field-control" name="user_password_confirmation" id="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
+                            <input type="password" class="form-control field-control" name="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
                             @if ($errors->first('user_password_confirmation'))
                             <div class="alert-error"> {{ $errors->first('user_password_confirmation') }} </div>
                           @endif </div>
