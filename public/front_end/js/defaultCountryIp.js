@@ -14,7 +14,7 @@
       callback(countryCode);
     });
   },
-  utilsScript: "{{ URL::asset('front_end/js/utils.js') }}" // just for formatting/placeholders etc
+  utilsScript: "/front_end/js/utils.js" // just for formatting/placeholders etc
 });
  $(".mobile").intlTelInput({
   hiddenInput: "full_phone",
@@ -27,7 +27,7 @@
       callback(countryCode);
     });
   },
-  utilsScript: "{{ URL::asset('front_end/js/utils.js') }}" // just for formatting/placeholders etc
+  utilsScript: "/front_end/js/utils.js" // just for formatting/placeholders etc
 });
 /*
  * Let us validate the phone number
