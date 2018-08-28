@@ -40,6 +40,9 @@ Route::post('register/insert_location', 'RegisterController@insert_location');
 // Complete Register Page ( Quick Registration )
 Route::get('register/qregister', 'RegisterController@qregister');
 
+// Create Users Uata From  Register Page
+Route::get('register/users', 'MoreRegisterController@users');
+Route::post('register/insert_users', 'MoreRegisterController@insert_users');
 
 
 /* Select Ajax From Register Page  */
