@@ -14,12 +14,18 @@ class MoreRegisterController extends Controller
         $data['complete_step'] = 5;
         return view('front_end.more_register',compact('countries'),$data);
     }
+
+
     	public function insert_users(Request $request)
-    { 
+    {
+
         $validatedData = $request->validate([
-            'user_first_name' => 'required'
+            'users.*.user_first_name' => 'required',
         ]);
-        $name=$request->input('user_first_name');
-        print_r($name);die;
+        $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+        $data['step']=5;
+        $data['complete_step'] = 5;
+        return view('front_end.more_register',compact('countries'),$data);
+
     }
 }

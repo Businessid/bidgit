@@ -9,7 +9,7 @@ use App\Companies;
 
 class UsersCompanies extends Model
 {
-    protected $table = "company_users";
+    protected $table = "tbl_company_users";
 
 
     public function Companies_List(){

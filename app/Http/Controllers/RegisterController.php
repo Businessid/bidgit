@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Companies;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -60,7 +61,6 @@ class RegisterController extends BaseController
 //             }
 //             echo "],";
 //         }
-
 
     }
 
@@ -305,6 +305,9 @@ class RegisterController extends BaseController
             return response()->json(['options'=>$data]);
         }
     }
+
+
+
 
     public function getCurrentCountry(Request $request)
     {

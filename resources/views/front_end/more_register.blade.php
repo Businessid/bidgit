@@ -86,7 +86,8 @@ top: 5px;
           <div class="lg-reg reg-form">
             {{ Form::open(array('url' => 'register/insert_users', 'enctype' => 'multipart/form-data')) }}
               <div id="users_repeater">
-                <div data-repeater-list="">
+                <div data-repeater-list="users">
+                <div data-repeater-item>
                   <div class="user-for-msg text-center mt-2 mb-4 border-0">
                     ( You can add multiple users in your account with unlimited facilities for each user or you can specify the area where your user can work on it  …  If not you can <b>skip</b> from this step )
                   </div>
@@ -317,12 +318,13 @@ top: 5px;
                       </div>
                       <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
                       <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
-                      <a href="javascript:void(0);" class="btn switch-acc remove-user"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                      <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc remove-user"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <a href="javascript:void(0);" class="btn switch-acc create-new-user"><i class="fa fa-user-plus" aria-hidden="true"></i> Add New</a>
+                </div>
+                <a href="javascript:void(0);" data-repeater-create class="btn switch-acc create-new-user"><i class="fa fa-user-plus" aria-hidden="true"></i> Add New</a>
               </div>
               <div class="f1-buttons">
                 <button type="button" class="btn btn-previous">Previous</button>
@@ -776,13 +778,28 @@ top: 5px;
   });
   }
   $(document).ready(function () {
-  $(document).on('click', '.create-new-user', function (e) {
-    var newUserForm=$('.add-more-user').html();
-    $(".section-users").append('<div class="add-more-user">'+newUserForm+'</a>');
-  });
-  $(document).on('click', '.remove-user', function (e) {
-   $(this).closest(".add-more-user").remove().fadeOut();
-  });
+
+
+
+
+      // Validation JS
+      $("#m_form_1").validate({
+          rules: {
+              date: {required: !0, date: !0},
+              daterange: {required: !0},
+              datetime: {required: !0},
+              time: {required: !0},
+
+              select2: {required: !0},
+              typeahead: {required: !0},
+              switch: {required: !0},
+              markdown: {required: !0}
+          }, invalidHandler: function (e, t) {
+              $("#m_form_1_msg").removeClass("m--hide").show(), mUtil.scrollTo("m_form_1_msg", -200)
+          }, submitHandler: function (e) {
+          }
+      })
+  }
 
 
 

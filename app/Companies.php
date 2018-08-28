@@ -7,11 +7,11 @@ use App\UsersCompanies;
 
 class Companies extends Model
 {
-    protected $table = "companies";
+    protected $table = "tbl_companies";
 
 
-    public function Users(){
-        return $this->hasMany(UsersCompanies::class, 'fk_company_id', 'pk_companies_id');
+    public function Users_Companies(){
+        return $this->hasMany(UsersCompanies::class, 'fk_companies_id', 'pk_companies_id');
     }
 
 }
