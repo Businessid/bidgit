@@ -84,7 +84,7 @@ top: 5px;
         </div>
         <fieldset class="users"  @if($step==5) style="display:block" @else  style="display:none !important" @endif >
           <div class="lg-reg reg-form">
-            {{ Form::open(array('url' => 'register/insert_users', 'enctype' => 'multipart/form-data')) }}
+            {{ Form::open(array('url' => 'register/insert_users', 'enctype' => 'multipart/form-data','id'=>'users')) }}
               <div id="users_repeater">
                 <div data-repeater-list="users">
                 <div data-repeater-item>
@@ -106,14 +106,14 @@ top: 5px;
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="user_first_name" class="field-label">First Name:</label>
-                                <input type="text" class="form-control field-control" name="user_first_name[]"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
+                                <input type="text" class="form-control field-control" name="user_first_name"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                              
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label for="user_last_name" class="field-label">Last Name:</label>
-                                <input type="text" class="form-control field-control" name="user_last_name[]"  value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
+                                <input type="text" class="form-control field-control" name="user_last_name"  value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
                                 @if ($errors->first('user_last_name'))
                                 <div class="alert-error"> {{ $errors->first('user_last_name') }} </div>
                               @endif </div>
@@ -593,6 +593,7 @@ top: 5px;
   <p id='address'></p>
   @include('front_end.modules.footer')
   <script src="{{ URL::asset('front_end/js/jquery.repeter.js') }}"></script>
+  <script src="{{ URL::asset('front_end/js/jquery.validate.min.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/bootstrap-datepicker.min.js') }}"></script>
   <script type="text/javascript">
   $(document).ready(function(e) {
@@ -783,9 +784,9 @@ top: 5px;
 
 
       // Validation JS
-      $("#m_form_1").validate({
+      $("#users").validate({
           rules: {
-              date: {required: !0, date: !0},
+              user_first_name: {required: !0},
               daterange: {required: !0},
               datetime: {required: !0},
               time: {required: !0},
@@ -798,8 +799,8 @@ top: 5px;
               $("#m_form_1_msg").removeClass("m--hide").show(), mUtil.scrollTo("m_form_1_msg", -200)
           }, submitHandler: function (e) {
           }
-      })
-  }
+      });
+
 
 
 
