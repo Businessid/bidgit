@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Countries;
+use App\Users;
 
 class MoreRegisterController extends Controller
 {
@@ -28,4 +29,13 @@ class MoreRegisterController extends Controller
         return view('front_end.more_register',compact('countries'),$data);
 
     }
+
+    	public function authoriszation(Request $request)
+    {
+        $data['email']  = $request->username;
+		$data['password']   = $request->password;
+		$user = Users::where($data)->get();
+		return response()->json(['user'=>$user]);
+    }
+
 }

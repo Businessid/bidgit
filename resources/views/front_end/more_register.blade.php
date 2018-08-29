@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/reg-wizard.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker3.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/modal.css') }}">
 <style type="text/css">
   .store-cat-nav{
     display: none;
@@ -106,7 +107,7 @@
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_first_name" class="field-label">First Name:</label>
-                                    <input id="user_first_name" type="text" data-validation="length alphanumeric" data-validation-length="min4" class="form-control field-control" name="user_first_name"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
+                                    <input id="user_first_name" type="text" data-validation="length alphanumeric" data-validation-length="min4" class="form-control field-control user_first_name" name="user_first_name"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
 
                                   </div>
                                 </div>
@@ -123,7 +124,7 @@
                                     <label class="field-label">Gender : </label>
                                     <div class="custom-radio-wrap">
                                       <div class="custom-control custom-radio mr-3">
-                                        <input type="radio" name="user_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('user_gender')== "Male") checked @endif @endif >
+                                        <input type="radio" id="user_gender" name="user_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('user_gender')== "Male") checked @endif @endif >
                                         <label class="custom-control-label" for="user_gender">Male</label>
                                       </div>
                                       <div class="custom-control custom-radio pull-right">
@@ -235,6 +236,23 @@
                                       <div class="alert-error"> {{ $errors->first('user_password_confirmation') }} </div>
                                     @endif </div>
                                 </div>
+
+
+
+
+
+                                  <div class="col-md-3">
+                                  <div class="form-group">
+                                
+                                    <input type="text" class="form-control field-control" name="auth_type" value="{{old('auth_type')}}" placeholder="">
+                                    @if ($errors->first('auth_type'))
+                                      <div class="alert-error"> {{ $errors->first('auth_type') }} </div>
+                                    @endif </div>
+                                </div>
+
+
+
+
                               </div>
                               <div class="row">
                                 <div class="lg-reg reg-form col-md-12">
@@ -255,38 +273,38 @@
                                       <ul class="list-for-user">
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products" name="products" type="checkbox" class="checkboxes">
-                                            <label for="products">Add product / Delete product / Manage Product / Edit product… etc.</label>
+                                            <input id="products1"  name="auth_ecommerce" type="checkbox" class="checkboxes" value="Add product / Delete product / Manage Product / Edit product… etc.">
+                                            <label for="products1">Add product / Delete product / Manage Product / Edit product… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="orders" type="checkbox" name="orders" class="checkboxes">
-                                            <label for="orders">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
+                                            <input id="products2" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.">
+                                            <label for="products2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="buying" type="checkbox" name="buying" class="checkboxes">
-                                            <label for="buying">Buy from supplier /   product / Edit the buying order… etc. </label>
+                                            <input id="products3" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Buy from supplier /   product / Edit the buying order… etc.">
+                                            <label for="products3">Buy from supplier /   product / Edit the buying order… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="tender" type="checkbox" name="tender" class="checkboxes">
-                                            <label for="tender">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
+                                            <input id="products4" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Create tender / accept tender / Delete tender / Edit tender… etc.">
+                                            <label for="products4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="jobs" type="checkbox" name="jobs" class="checkboxes">
-                                            <label for="jobs">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
+                                            <input id="products5" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.">
+                                            <label for="products5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
                                           </div>
                                         </li>
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="advertising" type="checkbox" name="advertising" class="checkboxes">
-                                            <label for="advertising">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
+                                            <input id="products6" id="advertising" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package">
+                                            <label for="products6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
                                           </div>
                                         </li>
                                       </ul>
@@ -300,14 +318,14 @@
                                       <ul class="list-for-user">
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social" type="checkbox" name="social" class="checkboxes">
-                                            <label for="social">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
+                                            <input id="social1" type="checkbox" name="auth_chat" class="checkboxes" value="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
+                                            <label for="social1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="chat" type="checkbox" name="chat" class="checkboxes">
-                                            <label for="chat">Chat / Send message</label>
+                                            <input id="social2" type="checkbox" name="auth_chat" class="checkboxes" value="Chat / Send message">
+                                            <label for="social2">Chat / Send message</label>
                                           </div>
                                         </li>
                                       </ul>
@@ -317,8 +335,8 @@
                                 </div>
                               </div>
                               <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
-                                <button class="btn send-author"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button>
-                                <a href="javascript:void(0);" data-repeater-delete class="btn switch-acc remove-user"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                <button name="authorization_name" type="button" class="btn send-author"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button> 
+                                <a name="remove_user" href="javascript:void(0);" data-repeater-delete class="btn switch-acc "><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                               </div>
                             </div>
                           </div>
@@ -589,6 +607,62 @@
       </div>
     </div>
   </div>
+  <!-- Authorise Modal -->
+  <!--   Authorize Box -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered cst-1" role="document">
+      <div class="modal-content cst-1">
+        <div class="modal-body">
+          <div class="auth-mod-cnt">
+            <div class="auth-mod-cnt-bx">
+              <div class="auth-mod-cnt-br">
+                <div class="mod-txt-tp-1 text-center">Authorizaton Request</div>
+                <div class="rg-cnt-tp-1 mt-3">
+                  <div class="text-center mt-4 mod-txt-tp-2">New user <span id='auth-new-username'></span></div>
+                  <div class="text-center mt-2 mod-txt-tp-2">Requested  to following Facilities</div>
+                  <div class="mt-3">
+                    <ul id='checked-auth-list' class="list-unstyled mdl-lst-grp-1">
+                      
+                    </ul>
+                  </div>
+                  <div class="md-frm-1 mt-3">
+                    <form>
+                      <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">Main User</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="auth-username" id="inputUser" placeholder="username">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-8">
+                          <input type="password" name="auth-password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                      </div>
+                      <span class='alert-error'></span>
+                    </form>
+                  </div>
+                  <div class="btn-grp-1 mt-5">
+                    <ul class="nav nav-fill">
+                      <li>
+                        <a href="#" class="md-tp-lnk accept ceck-authorize">Authorized</a>
+                      </li>
+                      <li>
+                        <a href="#" class="md-tp-lnk decline">Decline</a>
+                      </li>
+                      <li>
+                        <a href="#" class="md-tp-lnk pending">Pending</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Get Map adress -->
   <p id='address'></p>
   @include('front_end.modules.footer')
@@ -780,9 +854,6 @@
       }
 
 
-
-
-
       function add_users_form_roles(){
           var oFormData = $('#users_form').serializeArray();
           for (var i = 0; i < oFormData.length; i++){
@@ -844,21 +915,6 @@
 
 
       $(document).ready(function () {
-
-
-          $("#users_form").validate({
-              invalidHandler: function (e, r) {
-                  console.log("AAA");
-              }, submitHandler: function (e) {
-                  console.log("AAA");
-              }
-          })
-
-
-          add_users_form_roles();
-
-
-
           $('#users_repeater').repeater({repeaters: [{
                   // (Required)
                   // Specify the jQuery selector for this nested repeater
@@ -891,7 +947,119 @@
               show:function(){$(this).slideDown()},
               hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
           });
+      });       $("#users_form").validate({
+              invalidHandler: function (e, r) {
+                  console.log("AAA");
+              }, submitHandler: function (e) {
+                  console.log("AAA");
+              }
+          })
+       $("#users_form").validate({
+              invalidHandler: function (e, r) {
+                  console.log("AAA");
+              }, submitHandler: function (e) {
+                  console.log("AAA");
+              }
+        })
+        setTimeout(add_users_form_roles, 1000);
+
+  
+
+  $(document).ready( function () {
+  $(document).on('click','.send-author',function(e){
+
+    var button_name = $(this).attr('name');
+
+    var FirstName_el_name = button_name.replace("authorization_name", "user_first_name");
+    var ufname= $("input[name='"+FirstName_el_name+"']").val();
+    $('#auth-new-username').html(ufname);
+
+    var Ecommerce_el_name = button_name.replace("authorization_name", "auth_ecommerce");
+    //var eco= $("checkbox[name='"+Ecommerce_el_name+"']").val();
+    $("input[name='"+Ecommerce_el_name+"[]']").each( function () {
+      if (this.checked) {
+          $('#checked-auth-list').append('<li><i class="fa fa-check-square-o" aria-hidden="true"></i>'+$(this).val()+'</li>');
+      }
+    });
+
+
+    var Auth_type_name = button_name.replace("authorization_name", "auth_type");
+    var remove_user_name = button_name.replace("authorization_name", "remove_user");
+    
+   $(".pending").attr("auth_fild",Auth_type_name);
+   $(".decline").attr("auth_fild",remove_user_name);
+   $(".ceck-authorize").attr("auth_fild",Auth_type_name);
+
+   });
+
+
+
+
+
+
+
+
+
+   $(document).on('click','.ceck-authorize',function(e){
+    var AuthorizedButton = $(this);
+    var token = $("input[name='_token']").val();
+    var username = $("input[name='auth-username']").val();
+    var password = $("input[name='auth-password']").val();
+    var auth_Type_name = AuthorizedButton.attr("auth_fild");
+    var auth_Type_elem = $("input[name='"+auth_Type_name+"']");
+  
+
+      $.ajax({
+      url: "<?php echo URL::to('/').'/register/authoriszation'; ?>",
+      method: 'POST',
+      data: { _token:token,username:username,password:password},
+      success: function(data) {
+        if (data === undefined || data.length === undefined) {
+            $('.alert-error').html('Invalid User Credential');
+        }else{
+          auth_Type_elem.attr("value","1");
+        }
+      }
       });
+
+
+   });
+
+
+
+
+   $(document).on('click','.decline',function(e){
+    var AuthorizedButton = $(this);
+    var auth_Type_name = AuthorizedButton.attr("auth_fild");
+    var auth_Type_elem = $("[name='"+auth_Type_name+"']");
+     auth_Type_elem.trigger( "click" );
+
+   });
+
+
+
+      $(document).on('click','.pending',function(e){
+    var AuthorizedButton = $(this);
+    var token = $("input[name='_token']").val();
+    var username = $("input[name='auth-username']").val();
+    var password = $("input[name='auth-password']").val();
+    var auth_Type_name = AuthorizedButton.attr("auth_fild");
+    var auth_Type_elem = $("input[name='"+auth_Type_name+"']");
+    auth_Type_elem.attr("value","0");
+
+   });
+
+
+
+
+
+
+
+
+
+  });
+
+
   </script>
   <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
