@@ -22,7 +22,11 @@ Route::get('/', function () {
 | Register
 |--------------------------------------------------------------------------
 */
-Route::get('register', 'RegisterController@company');
+Route::get('register', 'RegisterController@index');
+
+
+Route::get('register/personal', 'RegisterController@personal');
+Route::post('register/insert_personal', 'RegisterController@insert_personal');
 
 // Company Data From  Register Page
 Route::get('register/company', 'RegisterController@company');
