@@ -108,3 +108,14 @@ font-size: 13px;
 	width: 75%;
 	margin: 0 auto;
 }
+.auth-alert-error{
+    float: right;
+    color: #F44336;
+    margin-right: 40px;
+}
+.auth-message{
+        padding: 1px;
+}
+.auth-message .user-for-msg{
+    font-size: 18px !important;
+}

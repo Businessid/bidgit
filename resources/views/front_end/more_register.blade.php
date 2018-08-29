@@ -177,7 +177,7 @@
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_phone" class="field-label">Landline Number:</label>
-                                    <input type="text" class="form-control field-control" name="user_phone[]" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
+                                    <input type="text" class="form-control field-control mobile" name="user_phone[]" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
                                     @if ($errors->first('user_phone'))
                                       <div class="alert-error">
                                         {{ $errors->first('user_phone') }}
@@ -273,37 +273,37 @@
                                       <ul class="list-for-user">
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products1"  name="auth_ecommerce" type="checkbox" class="checkboxes" value="Add product / Delete product / Manage Product / Edit product… etc.">
+                                            <input id="products1"  name="auth_ecommerce" type="checkbox" class="checkboxes auth-ecommerce" value="" title="Add product / Delete product / Manage Product / Edit product… etc.">
                                             <label for="products1">Add product / Delete product / Manage Product / Edit product… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products2" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.">
+                                            <input id="products2" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.">
                                             <label for="products2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products3" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Buy from supplier /   product / Edit the buying order… etc.">
+                                            <input id="products3" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Buy from supplier /   product / Edit the buying order… etc.">
                                             <label for="products3">Buy from supplier /   product / Edit the buying order… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products4" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Create tender / accept tender / Delete tender / Edit tender… etc.">
+                                            <input id="products4" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Create tender / accept tender / Delete tender / Edit tender… etc.">
                                             <label for="products4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products5" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.">
+                                            <input id="products5" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.">
                                             <label for="products5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
                                           </div>
                                         </li>
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products6" id="advertising" type="checkbox" name="auth_ecommerce" class="checkboxes" value="Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package">
+                                            <input id="products6" id="advertising" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package">
                                             <label for="products6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
                                           </div>
                                         </li>
@@ -318,13 +318,13 @@
                                       <ul class="list-for-user">
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social1" type="checkbox" name="auth_chat" class="checkboxes" value="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
+                                            <input id="social1" type="checkbox" name="auth_ecommerce" class="checkboxes auth-social" value="" title="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
                                             <label for="social1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social2" type="checkbox" name="auth_chat" class="checkboxes" value="Chat / Send message">
+                                            <input id="social2" type="checkbox" name="auth_ecommerce" class="checkboxes auth-social" value="" title="Chat / Send message">
                                             <label for="social2">Chat / Send message</label>
                                           </div>
                                         </li>
@@ -334,6 +334,10 @@
                                   </div>
                                 </div>
                               </div>
+                              <!-- Auth Message -->
+                              <span class="auth-message">
+                                
+                              </span>
                               <div class="full-wrap text-right send-author-wrap"> <span>* This user has to authorized by <a href="">[Name]</a></span>
                                 <button name="authorization_name" type="button" class="btn send-author"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send For Authorization</button> 
                                 <a name="remove_user" href="javascript:void(0);" data-repeater-delete class="btn switch-acc "><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
@@ -639,7 +643,7 @@
                           <input type="password" name="auth-password" class="form-control" id="inputPassword" placeholder="Password">
                         </div>
                       </div>
-                      <span class='alert-error'></span>
+                      <span class='auth-alert-error'></span>
                     </form>
                   </div>
                   <div class="btn-grp-1 mt-5">
@@ -663,6 +667,7 @@
       </div>
     </div>
   </div>
+
   <!-- Get Map adress -->
   <p id='address'></p>
   @include('front_end.modules.footer')
@@ -965,7 +970,7 @@
 
   
 
-  $(document).ready( function () {
+$(document).ready( function () {
   $(document).on('click','.send-author',function(e){
 
     var button_name = $(this).attr('name');
@@ -976,9 +981,10 @@
 
     var Ecommerce_el_name = button_name.replace("authorization_name", "auth_ecommerce");
     //var eco= $("checkbox[name='"+Ecommerce_el_name+"']").val();
+    $('#checked-auth-list').html("");
     $("input[name='"+Ecommerce_el_name+"[]']").each( function () {
       if (this.checked) {
-          $('#checked-auth-list').append('<li><i class="fa fa-check-square-o" aria-hidden="true"></i>'+$(this).val()+'</li>');
+          $('#checked-auth-list').append('<li><i class="fa fa-check-square-o" aria-hidden="true"></i>'+$(this).attr("title")+'</li>');
       }
     });
 
@@ -989,56 +995,39 @@
    $(".pending").attr("auth_fild",Auth_type_name);
    $(".decline").attr("auth_fild",remove_user_name);
    $(".ceck-authorize").attr("auth_fild",Auth_type_name);
-
    });
 
-
-
-
-
-
-
-
-
    $(document).on('click','.ceck-authorize',function(e){
+    $('.auth-alert-error').html('');
     var AuthorizedButton = $(this);
     var token = $("input[name='_token']").val();
     var username = $("input[name='auth-username']").val();
     var password = $("input[name='auth-password']").val();
     var auth_Type_name = AuthorizedButton.attr("auth_fild");
     var auth_Type_elem = $("input[name='"+auth_Type_name+"']");
-  
-
       $.ajax({
       url: "<?php echo URL::to('/').'/register/authoriszation'; ?>",
       method: 'POST',
       data: { _token:token,username:username,password:password},
       success: function(data) {
         if (data === undefined || data.length === undefined) {
-            $('.alert-error').html('Invalid User Credential');
+            $('.auth-alert-error').html('Invalid User Credential');
         }else{
           auth_Type_elem.attr("value","1");
         }
       }
       });
-
-
    });
 
-
-
-
-   $(document).on('click','.decline',function(e){
+    $(document).on('click','.decline',function(e){
     var AuthorizedButton = $(this);
     var auth_Type_name = AuthorizedButton.attr("auth_fild");
     var auth_Type_elem = $("[name='"+auth_Type_name+"']");
-     auth_Type_elem.trigger( "click" );
+    auth_Type_elem.trigger( "click" );
+    $('#exampleModal').modal('toggle');
+    });
 
-   });
-
-
-
-      $(document).on('click','.pending',function(e){
+    $(document).on('click','.pending',function(e){
     var AuthorizedButton = $(this);
     var token = $("input[name='_token']").val();
     var username = $("input[name='auth-username']").val();
@@ -1046,18 +1035,33 @@
     var auth_Type_name = AuthorizedButton.attr("auth_fild");
     var auth_Type_elem = $("input[name='"+auth_Type_name+"']");
     auth_Type_elem.attr("value","0");
-
+    var AuthorizedBtnName=$(this).attr('auth_fild');
+    var FirstName_el_name = AuthorizedBtnName.replace("auth_type", "user_first_name");
+    var ufname= $("input[name='"+FirstName_el_name+"']").val();
+    $('.auth-message').html('<div class="user-for-msg text-center"> <i class="fa fa-user" aria-hidden="true"></i> The User '+ufname+' not authorised yet. User will goes to pending status</div>');
+    $('#exampleModal').modal('toggle');
    });
+  $(document).on('click','.permission_type',function(e){
+  var type = $(this).val();
+  var El_name = $(this).attr("name");
+  var Auth_el_name = El_name.replace("permission_type", "auth_ecommerce");
 
 
-
-
-
-
-
-
-
+  $(".auth-ecommerce").prop('checked', false);
+  $(".auth-social").prop('checked', false);
+  if(type==1){
+    console.log(Auth_el_name);
+    $("[name='"+Auth_el_name+"']").prop('checked', true);
+    $(".auth-social").prop('checked', true);
+  }else if(type==2){
+    $(".auth-ecommerce").prop('checked', true);
+  }else{
+    $(".auth-social").prop('checked', true);
+  }
   });
+
+
+});
 
 
   </script>
