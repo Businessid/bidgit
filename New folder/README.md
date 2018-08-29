@@ -1,2 +1,0 @@
-# bidgit
-Businessid project
