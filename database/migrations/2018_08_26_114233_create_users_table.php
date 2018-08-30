@@ -14,35 +14,36 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('tbl_users', function (Blueprint $table) {
-            $table->increments('pk_users_id')->nullable();;
+            $table->increments('pk_users_id')->nullable();
+            $table->tinyInteger('fk_companies_id')->nullable();
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('email')->unique()->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('phone');
+            $table->string('mobile');
+            $table->string('phone')->nullable();
             $table->string('password')->nullable();
-            $table->mediumText('headline');
-            $table->string('bio');
-            $table->string('profile_image');
-            $table->string('cover_image');
+            $table->mediumText('designation')->nullable();
+            $table->string('bio')->nullable();
+            $table->string('profile_image')->nullable();
+            $table->string('cover_image')->nullable();
             $table->string('profile_url')->unique()->nullable();
-            $table->string('religion');
-            $table->year('birth_year');
+            $table->string('religion')->nullable();
+            $table->year('birth_year')->nullable();
             $table->string('gender')->nullable();
-            $table->string('marital');
-            $table->string('website');
+            $table->string('marital')->nullable();
+            $table->string('website')->nullable();
             $table->string('nationality')->nullable();
             $table->integer('fk_country_id')->nullable();
             $table->integer('fk_city_id')->nullable();
             $table->integer('fk_area_id')->nullable();
-            $table->mediumText('address');
-            $table->string('street');
+            $table->mediumText('address')->nullable();
+            $table->string('street')->nullable();
             $table->string('expiry_date')->nullable();
-            $table->string('order_rank');
-            $table->tinyInteger('verified');
+            $table->string('order_rank')->nullable();
+            $table->tinyInteger('verified')->nullable();
             $table->tinyInteger('status');
-            $table->string('otp');
-            $table->string('FCM');
+            $table->string('otp')->nullable();
+            $table->string('FCM')->nullable();
             $table->timestamps();
         });
     }

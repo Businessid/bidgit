@@ -99,7 +99,7 @@
                                   <div class="form-group">
                                     <label for="user_userimage" class="field-label">Upload Your Photo</label>
                                     <div class="custom-file upload-reg">
-                                      <input type="file" class="custom-file-input form-control field-control" name="user_userimage[]">
+                                      <input type="file" class="custom-file-input form-control field-control" name="user_userimage">
                                       <label class="custom-file-label" for="user_userimage">Choose file</label>
                                     </div>
                                   </div>
@@ -107,36 +107,28 @@
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_first_name" class="field-label">First Name:</label>
-                                    <input id="user_first_name" type="text" data-validation="length alphanumeric" data-validation-length="min4" class="form-control field-control user_first_name" name="user_first_name"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
-
+                                    <input type="text" data-validation="length alphanumeric" data-validation-length="min4" class="form-control field-control user_first_name" name="user_first_name"  value="{{old('user_first_name')}}"  placeholder="" data-fv-field="user_first_name">
                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_last_name" class="field-label">Last Name:</label>
-                                    <input type="text" class="form-control field-control" name="user_last_name"  value="{{old('user_last_name')}}" placeholder="" data-fv-field="user_last_name">
-                                    @if ($errors->first('user_last_name'))
-                                      <div class="alert-error"> {{ $errors->first('user_last_name') }} </div>
-                                    @endif </div>
+                                    <input type="text" class="form-control field-control" name="user_last_name"  value="" placeholder="" data-fv-field="user_last_name">
+                                  </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label class="field-label">Gender : </label>
                                     <div class="custom-radio-wrap">
                                       <div class="custom-control custom-radio mr-3">
-                                        <input type="radio" id="user_gender" name="user_gender" class="custom-control-input" value="Male" @if(isset($company_info['gender'])) @if($company_info['gender'] == "Male") checked @endif @else  @if(old('user_gender')== "Male") checked @endif @endif >
+                                        <input type="radio" id="user_gender" name="user_gender" class="custom-control-input" value="Male">
                                         <label class="custom-control-label" for="user_gender">Male</label>
                                       </div>
                                       <div class="custom-control custom-radio pull-right">
-                                        <input type="radio" id="user_gender1" name="user_gender" class="custom-control-input" value="Female"   @if(isset($company_info['gender'])) @if($company_info['gender'] == "Female") checked @endif @else @if(old('user_gender') == "Female") checked @endif @endif >
+                                        <input type="radio" id="user_gender1" name="user_gender" class="custom-control-input" value="Female">
                                         <label class="custom-control-label" for="user_gender1">Female</label>
                                       </div>
                                     </div>
-                                    @if ($errors->first('user_gender'))
-                                      <div class="alert-error">
-                                        {{ $errors->first('user_gender') }}
-                                      </div>
-                                    @endif
                                   </div>
                                 </div>
                               </div>
@@ -144,45 +136,27 @@
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_designation" class="field-label">Designation:</label>
-                                    <input type="text" class="form-control field-control" name="user_designation" value="{{old('user_designation')}}" placeholder="" data-fv-field="user_designation">
-                                    @if ($errors->first('user_designation'))
-                                      <div class="alert-error">
-                                        {{ $errors->first('user_designation') }}
-                                      </div>
-                                    @endif
+                                    <input type="text" class="form-control field-control" name="user_designation" value="" placeholder="" data-fv-field="user_designation">
                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_dob" class="field-label">DOB:</label>
                                     <input type="text" class="form-control field-control datepicker" name="user_dob" value="" placeholder="" data-fv-field="user_dob">
-                                    @if ($errors->first('user_dob'))
-                                      <div class="alert-error">
-                                        {{ $errors->first('user_dob') }}
-                                      </div>
-                                    @endif
                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_mobile" class="field-label">Mobile Number:</label>
-                                    <input type="text" class="form-control field-control mobile" name="user_mobile[]" value="{{old('user_mobile')}}" placeholder="" data-fv-field="user_mobile">
-                                    @if ($errors->first('user_mobile'))
-                                      <div class="alert-error">
-                                        {{ $errors->first('user_mobile') }}
-                                      </div>
-                                    @endif
+                                    <input type="text" class="form-control field-control mobile usermobile" name="user_mobile" value="" placeholder="" data-fv-field="user_mobile">
+                                    <input type="hidden" class="user_mobile_code" name="user_mobile_code" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_phone" class="field-label">Landline Number:</label>
-                                    <input type="text" class="form-control field-control mobile" name="user_phone[]" value="{{old('user_phone')}}" placeholder="" data-fv-field="user_phone">
-                                    @if ($errors->first('user_phone'))
-                                      <div class="alert-error">
-                                        {{ $errors->first('user_phone') }}
-                                      </div>
-                                    @endif
+                                    <input type="text" class="form-control field-control mobile" name="user_phone" value="" placeholder="" data-fv-field="user_phone">
+                                    <input type="hidden" class="user_phone_code" name="user_phone_code" value="">
                                   </div>
                                 </div>
                               </div>
@@ -198,60 +172,40 @@
                                         @endforeach
                                       @endif
                                     </select>
-                                    @if ($errors->first('user_nationality'))
-                                      <div class="alert-error"> {{ $errors->first('user_nationality') }} </div>
-                                    @endif </div>
+                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_email" class="field-label">E-mail:</label>
-                                    <input type="email" class="form-control field-control" name="user_email" value="{{old('user_email')}}" placeholder="" data-fv-field="user_email">
-                                    @if ($errors->first('user_email'))
-                                      <div class="alert-error"> {{ $errors->first('user_email') }} </div>
-                                    @endif </div>
+                                    <input type="email" class="form-control field-control" name="user_email" value="" placeholder="" data-fv-field="user_email">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_email_confirmation" class="field-label">Confirm E-mail:</label>
-                                    <input type="email" class="form-control field-control" name="user_email_confirmation"  value="{{old('user_email_confirmation')}}" placeholder="" data-fv-field="user_email_confirmation">
-                                    @if ($errors->first('user_email_confirmation'))
-                                      <div class="alert-error"> {{ $errors->first('user_email_confirmation') }} </div>
-                                    @endif </div>
+                                    <input type="email" class="form-control field-control" name="user_email_confirmation"  value="" placeholder="" data-fv-field="user_email_confirmation">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_password" class="field-label">Password:</label>
-                                    <input type="password" class="form-control field-control" name="user_password[]" value="{{old('user_password')}}" placeholder="" data-fv-field="password">
-                                    @if ($errors->first('user_password'))
-                                      <div class="alert-error"> {{ $errors->first('user_password') }} </div>
-                                    @endif </div>
+                                    <input type="password" class="form-control field-control" name="user_password" value="" placeholder="" data-fv-field="password">
+                                    </div>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <label for="user_password_confirmation" class="field-label">Confirm Password:</label>
-                                    <input type="password" class="form-control field-control" name="user_password_confirmation" value="{{old('user_password_confirmation')}}" placeholder="" data-fv-field="confirmpassword">
-                                    @if ($errors->first('user_password_confirmation'))
-                                      <div class="alert-error"> {{ $errors->first('user_password_confirmation') }} </div>
-                                    @endif </div>
+                                    <input type="password" class="form-control field-control" name="user_password_confirmation" value="" placeholder="" data-fv-field="confirmpassword">
+                                    </div>
                                 </div>
 
-
-
-
-
-                                  <div class="col-md-3">
-                                  <div class="form-group">
-                                
-                                    <input type="text" class="form-control field-control" name="auth_type" value="{{old('auth_type')}}" placeholder="">
-                                    @if ($errors->first('auth_type'))
-                                      <div class="alert-error"> {{ $errors->first('auth_type') }} </div>
-                                    @endif </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                 <input type="hidden" class="form-control field-control" name="auth_type" value="0" placeholder=""> 
                                 </div>
-
-
-
+                              </div>
 
                               </div>
                               <div class="row">
@@ -259,17 +213,21 @@
                                   <div class="full-wrap user-action-part mt-4">
                                     <div class="label-head"><img src="{{ URL::asset('front_end/images/icon/allow.png') }}" class="mr-1"><span class="d-inline-block">This user authorized to :</span></div>
                                     <div class="full-wrap mt-2">
-                                      <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
-                                        <input type="radio" id="permission_type_1" name="permission_type" class="custom-control-input permission_type" value="1">
-                                        <label class="custom-control-label" for="permission_type_1">Delegation of using all the businessid.net functions, facilities and actions.</label>
-                                      </div>
+
+                                    <div class="checkbox-edit checkbox-primary d-inline-block acc-choose mt-2">
+                                          <input id="type1" name="permission_type" type="checkbox" class="checkboxes permission_type" value="1" >
+                                          <label for="type1">Delegation of using all the businessid.net functions, facilities and actions.</label>
+                                    </div>
+
+
                                       <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
                                     </div>
                                     <div class="full-wrap mt-2">
-                                      <div class="custom-control custom-radio d-inline-block acc-choose mt-2">
-                                        <input type="radio" id="permission_type_2" name="permission_type" class="custom-control-input permission_type" value="2">
-                                        <label class="custom-control-label" for="permission_type_2">All E-commerce:</label>
+                                      <div class="checkbox-edit checkbox-primary d-inline-block acc-choose mt-2">
+                                          <input id="type2" name="permission_type" type="checkbox" class="checkboxes permission_type" value="2" >
+                                          <label for="type2">All E-commerce:</label>
                                       </div>
+
                                       <ul class="list-for-user">
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
@@ -311,20 +269,20 @@
                                       <div class="full-wrap text-left"><span class="or-box-for">OR</span></div>
                                     </div>
                                     <div class="full-wrap mt-2">
-                                      <div class="custom-control custom-radio d-inline-block acc-choose mt-2 ml-1">
-                                        <input type="radio" id="permission_type_3" name="permission_type" class="custom-control-input permission_type" value="3">
-                                        <label class="custom-control-label" for="permission_type_3">All Social Media</label>
+                                      <div class="checkbox-edit checkbox-primary d-inline-block acc-choose mt-2">
+                                          <input id="type3" name="permission_type" type="checkbox" class="checkboxes permission_type" value="3" >
+                                          <label for="type3">All Social Media:</label>
                                       </div>
                                       <ul class="list-for-user">
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social1" type="checkbox" name="auth_ecommerce" class="checkboxes auth-social" value="" title="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
+                                            <input id="social1" type="checkbox" name="auth_social" class="checkboxes auth-social" value="" title="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
                                             <label for="social1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social2" type="checkbox" name="auth_ecommerce" class="checkboxes auth-social" value="" title="Chat / Send message">
+                                            <input id="social2" type="checkbox" name="auth_social" class="checkboxes auth-social" value="" title="Chat / Send message">
                                             <label for="social2">Chat / Send message</label>
                                           </div>
                                         </li>
@@ -393,8 +351,8 @@
                                   <select class="form-control js-example-basic-single" id="investor_nationality" name="investor_nationality[]"  title="">
                                     <option value="">- Select -</option>
                                     @if(!empty($countries))
-                                      @foreach($countries as $key => $value)
-                                        <option value="{{ $key }}" <?php if(old('investor_nationality')==$key) echo "selected"; ?>>{{ $value }}</option>
+                                      @foreach($countries as $value)
+                                        <option value="{{ $value->pk_countries_id}}">{{ $value->name }}</option>
                                       @endforeach
                                     @endif
                                   </select>
@@ -955,17 +913,9 @@
       });       $("#users_form").validate({
               invalidHandler: function (e, r) {
                   console.log("AAA");
-              }, submitHandler: function (e) {
-                  console.log("AAA");
               }
           })
-       $("#users_form").validate({
-              invalidHandler: function (e, r) {
-                  console.log("AAA");
-              }, submitHandler: function (e) {
-                  console.log("AAA");
-              }
-        })
+   
         setTimeout(add_users_form_roles, 1000);
 
   
@@ -980,9 +930,15 @@ $(document).ready( function () {
     $('#auth-new-username').html(ufname);
 
     var Ecommerce_el_name = button_name.replace("authorization_name", "auth_ecommerce");
+    var Social_el_name = button_name.replace("authorization_name", "auth_social");
     //var eco= $("checkbox[name='"+Ecommerce_el_name+"']").val();
     $('#checked-auth-list').html("");
     $("input[name='"+Ecommerce_el_name+"[]']").each( function () {
+      if (this.checked) {
+          $('#checked-auth-list').append('<li><i class="fa fa-check-square-o" aria-hidden="true"></i>'+$(this).attr("title")+'</li>');
+      }
+    });
+    $("input[name='"+Social_el_name+"[]']").each( function () {
       if (this.checked) {
           $('#checked-auth-list').append('<li><i class="fa fa-check-square-o" aria-hidden="true"></i>'+$(this).attr("title")+'</li>');
       }
@@ -1005,19 +961,24 @@ $(document).ready( function () {
     var password = $("input[name='auth-password']").val();
     var auth_Type_name = AuthorizedButton.attr("auth_fild");
     var auth_Type_elem = $("input[name='"+auth_Type_name+"']");
-      $.ajax({
+    $.ajax({
       url: "<?php echo URL::to('/').'/register/authoriszation'; ?>",
       method: 'POST',
       data: { _token:token,username:username,password:password},
       success: function(data) {
-        if (data === undefined || data.length === undefined) {
+        console.log(data);
+        if (data == false) {
             $('.auth-alert-error').html('Invalid User Credential');
         }else{
           auth_Type_elem.attr("value","1");
+          var FirstName_el_name = auth_Type_name.replace("auth_type", "user_first_name");
+          var ufname= $("input[name='"+FirstName_el_name+"']").val();
+          $('.auth-message').html('<div class="user-for-msg text-center"> <i class="fa fa-user-plus" aria-hidden="true"></i> The User '+ufname+' authorised successfully ..</div>');
+          $('#exampleModal').modal('toggle');
         }
       }
       });
-   });
+    });
 
     $(document).on('click','.decline',function(e){
     var AuthorizedButton = $(this);
@@ -1041,25 +1002,36 @@ $(document).ready( function () {
     $('.auth-message').html('<div class="user-for-msg text-center"> <i class="fa fa-user" aria-hidden="true"></i> The User '+ufname+' not authorised yet. User will goes to pending status</div>');
     $('#exampleModal').modal('toggle');
    });
+
+
   $(document).on('click','.permission_type',function(e){
   var type = $(this).val();
   var El_name = $(this).attr("name");
-  var Auth_el_name = El_name.replace("permission_type", "auth_ecommerce");
-
-
-  $(".auth-ecommerce").prop('checked', false);
-  $(".auth-social").prop('checked', false);
+  var Eco_el_name = El_name.replace("permission_type", "auth_ecommerce");
+  var Soc_el_name = El_name.replace("permission_type", "auth_social");
+  $("[name='"+El_name+"']").prop('checked', false);
+  $("[name='"+Eco_el_name+"']").prop('checked', false);
+  $("[name='"+Soc_el_name+"']").prop('checked', false);
   if(type==1){
-    console.log(Auth_el_name);
-    $("[name='"+Auth_el_name+"']").prop('checked', true);
-    $(".auth-social").prop('checked', true);
+    $("[name='"+El_name+"']").prop('checked', true);
+    $("[name='"+Eco_el_name+"']").prop('checked', true);
+    $("[name='"+Soc_el_name+"']").prop('checked', true);
   }else if(type==2){
-    $(".auth-ecommerce").prop('checked', true);
+    $(this).prop('checked', true);
+    $("[name='"+Eco_el_name+"']").prop('checked', true);
   }else{
-    $(".auth-social").prop('checked', true);
+    $(this).prop('checked', true);
+    $("[name='"+Soc_el_name+"']").prop('checked', true);
   }
   });
 
+  /*Country Code*/
+  $(document).on('keyup','.usermobile',function(e){
+    var El_name = $(this).attr("name");
+    var E_el_mobile = El_name.replace("user_mobile", "user_mobile_code");
+    var code=$('.selected-dial-code').html();
+    $("[name='"+E_el_mobile+"']").val(code);
+  });
 
 });
 

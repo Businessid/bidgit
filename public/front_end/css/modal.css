@@ -119,3 +119,9 @@ font-size: 13px;
 .auth-message .user-for-msg{
     font-size: 18px !important;
 }
+.auth-message .fa-user-plus{
+    color: green !important;
+}
+.full-wrap.text-right.send-author-wrap{
+    text-align: center !important;
+}

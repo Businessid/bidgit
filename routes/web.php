@@ -46,6 +46,9 @@ Route::post('register/insert_users', 'MoreRegisterController@insert_users');
 // Authorize User Data From  Register Page
 Route::post('register/authoriszation', 'MoreRegisterController@authoriszation');
 
+// Create Branches Data From  Register Page
+Route::get('register/branches', 'MoreRegisterController@branches');
+
 /* Select Ajax From Register Page  */
 Route::post('register/selectActivities', 'AjaxController@selectActivities');
 Route::post('register/selectCities', 'AjaxController@selectCities');
