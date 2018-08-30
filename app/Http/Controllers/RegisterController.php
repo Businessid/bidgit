@@ -227,6 +227,7 @@ class RegisterController extends BaseController
 
     public function qregister(Request $request)
     {
+        echo $this->AdminPremetion();
         $company_info = $request->session()->get('company_info');
         $complete_step = $request->session()->get('complete_step');
         if ($complete_step < 3) {
@@ -237,6 +238,7 @@ class RegisterController extends BaseController
             $data['company_info'] = $company_info;
             return view('front_end.company_register', $data);
         }
+
 
     }
 
@@ -266,6 +268,16 @@ class RegisterController extends BaseController
             $result = $users->save();
             if ($result) {
                 $User_Last_ID = $users->id;
+
+                $permission['fk_users_id']=$User_Last_ID;
+                $permission['fk_companies_id']=$Company_Last_ID;
+                $permission['creator']= "1";
+                $permission['permissions']= json_encode("[\"allow_product\",\"allow_manage_order\",\"allow_buy\",\"allow_tender\",\"allow_job\",\"allow_advertising\",\"allow_post\",\"allow_chat\"]");
+
+
+                $users = new UsersCompanies();
+                $users->fill($user_info);
+                $result = $users->save();
 
 
             } else {
@@ -1377,6 +1389,27 @@ class RegisterController extends BaseController
 
         return $Email_Templet;
     }
+
+
+
+
+
+
+    public function AdminPremetion(){
+
+        $permetions = [ "allow_product" => true,
+            "allow_manage_order" => true,
+            "allow_buy" => true,
+            "allow_tender" => true,
+            "allow_job" => true,
+            "allow_advertising" => true,
+            "allow_post" => true,
+            "allow_chat" => true ];
+
+
+        return json_encode($permetions);
+    }
+
 
 
 }

@@ -12,16 +12,23 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class MoreRegisterController extends Controller
 {
-    	public function users(Request $request)
-    {   $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']=5;
+    public function users(Request $request)
+    {
+        $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
+        $data['step'] = 5;
         $data['complete_step'] = 5;
-        return view('front_end.more_register',compact('countries'),$data);
+        return view('front_end.more_register', compact('countries'), $data);
     }
 
 
-    	public function insert_users(Request $request)
+    public function insert_users(Request $request)
     {
+
+        if (Session::has('pk_companies_id')) {
+            $pk_companies_id = $request->session()->get('pk_companies_id');
+        } else {
+            return redirect('register/users')->withInput();
+        }
 
         $validatedData = $request->validate([
             'users.*.user_first_name' => 'required',
@@ -50,41 +57,77 @@ class MoreRegisterController extends Controller
         $permission_ecommerce = $request->input('users.*.auth_ecommerce');
         $permission_social = $request->input('users.*.auth_social');
 
-        $records=count($first_name);
-        for ($i=0; $i < $records ; $i++) { 
-        	$data['first_name']=$first_name[$i];
-        	$data['last_name']=$last_name[$i];
-        	$data['gender']=$gender[$i];
-        	$data['designation']=$designation[$i];
-        	$data['mobile']=$mobile[$i];
-        	$data['phone']=$phone[$i];
-        	$data['nationality']=$nationality[$i];
-        	$data['email']=$email[$i];
-        	$data['password']=md5($password[$i]);
-        	$data['status']=$status[$i];
-        	$profile = $this->isUploadProfile($request,$i);
-            $data['profile_image'] = storage_path('app/upload/profile/'.$profile);
-            $Users = new Users();
-            $Users->fill($data);
-            $result = $Users->save();
-        	if($result){
-                $LastInsertId = $Users->id;
-	        	$permissions=array();
-	        	$array_1=$permission_ecommerce[$i];
-	        	$array_2=$permission_social[$i];
-	        	$permissions=array_merge($array_1,$array_2);
-	        	$permission['fk_users_id']=$LastInsertId;
-                $pk_companies_id = "1";  // $request->session()->get('$pk_companies_id');
-	        	$permission['fk_companies_id']=$pk_companies_id;
-	        	$permission['creator']= "0";
-	        	$permission['permissions']=json_encode($permissions);
-                $UsersCompanies = new UsersCompanies();
-                $UsersCompanies->fill($permission);
-                $UsersCompanies->save();
 
-        	}
+        $LastInsertIdList = array();
+
+        $records = count($first_name);
+        for ($i = 0; $i < $records; $i++) {
+            $data['first_name'] = $first_name[$i];
+            $data['last_name'] = $last_name[$i];
+            $data['gender'] = $gender[$i];
+            $data['designation'] = $designation[$i];
+            $data['mobile'] = $mobile[$i];
+            $data['phone'] = $phone[$i];
+            $data['nationality'] = $nationality[$i];
+            $data['email'] = $email[$i];
+            $data['password'] = md5($password[$i]);
+            $data['status'] = $status[$i];
+            $profile = $this->isUploadProfile($request, $i);
+            $data['profile_image'] = storage_path('app/upload/profile/' . $profile);
+
+            try {
+                $Users = new Users();
+                $Users->fill($data);
+                $result = $Users->save();
+                if ($result) {
+                    $LastInsertId = $Users->id;
+                    $LastInsertIdList[] = $LastInsertId;
+                    $permissions = array();
+                    $array_1 = $permission_ecommerce[$i];
+                    $array_2 = $permission_social[$i];
+                    $permissions = array_merge($array_1, $array_2);
+                    $permissions = $this->GetPermissions($permissions);
+                    $permission['fk_users_id'] = $LastInsertId;
+
+                    $permission['fk_companies_id'] = $pk_companies_id;
+                    $permission['creator'] = "0";
+                    $permission['permissions'] = $permissions;
+                    $UsersCompanies = new UsersCompanies();
+                    $UsersCompanies->fill($permission);
+                    $result = $UsersCompanies->save();
+                    if(!$result){
+                        $LastInsertIdCount = count($LastInsertIdList);
+
+                        for ($x = 0; $x < $LastInsertIdCount; $x++) {
+                            Users::where('pk_users_id', $LastInsertIdCount[$x])->delete();
+                            UsersCompanies::where('fk_users_id', $LastInsertIdCount[$x])->where('fk_companies_id', $pk_companies_id)->delete();
+                        }
+
+                        return redirect('register/users')->withInput();
+                       break;
+                    }
 
 
+                } else {
+                    $LastInsertIdCount = count($LastInsertIdList);
+
+                    for ($x = 0; $x < $LastInsertIdCount; $x++) {
+                        Users::where('pk_users_id', $LastInsertIdCount[$x])->delete();
+                        UsersCompanies::where('fk_users_id', $LastInsertIdCount[$x])->where('fk_companies_id', $pk_companies_id)->delete();
+                    }
+
+                    return redirect('register/users')->withInput();
+
+                }
+            } catch (\Exception $e) {
+                $LastInsertIdCount = count($LastInsertIdList);
+
+                for ($x = 0; $x < $LastInsertIdCount; $x++) {
+                    Users::where('pk_users_id', $LastInsertIdCount[$x])->delete();
+                    UsersCompanies::where('fk_users_id', $LastInsertIdCount[$x])->where('fk_companies_id', $pk_companies_id)->delete();
+                }
+                return redirect('register/users')->withInput();
+            }
 
         }
         return redirect('register/owners');
@@ -136,33 +179,45 @@ class MoreRegisterController extends Controller
         return redirect('register/branches');
     }
 
+<<<<<<< HEAD
     	public function branches(Request $request)
     {   $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
         $data['step']=7;
         return view('front_end.more_register',compact('countries'),$data);
-    }
+=======
 
-    	public function authoriszation(Request $request)
+
+
+    public function branches(Request $request)
     {
-        $data['email']  = $request->username;
-		$data['password']   = md5($request->password);
-		$user = Users::where($data)->get();
-		$count = $user->count();
-		if($count > 0){
-			echo "true";
-		}else{
-			echo "false";
-		}
+        $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
+        $data['step'] = 6;
+        return view('front_end.more_register', compact('countries'), $data);
+>>>>>>> 502383b99e8f213f535cd2c9d569d3b661777a28
+    }
+
+    public function authoriszation(Request $request)
+    {
+        $data['email'] = $request->username;
+        $data['password'] = md5($request->password);
+        $user = Users::where($data)->get();
+        $count = $user->count();
+        if ($count > 0) {
+            echo "true";
+        } else {
+            echo "false";
+        }
 
     }
+
     public function isUploadProfile($request, $i)
     {
-    	$image = 'users.'.$i.'.user_userimage';
+        $image = 'users.' . $i . '.user_userimage';
         $SM_Path = storage_path('app/upload/profile/sm/');
         $MD_Path = storage_path('app/upload/profile/md/');
         File::isDirectory($SM_Path) or File::makeDirectory($SM_Path, 0777, true, true);
         File::isDirectory($MD_Path) or File::makeDirectory($MD_Path, 0777, true, true);
-        $newname = time() . '-' . $request->input('users.'.$i.'.user_first_name') . '.png';
+        $newname = time() . '-' . $request->input('users.' . $i . '.user_first_name') . '.png';
 
         if ($request->hasFile($image)) {
             $path = $request->file($image)->storeAs('upload/profile', $newname);
@@ -188,5 +243,51 @@ class MoreRegisterController extends Controller
         }
         return $newname;
     }
+
+
+    public function GetPermissions($permissions)
+    {
+
+        $Json_permetions = ["allow_product" => false,
+            "allow_manage_order" => false,
+            "allow_buy" => false,
+            "allow_tender" => false,
+            "allow_job" => false,
+            "allow_advertising" => false,
+            "allow_post" => false,
+            "allow_chat" => false];
+
+        if (in_array("allow_product", $permissions)) {
+            $Json_permetions["allow_product"] = true;
+        }
+        if (in_array("allow_manage_order", $permissions)) {
+            $Json_permetions["allow_manage_order"] = true;
+        }
+
+        if (in_array("allow_buy", $permissions)) {
+            $Json_permetions["allow_buy"] = true;
+        }
+
+        if (in_array("allow_tender", $permissions)) {
+            $Json_permetions["allow_tender"] = true;
+        }
+
+        if (in_array("allow_job", $permissions)) {
+            $Json_permetions["allow_job"] = true;
+        }
+        if (in_array("allow_advertising", $permissions)) {
+            $Json_permetions["allow_advertising"] = true;
+        }
+        if (in_array("allow_post", $permissions)) {
+            $Json_permetions["allow_post"] = true;
+        }
+        if (in_array("allow_chat", $permissions)) {
+            $Json_permetions["allow_chat"] = true;
+        }
+
+
+        return json_encode($Json_permetions);
+    }
+
 
 }
