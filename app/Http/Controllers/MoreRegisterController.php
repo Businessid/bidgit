@@ -45,6 +45,10 @@ class MoreRegisterController extends Controller
         $email = $request->input('users.*.user_email');
         $password = $request->input('users.*.user_password');
         $status = $request->input('users.*.auth_type');
+
+        $permission_ecommerce = $request->input('users.*.auth_ecommerce');
+        $permission_social = $request->input('users.*.auth_social');
+
         $records=count($first_name);
         for ($i=0; $i < $records ; $i++) { 
         	$data['first_name']=$first_name[$i];
@@ -57,12 +61,22 @@ class MoreRegisterController extends Controller
         	$data['email']=$email[$i];
         	$data['password']=md5($password[$i]);
         	$data['status']=$status[$i];
-        	
-      
         	$profile = $this->isUploadProfile($request,$i);
-        	echo $profile; die;
             $data['profile_image'] = storage_path('app/upload/profile/'.$profile);
-        	Users::insert($data);
+        	$result=Users::insert($data);
+        	if($result){
+	        	$permissions=array();
+	        	$array_1=$permission_ecommerce[$i];
+	        	$array_2=$permission_social[$i];
+	        	$permissions=array_merge($array_1,$array_2);
+	        	$permission['fk_users_id']=$LastInsertId;
+	        	$permission['fk_companies_id']=$LastInsertId;
+	        	$permission['creator']=$LastInsertId;
+	        	$permission['permissions']=json_encode($permissions);
+        	}
+
+
+
         }
         return redirect('register/branches');
     }
