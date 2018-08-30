@@ -179,24 +179,14 @@ class MoreRegisterController extends Controller
         return redirect('register/branches');
     }
 
-<<<<<<< HEAD
     	public function branches(Request $request)
-    {   $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']=7;
-        return view('front_end.more_register',compact('countries'),$data);
-=======
-
-
-
-    public function branches(Request $request)
     {
         $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
-        $data['step'] = 6;
+        $data['step'] = 7;
         return view('front_end.more_register', compact('countries'), $data);
->>>>>>> 502383b99e8f213f535cd2c9d569d3b661777a28
     }
 
-    public function authoriszation(Request $request)
+    	public function authoriszation(Request $request)
     {
         $data['email'] = $request->username;
         $data['password'] = md5($request->password);
@@ -210,7 +200,7 @@ class MoreRegisterController extends Controller
 
     }
 
-    public function isUploadProfile($request, $i)
+    	public function isUploadProfile($request, $i)
     {
         $image = 'users.' . $i . '.user_userimage';
         $SM_Path = storage_path('app/upload/profile/sm/');
@@ -230,7 +220,8 @@ class MoreRegisterController extends Controller
         }
         return $newname;
     }
-    public function isUploadID($request, $i)
+
+    	public function isUploadID($request, $i)
     {
     	$image = 'braches.'.$i.'.branches_file';
         $ID_Path = storage_path('app/upload/ID/');
@@ -244,8 +235,7 @@ class MoreRegisterController extends Controller
         return $newname;
     }
 
-
-    public function GetPermissions($permissions)
+    	public function GetPermissions($permissions)
     {
 
         $Json_permetions = ["allow_product" => false,
@@ -284,7 +274,6 @@ class MoreRegisterController extends Controller
         if (in_array("allow_chat", $permissions)) {
             $Json_permetions["allow_chat"] = true;
         }
-
 
         return json_encode($Json_permetions);
     }
