@@ -50,7 +50,11 @@ Route::post('register/insert_users', 'MoreRegisterController@insert_users');
 // Authorize User Data From  Register Page
 Route::post('register/authoriszation', 'MoreRegisterController@authoriszation');
 
-// Create Branches Data From  Register Page
+// Create Owners Data From  Register Page
+Route::get('register/owners', 'MoreRegisterController@owners');
+Route::post('register/insert_owners', 'MoreRegisterController@insert_owners');
+
+// Create Banches Data From  Register Page
 Route::get('register/branches', 'MoreRegisterController@branches');
 
 /* Select Ajax From Register Page  */

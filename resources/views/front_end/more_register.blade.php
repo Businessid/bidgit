@@ -66,16 +66,16 @@
                   </a>
                   <a   href="@if($step > 8) {{url('/register/location')}} @else # @endif">
                     <div class="f1-step <?php if(@$step==8) echo 'active'; elseif(@$step>8) echo 'activated';else echo '';?>">
-                      <div class="f1-step-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>
-                      <p>Upload Documents</p>
-                    </div>
-                  </a>
-                  <a   href="@if($step > 9) {{url('/register/location')}} @else # @endif">
-                    <div class="f1-step <?php if(@$step==9) echo 'active'; elseif(@$step>9) echo 'activated';else echo '';?>">
                       <div class="f1-step-icon"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
                       <p>Verifiy</p>
                     </div>
                   </a>
+                  <!-- <a   href="@if($step > 9) {{url('/register/location')}} @else # @endif">
+                    <div class="f1-step <?php //if(@$step==9) echo 'active'; elseif(@$step>9) echo 'activated';else echo '';?>">
+                      <div class="f1-step-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>
+                      <p>Verifiy</p>
+                    </div>
+                  </a> -->
                   <a   href="@if($step > 9) {{url('/register/payment')}} @else # @endif">
                     <div class="f1-step <?php if(@$step==10) echo 'active'; elseif(@$step>10) echo 'activated';else echo '';?>">
                       <div class="f1-step-icon"><i class="fa fa-credit-card" aria-hidden="true"></i></div>
@@ -313,25 +313,26 @@
                     {{ Form::close() }}
                   </div>
                 </fieldset>
+
                 <fieldset class="investors"  @if($step==6) style="display:block" @else  style="display:none !important" @endif>
-                  {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
+                  {{ Form::open(array('url' => 'register/insert_owners', 'enctype' => 'multipart/form-data','id'=>'owners_form')) }}
                   <div id="investors_repeater">
-                    <div data-repeater-list="">
-                      <div data-repeater-item="">
+                    <div data-repeater-list="branches">
+                      <div data-repeater-item>
                         <input type="hidden" name="tab" value="investors">
                         <div class="lg-reg reg-form">
                           <div class="add-more-investor">
                             <div class="row">
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_name" class="field-label">Full Name:</label>
-                                  <input type="email" class="form-control field-control" name="investor_name[]" id="investor_name" value="{{old('investor_name')}}" placeholder="" data-fv-field="investor_name">
+                                  <label for="owners_name" class="field-label">Full Name:</label>
+                                  <input type="email" class="form-control field-control" name="owners_name" value="" placeholder="" data-fv-field="owners_name">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_type" class="field-label">Type:</label>
-                                  <select class="form-control js-example-basic-single" name="investor_type[]" id="investor_type">
+                                  <label for="owners_type" class="field-label">Type:</label>
+                                  <select class="form-control js-example-basic-single" name="owners_type">
                                     <option value="">Select Type</option>
                                     <option value="1">Local Sponsor</option>
                                     <option value="2">Owner</option>
@@ -341,14 +342,14 @@
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="share" class="field-label">Percentage Of Share</label>
-                                  <input type="text" class="form-control field-control" name="share[]" id="share" value="{{old('share')}}" placeholder="" data-fv-field="share">
+                                  <label for="owners_share" class="field-label">Percentage Of Share</label>
+                                  <input type="text" class="form-control field-control" name="owners_share" value="" placeholder="" data-fv-field="owners_share">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_nationality" class="field-label">Nationality:</label>
-                                  <select class="form-control js-example-basic-single" id="investor_nationality" name="investor_nationality[]"  title="">
+                                  <label for="owners_nationality" class="field-label">Nationality:</label>
+                                  <select class="form-control js-example-basic-single" name="owners_nationality"  title="">
                                     <option value="">- Select -</option>
                                     @if(!empty($countries))
                                       @foreach($countries as $value)
@@ -362,28 +363,28 @@
                             <div class="row">
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_mobile" class="field-label">Mobile Number:</label>
-                                  <input type="text" class="form-control field-control mobile" name="investor_mobile[]" id="investor_mobile" value="{{old('investor_mobile')}}" placeholder="" data-fv-field="investor_mobile">
+                                  <label for="owners_mobile" class="field-label">Mobile Number:</label>
+                                  <input type="text" class="form-control field-control mobile" name="owners_mobile" value="" placeholder="" data-fv-field="owners_mobile">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_email" class="field-label">E-mail:</label>
-                                  <input type="email" class="form-control field-control" name="investor_email[]" id="investor_email" value="{{old('investor_email')}}" placeholder="" data-fv-field="investor_email">
+                                  <label for="owners_email" class="field-label">E-mail:</label>
+                                  <input type="email" class="form-control field-control" name="owners_email" value="" placeholder="" data-fv-field="owners_email">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_id_no" class="field-label">ID No:</label>
-                                  <input type="text" class="form-control field-control" name="investor_id_no[]" id="investor_id_no" value="{{old('investor_id_no')}}" placeholder="" data-fv-field="investor_id_no">
+                                  <label for="owners_id_no" class="field-label">ID No:</label>
+                                  <input type="text" class="form-control field-control" name="owners_id_no" value="" placeholder="" data-fv-field="owners_id_no">
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-group">
-                                  <label for="investor_image" class="field-label">Upload Your ID</label>
+                                  <label for="owners_file" class="field-label">Upload Your ID</label>
                                   <div class="custom-file upload-reg">
-                                    <input type="file" class="custom-file-input form-control field-control" id="investor_image" name="investor_image[]">
-                                    <label class="custom-file-label" for="investor_image">Choose file</label>
+                                    <input type="file" class="custom-file-input form-control field-control" name="owners_file">
+                                    <label class="custom-file-label" for="owners_file">Choose file</label>
                                     <span class="text-muted">*This will not be share with  anyone </span>
                                   </div>
                                 </div>
@@ -398,16 +399,17 @@
                     </div>
                     <div class="row">
                       <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
-                        <a href="javascript:void(0);" data-repeater-create="" class="switch-acc add-user">Add</a>
+                        <a href="javascript:add_owners_form_roles();" data-repeater-create="" class="switch-acc add-user">Add</a>
                       </div>
                     </div>
                     <div class="f1-buttons">
                       <button type="button" class="btn btn-previous">Previous</button>
-                      <button type="button" class="btn btn-next">Next</button>
+                      <button type="submit" class="btn btn-next">Next</button>
                     </div>
                   </div>
                   {{ Form::close() }}
                 </fieldset>
+                
                 <fieldset class="branches"  @if($step==7) style="display:block" @else  style="display:none !important" @endif>
                   {{ Form::open(array('url' => 'register/post', 'enctype' => 'multipart/form-data')) }}
                   <div id="branches_repeater">
@@ -869,9 +871,37 @@
                   var ConfirmPass = FormElemant_Name.replace("user_password_confirmation", "user_password");
                   FormElemant.rules( "add", {required: true,minlength: 6,  equalTo:'[name="'+ConfirmPass+'"]'});
               }
-
           }
+      }
 
+
+       function add_owners_form_roles(){
+          var oFormData = $('#owners_form').serializeArray();
+          for (var i = 0; i < oFormData.length; i++){
+
+              if (oFormData[i]['name'].indexOf('owners_nationality') > -1)
+              {
+                  var FormElemant_Name = $( "select[name='"+oFormData[i]['name']+"']" ).attr('name');
+              }else{
+                  var FormElemant_Name = $( "input[name='"+oFormData[i]['name']+"']" ).attr('name');
+              }
+              var FormElemant = $( "input[name='"+oFormData[i]['name']+"']" );
+              FormElemant.rules( "remove" );
+
+
+              if(FormElemant_Name.indexOf('owners_name') > -1){
+                  FormElemant.rules( "add", {required: true, minlength: 3});
+              }
+              if(FormElemant_Name.indexOf('owners_type') > -1){
+                  FormElemant.rules( "add", {required: true});
+              }
+              if(FormElemant_Name.indexOf('owners_mobile') > -1){
+                  FormElemant.rules( "add", {required: true,});
+              }
+              if(FormElemant_Name.indexOf('owners_email') > -1){
+                  FormElemant.rules( "add", {required: true,});
+              }
+          }
       }
 
 

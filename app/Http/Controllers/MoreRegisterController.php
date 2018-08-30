@@ -87,12 +87,58 @@ class MoreRegisterController extends Controller
 
 
         }
+        return redirect('register/owners');
+    }
+
+    	public function owners(Request $request)
+    {   $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
+        $data['step']=6;
+        return view('front_end.more_register',compact('countries'),$data);
+    }
+
+    	public function insert_owners(Request $request)
+    {
+        $validatedData = $request->validate([
+            'owners.*.owners_name' => 'required',
+            'owners.*.owners_type' => 'required',
+            'owners.*.owners_nationality' => 'required',
+            'owners.*.owners_mobile' => 'required',
+            'owners.*.owners_email' => 'required'
+        ]);
+        echo "okkk"; die;
+        $owners_name = $request->input('owners.*.owners_name');
+        $owners_type = $request->input('owners.*.owners_type');
+        $owners_share = $request->input('owners.*.owners_share');
+        $owners_nationality = $request->input('owners.*.owners_nationality');
+        $owners_mobile = $request->input('owners.*.owners_mobile');
+        $owners_email = $request->input('owners.*.owners_email');
+        $owners_id_no = $request->input('owners.*.owners_id_no');
+        $owners_image = $request->file('owners.*.owners_image');
+
+        $records=count($owners_name);
+        for ($i=0; $i < $records ; $i++) { 
+        	$pk_companies_id = "1"; // $request->session()->get('$pk_companies_id');
+        	$data['fk_companies_id']=$pk_companies_id;
+        	$data['full_name']=$owners_name[$i];
+        	$data['type']=$owners_type[$i];
+        	$data['percentage_of_share']=$owners_share[$i];
+        	$data['nationality']=$owners_nationality[$i];
+        	$data['mobile']=$owners_mobile[$i];
+        	$data['email']=$owners_email[$i];
+        	$data['id_no']=$owners_id_no[$i];
+        	$ID = $this->isUploadID($request,$i);
+            $data['id_image'] = storage_path('app/upload/ID/'.$ID);
+            print_r($data); die;
+            $CompanyOwners = new CompanyOwners();
+            $CompanyOwners->fill($data);
+            $result = $CompanyOwners->save();
+        }
         return redirect('register/branches');
     }
 
     	public function branches(Request $request)
     {   $countries =  Countries::where('name','<>','')->orderBy('name','ASC')->get();
-        $data['step']=6;
+        $data['step']=7;
         return view('front_end.more_register',compact('countries'),$data);
     }
 
@@ -126,6 +172,19 @@ class MoreRegisterController extends Controller
             $image_md = Image::make(storage_path('app/upload/profile/' . $newname));
             $image_md->resize(400, 400);
             $image_md->save(storage_path('app/upload/profile/md/' . $newname));
+        }
+        return $newname;
+    }
+    public function isUploadID($request, $i)
+    {
+    	$image = 'braches.'.$i.'.branches_file';
+        $ID_Path = storage_path('app/upload/ID/');
+        File::isDirectory($ID_Path) or File::makeDirectory($ID_Path, 0777, true, true);
+
+        $newname = time() . '-' . $request->input('braches.'.$i.'.branches_name') . '.png';
+
+        if ($request->hasFile($image)) {
+            $path = $request->file($image)->storeAs('upload/profile', $newname);
         }
         return $newname;
     }
