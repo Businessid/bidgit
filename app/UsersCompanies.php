@@ -21,4 +21,13 @@ class UsersCompanies extends Model
         return $this->hasMany(Users::class, 'pk_users_id', 'fk_users_id');
     }
 
+
+
+    protected $fillable = [
+        'fk_users_id',
+        'fk_companies_id',
+        'creator',
+        'permissions',
+    ];
+
 }

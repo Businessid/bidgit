@@ -259,6 +259,7 @@ class RegisterController extends BaseController
         $result = $Companies->save();
         if ($result) {
             $Company_Last_ID = $Companies->id;
+            $request->session()->put('pk_companies_id', $Company_Last_ID);
             $user_info = $request->session()->get('company_user_info');
             $users = new Users();
             $users->fill($user_info);

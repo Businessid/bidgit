@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Countries;
 use App\Users;
+use App\UsersCompanies;
 use File;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -63,16 +64,24 @@ class MoreRegisterController extends Controller
         	$data['status']=$status[$i];
         	$profile = $this->isUploadProfile($request,$i);
             $data['profile_image'] = storage_path('app/upload/profile/'.$profile);
-        	$result=Users::insert($data);
+            $Users = new Users();
+            $Users->fill($data);
+            $result = $Users->save();
         	if($result){
+                $LastInsertId = $Users->id;
 	        	$permissions=array();
 	        	$array_1=$permission_ecommerce[$i];
 	        	$array_2=$permission_social[$i];
 	        	$permissions=array_merge($array_1,$array_2);
 	        	$permission['fk_users_id']=$LastInsertId;
-	        	$permission['fk_companies_id']=$LastInsertId;
-	        	$permission['creator']=$LastInsertId;
+                $pk_companies_id = "1";  // $request->session()->get('$pk_companies_id');
+	        	$permission['fk_companies_id']=$pk_companies_id;
+	        	$permission['creator']= "0";
 	        	$permission['permissions']=json_encode($permissions);
+                $UsersCompanies = new UsersCompanies();
+                $UsersCompanies->fill($permission);
+                $UsersCompanies->save();
+
         	}
 
 
