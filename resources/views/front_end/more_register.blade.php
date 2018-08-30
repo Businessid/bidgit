@@ -231,37 +231,37 @@
                                       <ul class="list-for-user">
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products1"  name="auth_ecommerce" type="checkbox" class="checkboxes auth-ecommerce" value="" title="Add product / Delete product / Manage Product / Edit product… etc.">
+                                            <input id="products1"  name="auth_ecommerce" type="checkbox" class="checkboxes auth-ecommerce" value="allow_product" title="Add product / Delete product / Manage Product / Edit product… etc.">
                                             <label for="products1">Add product / Delete product / Manage Product / Edit product… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products2" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.">
+                                            <input id="products2" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="allow_manage_order" title="Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.">
                                             <label for="products2">Sell product / Confirm order request/Track order/Delete order request / Edit the selling product / Edit Tracking Order / Edit order… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products3" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Buy from supplier /   product / Edit the buying order… etc.">
+                                            <input id="products3" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="allow_buy" title="Buy from supplier /   product / Edit the buying order… etc.">
                                             <label for="products3">Buy from supplier /   product / Edit the buying order… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products4" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Create tender / accept tender / Delete tender / Edit tender… etc.">
+                                            <input id="products4" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="allow_tender" title="Create tender / accept tender / Delete tender / Edit tender… etc.">
                                             <label for="products4">Create tender / accept tender / Delete tender / Edit tender… etc. </label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products5" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.">
+                                            <input id="products5" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="allow_job" title="Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.">
                                             <label for="products5">Create Job vacancies / Accept CV / Accept appointments / Decline the appointment / Edit job vacancies … etc.</label>
                                           </div>
                                         </li>
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="products6" id="advertising" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="" title="Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package">
+                                            <input id="products6" id="advertising" type="checkbox" name="auth_ecommerce" class="checkboxes auth-ecommerce" value="allow_advertising" title="Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package">
                                             <label for="products6">Add advertising Post ( Buying a package from businessid.net to promote your account or product or service or your brand ) / add advertising video (Buying a package from businessid.net to promote your account or product or service or your brand ) / Delete your advertising package from  businessid.net / Edit your advertising package</label>
                                           </div>
                                         </li>
@@ -276,13 +276,13 @@
                                       <ul class="list-for-user">
                                         <li class="ml-3">
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social1" type="checkbox" name="auth_social" class="checkboxes auth-social" value="" title="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
+                                            <input id="social1" type="checkbox" name="auth_social" class="checkboxes auth-social" value="allow_post" title="Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.">
                                             <label for="social1">Post video, Post photo, Follow, Un Follow, Change the name of company / background photo / Profile photo / Write comment / Like post / Share / Delete all type of post and comments / Edit all the posts in profile and in newsfeed… etc.</label>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="checkbox-edit checkbox-primary">
-                                            <input id="social2" type="checkbox" name="auth_social" class="checkboxes auth-social" value="" title="Chat / Send message">
+                                            <input id="social2" type="checkbox" name="auth_social" class="checkboxes auth-social" value="allow_chat" title="Chat / Send message">
                                             <label for="social2">Chat / Send message</label>
                                           </div>
                                         </li>

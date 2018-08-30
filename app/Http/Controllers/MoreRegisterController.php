@@ -33,8 +33,7 @@ class MoreRegisterController extends Controller
             'users.*.user_email' => 'required',
             'users.*.user_password' => 'required'
         ]);
-        $profile_image = $request->input('users.*.user_userimage');
-        print_r($profile_image); die;
+        $profile_image = $request->file('users.*.user_userimage');
         $first_name = $request->input('users.*.user_last_name');
         $last_name = $request->input('users.*.user_last_name');
         $gender = $request->input('users.*.user_gender');
@@ -58,7 +57,10 @@ class MoreRegisterController extends Controller
         	$data['email']=$email[$i];
         	$data['password']=md5($password[$i]);
         	$data['status']=$status[$i];
-        	$profile = $this->isUploadProfile($request,$data['first_name'],$profile_image[$i]);
+        	
+      
+        	$profile = $this->isUploadProfile($request,$i);
+        	echo $profile; die;
             $data['profile_image'] = storage_path('app/upload/profile/'.$profile);
         	Users::insert($data);
         }
@@ -84,22 +86,23 @@ class MoreRegisterController extends Controller
 		}
 
     }
-     public function isUploadProfile($request,$newname,$image)
+    public function isUploadProfile($request, $i)
     {
+    	$image = 'users.'.$i.'.user_userimage';
         $SM_Path = storage_path('app/upload/profile/sm/');
         $MD_Path = storage_path('app/upload/profile/md/');
         File::isDirectory($SM_Path) or File::makeDirectory($SM_Path, 0777, true, true);
         File::isDirectory($MD_Path) or File::makeDirectory($MD_Path, 0777, true, true);
-        $newname= time().'-'.$newname.'.png';
+        $newname = time() . '-' . $request->input('users.'.$i.'.user_first_name') . '.png';
 
-        if($request->hasFile($image)) {
-            $path= $request->file($image)->storeAs('upload/profile',$newname);
-            $image_sm = Image::make(storage_path('app/upload/profile/'.$newname));          
-            $image_sm->resize(150,150);            //$image_sm->crop(300, 300, 300, 300);
-            $image_sm->save(storage_path('app/upload/profile/sm/'.$newname));
-            $image_md = Image::make(storage_path('app/upload/profile/'.$newname));          
-            $image_md->resize(400,400);
-            $image_md->save(storage_path('app/upload/profile/md/'.$newname));
+        if ($request->hasFile($image)) {
+            $path = $request->file($image)->storeAs('upload/profile', $newname);
+            $image_sm = Image::make(storage_path('app/upload/profile/' . $newname));
+            $image_sm->resize(150, 150);            //$image_sm->crop(300, 300, 300, 300);
+            $image_sm->save(storage_path('app/upload/profile/sm/' . $newname));
+            $image_md = Image::make(storage_path('app/upload/profile/' . $newname));
+            $image_md->resize(400, 400);
+            $image_md->save(storage_path('app/upload/profile/md/' . $newname));
         }
         return $newname;
     }
