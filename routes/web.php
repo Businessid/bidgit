@@ -56,6 +56,13 @@ Route::post('register/insert_owners', 'MoreRegisterController@insert_owners');
 
 // Create Banches Data From  Register Page
 Route::get('register/branches', 'MoreRegisterController@branches');
+Route::post('register/insert_branches', 'MoreRegisterController@insert_branches');
+
+// Create Verify Data From  Register Page
+Route::get('register/verify', 'MoreRegisterController@verify');
+
+// Insert Verify Data From  Register Page
+Route::post('register/upload_doc', 'MoreRegisterController@upload_verify');
 
 /* Select Ajax From Register Page  */
 Route::post('register/selectActivities', 'AjaxController@selectActivities');

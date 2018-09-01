@@ -125,3 +125,13 @@ font-size: 13px;
 .full-wrap.text-right.send-author-wrap{
     text-align: center !important;
 }
+.document_prevew{
+    text-align: center;
+    width: 100%;
+}
+.document-success .fa-file{
+    color: green !important;
+}
+.custom-file.upload-reg.document_file{
+    width: 20% !important;
+}

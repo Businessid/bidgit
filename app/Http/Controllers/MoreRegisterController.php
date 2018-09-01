@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Countries;
 use App\Users;
 use App\UsersCompanies;
+use App\CompanyOwners;
+use App\CompanyBranches;
+use App\Companies;
 use File;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -148,18 +151,17 @@ class MoreRegisterController extends Controller
             'owners.*.owners_mobile' => 'required',
             'owners.*.owners_email' => 'required'
         ]);
-        echo "okkk"; die;
         $owners_name = $request->input('owners.*.owners_name');
         $owners_type = $request->input('owners.*.owners_type');
         $owners_share = $request->input('owners.*.owners_share');
         $owners_nationality = $request->input('owners.*.owners_nationality');
         $owners_mobile = $request->input('owners.*.owners_mobile');
+        $owners_phone = $request->input('owners.*.owners_phone');
         $owners_email = $request->input('owners.*.owners_email');
         $owners_id_no = $request->input('owners.*.owners_id_no');
         $owners_image = $request->file('owners.*.owners_image');
-
         $records=count($owners_name);
-        for ($i=0; $i < $records ; $i++) { 
+        for ($i=0; $i < $records ; $i++) {
         	$pk_companies_id = "1"; // $request->session()->get('$pk_companies_id');
         	$data['fk_companies_id']=$pk_companies_id;
         	$data['full_name']=$owners_name[$i];
@@ -167,11 +169,11 @@ class MoreRegisterController extends Controller
         	$data['percentage_of_share']=$owners_share[$i];
         	$data['nationality']=$owners_nationality[$i];
         	$data['mobile']=$owners_mobile[$i];
+        	$data['phone']=$owners_phone[$i];
         	$data['email']=$owners_email[$i];
         	$data['id_no']=$owners_id_no[$i];
         	$ID = $this->isUploadID($request,$i);
             $data['id_image'] = storage_path('app/upload/ID/'.$ID);
-            print_r($data); die;
             $CompanyOwners = new CompanyOwners();
             $CompanyOwners->fill($data);
             $result = $CompanyOwners->save();
@@ -184,6 +186,61 @@ class MoreRegisterController extends Controller
         $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
         $data['step'] = 7;
         return view('front_end.more_register', compact('countries'), $data);
+    }
+
+    	public function insert_branches(Request $request)
+    {
+        $validatedData = $request->validate([
+            'branches.*.branches_name' => 'required',
+            'branches.*.branches_mobile' => 'required',
+            'branches.*.branches_email' => 'required',
+            'branches.*.branches_country' => 'required'
+        ]);
+        $branches_name = $request->input('branches.*.branches_name');
+        $branches_mobile = $request->input('branches.*.branches_mobile');
+        $branches_phone = $request->input('branches.*.branches_phone');
+        $branches_email = $request->input('branches.*.branches_email');
+        $branches_country = $request->input('branches.*.branches_country');
+        $branches_city = $request->input('branches.*.branches_city');
+        $branches_area = $request->input('branches.*.branches_area');
+        $branch_address = $request->input('branches.*.branch_address');
+        $records=count($branches_name);
+        for ($i=0; $i < $records ; $i++) {
+        	$pk_companies_id = "1"; // $request->session()->get('$pk_companies_id');
+        	$data['fk_companies_id']=$pk_companies_id;
+        	$data['branch_name']=$branches_name[$i];
+        	$data['tel']=$branches_mobile[$i];
+        	$data['mobile']=$branches_phone[$i];
+        	$data['email']=$branches_email[$i];
+        	$data['fk_country_id']=$branches_country[$i];
+        	$data['fk_city_id']=$branches_city[$i];
+        	$data['fk_area_id']=$branches_area[$i];
+        	$data['address']=$branch_address[$i];
+            $CompanyBranches = new CompanyBranches();
+            $CompanyBranches->fill($data);
+            $result = $CompanyBranches->save();
+        }
+        return redirect('register/verify');
+    }
+
+    	public function verify(Request $request)
+    {
+        $data['step'] = 8;
+        $data['submitted'] = 0;
+        return view('front_end.more_register', $data);
+    }
+    	public function upload_verify(Request $request)
+    {
+        $Document = $this->isUploadDocument($request);
+        $data['documents'] = $Document;
+        $update = Companies::where('pk_companies_id', 1)->update($data);
+        if($update){
+        	$data['step'] = 8;
+        	$data['submitted'] = 1;
+            return view('front_end.more_register', $data);
+        }else{
+        	return redirect('register/verify');
+        }
     }
 
     	public function authoriszation(Request $request)
@@ -233,6 +290,22 @@ class MoreRegisterController extends Controller
             $path = $request->file($image)->storeAs('upload/profile', $newname);
         }
         return $newname;
+    }
+    	public function isUploadDocument($request)
+    {
+    	$Document_Path = storage_path('app/upload/verify_documents/');
+        File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
+
+    	$image = $request->file('document.*.document_file');
+        $doc_images_Arr=array();
+    	$i=1;
+    	foreach ($image[0] as $image) {
+    		$newname = time().'-'.$i.'.png';
+    		$image->storeAs('upload/verify_documents', $newname);
+    		array_push($doc_images_Arr,$newname);
+    		$i++;
+    	}
+    	return json_encode($doc_images_Arr);
     }
 
     	public function GetPermissions($permissions)

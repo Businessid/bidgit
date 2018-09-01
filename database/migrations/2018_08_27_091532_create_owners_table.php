@@ -17,13 +17,14 @@ class CreateOwnersTable extends Migration
             $table->increments('id');
             $table->integer('fk_companies_id');
             $table->string('full_name');
-            $table->string('type');
-            $table->string('percentage_of_share');
-            $table->string('nationality');
+            $table->integer('type');
+            $table->string('percentage_of_share')->nullable();
+            $table->integer('nationality');
             $table->string('mobile');
+            $table->string('phone')->nullable();
             $table->string('email');
-            $table->string('id_no');
-            $table->string('id_image');
+            $table->string('id_no')->nullable();
+            $table->string('id_image')->nullable();
             $table->timestamps();
         });
     }

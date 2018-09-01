@@ -30,6 +30,7 @@ class CreateCompaniesTable extends Migration
             $table->string('profile_image');
             $table->string('cover_image');
             $table->string('website');
+            $table->json('documents')->nullable();
             $table->string('nationality')->nullable();
             $table->string('pobox');
             $table->integer('fk_country_id')->nullable();
