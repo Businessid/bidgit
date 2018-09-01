@@ -83,6 +83,7 @@
                     </div>
                   </a>
                 </div>
+
                 <fieldset class="users"  @if($step==5) style="display:block" @else  style="display:none !important" @endif >
                   <div class="lg-reg reg-form">
                     {{ Form::open(array('url' => 'register/insert_users', 'enctype' => 'multipart/form-data','id'=>'users_form')) }}
@@ -308,6 +309,7 @@
                     </div>
                     <div class="f1-buttons">
                       <button type="button" class="btn btn-previous">Previous</button>
+                       <button type="submit" class="btn btn-next">Skip</button>
                       <button type="submit" class="btn">Next</button>
                     </div>
                     {{ Form::close() }}
@@ -316,7 +318,7 @@
 
                 <fieldset class="investors"  @if($step==6) style="display:block" @else  style="display:none !important" @endif>
                   {{ Form::open(array('url' => 'register/insert_owners', 'enctype' => 'multipart/form-data','id'=>'owners_form')) }}
-                  <div id="investors_repeater">
+                  <div id="owners_repeater">
                     <div data-repeater-list="owners">
                       <div data-repeater-item>
                         <input type="hidden" name="tab" value="investors">
@@ -412,6 +414,7 @@
                     </div>
                     <div class="f1-buttons">
                       <button type="button" class="btn btn-previous">Previous</button>
+                       <button type="submit" class="btn btn-next">Skip</button>
                       <button type="submit" class="btn">Next</button>
                     </div>
                   </div>
@@ -482,7 +485,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label for="branch_address" class="field-label">Branch Address:</label>
-                                  <textarea class="form-control" name="branch_address[]" id="branch_address" placeholder="">{{old('branch_address')}}</textarea>
+                                  <textarea class="form-control" name="branch_addres" placeholder=""></textarea>
                                 </div>
                               </div>
                             </div>
@@ -823,8 +826,6 @@
                   var FormElemant_Name = $( "input[name='"+oFormData[i]['name']+"']" ).attr('name');
               }
               var FormElemant = $( "input[name='"+oFormData[i]['name']+"']" );
-
-
               FormElemant.rules( "remove" );
 
               if(FormElemant_Name.indexOf('user_first_name') > -1){
@@ -867,8 +868,7 @@
           }
       }
 
-
-       function add_owners_form_roles(){
+      function add_owners_form_roles(){
           var oFormData = $('#owners_form').serializeArray();
           for (var i = 0; i < oFormData.length; i++){
 
@@ -889,17 +889,26 @@
                   FormElemant.rules( "add", {required: true});
               }
               if(FormElemant_Name.indexOf('owners_mobile') > -1){
-                  FormElemant.rules( "add", {required: true,});
+                  FormElemant.rules( "add", {required: true});
               }
               if(FormElemant_Name.indexOf('owners_email') > -1){
-                  FormElemant.rules( "add", {required: true,});
+                  FormElemant.rules( "add", {required: true});
               }
           }
       }
 
-       function add_branches_form_roles(){
+      function add_branches_form_roles(){
           var oFormData = $('#branches_form').serializeArray();
           for (var i = 0; i < oFormData.length; i++){
+
+             if (oFormData[i]['name'].indexOf('branches_country') > -1)
+              {
+                  var FormElemant_Name = $( "select[name='"+oFormData[i]['name']+"']" ).attr('name');
+              }else{
+                  var FormElemant_Name = $( "input[name='"+oFormData[i]['name']+"']" ).attr('name');
+              }
+              var FormElemant = $( "input[name='"+oFormData[i]['name']+"']" );
+              FormElemant.rules( "remove" );
 
               if(FormElemant_Name.indexOf('branches_name') > -1){
                   FormElemant.rules( "add", {required: true, minlength: 3});
@@ -908,14 +917,13 @@
                   FormElemant.rules( "add", {required: true});
               }
               if(FormElemant_Name.indexOf('branches_email') > -1){
-                  FormElemant.rules( "add", {required: true,});
+                  FormElemant.rules( "add", {required: true});
               }
               if(FormElemant_Name.indexOf('branches_country') > -1){
-                  FormElemant.rules( "add", {required: true,});
+                  FormElemant.rules( "add", {required: true});
               }
           }
       }
-
 
 
 
@@ -952,15 +960,26 @@
               show:function(){$(this).slideDown()},
               hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
           });
-      });       $("#users_form").validate({
+          });       
+          $("#users_form").validate({
               invalidHandler: function (e, r) {
-                  console.log("AAA");
+                  console.log("users_form");
+              }
+          })
+          $("#owners_form").validate({
+              invalidHandler: function (e, r) {
+                  console.log("owners_form");
+              }
+          })
+          $("#branches_form").validate({
+              invalidHandler: function (e, r) {
+                  console.log("branches_form");
               }
           })
    
-        setTimeout(add_users_form_roles, 1000);
-       setTimeout(add_owners_form_roles, 1000);
-       setTimeout(add_branches_form_roles, 1000);
+      setTimeout(add_users_form_roles, 1000);
+      setTimeout(add_owners_form_roles, 1000);
+      setTimeout(add_branches_form_roles, 1000);
   
 
 $(document).ready( function () {
@@ -1102,9 +1121,5 @@ $(document).ready( function () {
   <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>
-  <script type="text/javascript">
-
-
-  </script>
   </body>
   </html>

@@ -74,7 +74,8 @@ Route::post('register/getCurrentCountry', 'AjaxController@getCurrentCountry');
 Route::post('register/getCurrentCity', 'AjaxController@getCurrentCity');
 Route::post('register/getCurrentArea', 'AjaxController@getCurrentArea');
 
-
+/*Personal register Success*/
+Route::get('register/success', 'RegisterController@success');
 
 
 

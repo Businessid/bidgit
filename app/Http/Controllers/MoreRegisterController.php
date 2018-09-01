@@ -4,18 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Countries;
 use App\Users;
 use App\UsersCompanies;
 use App\CompanyOwners;
 use App\CompanyBranches;
 use App\Companies;
+use Session;
 use File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class MoreRegisterController extends Controller
 {
-    public function users(Request $request)
+    	public function users(Request $request)
     {
         $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
         $data['step'] = 5;
@@ -24,10 +28,10 @@ class MoreRegisterController extends Controller
     }
 
 
-    public function insert_users(Request $request)
+    	public function insert_users(Request $request)
     {
-
-        if (Session::has('pk_companies_id')) {
+    	return redirect('register/owners');
+        /**//*if (Session::has('pk_companies_id')) {
             $pk_companies_id = $request->session()->get('pk_companies_id');
         } else {
             return redirect('register/users')->withInput();
@@ -133,7 +137,7 @@ class MoreRegisterController extends Controller
             }
 
         }
-        return redirect('register/owners');
+        return redirect('register/owners');*/
     }
 
     	public function owners(Request $request)

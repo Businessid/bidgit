@@ -26,21 +26,19 @@ class RegisterController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(Request $request)
+        public function index(Request $request)
     {
         return view('front_end.register');
     }
 
-
-    public function personal(Request $request)
+        public function personal(Request $request)
     {
         $countries = Countries::where('name', '<>', '')->orderBy('name', 'ASC')->get();
         return view('front_end.personal_register', compact('countries'));
 
     }
 
-
-    public function insert_personal(Request $request)
+        public function insert_personal(Request $request)
     {
         $validatedData = $request->validate([
             'first_name' => 'required|min:2',
@@ -54,8 +52,6 @@ class RegisterController extends BaseController
             'password' => 'required|confirmed',
             'password_confirmation' => 'required'
         ]);
-
-
         $user_data['first_name'] = $request->input('first_name');
         $user_data['last_name'] = $request->input('last_name');
         $user_data['gender'] = $request->input('gender');
@@ -64,20 +60,23 @@ class RegisterController extends BaseController
         $user_data['nationality'] = $request->input('nationality');
         $user_data['email'] = $request->input('email');
         $user_data['password'] = $request->input('password');
-
+        $user_data['status']=1;
         $user = new Users();
         $user->fill($user_data);
         $result = $user->save();
-
         if ($result) {
-            $EmailTemp = $this->ConfirmEmailTmplate($user_data['first_name'], $user_data['last_name'] , "aa");
-            $this->sendEmail($user_data['email'], $EmailTemp);
-
-            return view('front_end.company_register');
+          /*  $EmailTemp = $this->ConfirmEmailTmplate($user_data['first_name'], $user_data['last_name'] , "aa");
+          $res=$this->sendEmail($user_data['email'], $EmailTemp);*/
+          return Redirect::to('register/success');
         } else {
             return Redirect::to('register/personal')->withInput();
         }
 
+    }
+        public function success()
+    {   
+        $data['message']='Please check your email to activate your account.';
+        return view('front_end.success_register',$data);
     }
 
 
@@ -448,6 +447,7 @@ class RegisterController extends BaseController
         $headers = "From: auto.confirm@businessid.com";
 
       //  mail($to,$subject,$Temp,$headers);
+        return true;
     }
 
 
