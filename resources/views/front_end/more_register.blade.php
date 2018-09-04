@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/datepicker3.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/modal.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/dropzone.css') }}">
 <style type="text/css">
   .store-cat-nav{
     display: none;
@@ -511,22 +512,19 @@
                   {{ Form::close() }}
                 </fieldset>
                 <fieldset class="upload_document" @if($step==8) style="display:block" @else  style="display:none !important" @endif >
-                  {{ Form::open(array('url' => 'register/upload_doc', 'enctype' => 'multipart/form-data')) }}
-                  <div id="upload_document_repeater">
                     @if(@$submitted==1)
                     <div class="user-for-msg text-center document-success"> <i class="fa fa-file" aria-hidden="true"></i> Documents are successfully recieved, it may take several hours to check them. We will let you know about the results of your company profle verification by email.</div><br/><br/><br/>
                     @else
-                    <div data-repeater-list="document">
-                      <div data-repeater-item>
                         <div class="lg-reg reg-form">
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group" style="text-align: center;">
                                 <label for="document_file" class="field-label">Upload Documents( Eg: Trade liecnce,Memorandum of association. etc...)</label><br/>
-                                <div class="custom-file upload-reg document_file">
-                                  <input type="file" class="custom-file-input form-control field-control document_file" name="document_file" width="20px;" multiple>
-                                  <label class="custom-file-label" for="document_file">Choose file</label>
-                                </div>
+     {{ Form::open(array('url' => 'docuemnt', 'enctype' => 'multipart/form-data','id'=>'myDropzone', 'class'=>'dropzone')) }}
+
+     {{ Form::close() }}
+
+
                               </div>
                             </div>
                           </div>
@@ -538,8 +536,6 @@
                               </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
                     @endif
                   <!--   <div class="row">
                       <div class="col-md-12 d-inline-block place-btn-wrap bottom-action-reg mt-2">
@@ -550,8 +546,6 @@
                       <button type="button" class="btn btn-previous">Previous</button>
                       <button type="button" class="btn btn-next">Next</button>
                     </div>
-                  </div>
-                  {{ Form::close() }}
                 </fieldset>
                 <fieldset class="logo">
                   <div class="lg-reg reg-form">
@@ -861,10 +855,10 @@
                     var ConfirmPass = FormElemant_Name.replace("user_password", "user_password_confirmation");
                     FormElemant.rules( "add", {required: true,minlength: 6,  equalTo:'[name="'+ConfirmPass+'"]'});
                 }
-              if(FormElemant_Name.indexOf('user_password_confirmation') > -1){
+                if(FormElemant_Name.indexOf('user_password_confirmation') > -1){
                   var ConfirmPass = FormElemant_Name.replace("user_password_confirmation", "user_password");
                   FormElemant.rules( "add", {required: true,minlength: 6,  equalTo:'[name="'+ConfirmPass+'"]'});
-              }
+                }
           }
       }
 
@@ -1093,31 +1087,54 @@ $(document).ready( function () {
     var E_el_mobile = El_name.replace("user_mobile", "user_mobile_code");
     var code=$('.selected-dial-code').html();
     $("[name='"+E_el_mobile+"']").val(code);
-  });
+  }); 
 
 
-    // Multiple images preview in browser
-    var imagesPreview = function(input, placeToInsertImagePreview) {
-        if (input.files) {
-            var filesAmount = input.files.length;
-            for (i = 0; i < filesAmount; i++) {
-                var reader = new FileReader();
-                reader.onload = function(event) {
-                    $($.parseHTML('<img width="150px;">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+  // DropZone
+
+  if(typeof Dropzone != 'undefined')
+    {
+        var images = new Array();
+        Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone("#myDropzone", {
+            url: "docuemnt",
+            maxFileSize: 50,
+            maxFilesize: 6, // MB
+            acceptedFiles: "image/*",
+            addRemoveLinks: true,
+            removedfile: function(file){
+            console.log(file.newname);
+            var token = $("input[name='_token']").val();
+              $.ajax({
+                url: "<?php echo URL::to('/').'/register/dlt_docuemnt'; ?>",
+                method: 'POST',
+                data: { _token:token,image:file.newname},
+                success: function(data) {
+                  if(data=='true'){
+                    var _ref;
+                    return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+                  }else{
+                    var _ref;
+                    return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+                  }
                 }
-                reader.readAsDataURL(input.files[i]);
+              });
+
+            },
+            success: function(file, response){
+              console.log(response);
+              file.newname =response;
+              file.previewElement.querySelector("img").alt = response;
+              file.previewElement.querySelector("[data-dz-name]").innerHTML = response;
+          
             }
-        }
-    };
-    $('.document_file').on('change', function() {
-        $('.document_prevew').html("");
-        imagesPreview(this, 'div.document_prevew');
-    });
+        });
+
+    }
 
 });
-
-
   </script>
+  <script src="{{ URL::asset('front_end/js/dropzone.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/prism.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/intlTelInput.js') }}"></script>
   <script src="{{ URL::asset('front_end/js/defaultCountryIp.js') }}"></script>

@@ -59,6 +59,8 @@ Route::get('register/branches', 'MoreRegisterController@branches');
 Route::post('register/insert_branches', 'MoreRegisterController@insert_branches');
 
 // Create Verify Data From  Register Page
+Route::post('register/docuemnt', 'MoreRegisterController@upload_decument');
+Route::post('register/dlt_docuemnt', 'MoreRegisterController@delete_decument');
 Route::get('register/verify', 'MoreRegisterController@verify');
 
 // Insert Verify Data From  Register Page
@@ -79,6 +81,9 @@ Route::get('register/success', 'RegisterController@success');
 
 
 
+
+Route::get('register/test', 'MoreRegisterController@test');
+Route::post('register/file_uppload', 'MoreRegisterController@file_uppload');
 
 
 Route::get('/home', function () {

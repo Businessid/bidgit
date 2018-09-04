@@ -12,9 +12,11 @@ use App\Users;
 use App\UsersCompanies;
 use App\CompanyOwners;
 use App\CompanyBranches;
+use App\CompanyDocuments;
 use App\Companies;
 use Session;
 use File;
+use Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class MoreRegisterController extends Controller
@@ -234,10 +236,14 @@ class MoreRegisterController extends Controller
         return view('front_end.more_register', $data);
     }
     	public function upload_verify(Request $request)
-    {
-        $Document = $this->isUploadDocument($request);
-        $data['documents'] = $Document;
-        $update = Companies::where('pk_companies_id', 1)->update($data);
+    {   
+        if (Session::has('pk_companies_id')) {
+        $pk_companies_id = $request->session()->get('pk_companies_id');
+        } else {
+        $pk_companies_id = 1;
+        }
+        $data['is_submit_document'] = 1;
+        $update = Companies::where('pk_companies_id', $pk_companies_id)->update($data);
         if($update){
         	$data['step'] = 8;
         	$data['submitted'] = 1;
@@ -295,7 +301,7 @@ class MoreRegisterController extends Controller
         }
         return $newname;
     }
-    	public function isUploadDocument($request)
+/*    	public function isUploadDocument($request)
     {
     	$Document_Path = storage_path('app/upload/verify_documents/');
         File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
@@ -310,7 +316,7 @@ class MoreRegisterController extends Controller
     		$i++;
     	}
     	return json_encode($doc_images_Arr);
-    }
+    }*/
 
     	public function GetPermissions($permissions)
     {
@@ -355,5 +361,61 @@ class MoreRegisterController extends Controller
         return json_encode($Json_permetions);
     }
 
+    public function upload_decument(Request $request){
+        $Document_Path = storage_path('app/upload/verify_documents/');
+        File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
+        
+        $image = $request->file('file');
+        $newname = time().'.png';
+        $upload=$image->storeAs('upload/verify_documents', $newname);
+        if($upload){
+            if (Session::has('pk_companies_id')) {
+            $pk_companies_id = $request->session()->get('pk_companies_id');
+            } else {
+            $pk_companies_id = 1;
+            }
+            //  Table
+            $CompanyDocuments = new CompanyDocuments();
+            $CompanyDocuments->fk_companies_id = $pk_companies_id;
+            $CompanyDocuments->file_path = $newname;
+            $CompanyDocuments->save();
+            echo $newname;
+        }else{
+            echo 'failed';
+        }
+    }
+
+    public function delete_decument(Request $request){
+       //  Table
+        $delete = CompanyDocuments::where('file_path',$request->image)->delete();
+        $image=storage_path('app/upload/verify_documents/').$request->image;
+        $res=unlink($image);
+        if($res){
+            echo "true";
+        }else{
+            echo "false";
+        }
+    }
+
+    public function test(Request $request){
+    return view('user');
+    }
+
+    public function file_uppload(Request $request){
+        $image = $request->input('filepond'); 
+        if($image){
+            $count=count($image);
+            for ($i=0 ; $i < $count ; $i++) {
+                try{
+                    $TheImage = json_decode($image[$i]);
+                    $imageName = $i.'-test.png';
+                    \File::put(storage_path(). '/' . $imageName, base64_decode($TheImage->data));
+                } catch (\Exception $e) {
+
+                }
+            }
+        }
+       
+    }
 
 }

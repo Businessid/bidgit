@@ -1,88 +1,100 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en"> 
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+  <title>Business ID Dubai Government | Ministry of foreign affairs | Dubai Immigration</title>
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/image_lib/filepond.min.css') }}">
+<style type="text/css">
+/**
+ * FilePond Custom Styles
+ */
+.filepond--drop-label {
+  color: #4c4e53;
+}
 
-        <title>Laravel</title>
+.filepond--label-action {
+  -webkit-text-decoration-color: #babdc0;
+          text-decoration-color: #babdc0;
+}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+.filepond--panel-root {
+  border-radius: 2em;
+  background-color: #edf0f4;
+  height: 1em;
+}
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+.filepond--item-panel {
+  background-color: #595e68;
+}
 
-            .full-height {
-                height: 100vh;
-            }
+.filepond--drip-blob {
+  background-color: #7f8a9a;
+}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+/**
+ * Page Styles
+ */
+html {
+  padding: 30vh 0 0;
+}
 
-            .position-ref {
-                position: relative;
-            }
+body {
+  max-width: 20em;
+  margin: 0 auto;
+}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+</style>
+<!--
+The classic file input element we'll enhance to a file pond
+-->
+ </head>
+ <body>
+ {{ Form::open(array('url' => 'register/file_uppload', 'enctype' => 'multipart/form-data')) }}
+ <input type="file" class="filepond" name="filepond[]" multiple data-max-file-size="3MB" data-max-files="10" style="display: none;" /><br/>
+<!--     <input type="text" name="name"> -->
+    <input type="submit" name="submit" value="submit">
+{{ Form::close() }}
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel Users
-                </div>
-
-            </div>
-        </div>
-    </body>
+<script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="{{ URL::asset('front_end/js/image_lib/filepond.min.js') }}"></script>
+<script type="text/javascript">
+    /*
+    We want to preview images, so we need to register the Image Preview plugin
+    */
+    FilePond.registerPlugin(
+        // encodes the file as base64 data
+        FilePondPluginFileEncode,
+        // validates the size of the file
+        FilePondPluginFileValidateSize,
+        // corrects mobile image orientation
+        FilePondPluginImageExifOrientation,
+        // previews dropped images
+        FilePondPluginImagePreview
+    );
+    const _inputElement = document.querySelector('input[type="file"]');
+        const _pond = FilePond.create( _inputElement, {
+            imageCropAspectRatio: '1:1',
+            imagePreviewMaxFileSize: '3MB',
+            imagePreviewHeight: 80,
+            imageTransformOutputMimeType: 'image/jpeg',
+            imageTransformOutputQuality: 100,
+            instantUpload: false,
+            acceptedFileTypes: ['image/jpeg'] // Only allow jpeg file type.
+        });
+    const _pondRoot = document.querySelector('.filepond--root');
+    _pondRoot.addEventListener('FilePond:addfile', e => {
+      console.log('File added', e);
+    });
+    _pond.on('addfile', (error, file) => {
+      if (error) {
+          console.log('Oh no');
+          return;
+      }
+      console.log('File added', file);
+    });
+</script>
+</body>
 </html>
