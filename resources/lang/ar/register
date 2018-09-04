@@ -1,0 +1,14 @@
+<?php
+
+return [
+    'first_name' => 'الأسم الاول',
+    'last_name' => 'الأسم الثاني',
+    'email' => 'البريد الالكتروني',
+    'email_configration' => 'تأكيد البريد الألكتروين',
+    'mobile' => "الموبايل",
+    'natinality' => "الجنسيى",
+    'date_of_birth' => "تاريخ الميلاد",
+    'password' => "الرقم السري",
+    'password_configration' => 'تأكيد الرقم السري',
+
+];

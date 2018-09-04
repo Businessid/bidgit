@@ -260,7 +260,7 @@
                                         <label class="field-label">Gender : </label>
                                         <div class="custom-radio-wrap">
                                             <div class="custom-control custom-radio mr-3">
-                                                <input type="radio" name="company_user_gender"
+                                                <input type="radio" id="company_user_gender" name="company_user_gender"
                                                        class="custom-control-input" value="Male"
                                                        @if(isset($company_user_info['gender'])) @if($company_user_info['gender'] == "Male") checked
                                                        @endif @else  @if(old('company_user_gender')== "Male") checked @endif @endif >
