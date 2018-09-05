@@ -25,8 +25,8 @@ $('.nice-select').niceSelect();
 /*--- Vertical-Menu Activation ----*/
     
 $('.categories-toggler-menu').on('click', function () {
-    $('.vertical-menu-list').slideToggle();
-    $(".qck-cat-bx").slideToggle();
+    $('.vertical-menu-list').hide();
+    $(".qck-cat-bx").slideDown();
 });	    
 /*---
 	3. Category Menu Active
@@ -149,13 +149,28 @@ $('.feategory-active').owlCarousel({
         992:{items:5},
         1200:{items:5}
     }
+});
+$('.main-cat-active').owlCarousel({
+    loop:true,
+    items:5,
+    dots:false,
+    nav:true,
+    navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+
+    responsive:{
+        0:{items:1},
+        480:{items:2},
+        768:{items:4},
+        992:{items:5},
+        1200:{items:5}
+    }
 });     
 /*--
  owl active
 ------------------------------ */    
 $('.prodict-active').owlCarousel({
     loop:true,
-    items:4,
+    items:5,
     dots:false,
     nav:true,
     navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
@@ -164,9 +179,24 @@ $('.prodict-active').owlCarousel({
         480:{items:2},
         768:{items:3},
         992:{items:4},
-        1200:{items:4}
+        1200:{items:5}
     }
-});  
+}); 
+
+$('#recent-view-active').owlCarousel({
+    loop:true,
+    items:5,
+    dots:false,
+    nav:true,
+    navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    responsive:{
+        0:{items:1},
+        480:{items:2},
+        768:{items:3},
+        992:{items:4},
+        1200:{items:5}
+    }
+}); 
 /*--
  owl active
 ------------------------------ */    
@@ -359,7 +389,7 @@ $( "#price-slider" ).slider({
    range: true,
    min: 0,
    max: 145,
-   values: [ 120, 440 ],
+   values: [ 20, 440 ],
    slide: function( event, ui ) {
         $( "#min-price" ).val('AED:' + ui.values[ 0 ] );
         $( "#max-price" ).val('AED:' + ui.values[ 1 ] );
@@ -368,48 +398,9 @@ $( "#price-slider" ).slider({
   $( "#min-price" ).val('AED:' + $( "#price-slider" ).slider( "values", 0 ));   
   $( "#max-price" ).val('AED:' + $( "#price-slider" ).slider( "values", 1 )); 
     	
-$( "#CountBed" ).slider({
-   range: true,
-   min: 0,
-   max: 500,
-   values: [ 100, 200 ],
-   slide: function( event, ui ) {
-        $( "#min-bed" ).val('Min:' + ui.values[ 0 ] );
-        $( "#max-bed" ).val('Max:' + ui.values[ 1 ] );
-     }
-  });
-  $( "#min-bed" ).val('Min:' + $( "#CountBed" ).slider( "values", 0 ));   
-  $( "#max-bed" ).val('Max:' + $( "#CountBed" ).slider( "values", 1 )); 
-
-
-  $( "#kilometer" ).slider({
-   range: true,
-   min: 0,
-   max: 500,
-   values: [ 1, 100 ],
-   slide: function( event, ui ) {
-        $( "#min-kilometer" ).val('Min:' + ui.values[ 0 ] );
-        $( "#max-kilometer" ).val('Max:' + ui.values[ 1 ] );
-     }
-  });
-  $( "#min-kilometer" ).val('Min:' + $( "#kilometer" ).slider( "values", 0 ));   
-  $( "#max-kilometer" ).val('Max:' + $( "#kilometer" ).slider( "values", 1 ));   
-
-$("#more-advanced-option").click(
-    function(){
-        $(this).next("div").slideToggle();
-        $('html, body').animate({
-            scrollTop: $(this).next("div").offset().top
-        }, 1000);
-    }
-);
-$(".lnk-tp-fr-1").click(
-    function(){
-         $(this).toggleClass("clicked");
-        $(".md-cnt-flt-bx-1").toggleClass("view-all");
-
-    }
-);
+    
+    
+    
 /*---
     select last tab 
 -------------------------*/
