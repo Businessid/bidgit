@@ -29,6 +29,6 @@ class ProfileController extends Controller
 
         public function index(Request $request)
     {
-        //return view('front_end.profile');
+        return view('front_end.profile');
     }
 }
