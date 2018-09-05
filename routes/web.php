@@ -80,10 +80,13 @@ Route::post('register/getCurrentArea', 'AjaxController@getCurrentArea');
 Route::get('register/success', 'RegisterController@success');
 
 
-
-
 Route::get('register/test', 'MoreRegisterController@test');
 Route::post('register/file_uppload', 'MoreRegisterController@file_uppload');
+
+
+// Profile Start
+Route::get('profile', 'ProfileController@error');
+Route::get('profile/{id}', 'ProfileController@index');
 
 
 Route::get('/home', function () {
