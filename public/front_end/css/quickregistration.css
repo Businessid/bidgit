@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900');
+body{
+	  color: #222;
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+}
+.qck-reg-box-1-cnt{
+     /*background: url("../images/bgquick.png"); */
+    width: 100%;
+    height: 100vh;
+}
+.qc-rg-bx{
+	width: 550px;
+	border-radius: 3px;
+	background: #fff;
+	    border: 1px solid #e4e4e4;
+}
+.qc-rg-bx-cnt-1{
+	background: #f1f1f1;
+	padding: 15px;
+}
+.cust-1{
+    max-width: 1300px;
+}
+.img-tp-21 img{
+	width: 40px;
+	height: 40px;
+}
+.txt-d-tp-1{
+	padding-left: 20px;
+	color: #bc162a;
+	font-size: 21px;
+	letter-spacing: 1.5px;
+	padding-top: 0px;
+	display: inline-block;
+	line-height: 1;
+	font-weight: 500;
+}
+.qc-rg-bx-cnt-2{
+	background: #fff;
+	padding: 10px;
+	background: #fff;
+	padding: 10px;
+	height: 48px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #525252;
+}
+.qc-rg-bx-cnt-3{
+	background: #f1f1f1;
+	padding: 20px;
+}
+.lbl-fr-inpt{
+	font-size: 13px;
+	color: #525252;
+	margin-bottom: 6px;
+	font-weight: 500;
+}
+.fr-inpt-1 {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    line-height: 1;
+    font-size: 13px;
+    color: #191919;
+    border: 1px solid #e4e4e4;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.fr-inpt-1:focus{
+	box-shadow: none;
+	outline: none;
+	border: 1px solid #d11d2f;
+}
+.cust-cln-1{
+	margin-bottom: 20px;
+}
