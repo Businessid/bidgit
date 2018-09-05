@@ -1,3 +1,28 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    color: #262626;
+}
+a:hover, a:active, a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #262626;
+}
+figure{
+    margin: 0;
+}
+i, cite, em, var, address, dfn {
+    font-style: normal;
+}
+html,body{
+    margin:0;
+    padding: 0;
+}
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900');
 body {
     color: #191919;
@@ -5,11 +30,6 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.42857;
-}
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('../font/glyphicons-halflings-regular.eot');
-    src: url('../font/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .cmn-container{
     width: 100%;
@@ -21,7 +41,7 @@ body {
 }
 .cmn-container-reg{
     width: 100%;
-    max-width: 1299px;
+    max-width: 1230px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -84,7 +104,7 @@ body {
 
 .masthead-inner .header-search .field {
     border: 1px solid #ecebeb;
-    padding: 0.4rem 0.75rem;
+    padding: 0.6rem 0.75rem;
     border-radius: 0 !important;
 }
 .masthead-inner .header-search .field:focus{
@@ -93,9 +113,8 @@ body {
 }
 .field-wrap{
     position: relative;
-    min-width:401px;
+     min-width:401px;
     width: 100%;
-    margin-top: 4px;
 }
 .secondary-nav{
     min-width: 568px;
@@ -147,7 +166,7 @@ body {
     background: #d11d2f !important;
     border-color: #d11d2f !important;
     outline: none;
-    height:37px;
+    height:43px;
     border-radius: 0px 4px 4px 0px !important;
     top: 0px;
     position: absolute;
