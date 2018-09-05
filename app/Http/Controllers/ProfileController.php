@@ -26,9 +26,15 @@ use App\UsersCompanies;
 class ProfileController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-        public function index(Request $request)
+    
+        public function error()
     {
-        //return view('front_end.profile');
+    	return Redirect::to('/');
     }
+
+        public function index($id,Request $request)
+    {
+        return view('front_end.profile');
+    }
+    
 }
