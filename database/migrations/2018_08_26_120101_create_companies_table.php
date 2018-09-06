@@ -30,7 +30,7 @@ class CreateCompaniesTable extends Migration
             $table->string('profile_image');
             $table->string('cover_image');
             $table->string('website');
-            $table->json('documents')->nullable();
+            $table->tinyInteger('is_submit_document')->nullable();
             $table->string('nationality')->nullable();
             $table->string('pobox');
             $table->integer('fk_country_id')->nullable();
@@ -41,6 +41,8 @@ class CreateCompaniesTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('expiry_date')->nullable();
+            $table->tinyInteger('followers');
+            $table->tinyInteger('Following');
             $table->string('order_rank');
             $table->tinyInteger('verified');
             $table->tinyInteger('status');

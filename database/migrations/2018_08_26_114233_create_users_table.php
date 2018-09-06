@@ -39,6 +39,8 @@ class CreateUsersTable extends Migration
             $table->mediumText('address')->nullable();
             $table->string('street')->nullable();
             $table->string('expiry_date')->nullable();
+            $table->tinyInteger('followers');
+            $table->tinyInteger('Following');
             $table->string('order_rank')->nullable();
             $table->tinyInteger('verified')->nullable();
             $table->tinyInteger('status');

@@ -16,19 +16,20 @@
 <meta property="og:title" content="Business ID" />
 <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 <link rel="icon" type="image/x-icon" href="http://www.businessid.net/desktop/assets/img/favicon.png">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" type="text/css" href="css/videojs.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" type="text/css" href="css/dropzone.css">
-<link rel="stylesheet" href="css/common.css?v=1.2" />
-<link rel="stylesheet" href="css/magnific-popup.css">
-<link rel="stylesheet" href="css/bidstyle.css?v=1.2" />
-<link rel="stylesheet" type="text/css" href="css/profile.css">
-<link rel="stylesheet" href="css/responsive.css?v=1.2" />
-<link rel="stylesheet" href="src/images-grid.css">
-<link rel="stylesheet" href="css/hero-nav.css">
+<link href="{{ URL::asset('front_end/css/bootstrap.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ URL::asset('front_end/font-awesome/css/font-awesome.min.css') }}" />
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/videojs.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/owl.theme.default.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/dropzone.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/common.css?v=1.2') }}" />
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/bidstyle.css?v=1.2') }}" />
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('front_end/css/profile.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/responsive.css?v=1.2') }}" />
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/images-grid.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/hero-nav.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('front_end/css/developer.css') }}">
 </head>
 <body class="bg-f1f1f1 profile-pg-1">
 <div class="canvas">
@@ -42,7 +43,7 @@
           <div class="cmn-container nav-container">
             <div class="row">
               <div class="col-md-auto">
-                <div class="site-branding"> <a href=""><img src="images/bid-2-logo.png"></a> </div>
+                <div class="site-branding"> <a href=""><img src="{{ URL::asset('front_end/images/bid-2-logo.png') }}"></a> </div>
               </div>
               <div class="col-md-auto masthead-inner">
                 <div class="header-search">
@@ -81,7 +82,7 @@
   </div>
   <div class="bx-tp-prf">
     <div class="bx-tp-prf-cnt">
-      <div class="coverphoto-1" style="background-image: url('images/coverphoto.jpeg');"></div>
+      <div class="coverphoto-1" style="background-image: url({{ URL::asset('front_end/images/coverphoto.jpeg') }});"></div>
       <div class="bx-tp-prf-1" data-sticky_parent>
         <div class="row">
           <div class="scr-nv-bx lght-bx-shdw col-md-12" data-sticky_column>
@@ -89,7 +90,7 @@
               <div class="bx-lft-prf back-fff pd-a-10 brd-r-b">
                 <table class="wdt-100-prc" style="height: 100%;">
                   <tr>
-                    <td class="wdt-80-px align-middle"><img class="img-scrl-lft lazy img-fluid bx-shdw-right" src="images/profilephoto.jpeg"></td>
+                    <td class="wdt-80-px align-middle"><img class="img-scrl-lft lazy img-fluid bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"></td>
                     <td class="align-middle pd-lft-25 text-center"><div class="row scrl-flwrs">
                         <div class="col-md-6">
                           <div class="prf-txt-1">Followers</div>
@@ -140,7 +141,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
           <div class="col-md-auto p-0">
             <div class="bx-lft-prf">
               <div class="tp-bx-rp-5 bg-fff lght-bx-shdw mrg-b-10 ">
-                <div class="img-prf-bx text-center"> <img class="lazy prf-pht-1 bx-shdw-right mrg-b-15" data-src="images/profilephoto.jpeg"> </div>
+                <div class="img-prf-bx text-center"> <img class="lazy prf-pht-1 bx-shdw-right mrg-b-15" data-src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"> </div>
                 <div class="det-bx-abt-1 font-fmly-ar">
                   <ul class="ul-dest-st">
                     <li>
@@ -207,19 +208,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Followers-320 <span class="float-left lft-txt-tp-1-l p-0"><i class="fa fa-user-o" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r">more</span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo1.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo2.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo3.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo4.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo5.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo6.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo7.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo8.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo9.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                 </div>
               </div>
@@ -227,19 +228,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Following-152 <span class="float-left lft-txt-tp-1-l p-0 flwng-tp"><i class="fa fa-sitemap" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r">more</span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo1.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo2.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo3.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo4.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo5.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo6.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo7.jpeg"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo8.jpeg"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo9.jpeg"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                 </div>
               </div>
@@ -247,19 +248,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Photos <span class="float-left lft-txt-tp-1-l img-thmp-fl"><i class="fa fa-picture-o" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r"><i class="fa fa-plus" aria-hidden="true"></i></span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo1.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo2.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo3.jpeg"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo4.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo5.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo6.jpeg"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo7.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo8.jpeg"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo9.jpeg"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> </div>
                   </div>
                 </div>
               </div>
@@ -267,19 +268,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Videos <span class="float-left lft-txt-tp-1-l vdo-thmp-fl"><i class="fa fa-video-camera" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r"><i class="fa fa-plus" aria-hidden="true"></i></span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo1.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo2.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo3.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo4.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo5.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo6.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo7.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo8.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="images/demo9.jpeg"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                 </div>
               </div>
@@ -364,7 +365,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <div class="post-tb-wrp">
                               <table class="wdt-100-prc">
                                 <tr>
-                                  <td class="pst-lft-img-blk"><img class="lazy img-bx-lft-1 bx-shdw-right" src="images/profilephoto.jpeg"></td>
+                                  <td class="pst-lft-img-blk"><img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"></td>
                                   <td><input type="text" name="postfield" class="txt-fld-tp-1" placeholder="Write Something here..."></td>
                                 </tr>
                               </table>
@@ -529,7 +530,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
                                 <div class="view-qck-bx-1 brd-e4">
                                   <ul class="list-unstyled p-0 m-0 ul-tp-1">
@@ -613,7 +614,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
                             </tr>
                           </table>
@@ -622,7 +623,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">12:05 pm</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -636,7 +637,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo3.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alia Butt</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -653,7 +654,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a>
                               <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
                           </tr>
@@ -663,11 +664,11 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="img-grd-bxt">
                           <div class="slider-bx-tp-1">
                             <div id="post-sldr-1" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1 image-link" src="images/demo1.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo2.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo3.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo4.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo5.jpeg" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                             </div>
                           </div>
                         </div>
@@ -718,7 +719,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
                             </tr>
                           </table>
@@ -727,7 +728,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -741,7 +742,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -758,7 +759,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
                                 <div class="view-qck-bx-1 brd-e4">
                                   <ul class="list-unstyled p-0 m-0 ul-tp-1">
@@ -842,7 +843,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
                             </tr>
                           </table>
@@ -851,7 +852,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">12:05 pm</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -865,7 +866,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo3.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alia Butt</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -882,7 +883,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a>
                               <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
                           </tr>
@@ -892,11 +893,11 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="img-grd-bxt">
                           <div class="slider-bx-tp-1">
                             <div id="post-sldr-111" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo1.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo2.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo3.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo4.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo5.jpeg" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                             </div>
                           </div>
                         </div>
@@ -947,7 +948,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
                             </tr>
                           </table>
@@ -956,7 +957,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -970,7 +971,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -987,7 +988,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alicia Alvice</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Emaar properties</a>
                               <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
                           </tr>
@@ -997,11 +998,11 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="img-grd-bxt">
                           <div class="slider-bx-tp-1">
                             <div id="post-sldr-2" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo1.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo2.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo3.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo4.jpeg" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="images/demo5.jpeg" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                             </div>
                           </div>
                         </div>
@@ -1051,7 +1052,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo31.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="write comment here..."></td>
                             </tr>
                           </table>
@@ -1060,7 +1061,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -1074,7 +1075,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -1091,7 +1092,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                         <table class="wdt-100-prc">
                           <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo4.jpeg" style=""></td>
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" style=""></td>
                             <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Antony Jaco</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Emaar properties</a>
                               <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
                           </tr>
@@ -1168,7 +1169,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                               <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="write comment here..."></td>
                             </tr>
                           </table>
@@ -1177,7 +1178,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -1191,7 +1192,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <div class="cmnt-bx-rslt mrg-b-10">
                           <table class="wdt-100-prc">
                             <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td>
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
@@ -1212,7 +1213,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="ad-bx-sldr-1 font-fmly-ar">
                       <div id="product-slider-tp-1" class="owl-carousel owl-theme">
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="images/demo1.jpeg" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Nike 1, Fogg.Nike 1, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1223,7 +1224,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="images/demo2.jpeg" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1234,7 +1235,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="images/demo3.jpeg" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1245,7 +1246,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="images/demo4.jpeg" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1256,7 +1257,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="images/demo5.jpeg" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Nike 1, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1274,7 +1275,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo1.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1284,7 +1285,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo2.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1294,7 +1295,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo1.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1304,7 +1305,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo2.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1314,7 +1315,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo1.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1324,7 +1325,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo2.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1337,7 +1338,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo3.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1347,7 +1348,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo4.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1357,7 +1358,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo5.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1367,7 +1368,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo6.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1377,7 +1378,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo7.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1387,7 +1388,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="images/demo8.jpeg"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1403,7 +1404,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <table>
                               <tbody>
                                 <tr>
-                                  <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td>
+                                  <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
                                   <td><div class="flw-txt-1">marina mandez</div>
                                     <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                                   <td class="wdt-30-px text-right"><a href="javascript:;" class="lnk-fl-bx-1" id="removeClass"><i class="fa fa-times" aria-hidden="true"></i></a></td>
@@ -1454,7 +1455,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                       </div>
-                      <div class="prf-txt-5 font-fmly-ar clearfix"> <span> <img src="images/svg/msgcontact.svg"> </span> Contacts </div>
+                      <div class="prf-txt-5 font-fmly-ar clearfix"> <span> <img src="{{ URL::asset('front_end/images/svg/msgcontact.svg') }}"> </span> Contacts </div>
                       <div class="chat-search">
                         <div class="element-search">
                           <input placeholder="Search users by name..." type="text" class="brd-e4">
@@ -1465,7 +1466,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">marina mandez</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1477,7 +1478,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1489,7 +1490,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo3.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1501,7 +1502,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo4.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1513,7 +1514,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo5.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1525,7 +1526,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo6.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo6.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1537,7 +1538,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo7.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo7.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1549,7 +1550,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo8.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo8.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1562,7 +1563,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">marina mandez</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1574,7 +1575,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1586,7 +1587,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo3.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1598,7 +1599,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo4.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1610,7 +1611,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo5.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1622,7 +1623,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <table>
                           <tbody>
                             <tr>
-                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo6.jpeg" style=""> <span class="st-avt">&nbsp;</span></td>
+                              <td class="wdt-50-px pos-rel"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo6.jpeg') }}" style=""> <span class="st-avt">&nbsp;</span></td>
                               <td><div class="flw-txt-1">Adriano Dizuza</div>
                                 <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                               <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-comments" aria-hidden="true"></i></a></td>
@@ -1707,15 +1708,15 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
       </div>
     </div>
   </div>
-  <?php include 'modules/footer1.php';?>
+  @include('front_end.modules.footer1')
 </div>
-<script src="js/jquery-3.3.1.min.js"></script> 
-<script src="js/tether.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/owl.carousel.js"></script> 
-<script src="js/dropzone.js"></script> 
-<script src="js/jquery.sticky-kit.min.js"></script> 
-<script src="js/jquery.lazy.min.js"></script> 
+<script src="{{ URL::asset('front_end/js/jquery-3.3.1.min.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/tether.min.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/bootstrap.min.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/owl.carousel.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/dropzone.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/jquery.sticky-kit.min.js') }}"></script> 
+<script src="{{ URL::asset('front_end/js/jquery.lazy.min.js') }}"></script> 
 <script type="text/javascript">
   (function() {
     var reset_scroll;
@@ -1933,23 +1934,23 @@ var data = [
   {
     
     
-    ContentSrc: '<img class="img-fluid" src="images/car1.jpg">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car1.jpg"') }}">'
   },
   
   {
     
-    ContentSrc: '<img class="img-fluid" src="images/car2.jpg">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car2.jpg"') }}">'
 
   },
   {
     
-    ContentSrc: '<img class="img-fluid" src="images/car3.jpg">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car3.jpg"') }}">'
 
   },
   
   {
    
-    ContentSrc: '<img class="img-fluid" src="images/car4.jpg">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car4.jpg"') }}">'
   }
 ];
 
@@ -1969,7 +1970,7 @@ $('.image-link').magnificPopup({
     //         '</div>'
    markup: '<div class="white-popup"><div class="mfp-close"></div>'+
             '<div class="bid-pp-tp-1"><div class="bid-pp-tp-1-cnt"><div class="row"><div class="col pos-rel p-0"><div class="mfp-ContentSrc"></div></div><div class="col-md-auto pl-0"><div class="col-wdt-350-r">'+
-            '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
+            '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('"front_end/images/demo1.jpeg"') }}" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
             +'</div></div></div></div></div>'+
             '</div>'
   },
