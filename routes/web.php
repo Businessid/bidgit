@@ -116,3 +116,4 @@ Route::post('/submit', function (Request $request) {
 
 
 Route::get('countries', 'AjaxController@AllCountry');
+Route::get('jsontoarray', 'AjaxController@jsontoarray');
