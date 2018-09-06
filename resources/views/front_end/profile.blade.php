@@ -141,7 +141,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
           <div class="col-md-auto p-0">
             <div class="bx-lft-prf">
               <div class="tp-bx-rp-5 bg-fff lght-bx-shdw mrg-b-10 ">
-                <div class="img-prf-bx text-center"> <img class="lazy prf-pht-1 bx-shdw-right mrg-b-15" data-src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"> </div>
+                <div class="img-prf-bx text-center"> <img class="lazy prf-pht-1 bx-shdw-right mrg-b-15" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"> </div>
                 <div class="det-bx-abt-1 font-fmly-ar">
                   <ul class="ul-dest-st">
                     <li>
@@ -208,19 +208,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Followers-320 <span class="float-left lft-txt-tp-1-l p-0"><i class="fa fa-user-o" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r">more</span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                 </div>
               </div>
@@ -228,19 +228,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Following-152 <span class="float-left lft-txt-tp-1-l p-0 flwng-tp"><i class="fa fa-sitemap" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r">more</span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="pos-abs-1">Andews perera</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="pos-abs-1">jeanachy</span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="pos-abs-1">Andews </span> </div>
                   </div>
                 </div>
               </div>
@@ -248,19 +248,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Photos <span class="float-left lft-txt-tp-1-l img-thmp-fl"><i class="fa fa-picture-o" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r"><i class="fa fa-plus" aria-hidden="true"></i></span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> </div>
                   </div>
                 </div>
               </div>
@@ -268,19 +268,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="lft-txt-tp-1 clearfix"> <span class="lft-txt-tp-1-m"></span> Videos <span class="float-left lft-txt-tp-1-l vdo-thmp-fl"><i class="fa fa-video-camera" aria-hidden="true"></i></span> <span class="float-right lft-txt-tp-1-r"><i class="fa fa-plus" aria-hidden="true"></i></span> </div>
                 <div class="grd-bx-tp-fl-1">
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo3.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo4.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo5.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo6.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                   <div class="flex-bx-2">
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
-                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" data-src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo7.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo8.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
+                    <div class="grd-col-1-fl"> <img class="lazy img-fluid grd-col-1-fl-img" src="{{ URL::asset('front_end/images/demo9.jpeg') }}"> <span class="vdo-bt-lft-gr"><i class="fa fa-play" aria-hidden="true"></i></span> </div>
                   </div>
                 </div>
               </div>
@@ -291,7 +291,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="prodct-bx-tp-1">
                       <table>
                         <tr>
-                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" data-src="images/f1.jpg" alt="" title=""></td>
+                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" src="images/f1.jpg" alt="" title=""></td>
                           <td><div class="flw-txt-1">Nike model5250</div>
                             <div class="flw-txt-2">Casual-f-m-c</div>
                             <a href="#" class="prf-flw-btn mrg-tp-5">View on Store</a></td>
@@ -304,14 +304,14 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           <td><div class="flw-txt-1">Nike model5250</div>
                             <div class="flw-txt-2">Casual-f-m-c</div>
                             <a href="#" class="prf-flw-btn mrg-tp-5">View on Store</a></td>
-                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" data-src="images/f2.jpg" alt="" title=""></td>
+                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" src="images/f2.jpg" alt="" title=""></td>
                         </tr>
                       </table>
                     </div>
                     <div class="prodct-bx-tp-1">
                       <table>
                         <tr>
-                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" data-src="images/f3.jpg" alt="" title=""></td>
+                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" src="images/f3.jpg" alt="" title=""></td>
                           <td><div class="flw-txt-1">Nike model5250</div>
                             <div class="flw-txt-2">Casual-f-m-c</div>
                             <a href="#" class="prf-flw-btn mrg-tp-5">View on Store</a></td>
@@ -324,7 +324,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           <td><div class="flw-txt-1">Nike model5250</div>
                             <div class="flw-txt-2">Casual-f-m-c</div>
                             <a href="#" class="prf-flw-btn mrg-tp-5">View on Store</a></td>
-                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" data-src="images/f3.jpg" alt="" title=""></td>
+                          <td class="align-middle wdt-80-px"><img class="lazy img-fluid prdct-img-1" src="images/f3.jpg" alt="" title=""></td>
                         </tr>
                       </table>
                     </div>
@@ -1308,7 +1308,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="ad-bx-sldr-1 font-fmly-ar">
                       <div id="product-slider-tp-1" class="owl-carousel owl-theme">
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Nike 1, Fogg.Nike 1, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1319,7 +1319,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1330,7 +1330,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1341,7 +1341,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1352,7 +1352,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </div>
                         </div>
                         <div class="item">
-                          <div class="bx-tp-itm-1 text-center"> <img data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
+                          <div class="bx-tp-itm-1 text-center"> <img src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="" title="" class="owl-lazy product-image-1">
                             <div class="product-txt-1">Nike 1, Fogg...</div>
                             <div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1370,7 +1370,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1380,7 +1380,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1390,7 +1390,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1400,7 +1400,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1410,7 +1410,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1420,7 +1420,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div></td>
                           <td class="wdt-30-px text-right"><a href="#" class="lnk-fl-bx-1"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
@@ -1433,7 +1433,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo3.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1443,7 +1443,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo4.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo4.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1453,7 +1453,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo5.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo5.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1463,7 +1463,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo6.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo6.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1473,7 +1473,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo7.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo7.jpeg') }}"></td>
                           <td><div class="flw-txt-1">marina mandez</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1483,7 +1483,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="wht-fl-bx-1">
                       <table>
                         <tr>
-                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" data-src="{{ URL::asset('front_end/images/demo8.jpeg') }}"></td>
+                          <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo8.jpeg') }}"></td>
                           <td><div class="flw-txt-1">Adriano Dizuza</div>
                             <div class="flw-txt-2">Web Ui/Ux Developer</div>
                             <a href="#" class="prf-flw-btn"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>follow</a></td>
@@ -1734,7 +1734,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 										<div id="product-slider-tp-2" class="owl-carousel owl-theme">
   											<div class="item">
   												<div class="bx-tp-itm-1 text-center">
-  													<img data-src="images/demo1.jpeg" alt="" title="" class="owl-lazy product-image-1">
+  													<img src="images/demo1.jpeg" alt="" title="" class="owl-lazy product-image-1">
   													<div class="product-txt-1">Nike 1, Fogg.Nike 1, Fogg...</div>
   													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1746,7 +1746,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
   											</div>
   											<div class="item">
   												<div class="bx-tp-itm-1 text-center">
-  													<img data-src="images/demo2.jpeg" alt="" title="" class="owl-lazy product-image-1">
+  													<img src="images/demo2.jpeg" alt="" title="" class="owl-lazy product-image-1">
   													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
   													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1758,7 +1758,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
   											</div>
   											<div class="item">
   												<div class="bx-tp-itm-1 text-center">
-  													<img data-src="images/demo3.jpeg" alt="" title="" class="owl-lazy product-image-1">
+  													<img src="images/demo3.jpeg" alt="" title="" class="owl-lazy product-image-1">
   													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
   													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1770,7 +1770,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
   											</div>
   											<div class="item">
   												<div class="bx-tp-itm-1 text-center">
-  													<img data-src="images/demo4.jpeg" alt="" title="" class="owl-lazy product-image-1">
+  													<img src="images/demo4.jpeg" alt="" title="" class="owl-lazy product-image-1">
   													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
   													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -1782,7 +1782,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
   											</div>
   											<div class="item">
   												<div class="bx-tp-itm-1 text-center">
-  													<img data-src="images/demo5.jpeg" alt="" title="" class="owl-lazy product-image-1">
+  													<img src="images/demo5.jpeg" alt="" title="" class="owl-lazy product-image-1">
   													<div class="product-txt-1">Nike 1, Fogg...</div>
   													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
