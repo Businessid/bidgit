@@ -354,173 +354,268 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     <div class="bx-tp-post-bx-1-cnt">
                       <div class="tab-bx-tp-2 bg-fff mrg-l-r-re">
                         <ul class="nav nav-pills nav-fill bg-fff brd-btm-e4e4e4" id="pills-tab" role="tablist">
-                          <li class="nav-item"> <a class="nav-link active" id="pills-compose-tab" data-toggle="pill" href="#pills-compose" role="tab" aria-controls="pills-compose" aria-selected="true"> <span class="mrg-r-5"><i class="fa fa-pencil" aria-hidden="true"></i></span>Compose Post</a> </li>
-                          <li class="nav-item"> <a class="nav-link" id="pills-phtvdo-tab" data-toggle="pill" href="#pills-phtvdo" role="tab" aria-controls="pills-phtvdo" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-video-camera" aria-hidden="true"></i></span>Photo/Video</a> </li>
-                          <li class="nav-item"> <a class="nav-link" id="pills-addjobs-tab" data-toggle="pill" href="#pills-addjobs" role="tab" aria-controls="pills-addjobs" aria-selected="false"> <span class="mrg-r-5"><i class="fa fa-suitcase" aria-hidden="true"></i></span> Add jobs </a> </li>
-                          <li class="nav-item"> <a class="nav-link" id="pills-addtenders-tab" data-toggle="pill" href="#pills-addtenders" role="tab" aria-controls="pills-addtenders" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-gavel" aria-hidden="true"></i></span>Add Tenders</a> </li>
-                          <li class="nav-item"> <a class="nav-link" id="pills-addproducts-tab" data-toggle="pill" href="#pills-addproducts" role="tab" aria-controls="pills-addproducts" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Add Products</a> </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" id="pills-compose-tab" data-toggle="pill" href="#pills-compose" role="tab" aria-controls="pills-compose" aria-selected="true">
+                            <span class="mrg-r-5"><i class="fa fa-pencil" aria-hidden="true"></i></span>Compose Post</a>
+                          </li>
+                          <!-- <li class="nav-item">
+                            <a class="nav-link" id="pills-phtvdo-tab" data-toggle="pill" href="#pills-phtvdo" role="tab" aria-controls="pills-phtvdo" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-video-camera" aria-hidden="true"></i></span>Photo/Video</a>
+                          </li> -->
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-addjobs-tab" data-toggle="pill" href="#pills-addjobs" role="tab" aria-controls="pills-addjobs" aria-selected="false">
+                              <span class="mrg-r-5"><i class="fa fa-suitcase" aria-hidden="true"></i></span> Add jobs
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-addtenders-tab" data-toggle="pill" href="#pills-addtenders" role="tab" aria-controls="pills-addtenders" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-gavel" aria-hidden="true"></i></span>Add Tenders</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-addproducts-tab" data-toggle="pill" href="#pills-addproducts" role="tab" aria-controls="pills-addproducts" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Add Products</a>
+                          </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                           <div class="tab-pane fade show active" id="pills-compose" role="tabpanel" aria-labelledby="pills-compose-tab">
                             <div class="post-tb-wrp">
                               <table class="wdt-100-prc">
                                 <tr>
-                                  <td class="pst-lft-img-blk"><img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}"></td>
-                                  <td><input type="text" name="postfield" class="txt-fld-tp-1" placeholder="Write Something here..."></td>
+                                  <td class="pst-lft-img-blk">
+                                    <img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}">
+                                  </td>
+                                  <td>
+                                    <input type="text" name="postfield" class="txt-fld-tp-1" placeholder="Write Something here...">
+                                  </td>
                                 </tr>
                               </table>
+                            </div>
+                            <div class="bx-tp-img-vdo-upl">
+                              <form action="/file-upload" class="dropzone">
+                                                      <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span><div class="drp-txt-msg"><span class="upl-vdo-icn"><img class="drp-zn-img" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIzNi44Mzc3IiB5MT0iMjc3LjgzNzIiIHgyPSIyNDcuMTg3NyIgeTI9Ijc4Ny41MTcyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEuMDY2NyAwIDAgLTEuMDY2NyAzLjI2NjcgNTU3LjUzMzIpIj4KCTxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6Izk3QUFBQSIvPgoJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojRThFRkVFIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMV8pOyIgZD0iTTQ1Ni4wMjUsNzAuNTI0bDU1LjUwNiwyODAuOTQ5YzIuNjA2LDEzLjE4OS01Ljk4NCwyNi4wMDctMTkuMTcyLDI4LjYxM0w4NC41ODQsNDYwLjY0OCAgYy0xMy4xODksMi42MDYtMjYuMDA3LTUuOTg0LTI4LjYxMy0xOS4xNzJMMC40NjYsMTYwLjUyN2MtMi42MDYtMTMuMTg5LDUuOTg0LTI2LjAwNywxOS4xNzItMjguNjEzbDQwNy43NzQtODAuNTYyICBDNDQwLjYwMSw0OC43NDYsNDUzLjQxOSw1Ny4zMzUsNDU2LjAyNSw3MC41MjR6Ii8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjYwLjQwMTgiIHkxPSIxNzEuMjE4NCIgeDI9IjI3My40NjE4IiB5Mj0iMTA5LjE4ODQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMzYzRjNFO3N0b3Atb3BhY2l0eTowIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMDMwMzMiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8yXyk7IiBkPSJNNDkyLjM1NywzODAuMDg5TDg0LjU4Niw0NjAuNjQ0Yy0xMy4xODgsMi42MTItMjYuMDA0LTUuOTc5LTI4LjYxNy0xOS4xNjdsLTMuNjU3LTE4LjUxNiAgYzQuMDA1LDEuMjUzLDguMzgyLDEuNTU1LDEyLjc5NCwwLjY4NUw0NTYuMDIxLDcwLjUxOWw1NS41MTUsMjgwLjk1M0M1MTQuMTM2LDM2NC42Niw1MDUuNTQ1LDM3Ny40NzYsNDkyLjM1NywzODAuMDg5eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzNfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjM4Mi4zNDkiIHkxPSIxMjguNzM5MiIgeDI9IjQzMy43NDkiIHkyPSI3Ny4zMjkyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEuMDY2NyAwIDAgLTEuMDY2NyAzLjI2NjcgNTU3LjUzMzIpIj4KCTxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6Izk3QUFBQSIvPgoJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojRThFRkVFIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfM18pOyIgZD0iTTQ5My42MzUsMTI3LjMzOXYyODYuMzhjMCwxMy40NDQtMTAuOTExLDI0LjM1NS0yNC4zNTUsMjQuMzU1SDUzLjYyNCAgYy0xMy40NDQsMC0yNC4zNTUtMTAuOTExLTI0LjM1NS0yNC4zNTV2LTI4Ni4zOGMwLTEzLjQ0NCwxMC45MTEtMjQuMzU1LDI0LjM1NS0yNC4zNTVINDY5LjI4ICBDNDgyLjcyNCwxMDIuOTg0LDQ5My42MzUsMTEzLjg5NCw0OTMuNjM1LDEyNy4zMzl6Ii8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNF8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjQyLjA0ODciIHkxPSI0MzYuMDI3NCIgeDI9IjI0Mi4wNDg3IiB5Mj0iMTAzLjExNzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZGRkZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFOEVGRUUiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF80Xyk7IiBkPSJNMzcxLjAzMiw0MzguMDc0SDUzLjYyNGMtMTMuNDUxLDAtMjQuMzU1LTEwLjkwNS0yNC4zNTUtMjQuMzU1di0yODYuMzggIGMwLTEzLjQ1MSwxMC45MDUtMjQuMzU1LDI0LjM1NS0yNC4zNTVINDY5LjI4YzEzLjQ1MSwwLDI0LjM1NSwxMC45MDUsMjQuMzU1LDI0LjM1NXYxOTQuNTFjMCwzLjcyNy0xLjQ2Nyw3LjMwNS00LjA4Miw5Ljk1OSAgbC05NS4wMDUsOTYuNDIzQzM4OC4zNDMsNDM0LjUyOCwzNzkuODcyLDQzOC4wNzQsMzcxLjAzMiw0MzguMDc0eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzVfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI0Mi4wNDg3IiB5MT0iMzI4LjEwNzQiIHgyPSIyNDIuMDQ4NyIgeTI9Ijg1LjcyNzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojM0ZBOUY1Ii8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDcxRTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF81Xyk7IiBkPSJNNDU4LjMyLDE0OS4xMTR2MjE0LjM5OGMtMTYuMjE4LDE2LjQ2Mi0zNS40MiwzNS45NDEtNDguMzY0LDQ5LjA4NEg4NS4yMzcgIGMtMTEuNDAxLDAtMjAuNjUzLTkuMjUyLTIwLjY1My0yMC42NTNWMTQ5LjExNGMwLTExLjQwMSw5LjI1Mi0yMC42NTMsMjAuNjUzLTIwLjY1M2gzNTIuNDMgIEM0NDkuMDY4LDEyOC40NjEsNDU4LjMyLDEzNy43MTMsNDU4LjMyLDE0OS4xMTR6Ii8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjQyLjA0ODciIHkxPSIxMzcuOTM3NCIgeDI9IjI0Mi4wNDg3IiB5Mj0iMTA3Ljg0NzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQzJDRUNFO3N0b3Atb3BhY2l0eTowIi8+Cgk8c3RvcCBvZmZzZXQ9IjAuMTc5IiBzdHlsZT0ic3RvcC1jb2xvcjojQUZCQ0JDO3N0b3Atb3BhY2l0eTowLjE3OSIvPgoJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNUI2QTZBIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfNl8pOyIgZD0iTTQ5My42MzUsMzk0LjIzNXYxOS40ODRjMCwxMy40NDQtMTAuOTExLDI0LjM1NS0yNC4zNTUsMjQuMzU1SDUzLjYyNCAgYy0xMy40NDQsMC0yNC4zNTUtMTAuOTExLTI0LjM1NS0yNC4zNTV2LTE5LjQ4NEg0OTMuNjM1eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzdfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIzMi4yMTUyIiB5MT0iMTY0LjA5NTQiIHgyPSI5OS4zMzUyIiB5Mj0iMjk2Ljk2NTQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIxLjAwMDAwMGUtMDA0IiBzdHlsZT0ic3RvcC1jb2xvcjojMDA4QkYyO3N0b3Atb3BhY2l0eTowIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDQ2RTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF83Xyk7IiBkPSJNNjQuNzA1LDM5NC4xNDNjMC4wNjQsMC42MDUsMC4xNTgsMS4yLDAuMjczLDEuNzg4YzAuMDIxLDAuMTA5LDAuMDQzLDAuMjE4LDAuMDY2LDAuMzI2ICBjMC4xMjMsMC41NzgsMC4yNjksMS4xNDgsMC40MzksMS43MDhjMC4wMywwLjA5OCwwLjA2MywwLjE5NSwwLjA5NSwwLjI5M2MwLjE4MywwLjU3MSwwLjM4NSwxLjEzMywwLjYxNSwxLjY4MSAgYzAuMDIxLDAuMDUsMC4wNDUsMC4wOTcsMC4wNjYsMC4xNDdjMC4yMjYsMC41MjUsMC40NzUsMS4wMzcsMC43NDEsMS41MzhjMC4wMzksMC4wNzUsMC4wNzcsMC4xNTEsMC4xMTcsMC4yMjYgIGMwLjI3MywwLjQ5OCwwLjU3MSwwLjk4LDAuODgyLDEuNDUyYzAuMDcsMC4xMDcsMC4xNCwwLjIxMywwLjIxMiwwLjMxOGMwLjMxLDAuNDUxLDAuNjM4LDAuODksMC45ODIsMS4zMTMgIGMwLjA4NiwwLjEwNiwwLjE3NSwwLjIxLDAuMjYyLDAuMzE1YzAuMzU0LDAuNDE5LDAuNzIxLDAuODI4LDEuMTA2LDEuMjE3YzAuMDgxLDAuMDgxLDAuMTY1LDAuMTU5LDAuMjQ3LDAuMjM5ICBjMC4zNjQsMC4zNTYsMC43NCwwLjY5OSwxLjEzLDEuMDI3YzAuMDc1LDAuMDYzLDAuMTQ1LDAuMTI5LDAuMjIxLDAuMTkxYzMuNTYyLDIuOTE4LDguMTEzLDQuNjcyLDEzLjA3NCw0LjY3MmgzMjQuNzE5ICBjMTAuMTMtMTAuMjg1LDI0LjA5MS0yNC40NDksMzcuNDU3LTM4LjAxNEwzMzcuNjkxLDI3My45MjhjLTguNDgtNy43NzktMjEuNTAxLTcuNzc5LTI5Ljk4MSwwbC00OC42ODQsNDQuNjZsLTc2LjU0My03Ni40OTkgIGMtOS4wNy0xMC44Ni0yNi4wMzktMTAuNTc1LTM0LjY4NiwwLjg2OEw2NC41ODQsMzUzLjA3NHYzOC44NjdjMCwwLjY1NSwwLjAzOCwxLjMsMC4wOTgsMS45NCAgQzY0LjY5LDM5My45NjgsNjQuNjk1LDM5NC4wNTYsNjQuNzA1LDM5NC4xNDN6Ii8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfOF8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjgwLjE4OTciIHkxPSIyOTcuOTg3NCIgeDI9IjI4MC4xODk3IiB5Mj0iMTI3LjYwNzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQzJENjAwIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM3QkQxMDEiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF84Xyk7IiBkPSJNNDQ3LjQxOCwzNzQuNTg2Yy0xMy4zNSwxMy41MzYtMjcuMjgxLDI3LjY3Ni0zNy40MDUsMzcuOTVsLTk4Ljc0OC0wLjA4MWwtMTU0LjQxMy0wLjEyOCAgbDkxLjEzMi04My42MDlsNTkuNzI2LTU0Ljc4OWM4LjQ4LTcuNzc5LDIxLjUwMS03Ljc3OSwyOS45ODEsMEw0NDcuNDE4LDM3NC41ODZ6Ii8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfOV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMzU2LjI5NjUiIHkxPSIxNTAuMDM2NyIgeDI9IjIyNC4wMzY1IiB5Mj0iMjgyLjI5NjciIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIxLjAwMDAwMGUtMDA0IiBzdHlsZT0ic3RvcC1jb2xvcjojMUFDRUI4O3N0b3Atb3BhY2l0eTowIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwNDk1OUMiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF85Xyk7IiBkPSJNMzM3LjY5MSwyNzMuOTI4Yy04LjQ4LTcuNzc5LTIxLjUwMS03Ljc3OS0yOS45ODEsMGwtNTkuNzI2LDU0Ljc4OWw2My4yODEsODMuNzM3ICBsOTguNzQ4LDAuMDgxYzEwLjEyMy0xMC4yNzQsMjQuMDU0LTI0LjQxNCwzNy40MDUtMzcuOTVMMzM3LjY5MSwyNzMuOTI4eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzEwXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyOTkuODg0MiIgeTE9IjI3My4zMjc0IiB4Mj0iMjk5Ljg4NDIiIHkyPSIyNDguOTc3NCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA2NjcgMCAwIC0xLjA2NjcgMy4yNjY3IDU1Ny41MzMyKSI+Cgk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkZGRkYiLz4KCTxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I0U4RUZFRSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzEwXyk7IiBkPSJNMzU3LjUwNiwyOTIuMTE0Yy0zLjc2MSwzLjA1My05LjY4MiwyLjM0NS0xMi40NTctMi4xMzdsLTAuMDEyLTAuMDEyICBjLTMuMjg1LTUuMzI5LTExLjAyOC01LjMyOS0xNC4zMTQsMHYwLjAxMmMtMy4yODUsNS4zMjktMTEuMDQsNS4zMjktMTQuMzI1LDB2LTAuMDEyYy0xLjYzNy0yLjY3LTQuNC0zLjk5NC03LjE2My0zLjk5NCAgcy01LjUyNiwxLjMyNC03LjE2MywzLjk5NGMtMi45ODMsNC44NDEtOS42NDcsNS4yODItMTMuMjkzLDEuMzM1bDE4LjkzNC0xNy4zNjdjOC40NzUtNy43OSwyMS41LTcuNzksMjkuOTc0LDBMMzU3LjUwNiwyOTIuMTE0eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzExXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyOTcuNzI1NiIgeTE9IjI1MS4zNjU4IiB4Mj0iMjcyLjU5NTYiIHkyPSIyNzYuNDk1OCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA2NjcgMCAwIC0xLjA2NjcgMy4yNjY3IDU1Ny41MzMyKSI+Cgk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNDMkNFQ0U7c3RvcC1vcGFjaXR5OjAiLz4KCTxzdG9wIG9mZnNldD0iMC4xNzkiIHN0eWxlPSJzdG9wLWNvbG9yOiNBRkJDQkM7c3RvcC1vcGFjaXR5OjAuMTc5Ii8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM1QjZBNkEiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8xMV8pOyIgZD0iTTM1Ny41MDYsMjkyLjExNGMtMy43NjEsMy4wNTMtOS42ODIsMi4zNDUtMTIuNDU3LTIuMTM3bC0wLjAxMi0wLjAxMiAgYy0zLjI4NS01LjMyOS0xMS4wMjgtNS4zMjktMTQuMzE0LDB2MC4wMTJjLTMuMjg1LDUuMzI5LTExLjA0LDUuMzI5LTE0LjMyNSwwdi0wLjAxMmMtMS42MzctMi42Ny00LjQtMy45OTQtNy4xNjMtMy45OTQgIHMtNS41MjYsMS4zMjQtNy4xNjMsMy45OTRjLTIuOTgzLDQuODQxLTkuNjQ3LDUuMjgyLTEzLjI5MywxLjMzNWwxOC45MzQtMTcuMzY3YzguNDc1LTcuNzksMjEuNS03Ljc5LDI5Ljk3NCwwTDM1Ny41MDYsMjkyLjExNHoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzAwOEJGMjsiIGQ9Ik0xNjMuMDk2LDI3MS44NjFjLTAuMTQsMC0wLjI3NywwLjAwNy0wLjQxNiwwLjAxMWMwLjE1NS0xLjI2NywwLjIzNi0yLjU1NywwLjIzNi0zLjg2NiAgYzAtMTcuNDQ3LTE0LjE0NC0zMS41OS0zMS41OS0zMS41OWMtMTIuOTk0LDAtMjQuMTU1LDcuODQ2LTI5LjAwNiwxOS4wNTljLTEuMTMtMC40NTMtMi4zNjMtMC43MDUtMy42NTQtMC43MDUgIGMtNS40MjMsMC05LjgxOSw0LjM5Ni05LjgxOSw5LjgxOWMwLDEuNjUyLDAuNDEsMy4yMDksMS4xMzIsNC41NzVjLTYuOTUzLDIuNTk5LTExLjkwNCw5LjMwMS0xMS45MDQsMTcuMTYxICBjMCwxMC4xMTYsOC4yMDIsMTguMzE4LDE4LjMxOCwxOC4zMThoNjYuNzA0YzkuMDUyLDAsMTYuMzktNy4zMzgsMTYuMzktMTYuMzlTMTcyLjE0OCwyNzEuODYxLDE2My4wOTYsMjcxLjg2MXoiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xMl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTczLjE2NjciIHkxPSIzMzYuMDc3NCIgeDI9IjE3My4xNjY3IiB5Mj0iMTI1LjU4NzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQzJENjAwIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM3QkQxMDEiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8xMl8pOyIgZD0iTTMxMS4zNzEsNDEyLjU5NGwtMjI5LjQ1NS0wLjI2N2MtOS44MjEtMS41OS0xNy4zMzItMTAuMTEyLTE3LjMzMi0yMC4zODZ2LTM4Ljg2NyAgbDgzLjIxNC0xMTAuMTE2YzguODczLTExLjc0MSwyNi41MTItMTEuNzQxLDM1LjM4NSwwLjAwMWw2NC44MDMsODUuNzU5bDYzLjI4MSw4My43MzdMMzExLjM3MSw0MTIuNTk0eiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzEzXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxNTIuMDg2MyIgeTE9IjMwMi43MTc0IiB4Mj0iMTUyLjA4NjMiIHkyPSIyNzYuOTQ3NCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA2NjcgMCAwIC0xLjA2NjcgMy4yNjY3IDU1Ny41MzMyKSI+Cgk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkZGRkYiLz4KCTxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I0U4RUZFRSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzEzXyk7IiBkPSJNMjAwLjIxNCwyNjUuNTA2Yy0zLjY2OCwzLjg3Ny0xMC4yNzQsMy40MDItMTMuMjQ2LTEuNDA1di0wLjAyMyAgYy0xLjY0OS0yLjY1OC00LjQtMy45ODItNy4xNjMtMy45ODJzLTUuNTE1LDEuMzI0LTcuMTYzLDMuOTk0Yy0xLjY0OCwyLjY1OC00LjQsMy45OTQtNy4xNjMsMy45OTRzLTUuNTE1LTEuMzM1LTcuMTYzLTMuOTk0ICBjLTEuNjQ4LTIuNjU4LTQuNC0zLjk5NC03LjE2My0zLjk5NHMtNS41MTUsMS4zMzUtNy4xNjMsMy45OTRjLTIuOTYsNC44MDYtOS41NDIsNS4yODItMTMuMjIyLDEuNDE3bDE3LjAzLTIyLjU0NSAgYzguODY5LTExLjc0OCwyNi41MTUtMTEuNzQ4LDM1LjM4NSwwTDIwMC4yMTQsMjY1LjUwNnoiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xNF8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMzYwLjMyNzEiIHkxPSIyMDQuNzIwNyIgeDI9IjQwNS4zMjIyIiB5Mj0iMTU5LjcxNTYiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZGRkZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFOEVGRUUiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8xNF8pOyIgZD0iTTQ5Mi4zODcsMzI3LjY2NWMwLDAtMC43MiwyLjAzOC0zLjU1Myw0Ljg3MWMtMS4wNTIsMS4wNTItOTMuNzI5LDk1LjEyOS05My43MjksOTUuMTI5ICBjLTYuNTYxLDYuNjU5LTE1LjUyLDEwLjQxLTI0Ljg2OSwxMC40MWwwLDBsMCwwYzguMDcsMCwxNC42MTMtNi41NDIsMTQuNjEzLTE0LjYxM1YzNTIuMDJjMC0xMy40NTEsMTAuOTA1LTI0LjM1NSwyNC4zNTUtMjQuMzU1ICBMNDkyLjM4NywzMjcuNjY1TDQ5Mi4zODcsMzI3LjY2NXoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzAwOEJGMjsiIGQ9Ik0zMzcuMjMzLDIwNi42NWMtMC4xNCwwLTAuMjc3LDAuMDA3LTAuNDE2LDAuMDExYzAuMTU1LTEuMjY3LDAuMjM2LTIuNTU3LDAuMjM2LTMuODY2ICBjMC0xNy40NDctMTQuMTQ0LTMxLjU5LTMxLjU5LTMxLjU5Yy0xMi45OTQsMC0yNC4xNTUsNy44NDYtMjkuMDA2LDE5LjA1OWMtMS4xMy0wLjQ1My0yLjM2My0wLjcwNS0zLjY1NC0wLjcwNSAgYy01LjQyMywwLTkuODE5LDQuMzk2LTkuODE5LDkuODE5YzAsMS42NTIsMC40MSwzLjIwOSwxLjEzMiw0LjU3NWMtNi45NTMsMi41OTktMTEuOTA0LDkuMzAxLTExLjkwNCwxNy4xNjEgIGMwLDEwLjExNiw4LjIwMiwxOC4zMTgsMTguMzE4LDE4LjMxOGg2Ni43MDRjOS4wNTIsMCwxNi4zOS03LjMzOCwxNi4zOS0xNi4zOVMzNDYuMjg2LDIwNi42NSwzMzcuMjMzLDIwNi42NXoiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xNV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iNDQxLjk0NzgiIHkxPSIyMzMuNzg3OSIgeDI9IjI4Mi42Mzc4IiB5Mj0iMzkzLjA4OCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA2NjcgMCAwIC0xLjA2NjcgMy4yNjY3IDU1Ny41MzMyKSI+Cgk8c3RvcCBvZmZzZXQ9IjEuMDAwMDAwZS0wMDQiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDhCRjI7c3RvcC1vcGFjaXR5OjAiLz4KCTxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzAwNDZFMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzE1Xyk7IiBkPSJNNDU4LjMyLDIyMS42NzVsLTUwLjU1OC01MC41NThjLTkuMDM5LTkuNDk0LTIxLjc5LTE1LjQyMi0zNS45MzQtMTUuNDIyICBjLTI3LjQwNSwwLTQ5LjYyMSwyMi4yMTctNDkuNjIxLDQ5LjYyMWMwLDE0LjE0NCw1LjkyNywyNi44OTUsMTUuNDIyLDM1LjkzNEw0NTguMzIsMzYxLjk0MUw0NTguMzIsMjIxLjY3NUw0NTguMzIsMjIxLjY3NXoiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xNl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMzQ1LjUyNzIiIHkxPSI0MTAuODI3NCIgeDI9IjM0NS41MjcyIiB5Mj0iMjQ1LjMzNzQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4wNjY3IDAgMCAtMS4wNjY3IDMuMjY2NyA1NTcuNTMzMikiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZDRjk1Ii8+Cgk8c3RvcCBvZmZzZXQ9IjAuNDI3IiBzdHlsZT0ic3RvcC1jb2xvcjojRkZDOTU0Ii8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkMyMDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzE2Xyk7IiBjeD0iMzcxLjgyOSIgY3k9IjIwNS4zMTIiIHI9IjQ5LjYyMSIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" /></span> Drop your images and videos here...</div></div>
+                                                      
+                                                  <div class="fallback">
+                                                    <input name="file" type="file" multiple />
+                                                  </div>
+                                                </form>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="pills-phtvdo" role="tabpanel" aria-labelledby="pills-phtvdo-tab">
                             <div class="bx-tp-img-vdo-upl">
                               <form action="/file-upload" class="dropzone">
-                                <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span>
-                                  <div class="drp-txt-msg fnt-wgt-600"><span class="upl-vdo-icn"><i class="fa fa-picture-o mrg-b-10" aria-hidden="true"></i></span> Drop your images and videos here...</div>
-                                </div>
-                                <div class="fallback">
-                                  <input name="file" type="file" multiple />
-                                </div>
-                              </form>
+                                                      <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span><div class="drp-txt-msg fnt-wgt-600"><span class="upl-vdo-icn"><i class="fa fa-picture-o mrg-b-10" aria-hidden="true"></i></span> Drop your images and videos here...</div></div>
+                                                      
+                                                  <div class="fallback">
+                                                    <input name="file" type="file" multiple />
+                                                  </div>
+                                                </form>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="pills-addjobs" role="tabpanel" aria-labelledby="pills-addjobs-tab">
                             <div class="bx-tp-jb-ad text-center pd-10-all">
-                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3"> <span class="mrg-r-10"><i class="fa fa-suitcase" aria-hidden="true"></i></span> <span>Add Available vacancies here</span> </div>
+                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3">
+                                <span class="mrg-r-10"><i class="fa fa-suitcase" aria-hidden="true"></i></span>
+                                <span>Add Available vacancies here</span>
+                              </div>
                               <table class="ad-jb-tbl mrg-tp-10 mrg-b-10">
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Title&nbsp;*</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="Title here.." class="txt-inpt-tp-1 mrg-b-10 outline-none"></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Title&nbsp;*</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="Title here.." class="txt-inpt-tp-1 mrg-b-10 outline-none">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>Information technology</option>
                                       <option>Real Estate</option>
                                       <option>Business Development</option>
                                       <option>Accounting</option>
                                       <option>Engineers</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Sub Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Sub Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>Web UI/Ux Developer</option>
                                       <option>Web Developer</option>
                                       <option>Network engineers</option>
                                       <option>Automotive</option>
                                       <option>Engineers</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc"><div class="flw-txt-13 mrg-b-10 text-left">Job Summery:</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="Job Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg"></td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <div class="flw-txt-13 mrg-b-10 text-left">Job Summery:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="Job Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Upload Files</div></td>
-                                  <td class="align-middle wdt-50-perc"><form action="/file-upload" class="dropzone">
-                                      <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span>
-                                        <div class="drp-txt-msg">Upload Documentd...</div>
-                                      </div>
-                                      <div class="fallback">
-                                        <input name="file" type="file" multiple />
-                                      </div>
-                                    </form></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Upload Files</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <form action="/file-upload" class="dropzone">
+                                                            <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span><div class="drp-txt-msg">Upload Documentd...</div></div>
+                                                            
+                                                        <div class="fallback">
+                                                          <input name="file" type="file" multiple />
+                                                        </div>
+                                                      </form>
+                                  </td>
                                 </tr>
                               </table>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="pills-addtenders" role="tabpanel" aria-labelledby="pills-addtenders-tab">
                             <div class="bx-tp-jb-ad text-center pd-10-all">
-                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3"> <span class="mrg-r-10"><i class="fa fa-gavel" aria-hidden="true"></i></span> <span>Add Available tenders here</span> </div>
+                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3">
+                                <span class="mrg-r-10"><i class="fa fa-gavel" aria-hidden="true"></i></span>
+                                <span>Add Available tenders here</span>
+                              </div>
                               <table class="ad-jb-tbl mrg-tp-10 mrg-b-10">
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Title&nbsp;*</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="Title here.." class="txt-inpt-tp-1 mrg-b-10 outline-none"></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Title&nbsp;*</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="Title here.." class="txt-inpt-tp-1 mrg-b-10 outline-none">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>Information technology</option>
                                       <option>Real Estate</option>
                                       <option>Business Development</option>
                                       <option>Accounting</option>
                                       <option>Engineers</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Sub Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Sub Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>Web UI/Ux Developer</option>
                                       <option>Web Developer</option>
                                       <option>Network engineers</option>
                                       <option>Automotive</option>
                                       <option>Engineers</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Tender Summery:</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="Tender Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg"></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Tender Summery:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="Tender Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Upload Files</div></td>
-                                  <td class="align-middle wdt-50-perc"><form action="/file-upload" class="dropzone">
-                                      <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span>
-                                        <div class="drp-txt-msg">Upload Documentd...</div>
-                                      </div>
-                                      <div class="fallback">
-                                        <input name="file" type="file" multiple />
-                                      </div>
-                                    </form></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Upload Files</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <form action="/file-upload" class="dropzone">
+                                                            <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span><div class="drp-txt-msg">Upload Documentd...</div></div>
+                                                            
+                                                        <div class="fallback">
+                                                          <input name="file" type="file" multiple />
+                                                        </div>
+                                                      </form>
+                                  </td>
                                 </tr>
                               </table>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="pills-addproducts" role="tabpanel" aria-labelledby="pills-addproducts-tab">
                             <div class="bx-tp-jb-ad text-center pd-10-all">
-                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3"> <span class="mrg-r-10"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> <span>Add Your New Products to wall</span> </div>
+                              <div class="text-center wdt-80-per fnt-wgt-600 blk-tp-3">
+                                <span class="mrg-r-10"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                                <span>Add Your New Products to wall</span>
+                              </div>
                               <table class="ad-jb-tbl mrg-tp-10 mrg-b-10">
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Product name&nbsp;*</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="product name.." class="txt-inpt-tp-1 mrg-b-10 outline-none"></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Product name&nbsp;*</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="product name.." class="txt-inpt-tp-1 mrg-b-10 outline-none">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>Dresses</option>
                                       <option>Electronics</option>
                                       <option>Mobiles</option>
                                       <option>Perfumes</option>
                                       <option>etc</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Sub Categories:</div></td>
-                                  <td class="align-middle wdt-50-perc"><select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Sub Categories:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <select class="form-control txt-inpt-tp-1 mrg-b-10" id="exampleSelect1">
                                       <option>T shirts</option>
                                       <option>Pants</option>
                                       <option>Inner wears</option>
-                                    </select></td>
+                                    </select>
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Product Summery:</div></td>
-                                  <td class="align-middle wdt-50-perc"><input type="text" name="txt1" placeholder="Product Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg"></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Product Summery:</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <input type="text" name="txt1" placeholder="Product Summery.." class="txt-inpt-tp-1 mrg-b-10 outline-none inpt-tp-hg">
+                                  </td>
                                 </tr>
                                 <tr>
-                                  <td class="align-middle wdt-50-perc text-left"><div class="flw-txt-13 mrg-b-10">Upload Files</div></td>
-                                  <td class="align-middle wdt-50-perc"><form action="/file-upload" class="dropzone">
-                                      <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span>
-                                        <div class="drp-txt-msg">Upload images...</div>
-                                      </div>
-                                      <div class="fallback">
-                                        <input name="file" type="file" multiple />
-                                      </div>
-                                    </form></td>
+                                  <td class="align-middle wdt-50-perc text-left">
+                                    <div class="flw-txt-13 mrg-b-10">Upload Files</div>
+                                  </td>
+                                  <td class="align-middle wdt-50-perc">
+                                    <form action="/file-upload" class="dropzone">
+                                                            <div class="dz-message" data-dz-message><span class="ion-images upload-img-icn"></span><div class="drp-txt-msg">Upload images...</div></div>
+                                                            
+                                                        <div class="fallback">
+                                                          <input name="file" type="file" multiple />
+                                                        </div>
+                                                      </form>
+                                  </td>
                                 </tr>
                               </table>
                             </div>
                           </div>
                         </div>
-                        <div class="btn-wrap-bx-1 text-right p-2"> <a href="#" class="lnk-tp-cmt-btn ">Commit</a> <a href="#" class="lnk-tp-cmt-btn">Cancel</a> </div>
+                        <div class="btn-wrap-bx-1 text-right p-2">
+                          <a class="float-left lnk-tp-shw-upld"><span class="mrg-r-5"><i class="fa fa-video-camera" aria-hidden="true"></i></span>Photo/Video</a>
+                          <a href="#" class="lnk-tp-cmt-btn ">Commit</a>
+                          <a href="#" class="lnk-tp-cmt-btn">Cancel</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -665,7 +760,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           <div class="slider-bx-tp-1">
                             <div id="post-sldr-1" class="owl-carousel owl-theme">
                               <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                               <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                               <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                               <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
@@ -1907,6 +2002,12 @@ $(document).ready(function() {
 
 		}
 	);
+  // image upload
+  $(".lnk-tp-shw-upld").click(
+    function(){
+      $(".bx-tp-img-vdo-upl").slideToggle();
+    }
+  );
 });
 </script> 
 <script type="text/javascript">
@@ -1927,30 +2028,30 @@ $(document).ready(function() {
             });
 	  })
 </script> 
-<script src="js/jquery.magnific-popup.js"></script> 
+<script src="{{ URL::asset('front_end/js/jquery.magnific-popup.js') }}"></script> 
 <script type="text/javascript">
 // Define data for the popup
 var data = [
   {
     
     
-    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car1.jpg"') }}">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset("front_end/images/car1.jpg") }}">'
   },
   
   {
     
-    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car2.jpg"') }}">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset("front_end/images/car2.jpg") }}">'
 
   },
   {
     
-    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car3.jpg"') }}">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset("front_end/images/car3.jpg") }}">'
 
   },
   
   {
    
-    ContentSrc: '<img class="img-fluid" src="{{ URL::asset('"front_end/images/car4.jpg"') }}">'
+    ContentSrc: '<img class="img-fluid" src="{{ URL::asset("front_end/images/car4.jpg") }}">'
   }
 ];
 
@@ -1969,8 +2070,11 @@ $('.image-link').magnificPopup({
     //           '<div class="mfp-userLocation"></div>'+
     //         '</div>'
    markup: '<div class="white-popup"><div class="mfp-close"></div>'+
-            '<div class="bid-pp-tp-1"><div class="bid-pp-tp-1-cnt"><div class="row"><div class="col pos-rel p-0"><div class="mfp-ContentSrc"></div></div><div class="col-md-auto pl-0"><div class="col-wdt-350-r">'+
-            '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('"front_end/images/demo1.jpeg"') }}" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
+            '<div class="bid-pp-tp-1"><div class="bid-pp-tp-1-cnt"><div class="row m-0"><div class="col pos-rel p-0"><div class="mfp-ContentSrc"></div></div><div class="col-md-auto pl-0 text-left"><div class="col-wdt-350-r">'+
+            '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
+            +'<div class="txt-desc-1 pd-10"><span>#UAE</span><span>#Life Style</span><span>#Burj Kalifa</span><br>&nbsp;Vecation Mode in Dubai<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div></div>'
+            +'<div class="shr-bx-tp-1 brd-btm-e4e4e4"><ul class="nav nav-fill"><li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127</a></li><li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"><span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment</a></li><li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11 <div class="shar-box-tp-11"> <div class="arrow-box-1"> <div> <ul> <li>Share Now..</li><li>Share..</li><li>Send as message</li><li> share on friends Timeline </li></ul> <div class="flex-box-2"> <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div></div></div></div></div></a></li></ul></div>'
+            +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg")"></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
             +'</div></div></div></div></div>'+
             '</div>'
   },
@@ -1985,18 +2089,65 @@ $('.image-link').magnificPopup({
   }
 });
 </script> 
+<script type="text/javascript">
+// Define data for the popup
+var data = [
+  {
+    
+    userLocation: '<video class="video" controls="controls" width="100%" height="auto" preload="metadata" aria-describedby="full-descript"><source type="video/mp4" src="images/videos/explore.mp4" /></video>'
 
-<!-- <div class="bid-pp-tp-1">
-	<div class="bid-pp-tp-1-cnt">
-		<div class="row">
-			<div class="col"></div>
-			<div class="col-md-auto">
-				<div class="col-wdt-350-r">
-					Ijas
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
+  },
+  {
+    
+    
+    ContentSrc: '<img class="img-fluid" src="images/car1.jpg">'
+  },
+  
+  {
+    
+    ContentSrc: '<img class="img-fluid" src="images/car2.jpg">'
+
+  },
+  {
+    
+    ContentSrc: '<img class="img-fluid" src="images/car3.jpg">'
+
+  },
+
+  
+  {
+   
+    ContentSrc: '<img class="img-fluid" src="images/car4.jpg">'
+  }
+];
+
+// initalize popup
+$('.video-link').magnificPopup({ 
+  key: 'my-popup', 
+  items: data,
+  type: 'inline',
+  inline: {
+   markup: '<div class="white-popup"><div class="mfp-close"></div>'+
+            '<div class="bid-pp-tp-1"><div class="bid-pp-tp-1-cnt"><div class="row"><div class="col pos-rel p-0"><div class="mfp-ContentSrc"></div></div><div class="col-md-auto pl-0 text-left"><div class="col-wdt-350-r">'+
+            '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
+            +'<div class="txt-desc-1 pd-10"><span>#UAE</span><span>#Life Style</span><span>#Burj Kalifa</span><br>&nbsp;Vecation Mode in Dubai<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div></div>'
+            +'<div class="shr-bx-tp-1 brd-btm-e4e4e4"><ul class="nav nav-fill"><li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127</a></li><li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"><span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment</a></li><li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11 <div class="shar-box-tp-11"> <div class="arrow-box-1"> <div> <ul> <li>Share Now..</li><li>Share..</li><li>Send as message</li><li> share on friends Timeline </li></ul> <div class="flex-box-2"> <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div></div></div></div></div></a></li></ul></div>'
+            +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
+            +'</div></div></div></div></div>'+
+            '</div>'
+  },
+  gallery: {
+    enabled: true 
+  },
+  callbacks: {
+    markupParse: function(template, values, item) {
+      // optionally apply your own logic - modify "template" element based on data in "values"
+      // console.log('Parsing:', template, values, item);
+    }
+  }
+});
+
+</script>
+
 </body>
 </html>

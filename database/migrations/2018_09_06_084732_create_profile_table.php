@@ -14,10 +14,10 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('tbl_profile', function (Blueprint $table) {
-            $table->increments('pk_profile_id')->nullable();
-             $table->bigInteger('profile_id')->nullable();
-             $table->string('profile_url')->nullable();
-             $table->enum('profile_type', ['company', 'user', 'bid']);
+            $table->increments('pk_profile_id');
+            $table->bigInteger('profile_id')->nullable();
+            $table->string('profile_url')->nullable();
+            $table->enum('profile_type', ['company', 'user', 'bid']);
             $table->timestamps();
         });
     }
