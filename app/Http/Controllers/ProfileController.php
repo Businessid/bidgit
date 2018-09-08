@@ -41,7 +41,10 @@ class ProfileController extends Controller
         $Document_Path = storage_path('app/upload/posts/');
         File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
         $image = $request->file('file');
-        $newname = date('Ymd').'_'.time().'_'.rand(10000000,99999999).'.png';
+        $originalName =$image->getClientOriginalName();
+        $nameArr=explode('.', $originalName);
+        $extension=end($nameArr);
+        $newname = date('Ymd').'_'.time().'_'.rand(10000000,99999999).'.'.$extension;
         $upload=$image->storeAs('upload/posts', $newname);
         if($upload){
             echo $newname;
