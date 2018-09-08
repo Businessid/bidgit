@@ -42,8 +42,8 @@ class CreateCompaniesTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('expiry_date')->nullable();
-            $table->tinyInteger('followers');
-            $table->tinyInteger('Following');
+            $table->bigInteger('followers');
+            $table->bigInteger('Following');
             $table->string('order_rank');
             $table->tinyInteger('verified');
             $table->tinyInteger('status');

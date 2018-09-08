@@ -32,9 +32,22 @@ class ProfileController extends Controller
     	return Redirect::to('/');
     }
 
-        public function index($id,Request $request)
+        public function index($id)
     {
         return view('front_end.profile');
+    }
+        public function fileupload(Request $request)
+    {
+        $Document_Path = storage_path('app/upload/posts/');
+        File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
+        $image = $request->file('file');
+        $newname = date('Ymd').'_'.time().'_'.rand(10000000,99999999).'.png';
+        $upload=$image->storeAs('upload/posts', $newname);
+        if($upload){
+            echo $newname;
+        }else{
+            echo 'failed';
+        }
     }
     
 }
