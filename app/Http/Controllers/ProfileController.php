@@ -52,5 +52,15 @@ class ProfileController extends Controller
             echo 'failed';
         }
     }
+        public function deletepostimage(Request $request)
+    {
+        $image=storage_path('app/upload/posts/').$request->image;
+        $res=unlink($image);
+        if($res){
+            echo "true";
+        }else{
+            echo "false";
+        } 
+    }
     
 }

@@ -87,8 +87,15 @@ Route::post('register/file_uppload', 'MoreRegisterController@file_uppload');
 // Profile Start
 Route::get('profile', 'ProfileController@error');
 Route::get('profile/{id}', 'ProfileController@index');
-// Create Post rdata Page
+// Create Post data Page
 Route::post('profile/fileupload', 'ProfileController@fileupload');
+Route::post('profile/deletepostimage', 'ProfileController@deletepostimage');
+
+
+
+
+
+
 
 Route::get('/home', function () {
     return view('home');

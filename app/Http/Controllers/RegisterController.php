@@ -1395,7 +1395,7 @@ class RegisterController extends BaseController
 
 
 
-    public function AdminPremetion(){
+    public function AdminPermission(){
 
         $permetions = [ "allow_product" => true,
             "allow_manage_order" => true,

@@ -119,7 +119,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="tb-tp-1 mrg-t-10">
                   <ul class="nav nav-pills nav-fill">
                     <li class="nav-item"> <a class="nav-link" href="profileinfo.php"> <span class="nv-icn-1"><i class="fa fa-address-book" aria-hidden="true"></i></span> Info </a> </li>
-                    <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Newsfeed </a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Timeline </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profilestore.php"> <span class="nv-icn-1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Store </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-video-camera" aria-hidden="true"></i></span> Videos </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-picture-o" aria-hidden="true"></i></span> Photos </a> </li>
@@ -384,7 +384,9 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                                     <img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}">
                                   </td>
                                   <td>
-                                    <input type="text" name="postfield" class="txt-fld-tp-1" placeholder="Write Something here...">
+                                    <div class="pos-rel">
+  <textarea class="txt-ar-tp-1 txt-fld-tp-1" placeholder="Whats In your mind ?" name="post-text" value="Whats in your mind..."></textarea>
+  </div> 
                                   </td>
                                 </tr>
                               </table>
@@ -401,16 +403,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                                     </span>
                                   </a>
                                 </li>
-                              <!--  <li class="nav-item">
-                                  <a href="JavaScript:;" class="nav-link lnk-tp-shw-upld">
-                                    <span class="nv-icn-tp-4">
-                                      <img src="{{ URL::asset('front_end/images/svg/youtube.svg') }}">
-                                    </span>
-                                    <span class="nv-txt-tp-4">
-                                      Upload videos
-                                    </span>
-                                  </a>
-                                </li> -->
                                 <li class="nav-item">
                                   <a href="JavaScript:;" class="nav-link url-box-show">
                                     <span class="nv-icn-tp-4">
@@ -424,21 +416,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                               </ul>
                             </div>
                             <div class="url-box-wrp">
-                              <input type="text" name="" placeholder="Enter Url Here.....">
+                              <input type="text" name="post-url" placeholder="Enter Url Here.....">
                             </div>
                             <div class="bx-tp-img-vdo-upl">
                               <div class="dropzone dz-clickable" id="myDrop">
-                                <div class="dz-default dz-message" data-dz-message="">
-                                  <span>Drop files here to upload</span>
-                                </div>
+                              
                               </div>
                             </div>
                           </div>
 
                         </div>
                         <div class="btn-wrap-bx-1 text-right p-2">
-                          <a href="#" class="lnk-tp-cmt-btn ">Commit</a>
-                          <a href="#" class="lnk-tp-cmt-btn">Cancel</a>
+                          <a href="javascript:void(0);" class="lnk-tp-cmt-btn ">Post</a>
+                          <!-- <a href="#" class="lnk-tp-cmt-btn">Cancel</a> -->
                         </div>
                       </div>
                     </div>
@@ -2002,37 +1992,31 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         }
     });
 
-
-
-
-
-
-
-
-    var PostDropzone = new Dropzone('div#myDrop', {
+  var PostDropzone = new Dropzone('div#myDrop', {
         url: "/profile/fileupload",
-        maxFiles: 10,
-        maxFilesize: 50,
+        maxFiles: 6,
+        maxFilesize:12,
         addRemoveLinks: true,
-        dictDefaultMessage: "<img class='dropzone-add-img' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6Izk5OTk5OTsiIGQ9Ik01MTIsMGgtNDB2MTZoMjR2MzJoMTZWMHogTTQzMiwwaC00MHYxNmg0MFYweiBNMzUyLDBoLTQwdjE2aDQwVjB6IE0yNzIsMGgtNDB2MTZoNDBWMHogTTE5MiwwaC00MCAgdjE2aDQwVjB6IE0xMTIsMEg3MnYxNmg0MFYweiBNMzIsMEgwdjE2aDMyVjB6IE0xNiw0OEgwdjQwaDE2VjQ4eiBNMTYsMTI4SDB2NDBoMTZWMTI4eiBNMTYsMjA4SDB2NDBoMTZWMjA4eiBNMTYsMjg4SDB2NDBoMTZWMjg4eiAgIE0xNiwzNjhIMHY0MGgxNlYzNjh6IE0xNiw0NDhIMHY0MGgxNlY0NDh6IE01Niw0OTZIMTZ2MTZoNDBWNDk2eiBNMTM2LDQ5Nkg5NnYxNmg0MFY0OTZ6IE0yMTYsNDk2aC00MHYxNmg0MFY0OTZ6IE0yOTYsNDk2aC00MHYxNiAgaDQwVjQ5NnogTTM3Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTQ1Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTUxMiw0ODhoLTE2djhsMCwwdjE2aDE2VjQ4OHogTTUxMiw0MDhoLTE2djQwaDE2VjQwOHogTTUxMiwzMjhoLTE2djQwICBoMTZWMzI4eiBNNTEyLDI0OGgtMTZ2NDBoMTZWMjQ4eiBNNTEyLDE2OGgtMTZ2NDBoMTZWMTY4eiBNNTEyLDg4aC0xNnY0MGgxNlY4OHoiLz4KPGc+Cgk8cmVjdCB4PSIyNDQiIHk9IjE3NS45NzYiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYwLjA4Ii8+Cgk8cmVjdCB4PSIxNzUuOTc2IiB5PSIyNDQiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMTYwLjA4IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==' /> Drop post file here to upload",
+        dictDefaultMessage: "<img class='dropzone-add-img' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6Izk5OTk5OTsiIGQ9Ik01MTIsMGgtNDB2MTZoMjR2MzJoMTZWMHogTTQzMiwwaC00MHYxNmg0MFYweiBNMzUyLDBoLTQwdjE2aDQwVjB6IE0yNzIsMGgtNDB2MTZoNDBWMHogTTE5MiwwaC00MCAgdjE2aDQwVjB6IE0xMTIsMEg3MnYxNmg0MFYweiBNMzIsMEgwdjE2aDMyVjB6IE0xNiw0OEgwdjQwaDE2VjQ4eiBNMTYsMTI4SDB2NDBoMTZWMTI4eiBNMTYsMjA4SDB2NDBoMTZWMjA4eiBNMTYsMjg4SDB2NDBoMTZWMjg4eiAgIE0xNiwzNjhIMHY0MGgxNlYzNjh6IE0xNiw0NDhIMHY0MGgxNlY0NDh6IE01Niw0OTZIMTZ2MTZoNDBWNDk2eiBNMTM2LDQ5Nkg5NnYxNmg0MFY0OTZ6IE0yMTYsNDk2aC00MHYxNmg0MFY0OTZ6IE0yOTYsNDk2aC00MHYxNiAgaDQwVjQ5NnogTTM3Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTQ1Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTUxMiw0ODhoLTE2djhsMCwwdjE2aDE2VjQ4OHogTTUxMiw0MDhoLTE2djQwaDE2VjQwOHogTTUxMiwzMjhoLTE2djQwICBoMTZWMzI4eiBNNTEyLDI0OGgtMTZ2NDBoMTZWMjQ4eiBNNTEyLDE2OGgtMTZ2NDBoMTZWMTY4eiBNNTEyLDg4aC0xNnY0MGgxNlY4OHoiLz4KPGc+Cgk8cmVjdCB4PSIyNDQiIHk9IjE3NS45NzYiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYwLjA4Ii8+Cgk8cmVjdCB4PSIxNzUuOTc2IiB5PSIyNDQiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMTYwLjA4IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==' style='width:50px;'/>",
         acceptedFiles: ".jpg,.png,.jpeg,.JPG,.PNG,.JPEG,.mp4,.avi,.mov,.mpeg,.mpg,.3gpp,.3gp,.mpeg,.mp3,.wav",
         removedfile: function(file) {
             var name = file.newname;
+            alert(name);
             $.ajax({
                 type: 'POST',
-                url: 'deletepostimage',
-                data: "post_id="+name,
+                url: '/profile/deletepostimage',
+                data: "image="+name,
                 dataType: 'html'
             });
             var _ref;
             return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
         },
         init: function() {
-            this.on('sending', function(file, xhr, formData){
+            this.on('sending', function(file, xhr, formData) {
                 formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
 
             }),
-                this.on('success', function(file, response) {
+            this.on('success', function(file, response) {
                     thisname = $(this)[0].element.attributes[1].nodeValue
                     var res = thisname.replace("post_dropzone", "posts_uploads");
                     res=res+'[]';
@@ -2042,8 +2026,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                     file.previewElement.querySelector("img").alt = response;
                     file.previewElement.querySelector("[data-dz-name]").innerHTML = response;
                     $("#processing").append($(the_input));
-
-                });
+                    $(".dz-details").hide();
+            });
         }
     });
 
