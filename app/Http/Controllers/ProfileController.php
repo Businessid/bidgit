@@ -21,7 +21,8 @@ use App\Users_Legal_Status;
 use App\Users;
 use App\Users_Activities;
 use App\UsersCompanies;
-
+use App\Posts;
+use App\PostFiles;
 
 class ProfileController extends Controller
 {
@@ -61,6 +62,93 @@ class ProfileController extends Controller
         }else{
             echo "false";
         } 
+    }
+        
+
+
+
+    public function PostData(Request $request){
+        $postFiles = [];
+        $postText= $request->input('post-text');
+        $postImages = $request->input('post_image');
+        $postVideos = $request->input('post_video');
+        $postUrl= $request->input('post-url');
+
+        if($postText != NULL ||$postImages != NULL || $postVideos != NULL || $postUrl != NULL){
+        $data['fk_user_id']=1;
+        if($postText)
+        {
+           $data['title']= $postText;
+           $matches='';
+           preg_match_all('/#([^\s]+)/', $postText, $matches);
+           $hashtags = implode(',', $matches[1]);
+           $data['hashtags']=$hashtags;
+        }
+        $data['privacy']=1;
+        $data['status']=1;
+        $Posts = new Posts();
+        $Posts->fill($data);
+        $result = $Posts->save();
+        // dd(DB::getQueryLog()); die;
+        if($result){
+            $LastInsertId = $Posts->id;
+            // Get Images 
+            if($postImages){
+                $image_num =  count($postImages);
+                for($i = 0; $i < $image_num; $i++){
+                 $postFiles[]["image"] =$postImages[$i];
+                }
+            }
+            // Get Images 
+            if($postVideos){
+                $video_num =  count($postVideos);
+                for($i = 0; $i < $video_num; $i++){
+                 $postFiles[]["video"] =$postVideos[$i];
+                }
+            }
+            // Get Url 
+            if($postUrl){
+                $urltrim = trim($postUrl);
+                if($urltrim != ""){
+                $postFiles[]["url"] = $postUrl; 
+                }
+            }
+            $result=$postFiles;
+            for($i=0 ; $i < count($postFiles) ; $i++){
+            foreach ($postFiles[$i] as $key=> $value) {
+               $files['fk_post_id']=$LastInsertId;
+               $files['type']=$key;
+               $files['file']=$value;
+            }
+            $PostFiles = new PostFiles();
+            $PostFiles->fill($files);
+            $PostFiles->save();
+            }
+            $result = array(
+                        'success' => true,
+                        'title'=>$postText,
+                        'result' =>$result
+                        );
+            echo json_encode($result);
+            exit;
+        }else{
+            $result = array(
+                        'success' => false,
+                        'message' =>"Error in post.. try to post later."
+                        );
+            echo json_encode($result);
+            exit;
+        }
+           
+        }else{
+            $result = array(
+                        'success' => false,
+                        'message' =>"emtey"
+                        );
+            echo json_encode($result);
+            exit;
+        }
+
     }
     
 }

@@ -86,10 +86,13 @@ Route::post('register/file_uppload', 'MoreRegisterController@file_uppload');
 
 // Profile Start
 Route::get('profile', 'ProfileController@error');
+Route::post('profile/postdata', 'ProfileController@PostData');
+
 Route::get('profile/{id}', 'ProfileController@index');
-// Create Post data Page
+// Create Post file
 Route::post('profile/fileupload', 'ProfileController@fileupload');
 Route::post('profile/deletepostimage', 'ProfileController@deletepostimage');
+// Create Post data
 
 
 

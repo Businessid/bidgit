@@ -1,2 +1,36 @@
 @charset "UTF-8";
 
+.plus-more > span{
+    position: absolute;
+    top: 33%;
+    left: 30%;
+}
+.bid-loader{
+    border: 1px solid #ccc!important;
+    margin-left: 5px;
+    margin-right: 5px;
+    display:none;
+}
+.bid-load-grey{
+	color: #000!important;
+    background-color: #9e9e9e!important;
+    border-radius: 2px;
+    height:5px;
+    width:20%
+}
+.full-load{
+	width:100% !important;
+}
+.dz-default{
+	    margin-bottom: -25px;
+}
+.dropzone.dz-clickable{
+	cursor: pointer;
+    border-top: solid 1px #e4e4e4;
+    margin: 15px;
+    margin-left: 0%;
+    margin-right: 0%;
+    background: none;
+    padding: 10px !important;
+    margin-bottom: 5px;
+}

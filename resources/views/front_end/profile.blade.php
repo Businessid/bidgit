@@ -36,10 +36,6 @@
 <div class="canvas">
   <div class="src-rslt-pg">
 
-
-
-
-
     <!-- hero nav start -->
 
     <div class="bx-tp-nav-main">
@@ -119,7 +115,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="tb-tp-1 mrg-t-10">
                   <ul class="nav nav-pills nav-fill">
                     <li class="nav-item"> <a class="nav-link" href="profileinfo.php"> <span class="nv-icn-1"><i class="fa fa-address-book" aria-hidden="true"></i></span> Info </a> </li>
-                    <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Timeline </a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Posts </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profilestore.php"> <span class="nv-icn-1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Store </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-video-camera" aria-hidden="true"></i></span> Videos </a> </li>
                     <li class="nav-item"> <a class="nav-link" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-picture-o" aria-hidden="true"></i></span> Photos </a> </li>
@@ -128,19 +124,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                   </ul>
                 </div>
               </div>
-              <!-- <div class="prf-rght-bar back-fff pd-a-10">
-	  						<table class="wdt-100-prc">
-	  							<tr>
-	  								<td class="align-middle text-right hgt-70">
-										<a href="#" class="prf-lnk-tp-2 text-center">
-											<img style=" width: 25px;" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4My43ODkgNDgzLjc4OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgzLjc4OSA0ODMuNzg5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjQzNC43Nyw0MDUuMzMyIDQ2NS44OTUsNDA1LjMzMiA0NjUuODk1LDEyMi42NjcgMzI5Ljg5NSwxMjIuNjY3IDMyOS44OTUsMjgwLjI4OCAzMjkuODk1LDI5My4zMzMgICAgIDMxNi4wNzMsMjkzLjMzMyAxNjcuMjI4LDI5My4zMzMgMTY3LjIyOCw0MDUuMzMyIDM2MS44OTUsNDA1LjMzMiAzNjEuODk1LDQ4My43ODkgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0QxMUQyRiIgZGF0YS1vbGRfY29sb3I9IiNkMTFkMmYiPjwvcG9seWdvbj4KCQk8cGF0aCBkPSJNMTcuODk1LDI4MGgzMC44OGw3My4xMiw3OS45NzNWMjgwaDQ1LjMzM2gxNDkuMzMzVjEyMi42NjdWMEgxNy44OTVWMjgweiBNMjY2LjEzOCwxMTYuNiAgICBjNi4yNjcsMCwxMS45ODksMy40LDE2LjQwNyw2LjA2N2M1LjQzLDUuMzMzLDguODg1LDExLjg0NSw4Ljg4NSwxOS41NDljMCwxMy45NjgtMTEuMzI1LDI1LjQ1My0yNS4yOTIsMjUuNDUzICAgIGMtMTMuOTY4LDAtMjUuMjk0LTExLjU2NS0yNS4yOTQtMjUuNTMzYzAtNy43MDEsMy40NTMtMTQuMTMzLDguODg2LTE5LjQ2N0MyNTQuMTQ1LDEyMCwyNTkuODY3LDExNi42LDI2Ni4xMzgsMTE2LjZ6ICAgICBNMTk5LjkyNywxMTYuNmM2LjI2NywwLDExLjk5LDMuNCwxNi40MDgsNi4wNjdjNS40MjksNS4zMzMsOC44ODYsMTEuODQ1LDguODg2LDE5LjU0OWMwLDEzLjk2OC0xMS4zMjYsMjUuNDUzLTI1LjI5NCwyNS40NTMgICAgYy0xMy45NjgsMC0yNS4yOTMtMTEuNTY1LTI1LjI5yNS4yOTMtMjUuMjkzQzEwOC40MjIsMTI4LjU2NSwxMTkuNzQ4LDExNy4yNDMsMTMzLjcxNSwxMTcuMjQzeiBNNjcuNTA3LDExNy4yNDMgICAgYzEzLjk2OCwwLDI1LjI5MywxMS4zMjYsMjUuMjkzLDI1LjI5M2MwLDEzLjk2OC0xMS4zMjYsMjUuMjkzLTI1LjI5MywyNS4yOTNjLTEzLjk3MSwwLTI1LjI5My0xMS4zMjUtMjUuMjkzLTI1LjI5MyAgICBDNDIuMjE0LDEyOC41NjUsNTMuNTM4LDExNy4yNDMsNjcuNTA3LDExNy4yNDN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNEMTFEMkYiIGRhdGEtb2xkX2NvbG9yPSIjZDExZDJmIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" />
-										</a>My0yNS41MzNjMC03LjcwMSwzLjQ1NC0xNC4xMzMsOC44ODYtMTkuNDY3QzE4Ny45MzcsMTIwLDE5My42NiwxMTYuNiwxOTkuOTI3LDExNi42eiAgICAgTTEzMy43MTUsMTE3LjI0M2MxMy45NzEsMCwyNS4yOTMsMTEuMzI2LDI1LjI5MywyNS4yOTNjMCwxMy45NjgtMTEuMzI1LDI1LjI5My0yNS4yOTMsMjUuMjkzICAgIGMtMTMuOTY4LDAtMjUuMjkzLTExLjMyNS0
-	  								</td>
-	  							</tr>
-	  						</table>
-
-	  					</div> -->
             </div>
           </div>
           <div class="col-md-auto p-0">
@@ -343,7 +326,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
               <div class="tb-tp-1">
                 <ul class="nav nav-pills nav-fill">
                   <li class="nav-item"> <a class="nav-link" href="profileinfo.php"> <span class="nv-icn-1"><i class="fa fa-address-book" aria-hidden="true"></i></span> Info </a> </li>
-                  <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Newsfeed </a> </li>
+                  <li class="nav-item"> <a class="nav-link active" href="profile.php"> <span class="nv-icn-1"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span> Posts </a> </li>
                   <li class="nav-item"> <a class="nav-link" href="profilestore.php"> <span class="nv-icn-1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Store </a> </li>
                   <li class="nav-item"> <a class="nav-link" href="profilevideo.php"> <span class="nv-icn-1"><i class="fa fa-video-camera" aria-hidden="true"></i></span> Videos </a> </li>
                   <li class="nav-item"> <a class="nav-link" href="profileimages.php"> <span class="nv-icn-1"><i class="fa fa-picture-o" aria-hidden="true"></i></span> Photos </a> </li>
@@ -375,72 +358,83 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <a class="nav-link" id="" data-toggle="pill" href="#" role="tab" aria-controls="pills-addproducts" aria-selected="false"><span class="mrg-r-5"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Add Products</a>
                           </li>
                         </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                          <div class="tab-pane fade show active" id="pills-compose" role="tabpanel" aria-labelledby="pills-compose-tab">
-                            <div class="post-tb-wrp">
-                              <table class="wdt-100-prc">
-                                <tr>
-                                  <td class="pst-lft-img-blk">
-                                    <img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}">
-                                  </td>
-                                  <td>
-                                    <div class="pos-rel">
-  <textarea class="txt-ar-tp-1 txt-fld-tp-1" placeholder="Whats In your mind ?" name="post-text" value="Whats in your mind..."></textarea>
-  </div> 
-                                  </td>
-                                </tr>
-                              </table>
-                            </div>
-                            <div class="upld-tp-icn-box">
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a href="JavaScript:;" class="nav-link lnk-tp-shw-upld">
-                                    <span class="nv-icn-tp-4">
-                                      <img src="{{ URL::asset('front_end/images/svg/camera.svg') }}">
-                                    </span>
-                                    <span class="nv-txt-tp-4">
-                                      Photo/Video
-                                    </span>
-                                  </a>
-                                </li>
-                                <li class="nav-item">
-                                  <a href="JavaScript:;" class="nav-link url-box-show">
-                                    <span class="nv-icn-tp-4">
-                                      <img src="{{ URL::asset('front_end/images/svg/search.svg') }}">
-                                    </span>
-                                    <span class="nv-txt-tp-4">
-                                      Insert Url
-                                    </span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="url-box-wrp">
-                              <input type="text" name="post-url" placeholder="Enter Url Here.....">
-                            </div>
-                            <div class="bx-tp-img-vdo-upl">
-                              <div class="dropzone dz-clickable" id="myDrop">
-                              
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
+<div class="tab-content" id="pills-tabContent">
+<div class="tab-pane fade show active" id="pills-compose" role="tabpanel" aria-labelledby="pills-compose-tab">
+  <form id='postformfiles'>
+  <div class="post-tb-wrp">
+    <table class="wdt-100-prc">
+      <tr>
+        <td class="pst-lft-img-blk">
+          <img class="lazy img-bx-lft-1 bx-shdw-right" src="{{ URL::asset('front_end/images/profilephoto.jpeg') }}">
+        </td>
+        <td>
+        <div class="pos-rel">
+<textarea class="txt-ar-tp-1 txt-fld-tp-1" placeholder="Whats In your mind ?" name="post-text"></textarea>
+</div> 
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="upld-tp-icn-box">
+    <ul class="nav">
+      <li class="nav-item">
+        <a href="JavaScript:;" class="nav-link lnk-tp-shw-upld">
+          <span class="nv-icn-tp-4">
+            <img src="{{ URL::asset('front_end/images/svg/camera.svg') }}">
+          </span>
+          <span class="nv-txt-tp-4">
+            Photo/Video
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="JavaScript:;" class="nav-link url-box-show">
+          <span class="nv-icn-tp-4">
+            <img src="{{ URL::asset('front_end/images/svg/search.svg') }}">
+          </span>
+          <span class="nv-txt-tp-4">
+            Insert Url
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="url-box-wrp">
+    <input type="text" name="post-url" placeholder="Enter Url Here.....">
+  </div>
+  </form>
+  <div class="bx-tp-img-vdo-upl">
+    <div class="dropzone dz-clickable" id="myDrop">
+    </div>
+  </div>
+</div>
+</div>
                         <div class="btn-wrap-bx-1 text-right p-2">
-                          <a href="javascript:void(0);" class="lnk-tp-cmt-btn ">Post</a>
+                          <a href="javascript:void(0);" class="lnk-tp-cmt-btn post-action">Post</a>
                           <!-- <a href="#" class="lnk-tp-cmt-btn">Cancel</a> -->
                         </div>
                       </div>
                     </div>
                   </div>
+
+                <div class="text-right p-2">
+                  <div class="bid-loader">
+                    <div class="bid-load-grey"></div>
+                  </div>
+                </div>
+
                   <div class="nws-fd-tp-1 pd-lft-20 pd-rgt-20 font-fmly-ar pd-l-r-10px">
-                    <div class="flw-txt-1 fnt-wgt-600">News feed</div>
+                    <div class="flw-txt-1 fnt-wgt-600">Posts</div>
+
+
+                  <div id='list-posts'>
+                    
                     <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
+                         <table class="wdt-100-prc">
                           <tr>
                             <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
                                 <div class="view-qck-bx-1 brd-e4">
                                   <ul class="list-unstyled p-0 m-0 ul-tp-1">
                                     <li class="lnk-tp-qck-1">
@@ -471,100 +465,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                                   </ul>
                                 </div>
                               </div>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
-
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Send as message</li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </a> </li>
-                          <li class="nav-item"> <a class="nav-link text-right save-lnk-tp-1" href="javascript:;"> <i class="fa fa-bookmark faa-tada" aria-hidden="true"></i> </a> </li>
-                        </ul>
-                      </div>
-                      <div class="bx-succss-tp-1">
-                        <div class="alert alert-success m-0"> <strong>Success!</strong> Saved Current Post. </div>
-                      </div>
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">12:05 pm</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alia Butt</a><span class="pst-tm-1">2 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a>
                               <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
                           </tr>
                         </table>
@@ -575,258 +475,22 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <div id="post-sldr-1" class="owl-carousel owl-theme">
                               <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                               <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pst-det-1 text-right pos-rel"> <span class="wh-pst-1 time-blk-1 fnt-wgt-600 mrg-r-10"> <i class="fa fa-meh-o mrg-r-10" aria-hidden="true"></i>Posted by user1 at 12th april 2012</span> </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4 pd-top-0"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Share..</li>
-                                      <li>Send as message</li>
-                                      <li> share on friends Timeline </li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
-                                    </div>
-                                  </div>
-                                </div>
+                              <div class="item"> 
+                                <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="{{ URL::asset('front_end/images/demo2.jpeg') }}" data-description="Lorem ipsum dolor amet">
+                                  <source src="http://www.thueringenforst.de/fileadmin/user_upload/Videos/Jagd/Jagd_Master_Final.mp4" type='video/mp4' />
+                                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
+                                </video> 
                               </div>
-                            </a> </li>
-                        </ul>
-                      </div>
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
-                                <div class="view-qck-bx-1 brd-e4">
-                                  <ul class="list-unstyled p-0 m-0 ul-tp-1">
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span> Save post
-                                        <div class="txt-tp-123-1">Edit Your Post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> Edit
-                                        <div class="txt-tp-123-1">Edit Your Post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-trash-o" aria-hidden="true"></i></span> Delete
-                                        <div class="txt-tp-123-1">Delete your post Now..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-flag" aria-hidden="true"></i></span> Report Spam
-                                        <div class="txt-tp-123-1">Report This post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-ban" aria-hidden="true"></i></span> Block
-                                        <div class="txt-tp-123-1">Block This post owner..</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
 
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Send as message</li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </a> </li>
-                          <li class="nav-item"> <a class="nav-link text-right save-lnk-tp-1" href="javascript:;"> <i class="fa fa-bookmark faa-tada" aria-hidden="true"></i> </a> </li>
-                        </ul>
-                      </div>
-                      <div class="bx-succss-tp-1">
-                        <div class="alert alert-success m-0"> <strong>Success!</strong> Saved Current Post. </div>
-                      </div>
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">12:05 pm</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alia Butt</a><span class="pst-tm-1">2 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="bx-tp-img-grd-1" >
-                        <div class="img-grd-bxt">
-                          <div class="slider-bx-tp-1">
-                            <div id="post-sldr-111" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="pst-det-1 text-right pos-rel"> <span class="wh-pst-1 time-blk-1 fnt-wgt-600 mrg-r-10"> <i class="fa fa-meh-o mrg-r-10" aria-hidden="true"></i>Posted by user1 at 12th april 2012</span> </div>
                       <div class="txt-desc-1 pd-10 brd-btm-e4e4e4 pd-top-0"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
                         &nbsp;Vecation Mode in Dubai
                         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                       </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
                       <div class="shr-bx-tp-1 brd-btm-e4e4e4">
                         <ul class="nav nav-fill">
                           <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
@@ -882,227 +546,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <tr>
                               <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
                               <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Alicia Alvice</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Emaar properties</a>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="bx-tp-img-grd-1" >
-                        <div class="img-grd-bxt">
-                          <div class="slider-bx-tp-1">
-                            <div id="post-sldr-2" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4 pd-top-0"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Share..</li>
-                                      <li>Send as message</li>
-                                      <li> share on friends Timeline </li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </a> </li>
-                        </ul>
-                      </div>
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo31.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="write comment here..."></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                        <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Antony Jaco</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Emaar properties</a>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="bx-tp-img-grd-1" >
-                        <div class="img-grd-bxt">
-                          <div class="slider-bx-tp-1">
-                            <div id="owl-demo" class="owl-carousel owl-theme">
-                              <div>
-                                <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="images/demo2.jpeg" data-description="Lorem ipsum dolor amet">
-                                  <source src="http://www.thueringenforst.de/fileadmin/user_upload/Videos/Jagd/Jagd_Master_Final.mp4" type='video/mp4' />
-                                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
-                                </video>
-                              </div>
-                              <div>
-                                <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="images/demo2.jpeg" data-description="Lorem ipsum dolor amet">
-                                  <source src="http://www.thueringenforst.de/fileadmin/user_upload/Videos/Jagd/Jagd_Master_Final.mp4" type='video/mp4' />
-                                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
-                                </video>
-                              </div>
-                              <div>
-                                <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="images/demo2.jpeg" data-description="Lorem ipsum dolor amet">
-                                  <source src="http://www.thueringenforst.de/fileadmin/user_upload/Videos/Jagd/Jagd_Master_Final.mp4" type='video/mp4' />
-                                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
-                                </video>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4 pd-top-0"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!-- <div class="info-bx-tp-1 pd-10 brd-btm-e4e4e4">
-												<div class="flex-box-3">
-													<span class="lft-txt-tp-1-l"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="fnt-wgt-600 fnt-sz-13">152</span>
-													<span class="push-r"></span>
-													<div>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">11 comments</span>
-														<span class="flw-txt-2 fnt-wgt-600 fnt-sz-13">1 shares</span>
-													</div>
-												</div>
-											</div> -->
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Share..</li>
-                                      <li>Send as message</li>
-                                      <li> share on friends Timeline </li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </a> </li>
-                        </ul>
-                      </div>
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="write comment here..."></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">2 days ago..</span> </div>
                                 <div class="cmnt-rslt-1"> Its Nice place....... </div>
                                 <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
                                   <div class="comment-toggle-box">
@@ -1115,7 +558,11 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       </div>
                     </div>
                   </div>
+                  </div>
                 </div>
+
+
+
                 <div class="prf-rght-bar">
                   <div class="ad-bx-tp-1 bx-shdw-btm bg-fff mrg-b-10">
                     <div class="prf-txt-5 font-fmly-ar">Todays HighLight</div>
@@ -1330,7 +777,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <div class="direct-chat-msg doted-border">
                               <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left">Osahan</span> </div>
                               <!-- /.direct-chat-info -->
-                              <img alt="message user image" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" class="direct-chat-img"><!-- /.direct-chat-img -->
+                              <img alt="message user image" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" class="direct-chat-img"><!-- /.direct-chat-img -->
                               <div class="direct-chat-text"> Hey bro, how’s everything going ? </div>
                               <div class="direct-chat-info clearfix"> <span class="direct-chat-timestamp pull-right">3.36 PM</span> </div>
                               <div class="direct-chat-info clearfix"> <span class="direct-chat-img-reply-small pull-left"> </span> <span class="direct-chat-reply-name">Singh</span> </div>
@@ -1344,10 +791,10 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             <div class="direct-chat-msg doted-border">
                               <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left">Osahan</span> </div>
                               <!-- /.direct-chat-info -->
-                              <img alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" class="direct-chat-img"><!-- /.direct-chat-img -->
+                              <img alt="iamgurdeeposahan" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" class="direct-chat-img"><!-- /.direct-chat-img -->
                               <div class="direct-chat-text"> Hey bro, how’s everything going ? </div>
                               <div class="direct-chat-info clearfix"> <span class="direct-chat-timestamp pull-right">3.36 PM</span> </div>
-                              <div class="direct-chat-info clearfix"> <img alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" class="direct-chat-img big-round"> <span class="direct-chat-reply-name">Singh</span> </div>
+                              <div class="direct-chat-info clearfix"> <img alt="iamgurdeeposahan" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" class="direct-chat-img big-round"> <span class="direct-chat-reply-name">Singh</span> </div>
                               <!-- /.direct-chat-text -->
                             </div>
                             <!-- /.direct-chat-msg -->
@@ -1542,73 +989,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="ad-bx-tp-1 bx-shdw-btm bg-fff mrg-b-10">
-									<div class="prf-txt-5 font-fmly-ar">Recently Added</div>
-									<div class="ad-bx-sldr-1 font-fmly-ar">
-										<div id="product-slider-tp-2" class="owl-carousel owl-theme">
-  											<div class="item">
-  												<div class="bx-tp-itm-1 text-center">
-  													<img src="images/demo1.jpeg" alt="" title="" class="owl-lazy product-image-1">
-  													<div class="product-txt-1">Nike 1, Fogg.Nike 1, Fogg...</div>
-  													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  												</div>
-  											</div>
-  											<div class="item">
-  												<div class="bx-tp-itm-1 text-center">
-  													<img src="images/demo2.jpeg" alt="" title="" class="owl-lazy product-image-1">
-  													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
-  													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  												</div>
-  											</div>
-  											<div class="item">
-  												<div class="bx-tp-itm-1 text-center">
-  													<img src="images/demo3.jpeg" alt="" title="" class="owl-lazy product-image-1">
-  													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
-  													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  												</div>
-  											</div>
-  											<div class="item">
-  												<div class="bx-tp-itm-1 text-center">
-  													<img src="images/demo4.jpeg" alt="" title="" class="owl-lazy product-image-1">
-  													<div class="product-txt-1">Lois Caron, SKMEI, Fogg...</div>
-  													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  												</div>
-  											</div>
-  											<div class="item">
-  												<div class="bx-tp-itm-1 text-center">
-  													<img src="images/demo5.jpeg" alt="" title="" class="owl-lazy product-image-1">
-  													<div class="product-txt-1">Nike 1, Fogg...</div>
-  													<div class="prf-txt-tp-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  												</div>
-  											</div>
-  										</div>
-									</div>
-								</div> -->
                 </div>
               </div>
             </div>
@@ -1617,7 +997,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
       </div>
     </div>
   </div>
-  @include('front_end.modules.footer1')
+ <!--  @include('front_end.modules.footer1') -->
 </div>
 <script src="{{ URL::asset('front_end/js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/tether.min.js') }}"></script>
@@ -1626,12 +1006,12 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 <script src="{{ URL::asset('front_end/js/dropzone.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/jquery.sticky-kit.min.js') }}"></script>
 <script src="{{ URL::asset('front_end/js/jquery.lazy.min.js') }}"></script>
-<script type="text/javascript">
 
+<script src="{{ URL::asset('front_end/js/jquery.magnific-popup.js') }}"></script>
 
-
-
-    (function() {
+<script>
+    
+        (function() {
         var reset_scroll;
 
         $(function() {
@@ -1685,9 +1065,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         })(this));
 
     }).call(this);
-</script>
-<script>
-
+    //    section 2
     $(document).ready(function() {
         var containerWidth= $(".bx-tp-prf-1").width();
         $(".cnt-scrl-area-1").width(containerWidth-570);
@@ -1800,15 +1178,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             video:true
         });
 
-// Start Dropzone
-
-
-    });
-
-
-
-    $(document).ready(function() {
-
         $('a#myList-toggle').click(function() {
             $(this).hide();
             $('.shw-cnt-1').css("display","block");
@@ -1827,11 +1196,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             }
         );
 
-    });
-
-
-
-    //Time lIne Script start
+             //Time lIne Script start
 
     $( ".txt-fld-tp-1" ).focus(function() {
         $(".upld-tp-icn-box").slideDown();
@@ -1854,10 +1219,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
     );
     //Time lIne Script start
 
-</script>
-<script type="text/javascript">
-    $(function(){
-        $(".chat-open").click(function () {
+    // Chat open
+    $(".chat-open").click(function () {
 
             $('#qnimate').addClass('popup-box-on');
             setTimeout(function(){
@@ -1867,13 +1230,20 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 
             }, 1000);
 
-        });
-        $("#removeClass").click(function () {
-            $('#qnimate').removeClass('popup-box-on');
-        });
-    })
+    });
+    $("#removeClass").click(function () {
+        $('#qnimate').removeClass('popup-box-on');
+    });
+
+
+});
+
+
+
+
+
 </script>
-<script src="{{ URL::asset('front_end/js/jquery.magnific-popup.js') }}"></script>
+
 <script type="text/javascript">
     // Define data for the popup
     var data = [
@@ -1919,7 +1289,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
                 +'<div class="txt-desc-1 pd-10"><span>#UAE</span><span>#Life Style</span><span>#Burj Kalifa</span><br>&nbsp;Vecation Mode in Dubai<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div></div>'
                 +'<div class="shr-bx-tp-1 brd-btm-e4e4e4"><ul class="nav nav-fill"><li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127</a></li><li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"><span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment</a></li><li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11 <div class="shar-box-tp-11"> <div class="arrow-box-1"> <div> <ul> <li>Share Now..</li><li>Share..</li><li>Send as message</li><li> share on friends Timeline </li></ul> <div class="flex-box-2"> <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div></div></div></div></div></a></li></ul></div>'
-                +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg")}}"></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
+                +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg")}}"></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpg") }}" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpg") }}" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
                 +'</div></div></div></div></div>'+
                 '</div>'
         },
@@ -1974,10 +1344,10 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         inline: {
             markup: '<div class="white-popup"><div class="mfp-close"></div>'+
                 '<div class="bid-pp-tp-1"><div class="bid-pp-tp-1-cnt"><div class="row"><div class="col pos-rel p-0"><div class="mfp-ContentSrc"></div></div><div class="col-md-auto pl-0 text-left"><div class="col-wdt-350-r">'+
-                '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
+                '<div class="text-left pstd-dt-1 pd-10 brd-btm-e4e4e4"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpg") }}" style=""></td><td class="pd-lft-10"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><div class="time-blk-1 fnt-wgt-600">24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i></div></td></tr></tbody></table></div>'
                 +'<div class="txt-desc-1 pd-10"><span>#UAE</span><span>#Life Style</span><span>#Burj Kalifa</span><br>&nbsp;Vecation Mode in Dubai<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div></div>'
                 +'<div class="shr-bx-tp-1 brd-btm-e4e4e4"><ul class="nav nav-fill"><li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127</a></li><li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"><span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment</a></li><li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11 <div class="shar-box-tp-11"> <div class="arrow-box-1"> <div> <ul> <li>Share Now..</li><li>Share..</li><li>Send as message</li><li> share on friends Timeline </li></ul> <div class="flex-box-2"> <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div><div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div></div></div></div></div></a></li></ul></div>'
-                +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo1.jpeg" style=""></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="images/demo2.jpeg" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
+                +'<div class="cmnt-bx-tp-1 pd-10"><div class="cmnt-pstng-bx mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpg") }}" style=""></td><td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td></tr></tbody></table></div><div class="txt-tp-125">Previous Comments....</div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpg") }}" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div><div class="cmnt-bx-rslt mrg-b-10"><table class="wdt-100-prc"><tbody><tr><td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpg") }}" style=""></td><td class="pd-lft-10"><div class="who-post-nm"><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span></div><div class="cmnt-rslt-1">Its Nice place.......</div><div class="rep-lk-bx"><a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a><a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a><div class="comment-toggle-box"><input type="text" name="" placeholder="Write reply here.." class="no-focus"></div></div></td></tr></tbody></table></div></div>'
                 +'</div></div></div></div></div>'+
                 '</div>'
         },
@@ -1994,43 +1364,79 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 
   var PostDropzone = new Dropzone('div#myDrop', {
         url: "/profile/fileupload",
-        maxFiles: 6,
-        maxFilesize:12,
+        maxFiles: 8,
+        maxFilesize:20,
         addRemoveLinks: true,
         dictDefaultMessage: "<img class='dropzone-add-img' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6Izk5OTk5OTsiIGQ9Ik01MTIsMGgtNDB2MTZoMjR2MzJoMTZWMHogTTQzMiwwaC00MHYxNmg0MFYweiBNMzUyLDBoLTQwdjE2aDQwVjB6IE0yNzIsMGgtNDB2MTZoNDBWMHogTTE5MiwwaC00MCAgdjE2aDQwVjB6IE0xMTIsMEg3MnYxNmg0MFYweiBNMzIsMEgwdjE2aDMyVjB6IE0xNiw0OEgwdjQwaDE2VjQ4eiBNMTYsMTI4SDB2NDBoMTZWMTI4eiBNMTYsMjA4SDB2NDBoMTZWMjA4eiBNMTYsMjg4SDB2NDBoMTZWMjg4eiAgIE0xNiwzNjhIMHY0MGgxNlYzNjh6IE0xNiw0NDhIMHY0MGgxNlY0NDh6IE01Niw0OTZIMTZ2MTZoNDBWNDk2eiBNMTM2LDQ5Nkg5NnYxNmg0MFY0OTZ6IE0yMTYsNDk2aC00MHYxNmg0MFY0OTZ6IE0yOTYsNDk2aC00MHYxNiAgaDQwVjQ5NnogTTM3Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTQ1Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTUxMiw0ODhoLTE2djhsMCwwdjE2aDE2VjQ4OHogTTUxMiw0MDhoLTE2djQwaDE2VjQwOHogTTUxMiwzMjhoLTE2djQwICBoMTZWMzI4eiBNNTEyLDI0OGgtMTZ2NDBoMTZWMjQ4eiBNNTEyLDE2OGgtMTZ2NDBoMTZWMTY4eiBNNTEyLDg4aC0xNnY0MGgxNlY4OHoiLz4KPGc+Cgk8cmVjdCB4PSIyNDQiIHk9IjE3NS45NzYiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYwLjA4Ii8+Cgk8cmVjdCB4PSIxNzUuOTc2IiB5PSIyNDQiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMTYwLjA4IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==' style='width:50px;'/>",
-        acceptedFiles: ".jpg,.png,.jpeg,.JPG,.PNG,.JPEG,.mp4,.avi,.mov,.mpeg,.mpg,.3gpp,.3gp,.mpeg,.mp3,.wav",
+        acceptedFiles: ".jpg,.png,.jpeg,.JPG,.PNG,.JPEG,.mp4,.avi,.mov,.mpeg,.mpg,.3gpp,.3gp,.mpeg,.mp3,.wav,.gif",
         removedfile: function(file) {
             var name = file.newname;
-            alert(name);
             $.ajax({
                 type: 'POST',
                 url: '/profile/deletepostimage',
                 data: "image="+name,
                 dataType: 'html'
             });
+            var length=$('.dropzone .dz-preview').length;
+            if(length <= 2){
+              $('.plus-more').remove();
+            }
             var _ref;
             return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
         },
         init: function() {
             this.on('sending', function(file, xhr, formData) {
                 formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-
             }),
             this.on('success', function(file, response) {
-                    thisname = $(this)[0].element.attributes[1].nodeValue
-                    var res = thisname.replace("post_dropzone", "posts_uploads");
-                    res=res+'[]';
-                    the_input = '<input type="hidden" ' + 'name="'+res+'" ' + 'value="' + response + '">';
-                    console.log(the_input);
+                    $(".plus-more").remove();
+                    var typeRes=file.type;
+                    var result = typeRes.split('/');
+                    var type=result[0];
+                    var the_input = '<input type="hidden" ' + 'name="post_'+type+'[]" ' + 'value="' + response + '"/>';
                     file.newname =response;
                     file.previewElement.querySelector("img").alt = response;
                     file.previewElement.querySelector("[data-dz-name]").innerHTML = response;
-                    $("#processing").append($(the_input));
-                    $(".dz-details").hide();
+                    $("#postformfiles").append(the_input);
+                    $("#myDrop").append('<div class="dz-preview dz-file-preview dz-processing dz-success dz-complete plus-more"><span><img class="dropzone-add-img" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6Izk5OTk5OTsiIGQ9Ik01MTIsMGgtNDB2MTZoMjR2MzJoMTZWMHogTTQzMiwwaC00MHYxNmg0MFYweiBNMzUyLDBoLTQwdjE2aDQwVjB6IE0yNzIsMGgtNDB2MTZoNDBWMHogTTE5MiwwaC00MCAgdjE2aDQwVjB6IE0xMTIsMEg3MnYxNmg0MFYweiBNMzIsMEgwdjE2aDMyVjB6IE0xNiw0OEgwdjQwaDE2VjQ4eiBNMTYsMTI4SDB2NDBoMTZWMTI4eiBNMTYsMjA4SDB2NDBoMTZWMjA4eiBNMTYsMjg4SDB2NDBoMTZWMjg4eiAgIE0xNiwzNjhIMHY0MGgxNlYzNjh6IE0xNiw0NDhIMHY0MGgxNlY0NDh6IE01Niw0OTZIMTZ2MTZoNDBWNDk2eiBNMTM2LDQ5Nkg5NnYxNmg0MFY0OTZ6IE0yMTYsNDk2aC00MHYxNmg0MFY0OTZ6IE0yOTYsNDk2aC00MHYxNiAgaDQwVjQ5NnogTTM3Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTQ1Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTUxMiw0ODhoLTE2djhsMCwwdjE2aDE2VjQ4OHogTTUxMiw0MDhoLTE2djQwaDE2VjQwOHogTTUxMiwzMjhoLTE2djQwICBoMTZWMzI4eiBNNTEyLDI0OGgtMTZ2NDBoMTZWMjQ4eiBNNTEyLDE2OGgtMTZ2NDBoMTZWMTY4eiBNNTEyLDg4aC0xNnY0MGgxNlY4OHoiLz4KPGc+Cgk8cmVjdCB4PSIyNDQiIHk9IjE3NS45NzYiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYwLjA4Ii8+Cgk8cmVjdCB4PSIxNzUuOTc2IiB5PSIyNDQiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMTYwLjA4IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" style="width:50px;"></span></div>');
             });
         }
     });
+    $(document).on( "click",'.post-action', function(e){
+      $('.bid-loader').show();
+      var FormData = $('#postformfiles').serialize();
+      $.ajax({
+             type: "POST",
+             url: "/profile/postdata",
+             data: FormData, // serializes the form's elements.
+             success: function(data)
+             {  
+                var suc = JSON.parse(data);
+                if(suc.success ==true){
+                  var res=suc.result;
+                  var post;
+                  for(i = 0; i < res.length; i++)
+                  {
+                  post='';
+                  }
+                  $(".list-posts").append(post);
 
+                /*var audioElement = document.createElement('audio');
+                audioElement.setAttribute('src', '{{ URL::asset("front_end/sound/sent.mp3") }}');
+                audioElement.volume = 0.2;
+                audioElement.play();*/
+
+                /*if(data=='true') $(".bid-load-grey").addClass("full-load");
+                $('.bid-loader').fadeOut();*/
+
+
+
+
+                }
+                
+             }
+          });
+  });
 
 </script>
 

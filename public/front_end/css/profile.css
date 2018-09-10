@@ -3144,8 +3144,8 @@ align-self: center;
 }
 .dropzone.dz-clickable {
     cursor: pointer;
-    border: 1px dotted #e4e4e4;
-    background: #f1f1f1;
+    /*border: 1px dotted #e4e4e4;
+    background: #f1f1f1;*/
     margin: 15px;
 }
 .drp-zn-img{

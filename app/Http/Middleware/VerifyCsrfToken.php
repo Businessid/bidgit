@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         "profile/fileupload",
-        "profile/deletepostimage"
+        "profile/deletepostimage",
+        "profile/postdata"
     ];
 }

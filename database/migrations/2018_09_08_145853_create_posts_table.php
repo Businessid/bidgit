@@ -16,8 +16,8 @@ class CreatePostsTable extends Migration
         Schema::create('tbl_posts', function (Blueprint $table) {
             $table->increments('pk_post_id');
             $table->bigInteger('fk_user_id');
-            $table->longText('title');
-            $table->mediumText('hashtags');
+            $table->longText('title')->nullable();
+            $table->mediumText('hashtags')->nullable();
             $table->string('privacy');
             $table->integer('status');
             $table->timestamps();
