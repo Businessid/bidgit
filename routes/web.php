@@ -94,7 +94,14 @@ Route::post('profile/fileupload', 'ProfileController@fileupload');
 Route::post('profile/deletepostimage', 'ProfileController@deletepostimage');
 // Create Post data
 
-
+// Profile Sections
+Route::get('profile', 'ProfileController@error');
+Route::get('profile/{id}/info', 'ProfileInfoController@index');
+Route::get('profile/{id}/store', 'ProfileStoreController@index');
+Route::get('profile/{id}/videos', 'ProfileVideosController@index');
+Route::get('profile/{id}/photos', 'ProfilePhotosController@index');
+Route::get('profile/{id}/tenders', 'ProfileTendersController@index');
+Route::get('profile/{id}/jobs', 'ProfileJobsController@index');
 
 
 
