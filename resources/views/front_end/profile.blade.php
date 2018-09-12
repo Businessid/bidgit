@@ -423,18 +423,17 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                   </div>
                 </div>
 
-                  <div class="nws-fd-tp-1 pd-lft-20 pd-rgt-20 font-fmly-ar pd-l-r-10px">
-                    <div class="flw-txt-1 fnt-wgt-600">Posts</div>
+              <div class="nws-fd-tp-1 pd-lft-20 pd-rgt-20 font-fmly-ar pd-l-r-10px">
+                <div class="flw-txt-1 fnt-wgt-600">Posts</div>
+                <div id='list-posts'>
 
-
-                  <div id='list-posts'>
-                    
-                    <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
+                  <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
+                      <!-- Post Header -->
                       <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
                          <table class="wdt-100-prc">
                           <tr>
                             <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
                                 <div class="view-qck-bx-1 brd-e4">
                                   <ul class="list-unstyled p-0 m-0 ul-tp-1">
                                     <li class="lnk-tp-qck-1">
@@ -469,28 +468,30 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </tr>
                         </table>
                       </div>
+                      <!--End Post Header -->
+                      <!--file slider -->
                       <div class="bx-tp-img-grd-1" >
                         <div class="img-grd-bxt">
                           <div class="slider-bx-tp-1">
-                            <div id="post-sldr-1" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1 image-link" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> 
-                                <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="{{ URL::asset('front_end/images/demo2.jpeg') }}" data-description="Lorem ipsum dolor amet">
-                                  <source src="http://www.thueringenforst.de/fileadmin/user_upload/Videos/Jagd/Jagd_Master_Final.mp4" type='video/mp4' />
-                                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
-                                </video> 
-                              </div>
-
+                            <div id="post-sldr-111" class="owl-carousel owl-theme">
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4 pd-top-0"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
+                      <!--end file slider -->
+                      <!--post description -->
+                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
                         &nbsp;Vecation Mode in Dubai
                         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                       </div>
+                      <!--end post description -->
+                      <!--like , comment , share icons -->
                       <div class="shr-bx-tp-1 brd-btm-e4e4e4">
                         <ul class="nav nav-fill">
                           <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
@@ -517,6 +518,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                             </a> </li>
                         </ul>
                       </div>
+                      <!-- End like , comment , share icons -->
+                      <!-- Comments -->
                       <div class="cmnt-bx-tp-1 pd-10">
                         <div class="cmnt-pstng-bx mrg-b-10">
                           <table class="wdt-100-prc">
@@ -556,13 +559,14 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                           </table>
                         </div>
                       </div>
-                    </div>
+                      <!--End Comments -->
                   </div>
-                  </div>
+
+
+                </div> <!-- list posts end  -->
+              </div>
+
                 </div>
-
-
-
                 <div class="prf-rght-bar">
                   <div class="ad-bx-tp-1 bx-shdw-btm bg-fff mrg-b-10">
                     <div class="prf-txt-5 font-fmly-ar">Todays HighLight</div>
@@ -1076,24 +1080,6 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             }
         );
 
-        $(".cmnt-bx-opn").click(function(){
-            // remove bx-open remove from all .cmnt-bx-tp-1
-            $(".cmnt-bx-tp-1").removeClass("bx-open");
-            $(this).removeClass("avlbl-bdg");
-            $(this).find(".badges-tp-1").hide();
-            $(this).find(".pos-rlt-icn-1").show();
-            $(this).parents(".shr-bx-tp-1").next(".cmnt-bx-tp-1").addClass("bx-open");
-        });
-        $(".heart").on('click touchstart', function(){
-            $(this).toggleClass('animating');
-            $(this).parents(".like-btn-tp").toggleClass('liked');
-        });
-
-        $(".share-box-lnk").click(
-            function(){
-                $(this).find(".shar-box-tp-11").toggleClass("opened");
-            }
-        );
         $(".heart").on('animationend', function(){
             $(this).toggleClass('animating');
         });
@@ -1116,88 +1102,28 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             smartSpeed:2000,
             lazyLoad: true
         });
-        $('#product-slider-tp-2').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            navText: ["<span class='icon-owl icon-arrow-left7'><i class='fa fa-angle-left' aria-hidden='true'></i></span>","<span class='icon-owl icon-arrow-right7'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"],
-            items:1,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            animateOut: 'fadeOut',
-            smartSpeed:2000,
-            lazyLoad: true
-        });
 
-        $("#post-sldr-1").owlCarousel({
-            loop:true,
-            autoHeight:true,
-            items:1,
-            autoplayTimeout:1000,
-            autoplayHoverPause:true,
-            animateOut: 'fadeOut',
-            smartSpeed:2000,
-            lazyLoad: true
-        });
-        $("#post-sldr-111").owlCarousel({
-            loop:true,
-            autoHeight:true,
-            items:1,
-            autoplayTimeout:1000,
-            autoplayHoverPause:true,
-            animateOut: 'fadeOut',
-            smartSpeed:2000,
-            lazyLoad: true
-        });
-        $("#post-sldr-2").owlCarousel({
-            loop:true,
-            autoHeight:true,
-            items:1,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            animateOut: 'fadeOut',
-            smartSpeed:2000,
-            lazyLoad: true
-        });
-        $('#post-sldr-2 .item').on('mouseover',function(e){
-            $("#post-sldr-2").trigger('play.owl.autoplay');
-        });
-        $('#post-sldr-2 .item').on('mouseleave',function(e){
-            $("#post-sldr-2").trigger('stop.owl.autoplay');
-        });
-        $("#owl-demo").owlCarousel({
-            loop:true,
-            items:1,
-            autoHeight:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            animateOut: 'fadeOut',
-            smartSpeed:2000,
-            lazyLoad: true,
-            video:true
-        });
+    $('#post-sldr-2 .item').on('mouseover',function(e){
+        $("#post-sldr-2").trigger('play.owl.autoplay');
+    });
+    $('#post-sldr-2 .item').on('mouseleave',function(e){
+        $("#post-sldr-2").trigger('stop.owl.autoplay');
+    });
 
-        $('a#myList-toggle').click(function() {
-            $(this).hide();
-            $('.shw-cnt-1').css("display","block");
-            return false;
-        });
-        $(".qck-lnk-11").click(
-            function(){
-                $(".view-qck-bx-1").toggleClass("enabled");
-            }
-        );
-        $(".save-lnk-tp-1").click(
-            function(){
-                $(this).find("i").toggleClass("animated");
-                $(".bx-succss-tp-1").fadeIn('slow').delay(1000).fadeOut('slow');
+    $('a#myList-toggle').click(function() {
+        $(this).hide();
+        $('.shw-cnt-1').css("display","block");
+        return false;
+    });
+    $(".save-lnk-tp-1").click(
+        function(){
+            $(this).find("i").toggleClass("animated");
+            $(".bx-succss-tp-1").fadeIn('slow').delay(1000).fadeOut('slow');
 
-            }
-        );
+        }
+    );
 
-             //Time lIne Script start
-
+    //Time lIne Script start
     $( ".txt-fld-tp-1" ).focus(function() {
         $(".upld-tp-icn-box").slideDown();
     });
@@ -1229,12 +1155,10 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 }, 2000);
 
             }, 1000);
-
     });
     $("#removeClass").click(function () {
         $('#qnimate').removeClass('popup-box-on');
     });
-
 
 });
 
@@ -1362,9 +1286,10 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         }
     });
 
+  // Programs Script start
+
   var PostDropzone = new Dropzone('div#myDrop', {
         url: "/profile/fileupload",
-        maxFiles: 8,
         maxFilesize:20,
         addRemoveLinks: true,
         dictDefaultMessage: "<img class='dropzone-add-img' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6Izk5OTk5OTsiIGQ9Ik01MTIsMGgtNDB2MTZoMjR2MzJoMTZWMHogTTQzMiwwaC00MHYxNmg0MFYweiBNMzUyLDBoLTQwdjE2aDQwVjB6IE0yNzIsMGgtNDB2MTZoNDBWMHogTTE5MiwwaC00MCAgdjE2aDQwVjB6IE0xMTIsMEg3MnYxNmg0MFYweiBNMzIsMEgwdjE2aDMyVjB6IE0xNiw0OEgwdjQwaDE2VjQ4eiBNMTYsMTI4SDB2NDBoMTZWMTI4eiBNMTYsMjA4SDB2NDBoMTZWMjA4eiBNMTYsMjg4SDB2NDBoMTZWMjg4eiAgIE0xNiwzNjhIMHY0MGgxNlYzNjh6IE0xNiw0NDhIMHY0MGgxNlY0NDh6IE01Niw0OTZIMTZ2MTZoNDBWNDk2eiBNMTM2LDQ5Nkg5NnYxNmg0MFY0OTZ6IE0yMTYsNDk2aC00MHYxNmg0MFY0OTZ6IE0yOTYsNDk2aC00MHYxNiAgaDQwVjQ5NnogTTM3Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTQ1Niw0OTZoLTQwdjE2aDQwVjQ5NnogTTUxMiw0ODhoLTE2djhsMCwwdjE2aDE2VjQ4OHogTTUxMiw0MDhoLTE2djQwaDE2VjQwOHogTTUxMiwzMjhoLTE2djQwICBoMTZWMzI4eiBNNTEyLDI0OGgtMTZ2NDBoMTZWMjQ4eiBNNTEyLDE2OGgtMTZ2NDBoMTZWMTY4eiBNNTEyLDg4aC0xNnY0MGgxNlY4OHoiLz4KPGc+Cgk8cmVjdCB4PSIyNDQiIHk9IjE3NS45NzYiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYwLjA4Ii8+Cgk8cmVjdCB4PSIxNzUuOTc2IiB5PSIyNDQiIHN0eWxlPSJmaWxsOiNFMjFCMUI7IiB3aWR0aD0iMTYwLjA4IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==' style='width:50px;'/>",
@@ -1377,6 +1302,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 data: "image="+name,
                 dataType: 'html'
             });
+            $('input[value="'+name+'"]').remove();
             var length=$('.dropzone .dz-preview').length;
             if(length <= 2){
               $('.plus-more').remove();
@@ -1389,6 +1315,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
             }),
             this.on('success', function(file, response) {
+                    $(".dz-default").hide();
                     $(".plus-more").remove();
                     var typeRes=file.type;
                     var result = typeRes.split('/');
@@ -1402,6 +1329,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             });
         }
     });
+
+
     $(document).on( "click",'.post-action', function(e){
       $('.bid-loader').show();
       var FormData = $('#postformfiles').serialize();
@@ -1414,29 +1343,231 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 var suc = JSON.parse(data);
                 if(suc.success ==true){
                   var res=suc.result;
-                  var post;
-                  for(i = 0; i < res.length; i++)
-                  {
-                  post='';
+                  var post="";
+                  var PostText="";
+                  var PostFiles="";
+                  var PostId=suc.postId;
+                  /*var HashTags=suc.hashTags;*/
+                  if(suc.postText) PostText=suc.postText;
+                  var dt = new Date();
+                  var postedDate=timeSince(dt);
+                  
+                   // start
+                  if(res.length >0){
+                    var PostFiles='<div class="bx-tp-img-grd-1" >\
+                          <div class="img-grd-bxt">\
+                            <div class="slider-bx-tp-1">\
+                              <div id="post-sldr-'+PostId+'" class="owl-carousel owl-theme">';
+                    var PostUrl=suc.postText;
+                    for(i = 0; i < res.length; i++)
+                    {
+                      $.each(res[i], function(key, value){
+                        if(key=='image'){
+                            PostFiles+='<div class="item"><div class="car-sl-itm-1"> <img class="slider-img-tp-1 image-link" src="/uploads/posts/'+value+'"></div> </div>';
+                        }else if (key=='video') {
+                            PostFiles+='<div class="item"><div class="car-sl-itm-1"> <video id="example_video_3" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="{{ URL::asset("front_end/images/demo2.jpeg") }}" data-description="Lorem ipsum dolor amet">\
+                                    <source src="/uploads/posts/'+value+'" type="video/mp4" /></video></div></div>';
+                        }
+                      });
+                    }
+                    PostFiles+='</div></div></div></div>';
                   }
-                  $(".list-posts").append(post);
-
-                /*var audioElement = document.createElement('audio');
+                  post='<div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">\
+                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">\
+                         <table class="wdt-100-prc">\
+                          <tr>\
+                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg") }}" style=""></td>\
+                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>\
+                                <div class="view-qck-bx-1 '+PostId+' brd-e4">\
+                                </div>\
+                              </div>\
+                              <div class="time-blk-1 fnt-wgt-600"> '+postedDate+' - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>\
+                          </tr>\
+                        </table>\
+                      </div>\
+                      '+PostFiles+'\
+                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4"><br>'+PostText+'\
+                      </div>\
+                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">\
+                        <ul class="nav nav-fill">\
+                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>\
+                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:void(0);" postId='+PostId+'> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>\
+                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:void(0);" postId='+PostId+'> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11\
+                              <div class="share-postid-'+PostId+'">\
+                              </div>\
+                            </a> </li>\
+                        </ul>\
+                      </div>\
+                      <div class="comment-postid-'+PostId+'">\
+                      </div>\
+                    </div>';
+                  $("#list-posts").prepend(post);
+                  $(".bid-load-grey").addClass("full-load");
+                  $("#post-sldr-"+PostId).owlCarousel({
+                    margin:10,
+                    items:1,
+                    autoplay:false,
+                    autoplayHoverPause:true,
+                    animateOut: 'fadeOut',
+                    smartSpeed:2000,
+                    lazyLoad: true
+                  });
+                var audioElement = document.createElement('audio');
                 audioElement.setAttribute('src', '{{ URL::asset("front_end/sound/sent.mp3") }}');
                 audioElement.volume = 0.2;
-                audioElement.play();*/
-
-                /*if(data=='true') $(".bid-load-grey").addClass("full-load");
-                $('.bid-loader').fadeOut();*/
-
-
-
-
+                audioElement.play();
+                $('.bid-loader').fadeOut();
+                // Reset box
+                $(".dz-complete").remove();
+                $(".dz-default").show();
+                $('textarea[name="post-text"]').val("");
+                $('input[name="post-url"]').val("");
+                $('input[name="post_image[]"]').remove();
+                $('input[name="post_video[]"]').remove();
                 }
-                
-             }
+              }
           });
   });
+
+  // Post options click
+  $(document).on( "click",'.qck-lnk-11', function(e){
+     $(".view-qck-bx-1").toggleClass("enabled");
+     $(".view-qck-bx-1").html('<ul class="list-unstyled p-0 m-0 ul-tp-1">\
+                                    <li class="lnk-tp-qck-1">\
+                                      <div> <span class="mrg-r-10"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span> Save post\
+                                        <div class="txt-tp-123-1">Edit Your Post..</div>\
+                                      </div>\
+                                    </li>\
+                                    <li class="lnk-tp-qck-1">\
+                                      <div> <span class="mrg-r-10"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> Edit\
+                                        <div class="txt-tp-123-1">Edit Your Post..</div>\
+                                      </div>\
+                                    </li>\
+                                    <li class="lnk-tp-qck-1">\
+                                      <div> <span class="mrg-r-10"><i class="fa fa-trash-o" aria-hidden="true"></i></span> Delete\
+                                        <div class="txt-tp-123-1">Delete your post Now..</div>\
+                                      </div>\
+                                    </li>\
+                                    <li class="lnk-tp-qck-1">\
+                                      <div> <span class="mrg-r-10"><i class="fa fa-flag" aria-hidden="true"></i></span> Report Spam\
+                                        <div class="txt-tp-123-1">Report This post..</div>\
+                                      </div>\
+                                    </li>\
+                                    <li class="lnk-tp-qck-1">\
+                                      <div> <span class="mrg-r-10"><i class="fa fa-ban" aria-hidden="true"></i></span> Block\
+                                        <div class="txt-tp-123-1">Block This post owner..</div>\
+                                      </div>\
+                                    </li>\
+                                  </ul>');
+  });
+
+  // Post Like Click
+  $(document).on( "click",'.heart', function(e){
+    $(this).toggleClass('animating');
+    $(this).parents(".like-btn-tp").toggleClass('liked');
+  });
+
+  // Post Comment Click
+  $(document).on( "click",'.cmnt-bx-opn', function(e){
+    id=$(this).attr("postId");
+    $(".comment-postid-"+id).html('<div class="cmnt-bx-tp-1 pd-10 bx-open">\
+                        <div class="cmnt-pstng-bx mrg-b-10">\
+                          <table class="wdt-100-prc">\
+                            <tr>\
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg") }}" style=""></td>\
+                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>\
+                            </tr>\
+                          </table>\
+                        </div>\
+                        <div class="txt-tp-125">Previous Comments....</div>\
+                        <div class="cmnt-bx-rslt mrg-b-10">\
+                          <table class="wdt-100-prc">\
+                            <tr>\
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpeg") }}" style=""></td>\
+                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>\
+                                <div class="cmnt-rslt-1"> Its Nice place....... </div>\
+                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>\
+                                  <div class="comment-toggle-box">\
+                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">\
+                                  </div>\
+                                </div></td>\
+                            </tr>\
+                          </table>\
+                        </div>\
+                        <div class="cmnt-bx-rslt mrg-b-10">\
+                          <table class="wdt-100-prc">\
+                            <tr>\
+                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpeg") }}" style=""></td>\
+                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>\
+                                <div class="cmnt-rslt-1"> Its Nice place....... </div>\
+                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>\
+                                  <div class="comment-toggle-box">\
+                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">\
+                                  </div>\
+                                </div></td>\
+                            </tr>\
+                          </table>\
+                        </div>\
+                      </div>');
+   /* $(".cmnt-bx-tp-1").removeClass("bx-open");
+    $(this).removeClass("avlbl-bdg");
+    $(this).find(".badges-tp-1").hide();
+    $(this).find(".pos-rlt-icn-1").show();
+    $(this).parents(".shr-bx-tp-1").next(".cmnt-bx-tp-1").addClass("bx-open");*/
+  });
+
+  // Post Comment Click
+  $(document).on( "click",'.share-box-lnk', function(e){
+    id=$(this).attr("postId");
+    $('.share-postid-'+id).html('<div class="shar-box-tp-11"><div>\
+                                    <ul>\
+                                      <li>Share Now..</li>\
+                                      <li>Share..</li>\
+                                      <li>Send as message</li>\
+                                      <li> share on friends Timeline </li>\
+                                    </ul>\
+                                    <div class="flex-box-2">\
+                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>\
+                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>\
+                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>\
+                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>\
+                                    </div>\
+                                  </div>\
+                                </div>\
+                                </div>');
+    $(this).find(".shar-box-tp-11").toggleClass("opened");
+  });
+
+
+
+function timeSince(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+  var interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + " y";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " m";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " d";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " h";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " min";
+  }
+  if (seconds <= 10) {
+    return 'Just now'
+  }else{
+    return Math.floor(seconds) + " sec";
+  }
+}
 
 </script>
 

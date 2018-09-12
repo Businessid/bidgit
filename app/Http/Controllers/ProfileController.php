@@ -35,18 +35,36 @@ class ProfileController extends Controller
 
         public function index($id)
     {
+        /*$posts = DB::table('tbl_posts as p')->leftJoin('tbl_post_files as f', 'p.pk_post_id', '=', 'f.fk_post_id')->groupBy('p.pk_post_id')->get();
+        echo '<pre/>';
+        print_r($posts); die;*/
         return view('front_end.profile');
     }
         public function fileupload(Request $request)
     {
-        $Document_Path = storage_path('app/upload/posts/');
-        File::isDirectory($Document_Path) or File::makeDirectory($Document_Path, 0777, true, true);
+        $Path = public_path('/uploads/posts/');
+        File::isDirectory($Path) or File::makeDirectory($Path, 0777, true, true);
+        $Path_md = public_path('/uploads/posts/size/');
+        File::isDirectory($Path_md) or File::makeDirectory($Path_md, 0777, true, true);
         $image = $request->file('file');
         $originalName =$image->getClientOriginalName();
+        $extension =$image->getMimeType();
+        $extArr=explode('/', $extension);
+        
         $nameArr=explode('.', $originalName);
         $extension=end($nameArr);
         $newname = date('Ymd').'_'.time().'_'.rand(10000000,99999999).'.'.$extension;
-        $upload=$image->storeAs('upload/posts', $newname);
+        $upload=$image->move(public_path('/uploads/posts'), $newname);
+        
+        if($extArr[0]=='image'){
+        $image_sm = Image::make(public_path('/uploads/posts/'). $newname);
+        $image_sm->resize(500, 500);
+        $image_sm->save(public_path('/uploads/posts/size/'). $newname);
+        }
+        if($extArr[0]=='video'){
+            //create video poster image mpegg
+        }
+
         if($upload){
             echo $newname;
         }else{
@@ -63,9 +81,6 @@ class ProfileController extends Controller
             echo "false";
         } 
     }
-        
-
-
 
     public function PostData(Request $request){
         $postFiles = [];
@@ -76,6 +91,7 @@ class ProfileController extends Controller
 
         if($postText != NULL ||$postImages != NULL || $postVideos != NULL || $postUrl != NULL){
         $data['fk_user_id']=1;
+        $hashtags="";
         if($postText)
         {
            $data['title']= $postText;
@@ -124,9 +140,12 @@ class ProfileController extends Controller
             $PostFiles->fill($files);
             $PostFiles->save();
             }
+            $storage_path=storage_path('app/upload/posts/');
             $result = array(
                         'success' => true,
-                        'title'=>$postText,
+                        'postId'=>$LastInsertId,
+                        'hashTags'=>$hashtags,
+                        'postText'=>$postText,
                         'result' =>$result
                         );
             echo json_encode($result);

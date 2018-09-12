@@ -3144,8 +3144,8 @@ align-self: center;
 }
 .dropzone.dz-clickable {
     cursor: pointer;
-    /*border: 1px dotted #e4e4e4;
-    background: #f1f1f1;*/
+   /* border: 1px dotted #e4e4e4;*/
+    background: #f1f1f1;
     margin: 15px;
 }
 .drp-zn-img{
@@ -3217,4 +3217,40 @@ width: 50px;
 }
 .txt-ar-tp-1:focus{
     padding-top: 10px;
+
+}
+
+
+
+
+
+.owl-carousel .owl-item video {
+    width: 100% !important;
+    height: 500px !important;
+    object-fit: cover !important;
+    max-width: initial !important;
+    align-self: center;
+    background-size: 100% 100%;
+
+}
+.owl-carousel .owl-item{
+    text-align: center;
+}
+.owl-carousel .owl-item .item{
+    align-self: center;
+}
+.car-sl-itm-1{
+ height: 500px;
+ display: flex;
+ background: #fff;
+}
+
+.owl-carousel .owl-item .item img{
+    max-height: 500px !important;
+    object-fit: contain!important;
+    max-width: initial !important;
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    width: 100% !important;
 }

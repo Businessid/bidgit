@@ -34,3 +34,12 @@
     padding: 10px !important;
     margin-bottom: 5px;
 }
+.owl-carousel .owl-item .item img{
+    max-height: 500px !important;
+    object-fit: contain!important;
+    max-width: initial !important;
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    width: 100% !important;
+}
