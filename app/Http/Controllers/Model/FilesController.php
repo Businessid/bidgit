@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Model;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
+use File;
+use Storage;
 
 class FilesController extends Controller
 {
@@ -69,7 +72,8 @@ class FilesController extends Controller
     public function UploadFile($File, $Generete = true, $Withname = '', $Extention = '', $Path){
         File::isDirectory($Path) or File::makeDirectory($Path, 0777, true, true);
         if($Extention == ""){
-            $Extention = pathinfo($File, PATHINFO_EXTENSION);
+//            $Extention = pathinfo($File, PATHINFO_EXTENSION);
+            $Extention = $File->getClientOrginalExtension();
         }
 
         if($Generete){

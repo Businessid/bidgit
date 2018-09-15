@@ -109,8 +109,8 @@
               <div class="col back-fff p-0">
                 <div> <a href="#" class="prf-lnk-tp-2 float-right mr-3"> <img  style="width: 25px;" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4My43ODkgNDgzLjc4OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgzLjc4OSA0ODMuNzg5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjQzNC43Nyw0MDUuMzMyIDQ2NS44OTUsNDA1LjMzMiA0NjUuODk1LDEyMi42NjcgMzI5Ljg5NSwxMjIuNjY3IDMyOS44OTUsMjgwLjI4OCAzMjkuODk1LDI5My4zMzMgICAgIDMxNi4wNzMsMjkzLjMzMyAxNjcuMjI4LDI5My4zMzMgMTY3LjIyOCw0MDUuMzMyIDM2MS44OTUsNDA1LjMzMiAzNjEuODk1LDQ4My43ODkgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzI4NzRGMCIgZGF0YS1vbGRfY29sb3I9IiMyODc0ZjAiPjwvcG9seWdvbj4KCQk8cGF0aCBkPSJNMTcuODk1LDI4MGgzMC44OGw3My4xMiw3OS45NzNWMjgwaDQ1LjMzM2gxNDkuMzMzVjEyMi42NjdWMEgxNy44OTVWMjgweiBNMjY2LjEzOCwxMTYuNiAgICBjNi4yNjcsMCwxMS45ODksMy40LDE2LjQwNyw2LjA2N2M1LjQzLDUuMzMzLDguODg1LDExLjg0NSw4Ljg4NSwxOS41NDljMCwxMy45NjgtMTEuMzI1LDI1LjQ1My0yNS4yOTIsMjUuNDUzICAgIGMtMTMuOTY4LDAtMjUuMjk0LTExLjU2NS0yNS4yOTQtMjUuNTMzYzAtNy43MDEsMy40NTMtMTQuMTMzLDguODg2LTE5LjQ2N0MyNTQuMTQ1LDEyMCwyNTkuODY3LDExNi42LDI2Ni4xMzgsMTE2LjZ6ICAgICBNMTk5LjkyNywxMTYuNmM2LjI2NywwLDExLjk5LDMuNCwxNi40MDgsNi4wNjdjNS40MjksNS4zMzMsOC44ODYsMTEuODQ1LDguODg2LDE5LjU0OWMwLDEzLjk2OC0xMS4zMjYsMjUuNDUzLTI1LjI5NCwyNS40NTMgICAgYy0xMy45NjgsMC0yNS4yOTMtMTEuNTY1LTI1LjI5My0yNS41MzNjMC03LjcwMSwzLjQ1NC0xNC4xMzMsOC44ODYtMTkuNDY3QzE4Ny45MzcsMTIwLDE5My42NiwxMTYuNiwxOTkuOTI3LDExNi42eiAgICAgTTEzMy43MTUsMTE3LjI0M2MxMy45NzEsMCwyNS4yOTMsMTEuMzI2LDI1LjI5MywyNS4yOTNjMCwxMy45NjgtMTEuMzI1LDI1LjI5My0yNS4yOTMsMjUuMjkzICAgIGMtMTMuOTY4LDAtMjUuMjkzLTExLjMyNS0yNS4yOTMtMjUuMjkzQzEwOC40MjIsMTI4LjU2NSwxMTkuNzQ4LDExNy4yNDMsMTMzLjcxNSwxMTcuMjQzeiBNNjcuNTA3LDExNy4yNDMgICAgYzEzLjk2OCwwLDI1LjI5MywxMS4zMjYsMjUuMjkzLDI1LjI5M2MwLDEzLjk2OC0xMS4zMjYsMjUuMjkzLTI1LjI5MywyNS4yOTNjLTEzLjk3MSwwLTI1LjI5My0xMS4zMjUtMjUuMjkzLTI1LjI5MyAgICBDNDIuMjE0LDEyOC41NjUsNTMuNTM4LDExNy4yNDMsNjcuNTA3LDExNy4yNDN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMyODc0RjAiIGRhdGEtb2xkX2NvbG9yPSIjMjg3NGYwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </a>
-                  <div class="flx-txt-5 pd-lft-25 mt-2">Mario Mandez</div>
-                  <div class="flx-txt-6 pd-lft-25">Web UI/UX Developer</div>
+                  <div class="flx-txt-5 pd-lft-25 mt-2">{{$ProfileData->name}}</div>
+                  <div class="flx-txt-6 pd-lft-25">{{$ProfileData->category}}</div>
                 </div>
                 <div class="tb-tp-1 mrg-t-10">
                   <ul class="nav nav-pills nav-fill">
@@ -136,8 +136,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <table class="wdt-100-prc">
                         <tr>
                           <td class="align-middle text-left"><div class="text-center">
-                              <div class="flx-txt-5">Mario Mandez</div>
-                              <div class="flx-txt-6">Web UI/UX Developer</div>
+                              <div class="flx-txt-5"> {{$ProfileData->name}} </div>
+                              <div class="flx-txt-6"> {{$ProfileData->category}} </div>
                             </div></td>
                         </tr>
                       </table>
@@ -147,7 +147,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <tr>
                           <td class="wdt-50-px text-center"><span class="icn-st-2"> <i class="fa fa-envelope"></i> </span></td>
                           <td class="align-middle text-left"><div class="Addrss-bx-1">
-                              ijas.np@gmail.com
+                                  {{$ProfileData->email}}
                               <div></td>
                         </tr>
                       </table>
@@ -157,7 +157,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         <tr>
                           <td class="wdt-50-px text-center"><span class="icn-st-2"> <i class="fa fa-phone"></i> </span></td>
                           <td class="align-middle text-left"><div class="Addrss-bx-1">
-                              +971-525995503
+                                  {{$ProfileData->mobile}}
                               <div></td>
                         </tr>
                       </table>
@@ -166,7 +166,9 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <table class="wdt-100-prc">
                         <tr>
                           <td class="wdt-50-px text-center"><span class="icn-st-2"> <i class="fa fa-globe"></i> </span></td>
-                          <td class="align-middle text-left"><div class="Addrss-bx-1">www.google.com</div></td>
+                          <td class="align-middle text-left"><div class="Addrss-bx-1">
+                                  {{$ProfileData->website}}
+                              </div></td>
                         </tr>
                       </table>
                     </li>
@@ -174,7 +176,9 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                       <table class="wdt-100-prc">
                         <tr>
                           <td class="wdt-50-px text-center"><span class="icn-st-2"> <i class="fa fa-address-book" aria-hidden="true"></i> </span></td>
-                          <td class="align-middle text-left"><div class="Addrss-bx-1">4th Floor, Liberty Building, Office # F-403, Mina Road, Al Soor, Sharjah ,</div></td>
+                          <td class="align-middle text-left"><div class="Addrss-bx-1">
+                                  {{$ProfileData->address}}
+                              </div></td>
                         </tr>
                       </table>
                     </li>
@@ -360,7 +364,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         </ul>
 <div class="tab-content" id="pills-tabContent">
 <div class="tab-pane fade show active" id="pills-compose" role="tabpanel" aria-labelledby="pills-compose-tab">
-  <form id='postformfiles'>
+  <form  id='postformfiles'>
   <div class="post-tb-wrp">
     <table class="wdt-100-prc">
       <tr>
@@ -427,140 +431,168 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="flw-txt-1 fnt-wgt-600">Posts</div>
                 <div id='list-posts'>
 
-                  <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff">
-                      <!-- Post Header -->
-                      <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
-                         <table class="wdt-100-prc">
-                          <tr>
-                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                            <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
-                                <div class="view-qck-bx-1 brd-e4">
-                                  <ul class="list-unstyled p-0 m-0 ul-tp-1">
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span> Save post
-                                        <div class="txt-tp-123-1">Edit Your Post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> Edit
-                                        <div class="txt-tp-123-1">Edit Your Post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-trash-o" aria-hidden="true"></i></span> Delete
-                                        <div class="txt-tp-123-1">Delete your post Now..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-flag" aria-hidden="true"></i></span> Report Spam
-                                        <div class="txt-tp-123-1">Report This post..</div>
-                                      </div>
-                                    </li>
-                                    <li class="lnk-tp-qck-1">
-                                      <div> <span class="mrg-r-10"><i class="fa fa-ban" aria-hidden="true"></i></span> Block
-                                        <div class="txt-tp-123-1">Block This post owner..</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--End Post Header -->
-                      <!--file slider -->
-                      <div class="bx-tp-img-grd-1" >
-                        <div class="img-grd-bxt">
-                          <div class="slider-bx-tp-1">
-                            <div id="post-sldr-111" class="owl-carousel owl-theme">
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
-                              <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                     @foreach($Posts as $Post)
+
+                        <div class="pst-bx-rp-1 brd-e4 mrg-tp-10 mrg-btm-10 bg-fff" >
+                            <!-- Post Header -->
+                            <div class="pstd-dt-1 pd-10 brd-btm-e4e4e4">
+                                <table class="wdt-100-prc">
+                                    <tr>
+                                        <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
+                                        <td class="pd-lft-10"><div class="pos-rel"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="mrg-r-5 mrg-l-5 fnt-sz-13">posted a post with</span><a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Damac properties</a> <span class="float-right qck-lnk-11"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+                                                <div class="view-qck-bx-1 brd-e4">
+                                                    <ul class="list-unstyled p-0 m-0 ul-tp-1">
+                                                        <li class="lnk-tp-qck-1">
+                                                            <div> <span class="mrg-r-10"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span> Save post
+                                                                <div class="txt-tp-123-1">Edit Your Post..</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lnk-tp-qck-1">
+                                                            <div> <span class="mrg-r-10"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> Edit
+                                                                <div class="txt-tp-123-1">Edit Your Post..</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lnk-tp-qck-1">
+                                                            <div> <span class="mrg-r-10"><i class="fa fa-trash-o" aria-hidden="true"></i></span> Delete
+                                                                <div class="txt-tp-123-1">Delete your post Now..</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lnk-tp-qck-1">
+                                                            <div> <span class="mrg-r-10"><i class="fa fa-flag" aria-hidden="true"></i></span> Report Spam
+                                                                <div class="txt-tp-123-1">Report This post..</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lnk-tp-qck-1">
+                                                            <div> <span class="mrg-r-10"><i class="fa fa-ban" aria-hidden="true"></i></span> Block
+                                                                <div class="txt-tp-123-1">Block This post owner..</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="time-blk-1 fnt-wgt-600"> 24&nbsp;&nbsp;july - <i class="fa fa-clock-o" aria-hidden="true"></i> - <i class="fa fa-globe" aria-hidden="true"></i> </div></td>
+                                    </tr>
+                                </table>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--end file slider -->
-                      <!--post description -->
-                      <div class="txt-desc-1 pd-10 brd-btm-e4e4e4"> <span>#UAE</span> <span>#Life Style</span> <span>#Burj Kalifa</span><br>
-                        &nbsp;Vecation Mode in Dubai
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                      </div>
-                      <!--end post description -->
-                      <!--like , comment , share icons -->
-                      <div class="shr-bx-tp-1 brd-btm-e4e4e4">
-                        <ul class="nav nav-fill">
-                          <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
-                          <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
-                          <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
-                              <div class="shar-box-tp-11">
-                                <div class="arrow-box-1">
-                                  <div>
-                                    <ul>
-                                      <li>Share Now..</li>
-                                      <li>Share..</li>
-                                      <li>Send as message</li>
-                                      <li> share on friends Timeline </li>
-                                    </ul>
-                                    <div class="flex-box-2">
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
-                                      <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
+                            <!--End Post Header -->
+                            <!--file slider -->
+                            <div class="bx-tp-img-grd-1" >
+                                <div class="img-grd-bxt">
+                                    <div class="slider-bx-tp-1">
+                                        <div id="post-sldr-111" class="owl-carousel owl-theme">
+                                            <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                                            <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                                            <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo3.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                                            <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo4.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                                            <div class="item"> <img class="slider-img-tp-1" src="{{ URL::asset('front_end/images/demo5.jpeg') }}" alt="#UAE" title="#UAE"> </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
-                            </a> </li>
-                        </ul>
-                      </div>
-                      <!-- End like , comment , share icons -->
-                      <!-- Comments -->
-                      <div class="cmnt-bx-tp-1 pd-10">
-                        <div class="cmnt-pstng-bx mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
-                            </tr>
-                          </table>
+                            </div>
+                            <!--end file slider -->
+                            <!--post description -->
+
+                            <div class="txt-desc-1 pd-10 brd-btm-e4e4e4">
+                                {{$Post->title}}
+                            </div>
+                            <div class="bx-tp-img-grd-1">
+                                <div class="img-grd-bxt">
+                                    <div class="slider-bx-tp-1">
+                                        <div id="post-sldr-1" class="owl-carousel owl-theme start-carousel">
+                                            @foreach($Post->Files as $file)
+
+
+                                                @if($file->type == "image")
+
+                                            <div class="item">
+                                                <div class="car-sl-itm-1">
+                                                    <img class="slider-img-tp-1 image-link" src="/uploads/posts/{{$file->file}}">
+                                                </div>
+                                            </div>
+                                                @elseif($file->type == "video")
+
+                                            <div class="item">
+                                            <div class="car-sl-itm-1">
+                                            <video  class="video-js vjs-default-skin" controls preload="auto"
+                                            width="100%" poster="" data-description="Lorem ipsum dolor amet">
+                                            <source src="/uploads/posts/{{$file->file}}" type="video/mp4"/>
+                                            </video>
+                                            </div>
+                                            </div>
+                                                @endif
+
+                                                @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <!--end post description -->
+                            <!--like , comment , share icons -->
+                            <div class="shr-bx-tp-1 brd-btm-e4e4e4">
+                                <ul class="nav nav-fill">
+                                    <li class="nav-item"> <a class="nav-link like-btn-tp" href="javascript:;"> <span class="mrg-r-5 pos-rel"><span class="heart"></span></span>127 </a> </li>
+                                    <li class="nav-item"> <a class="nav-link cmnt-bx-opn avlbl-bdg" href="javascript:;"> <span class="badges-tp-1">12</span> <span class="mrg-r-5 pos-rlt-icn-1"> <i class="fa fa-comment" aria-hidden="true"></i> </span> Comment </a> </li>
+                                    <li class="nav-item"> <a class="nav-link share-box-lnk" href="javascript:;"> <span class="mrg-r-5"><i class="fa fa-share-alt" aria-hidden="true"></i></span>11
+                                            <div class="shar-box-tp-11">
+                                                <div class="arrow-box-1">
+                                                    <div>
+                                                        <ul>
+                                                            <li>Share Now..</li>
+                                                            <li>Share..</li>
+                                                            <li>Send as message</li>
+                                                            <li> share on friends Timeline </li>
+                                                        </ul>
+                                                        <div class="flex-box-2">
+                                                            <div class="shr-bx-tp-132"> <span class="icon-link-12 round facebook fill"><i class="fa fa-facebook"></i></span> </div>
+                                                            <div class="shr-bx-tp-132"> <span class="icon-link-12 round linkedin fill"><i class="fa fa-linkedin"></i></span> </div>
+                                                            <div class="shr-bx-tp-132"> <span class="icon-link-12 round google-plus fill"><i class="fa fa-google-plus"></i></span> </div>
+                                                            <div class="shr-bx-tp-132"> <span class="icon-link-12 round twitter fill"><i class="fa fa-twitter"></i></span> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a> </li>
+                                </ul>
+                            </div>
+                            <!-- End like , comment , share icons -->
+                            <!-- Comments -->
+                            <div class="cmnt-bx-tp-1 pd-10">
+                                <div class="cmnt-pstng-bx mrg-b-10">
+                                    <table class="wdt-100-prc">
+                                        <tr>
+                                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo1.jpeg') }}" style=""></td>
+                                            <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="txt-tp-125">Previous Comments....</div>
+                                @foreach($Post->Comments as $Comment)
+                                <div class="cmnt-bx-rslt mrg-b-10">
+                                    <table class="wdt-100-prc">
+                                        <tr>
+                                            <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
+                                            <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>
+                                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
+                                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
+                                                    <div class="comment-toggle-box">
+                                                        <input type="text" name="" placeholder="Write reply here.." class="no-focus">
+                                                    </div>
+                                                </div></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                @endforeache>
+                                </div>
+                            </div>
+                            <!--End Comments -->
                         </div>
-                        <div class="txt-tp-125">Previous Comments....</div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="cmnt-bx-rslt mrg-b-10">
-                          <table class="wdt-100-prc">
-                            <tr>
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset('front_end/images/demo2.jpeg') }}" style=""></td>
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>
-                                  <div class="comment-toggle-box">
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">
-                                  </div>
-                                </div></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                      <!--End Comments -->
-                  </div>
+                     @endforeach
 
 
                 </div> <!-- list posts end  -->
@@ -1429,6 +1461,19 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
           });
   });
 
+
+    $( ".start-carousel" ).each(function() {
+        $( this ).owlCarousel({
+            margin:10,
+            items:1,
+            autoplay:false,
+            autoplayHoverPause:true,
+            animateOut: 'fadeOut',
+            smartSpeed:2000,
+            lazyLoad: true
+        });
+    });
+
   // Post options click
   $(document).on( "click",'.qck-lnk-11', function(e){
      $(".view-qck-bx-1").toggleClass("enabled");
@@ -1468,53 +1513,14 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
   });
 
   // Post Comment Click
-  $(document).on( "click",'.cmnt-bx-opn', function(e){
-    id=$(this).attr("postId");
-    $(".comment-postid-"+id).html('<div class="cmnt-bx-tp-1 pd-10 bx-open">\
-                        <div class="cmnt-pstng-bx mrg-b-10">\
-                          <table class="wdt-100-prc">\
-                            <tr>\
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo1.jpeg") }}" style=""></td>\
-                              <td><input type="text" name="" class="posting-cmnt-bx no-focus" placeholder="Write comment here..."></td>\
-                            </tr>\
-                          </table>\
-                        </div>\
-                        <div class="txt-tp-125">Previous Comments....</div>\
-                        <div class="cmnt-bx-rslt mrg-b-10">\
-                          <table class="wdt-100-prc">\
-                            <tr>\
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpeg") }}" style=""></td>\
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">7 days ago..</span> </div>\
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>\
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>\
-                                  <div class="comment-toggle-box">\
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">\
-                                  </div>\
-                                </div></td>\
-                            </tr>\
-                          </table>\
-                        </div>\
-                        <div class="cmnt-bx-rslt mrg-b-10">\
-                          <table class="wdt-100-prc">\
-                            <tr>\
-                              <td class="wdt-50-px"><img class="lazy fl-bx-pht-1 bx-shdw-right" src="{{ URL::asset("front_end/images/demo2.jpeg") }}" style=""></td>\
-                              <td class="pd-lft-10"><div class="who-post-nm"> <a href="#" class="lnk-fl-bx-1 fnt-wgt-600">Janson Raj</a><span class="pst-tm-1">3 weaks ago..</span> </div>\
-                                <div class="cmnt-rslt-1"> Its Nice place....... </div>\
-                                <div class="rep-lk-bx"> <a href="javascript:;" class="lnk-tp-192 mrg-r-10"><span class="mrg-r-5"><i class="fa fa-heart" aria-hidden="true"></i></span>Like</a> <a href="javascript:;" class="lnk-tp-192 reply-lnk-1"><span class="mrg-r-5"><i class="fa fa-reply" aria-hidden="true"></i></span> Reply</a>\
-                                  <div class="comment-toggle-box">\
-                                    <input type="text" name="" placeholder="Write reply here.." class="no-focus">\
-                                  </div>\
-                                </div></td>\
-                            </tr>\
-                          </table>\
-                        </div>\
-                      </div>');
-   /* $(".cmnt-bx-tp-1").removeClass("bx-open");
-    $(this).removeClass("avlbl-bdg");
-    $(this).find(".badges-tp-1").hide();
-    $(this).find(".pos-rlt-icn-1").show();
-    $(this).parents(".shr-bx-tp-1").next(".cmnt-bx-tp-1").addClass("bx-open");*/
-  });
+    $(".cmnt-bx-opn").click(function(){
+        // remove bx-open remove from all .cmnt-bx-tp-1
+        $(".cmnt-bx-tp-1").removeClass("bx-open");
+        $(this).removeClass("avlbl-bdg");
+        $(this).find(".badges-tp-1").hide();
+        $(this).find(".pos-rlt-icn-1").show();
+        $(this).parents(".shr-bx-tp-1").next(".cmnt-bx-tp-1").addClass("bx-open");
+    });
 
   // Post Comment Click
   $(document).on( "click",'.share-box-lnk', function(e){

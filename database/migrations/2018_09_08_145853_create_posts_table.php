@@ -15,11 +15,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('tbl_posts', function (Blueprint $table) {
             $table->increments('pk_post_id');
-            $table->bigInteger('fk_user_id');
+            $table->enum('profile_type',['company','user','bid']);
+            $table->bigInteger('posted_id');
+            $table->bigInteger('post_by');
+            $table->bigInteger('post_to')->default(0);
             $table->longText('title')->nullable();
             $table->mediumText('hashtags')->nullable();
-            $table->string('privacy');
-            $table->integer('status');
+            $table->string('privacy')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
