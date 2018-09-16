@@ -39,6 +39,7 @@ class ProfileController extends Controller
         if (!$Profile_Url) {
             return redirect('/');
         }
+
         if ($Profile_Url->profile_type == "company") {
             $Company_Data = Companies::where('pk_companies_id', $Profile_Url->profile_id)->first();
             if (!$Company_Data) {
@@ -50,7 +51,7 @@ class ProfileController extends Controller
 
 
 
-            $Data["ProfileData"] = $Company_Data;
+            $Data["ProfileData"] = $Profile_Url->ProfileData;
             $Data["Posts"] = $Company_Data->Poasts;
         }
 

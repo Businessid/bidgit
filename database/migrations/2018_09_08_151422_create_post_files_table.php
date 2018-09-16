@@ -29,6 +29,6 @@ class CreatePostFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_files');
+        Schema::dropIfExists('tbl_post_files');
     }
 }
