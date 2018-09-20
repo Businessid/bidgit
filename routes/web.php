@@ -135,3 +135,21 @@ Route::post('/submit', function (Request $request) {
 
 Route::get('countries', 'AjaxController@AllCountry');
 Route::get('jsontoarray', 'AjaxController@jsontoarray');
+
+
+
+Route::get('changedata', 'AjaxController@ChangeData');
+
+
+
+Route::group(['namespace' => 'dashboard', 'prefix' => 'admin'], function()
+{
+    Route::get('/', 'CategoriesController@CategoryListIndex');
+
+    Route::get('/categories-list', 'CategoriesController@CategoryListIndex');
+    Route::get('/categories-list-json', 'CategoriesController@CategoryListIndex');
+
+
+    Route::get('/add-category', 'CategoriesController@AddCategoryIndex');
+
+});

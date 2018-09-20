@@ -9,9 +9,76 @@ use App\Users_Legal_Status;
 use App\Users;
 use App\Countries;
 use App\Sections;
+use App\FollowUp;
 
 class AjaxController extends Controller
 {
+
+
+
+
+    public function ChangeData(){
+//
+//        $Results = FollowUp::select('activity_group')->where('activity_group_tr','')->groupBy('activity_group')->get();
+//        foreach ($Results as $Result) {
+//            print_r($Result->activity_group);
+//            echo "<br> <br>";
+//        }
+
+        $Results = FollowUp::where('activity_group','الزهور و النباتات')->get();
+        foreach ($Results as $Result) {
+            $Table = FollowUp::find($Result->id);
+            $Table->activity_group_tr = "Flowers and plants";
+            $Table->save();
+        }
+
+
+//       $Results =  FollowUp::all();
+//        foreach ($Results as $Result) {
+//            $Arabic_Activity =  preg_replace('/[^أ-ي ]/ui', '', $Result->activity_name_en);
+//            $English_Activity =  preg_replace('/[^A-Za-z ]/ui', '', $Result->activity_name_en);
+//
+//            $Arabic_Type =  preg_replace('/[^أ-ي ]/ui', '', $Result->activity_type_en);
+//            $English_Type =  preg_replace('/[^A-Za-z ]/ui', '', $Result->activity_type_en);
+//
+//            $Table = FollowUp::find($Result->id);
+//            $Table->activity_name_ar = $Arabic_Activity;
+//            $Table->activity_name_en = $English_Activity;
+//            $Table->activity_type_ar = $Arabic_Type;
+//            $Table->activity_type_en = $English_Type;
+//            $Table->save();
+//
+//
+//
+//            echo "Arabic Activity : " . $Arabic_Activity;
+//            echo "<br>";
+//            echo "English Activity : " . $English_Activity;
+//            echo "<br>";
+//            echo "Arabic Type : " . $Arabic_Type;
+//            echo "<br>";
+//            echo "English Type : " . $English_Type;
+//            echo "<br>";
+//
+//
+//
+//
+//
+//          }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 public function jsontoarray(Request $request)
