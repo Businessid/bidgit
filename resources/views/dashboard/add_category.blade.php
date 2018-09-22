@@ -22,16 +22,19 @@
     </div>
 </div>
 
+
+
 <!-- END: Subheader -->
 <div class="m-content">
+{{ Form::open(array('url' => 'admin/add-category/submit-category', 'id' => 'personal_info', 'enctype' => 'multipart/form-data')) }}
 
-    <!--begin:: General -->
+<!--begin:: General -->
     <div class="m-portlet">
         <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
                     <h3 class="m-portlet__head-text">
-                     Category Data
+                        Category Data
                     </h3>
                 </div>
             </div>
@@ -161,76 +164,15 @@
             <div class="form-group m-form__group row ">
                 <label class="col-lg-2 col-form-label">Parent :</label>
                 <div class="col-lg-4">
-                    <select class="form-control m-select2" id="category_id" name="category_id"
+                    <select class="form-control m-select2" id="parent_id" name="parent_id"
                             placeholder="Select Category">
-                        <option value="0"> This is Root Category </option>
-                        <option value="AK">Alaska</option>
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="CA">California</option>
-                        <option value="NV">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="CO">Colorado</option>
-                        <option value="ID">Idaho</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="UT">Utah</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TX">Texas</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="IN">Indiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="OH">Ohio</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WV">West Virginia</option>
+                            <option value="0">Main Category</option>
+                        @if(!empty($Categories))
+                        @foreach($Categories as $Category)
+                            <option value="0">This is Root</option>
+                        @endforeach
+                        @endif
                     </select>
-                    <span class="m-form__help">Example help text that remains unchanged.</span>
-                </div>
-            </div>
-            <div class="form-group m-form__group row ">
-                <label class="col-lg-2 col-form-label">IconType :</label>
-                <div class="col-lg-4">
-                    <select class="form-control m-select2" id="icon_type" name="icon_type"
-                            placeholder="Select Icon Type">
-                        <option value="flaticon">Flat Icon</option>
-                        <option value="fontawesome5">FontAwesome 5</option>
-                        <option value="lineawesome">LineAwesome</option>
-                        <option value="socicons">Socicons</option>
-
-                    </select>
-
                     <span class="m-form__help">Example help text that remains unchanged.</span>
                 </div>
             </div>
@@ -238,62 +180,13 @@
                 <label class="col-lg-2 col-form-label">Icon :
 
 
-                    </label>
+                </label>
                 <div class="col-lg-4">
                     <select class="form-control m-select2" id="category_icon" name="category_icon"
                             placeholder="Select Icon">
                         <option></option>
                         <option value="flaticon-email-black-circular-button" data-icon="flaticon-email-black-circular-button">email</option>
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="CA">California</option>
-                        <option value="NV">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="CO">Colorado</option>
-                        <option value="ID">Idaho</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="UT">Utah</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TX">Texas</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="IN">Indiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="OH">Ohio</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WV">West Virginia</option>
+
                     </select>
                     <span class="m-form__help">Example help text that remains unchanged.</span>
                 </div>
@@ -319,9 +212,9 @@
 
 
         <div class="m-portlet__body">
-            <div id="attr_repeater">
-                <div class="form-group  m-form__group row" id="m_repeater_1">
-                    <div data-repeater-list="" class="col-lg-12">
+            <div id="attribute_repeater">
+                <div class="form-group  m-form__group row" >
+                    <div data-repeater-list="attribute" class="col-lg-12">
                         <div data-repeater-item class="form-group m-form__group row align-items-center">
                             <div class="col-md-3">
                                 <div class="m-form__group m-form__group--inline">
@@ -329,23 +222,7 @@
                                         <label>Name:</label>
                                     </div>
                                     <div class="m-form__control">
-                                        <input type="email" class="form-control m-input" placeholder="Enter full name">
-                                    </div>
-                                </div>
-                                <div class="d-md-none m--margin-bottom-10"></div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="m-form__group m-form__group--inline">
-                                    <div class="m-form__label">
-                                        <label class="m-label m-label--single">Type:</label>
-                                    </div>
-                                    <div class="m-form__control">
-                                        <select class="form-control m-select2" id="attr_type" name="attr_type"
-                                                placeholder="Select Attribute Type">
-                                            <option value="flaticon">input</option>
-                                            <option value="fontawesome5">color</option>
-                                            <option value="lineawesome">select</option>
-                                        </select>
+                                        <input type="text" name="attribute_name" class="form-control m-input" placeholder="Enter Attribute name">
                                     </div>
                                 </div>
                                 <div class="d-md-none m--margin-bottom-10"></div>
@@ -356,7 +233,7 @@
                                         <label class="m-label m-label--single">Value:</label>
                                     </div>
                                     <div class="m-form__control">
-                                        <input type="email" class="form-control m-input" placeholder="Enter full name">
+                                        <input type="text" name="attribute_values" class="form-control m-input" placeholder="Enter Values Like this opt1,opt2">
                                     </div>
                                 </div>
                                 <div class="d-md-none m--margin-bottom-10"></div>
@@ -364,7 +241,7 @@
                             <div class="col-md-3">
                                 <div class="m-radio-inline">
                                     <label class="m-checkbox m-checkbox--state-success">
-                                        <input type="checkbox"> required
+                                        <input type="checkbox" value="1" name="required"> required
                                         <span></span>
                                     </label>
                                 </div>
@@ -373,7 +250,7 @@
                                 <div data-repeater-delete="" class="btn-sm btn btn-danger m-btn m-btn--icon m-btn--pill">
 																<span>
 																	<i class="la la-trash-o"></i>
-																	<span>Delete</span>
+																	<span>X</span>
 																</span>
                                 </div>
                             </div>
@@ -396,8 +273,130 @@
 
 
 
-        </div>
+    </div>
     <!--end:: General -->
+
+
+
+    <!--begin:: General -->
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Options
+
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="m-portlet__body">
+            <div id="options_repeater">
+                <div class="form-group  m-form__group row" >
+                    <div data-repeater-list="options" class="col-lg-12">
+                        <div data-repeater-item class="form-group m-form__group row align-items-center">
+                            <div class="col-md-3">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>Name:</label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" name="option_name" class="form-control m-input" placeholder="Enter Option Name">
+
+                                    </div>
+                                </div>
+                                <div class="d-md-none m--margin-bottom-10"></div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label class="m-label m-label--single">Type:</label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <select class="form-control" id="option_type" name="option_type">
+                                            <option value="color" selected="selected" >color radio</option>
+                                            <option value="size">size radio</option>
+                                            <option value="select">select</option>
+                                            <option value="radio">radio</option>
+                                            <option value="checkbox">checkbox</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-md-none m--margin-bottom-10"></div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>Name:</label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" name="option_values" class="form-control m-input" placeholder="Enter Option Name">
+
+                                    </div>
+                                </div>
+                                <div class="d-md-none m--margin-bottom-10"></div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="m-radio-inline">
+                                    <label class="m-checkbox m-checkbox--state-success">
+                                        <input type="checkbox"name="required" > required
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div data-repeater-delete="" class="btn-sm btn btn-danger m-btn m-btn--icon m-btn--pill">
+																<span>
+																	<i class="la la-trash-o"></i>
+																	<span>X</span>
+																</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-form__group form-group row">
+                    <label class="col-lg-2 col-form-label"></label>
+                    <div class="col-lg-4">
+                        <div data-repeater-create="" class="btn btn btn-sm btn-brand m-btn m-btn--icon m-btn--pill m-btn--wide">
+														<span>
+															<i class="la la-plus"></i>
+															<span>Add</span>
+														</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!--end:: General -->
+
+    <!--begin:: Submit Area -->
+    <div class="m-portlet">
+        <div class="m-portlet__body">
+
+            <div class="m-form__actions m-form__actions">
+                <div class="row">
+                    <div class="col-lg-9 ml-lg-auto">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--end:: Submit Area -->
+
+    {{ Form::close() }}
 
 </div>
 

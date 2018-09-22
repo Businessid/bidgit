@@ -1,16 +1,4 @@
-<?phpSchema::create('tbl_product', function (Blueprint $table) {
-            $table->bigIncrements('pk_product_id');
-            $table->enum('payer_type',['user','company','bid']);
-            $table->integer('payer_id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('price');
-            $table->string('discount');
-            $table->string('final_price');
-            $table->enum('follower_type',['user','company','bid']);
-            $table->bigInteger('follower_id');
-            $table->timestamps();
-        });
+<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

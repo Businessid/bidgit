@@ -151,5 +151,10 @@ Route::group(['namespace' => 'dashboard', 'prefix' => 'admin'], function()
 
 
     Route::get('/add-category', 'CategoriesController@AddCategoryIndex');
+    Route::post('/add-category/submit-category', 'CategoriesController@AddCategorySubmit');
+
+
+
+    Route::get('/add-category-options', 'CategoryOptionsController@AddCategoryOptionsIndex');
 
 });
