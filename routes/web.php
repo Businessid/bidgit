@@ -104,7 +104,8 @@ Route::get('profile/{id}/tenders', 'ProfileTendersController@index');
 Route::get('profile/{id}/jobs', 'ProfileJobsController@index');
 
 
-
+// Store DashBoard
+Route::get('profile/{id}/store/add', 'AddProductToStore@AddProductToStoreIndex');
 
 
 Route::get('/home', function () {
@@ -138,7 +139,7 @@ Route::get('jsontoarray', 'AjaxController@jsontoarray');
 
 
 
-Route::get('changedata', 'AjaxController@ChangeData');
+
 
 
 
