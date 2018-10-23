@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ProfileStoreBannersController extends Controller
 {
     public function index(){
-        return view('front_end.profile.bannergit ');
+        return view('front_end.profile.banner');
     }
 }

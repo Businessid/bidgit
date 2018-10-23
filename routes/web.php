@@ -104,7 +104,7 @@ Route::get('profile/{id}/tenders', 'ProfileTendersController@index');
 Route::get('profile/{id}/jobs', 'ProfileJobsController@index');
 
 
-<<<<<<< HEAD
+
 Route::get('profile/{id}/store/add-product', 'ProfileStoreAddProductController@AddProductIndex');
 Route::get('profile/{id}/store/product-list', 'ProfileStoreProductListController@index');
 Route::get('profile/{id}/store/edit-product/{product_id}', 'ProfileStoreProductListController@index');
@@ -113,10 +113,10 @@ Route::get('profile/{id}/store/banners', 'ProfileStoreBannersController@index');
 
 Route::get('categories/{id}/sub-categories', 'AjaxController@SubCategory');
 Route::get('categories/sub-categories-data/{id}', 'AjaxController@SubCategoryData');
-=======
+
 // Store DashBoard
 Route::get('profile/{id}/store/add', 'AddProductToStore@AddProductToStoreIndex');
->>>>>>> 26d67f3892905e2351d541b3db2cad531307d300
+
 
 
 Route::get('/home', function () {
