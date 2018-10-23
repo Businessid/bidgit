@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductCategories;
 use Illuminate\Http\Request;
 use App\Users_Activities;
 use App\Users_Category;
@@ -15,6 +16,16 @@ class AjaxController extends Controller
 {
 
 
+
+    public function SubCategoryData($id){
+        $Products = ProductCategories::where('id',$id)->with('Attribute')->with('Options')->get();
+        return response()->json($Products);
+    }
+
+    public function SubCategory($id){
+        $Products = ProductCategories::where('parent_id',$id)->with('Attribute')->with('Options')->with('Description')->get();
+        return response()->json($Products);
+    }
 
 
     public function ChangeData(){

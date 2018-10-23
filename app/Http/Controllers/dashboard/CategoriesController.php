@@ -15,17 +15,15 @@ use Validator;
 class CategoriesController extends Controller
 {
     public function CategoryListIndex(){
-        $Categories = ProductCategories::all();
 
-
-        return view("dashboard.categorieslist", compact('Categories'));
+        return view("dashboard.categorieslist");
     }
 
 
 
     public function AddCategoryIndex(){
-
-        return view("dashboard.add_category");
+        $Categories = ProductCategories::where('status','>','0')->get();
+        return view("dashboard.add_category",compact('Categories'));
     }
 
 

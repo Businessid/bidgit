@@ -17,6 +17,7 @@
   <link rel="icon" type="image/x-icon" href="{{ URL::asset('front_end/images/bigbid1.png') }}">
   <!-- <link href="{{ URL::asset('front_end/css/bootstrap-glyphicons.min.css') }}" rel="stylesheet"> -->
   <link href="{{ URL::asset('front_end/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('front_end/css/jquery-ui.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ URL::asset('front_end/font-awesome/css/font-awesome.min.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('front_end/css/bidstyle1.css?v=1.2') }}" />
  <!--  <link rel="stylesheet" href="css/home.css?v=1.3" /> -->

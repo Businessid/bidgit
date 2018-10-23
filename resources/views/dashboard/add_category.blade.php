@@ -1,6 +1,9 @@
 @include('dashboard.layout.html_header')
 @include('dashboard.layout.header')
 
+
+
+
 <!-- BEGIN: Subheader -->
 <div class="m-subheader ">
     <div class="d-flex align-items-center">
@@ -167,11 +170,9 @@
                     <select class="form-control m-select2" id="parent_id" name="parent_id"
                             placeholder="Select Category">
                             <option value="0">Main Category</option>
-                        @if(!empty($Categories))
                         @foreach($Categories as $Category)
-                            <option value="0">This is Root</option>
+                            <option value="{{$Category->id}}">{{$Category->Description[0]->name}} </option>
                         @endforeach
-                        @endif
                     </select>
                     <span class="m-form__help">Example help text that remains unchanged.</span>
                 </div>
