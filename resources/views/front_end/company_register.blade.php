@@ -31,7 +31,7 @@
                                              style="width: 6%;"></div>
                                     </div>
 
-                                    <a href="@if($complete_step > 0) {{url('/register')}} @else # @endif">
+                                    <a href="@if($complete_step > 0) {{url('/register/company')}} @else # @endif">
                                         <div class="f1-step <?php if (@$step == 1) echo 'active'; elseif (@$step > 1) echo 'activated'; else echo '';?>">
                                             <div class="f1-step-icon"><i class="fa fa-copyright" aria-hidden="true"></i>
                                             </div>
@@ -53,11 +53,11 @@
                                         </div>
                                     </a>
                                     <a href="@if($complete_step > 3) {{url('/register/qregister')}} @else # @endif">
-                                    <div class="f1-step <?php if (@$step == 4) echo 'active'; elseif (@$step > 4) echo 'activated'; else echo '';?>">
-                                        <div class="f1-step-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i>
+                                        <div class="f1-step <?php if (@$step == 4) echo 'active'; elseif (@$step > 4) echo 'activated'; else echo '';?>">
+                                            <div class="f1-step-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i>
+                                            </div>
+                                            <p>Quick Registration</p>
                                         </div>
-                                        <p>Quick Registration</p>
-                                    </div>
                                     </a>
 
                                     <a href="@if($step > 5) {{url('/register/location')}} @else # @endif">
@@ -101,7 +101,8 @@
                                         <p>Payment</p>
                                     </div>
                                 </div>
-                                <fieldset class="company_info" <?php if (@$step == 1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                                <fieldset
+                                        class="company_info" <?php if (@$step == 1) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                                     {{ Form::open(array('url' => 'register/insert_company', 'id' => 'main_user_form', 'enctype' => 'multipart/form-data')) }}
                                     <input type="hidden" name="tab" value="company_info">
                                     <div class="lg-reg reg-form">
@@ -109,7 +110,8 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="company_name" class="field-label">Company Name:</label>
-                                                    <input type="text" class="form-control field-control" name="company_name"
+                                                    <input type="text" class="form-control field-control"
+                                                           name="company_name"
                                                            id="company_name"
                                                            value="@if(isset($company_info['name'])){{$company_info['name']}}@else{{old('company_name')}}@endif"
                                                            placeholder="" data-fv-field="name">
@@ -122,8 +124,10 @@
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="company_category" class="field-label">Main Activity:</label>
-                                                    <select class="form-control js-example-basic-single" id="company_category"
+                                                    <label for="company_category" class="field-label">Main
+                                                        Activity:</label>
+                                                    <select class="form-control js-example-basic-single"
+                                                            id="company_category"
                                                             name="company_category" title="">
                                                         <option value="">- Select -</option>
                                                         @if(!empty($categories))
@@ -142,8 +146,10 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="company_activity" class="field-label">Sub Activity:</label>
-                                                    <select class="form-control js-example-basic-single" id="company_activity"
+                                                    <label for="company_activity" class="field-label">Sub
+                                                        Activity:</label>
+                                                    <select class="form-control js-example-basic-single"
+                                                            id="company_activity"
                                                             name="company_activity" multiple="">
                                                         <option value="">- Select -</option>
                                                         @if(!empty($activities))
@@ -161,8 +167,10 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="company_email" class="field-label">E-mail:</label>
-                                                    <input type="company_email" class="form-control field-control" id="company_email"
-                                                           name="company_email" value="@if(isset($company_info['email'])){{$company_info['email']}}@else{{old('company_email')}}@endif">
+                                                    <input type="company_email" class="form-control field-control"
+                                                           id="company_email"
+                                                           name="company_email"
+                                                           value="@if(isset($company_info['email'])){{$company_info['email']}}@else{{old('company_email')}}@endif">
                                                     @if ($errors->first('company_email'))
                                                         <div class="alert-error">
                                                             {{ $errors->first('company_email') }}
@@ -173,9 +181,11 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="company_mobile" class="field-label">Mobile Number:</label>
+                                                    <label for="company_mobile" class="field-label">Mobile
+                                                        Number:</label>
                                                     <input type="text" class="form-control field-control mobile"
-                                                           name="company_mobile" id="company_mobile"  value="@if(isset($company_info['mobile'])){{$company_info['mobile']}}@else{{old('company_mobile')}}@endif "
+                                                           name="company_mobile" id="company_mobile"
+                                                           value="@if(isset($company_info['mobile'])){{$company_info['mobile']}}@else{{old('company_mobile')}}@endif "
                                                            placeholder="" data-fv-field="company_mobile">
                                                     @if ($errors->first('company_mobile'))
                                                         <div class="alert-error">
@@ -185,9 +195,11 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="company_phone" class="field-label">Landline Number:</label>
+                                                    <label for="company_phone" class="field-label">Landline
+                                                        Number:</label>
                                                     <input type="text" class="form-control field-control mobile"
-                                                           name="company_phone" id="company_phone" value="@if(isset($company_info['phone'])){{$company_info['phone']}}@else{{old('company_phone')}}@endif"
+                                                           name="company_phone" id="company_phone"
+                                                           value="@if(isset($company_info['phone'])){{$company_info['phone']}}@else{{old('company_phone')}}@endif"
                                                            placeholder="local number" data-fv-field="company_phone">
                                                 </div>
                                             </div>
@@ -211,222 +223,235 @@
                                                         class="d-inline-block"> <span
                                                         class="super-user d-inline-block align-middle">Main User Details</span>
                                             </div>
-                                        <div id="main_users_repeater">
-                                            <div data-repeater-list="main_users">
-                                                <div data-repeater-item>
-                                                    <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="company_first_name" class="field-label">Upload Your
-                                        Photo</label>
-                                        <div class="custom-file upload-reg">
-                                            <input type="file"
-                                            class="custom-file-input form-control field-control" name="company_user_image">
-                                            <label class="custom-file-label" for="company_user_image">Choose
-                                            file</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="company_user_first_name" class="field-label">First
-                                        Name:</label>
-                                        <input type="text" class="form-control field-control"
-                                        name="company_user_first_name" value="@if(isset($company_user_info['first_name'])){{$company_user_info['first_name']}}@else{{old('company_user_first_name')}}@endif"
-                                        placeholder="" data-fv-field="company_user_first_name">
-                                        @if ($errors->first('company_user_first_name'))
-                                        <div class="alert-error">
-                                            {{ $errors->first('company_user_first_name') }}
-                                        </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="company_user_last_name" class="field-label">Last
-                                            Name:</label>
-                                        <input type="text" class="form-control field-control"
-                                               name="company_user_last_name" value="@if(isset($company_user_info['last_name'])){{$company_user_info['last_name']}}@else{{old('company_user_last_name')}}@endif"
-                                               placeholder="" data-fv-field="company_user_last_name">
-                                        @if ($errors->first('company_user_last_name'))
-                                            <div class="alert-error">
-                                                {{ $errors->first('company_user_last_name') }}
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="field-label">Gender : </label>
-                                        <div class="custom-radio-wrap">
-                                            <div class="custom-control custom-radio mr-3">
-                                                <input type="radio" id="company_user_gender" name="company_user_gender"
-                                                       class="custom-control-input" value="Male"
-                                                       @if(isset($company_user_info['gender'])) @if($company_user_info['gender'] == "Male") checked
-                                                       @endif @else  @if(old('company_user_gender')== "Male") checked @endif @endif >
-                                                <label class="custom-control-label"
-                                                       for="company_user_gender">Male</label>
-                                            </div>
-                                            <div class="custom-control custom-radio pull-right">
-                                                <input type="radio" id="company_user_gender1"
-                                                       name="company_user_gender"
-                                                       class="custom-control-input" value="Female"
-                                                       @if(isset($company_user_info['gender'])) @if($company_user_info['gender'] == "Female") checked
-                                                       @endif @else @if(old('company_user_gender') == "Female") checked @endif @endif >
-                                                <label class="custom-control-label"
-                                                       for="company_user_gender1">Female</label>
-                                            </div>
-                                        </div>
-                                        @if ($errors->first('company_user_gender'))
-                                            <div class="alert-error">
-                                                {{ $errors->first('company_user_gender') }}
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                                    </div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_designation" class="field-label">Designation:</label>
-            <input type="text" class="form-control field-control"
-                   name="company_user_designation" value="@if(isset($company_user_info['designation'])){{$company_user_info['designation']}}@else{{old('company_user_designation')}}@endif"
-                   placeholder="" data-fv-field="company_designation">
-            @if ($errors->first('company_user_designation'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_designation') }}
-                </div>
-            @endif
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_dob" class="field-label">DOB:</label>
-            <input type="text" class="form-control field-control"
-                   name="company_user_dob" value="@if(isset($company_user_info['birthday'])){{$company_user_info['birthday']}}@else{{old('company_user_dob')}}@endif"
-                   placeholder="" data-fv-field="company_user_dob">
-            @if ($errors->first('company_user_dob'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_dob') }}
-                </div>
-            @endif
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_mobile" class="field-label">Mobile
-                Number:</label>
-            <input type="text" class="form-control field-control mobile"
-                   name="company_user_mobile" value="@if(isset($company_user_info['mobile'])){{$company_user_info['mobile']}}@else{{old('company_user_mobile')}}@endif"
-                   placeholder=""  data-fv-field="company_mobile">
-            @if ($errors->first('company_user_mobile'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_mobile') }}
-                </div>
-            @endif
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_phone" class="field-label">Landline
-                Number:</label>
-            <input type="text" class="form-control field-control mobile"
-                   name="company_user_phone" value="@if(isset($company_user_info['phone'])){{$company_user_info['phone']}}@else{{old('company_user_phone')}}@endif"
-                   placeholder="local number" data-fv-field="company_phone">
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_nationality" class="field-label">Nationality:</label>
-            <select class="form-control js-example-basic-single" name="company_user_nationality"
-                    title="">
-                <option value="">- Select -</option>
-                @if(!empty($countries))
-                    @foreach($countries as $val)
-                        <option value="{{ $val->pk_countries_id }}"
-                                @if(isset($company_user_info['nationality'])) @if($company_user_info['nationality'] == $val->pk_countries_id ) selected
-                                @endif @else  @if(old('company_user_nationality')== $val->pk_countries_id) selected @endif @endif >{{ $val->name }}</option>
-                    @endforeach
-                @endif
-            </select>
-            @if ($errors->first('company_user_nationality'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_nationality') }}
-                </div>
-            @endif </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_email" class="field-label">E-mail:</label>
-            <input type="email" class="form-control field-control"
-                   name="company_user_email" value="@if(isset($company_user_info['email'])){{$company_user_info['email']}}@else{{old('company_user_email')}}@endif"
-                   placeholder=""  data-fv-field="company_user_email">
-            @if ($errors->first('company_user_email'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_email') }}
-                </div>
-            @endif </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_email_confirmation" class="field-label">Confirm
-                E-mail:</label>
-            <input type="email" class="form-control field-control"
-                   name="company_user_email_confirmation" value="@if(isset($company_user_info['email'])){{$company_user_info['email']}}@else{{old('company_user_email_confirmation')}}@endif"
-                   placeholder=""  data-fv-field="company_user_email_confirmation">
-            @if ($errors->first('company_user_email_confirmation'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_email_confirmation') }}
-                </div>
-            @endif </div>
-    </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_password"
-                   class="field-label">Password:</label>
-            <input type="password" class="form-control field-control"
-                   name="company_user_password" value="" placeholder=""
-                   data-fv-field="company_user_password">
-            @if ($errors->first('company_user_password'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_password') }}
-                </div>
-            @endif </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="company_user_password_confirmation" class="field-label">Confirm
-                Password:</label>
-            <input type="password" class="form-control field-control"
-                   name="company_user_password_confirmation" value=""
-                   placeholder="" data-fv-field="confirmpassword">
-            @if ($errors->first('company_user_password_confirmation'))
-                <div class="alert-error">
-                    {{ $errors->first('company_user_password_confirmation') }}
-                </div>
-            @endif </div>
-    </div>
-</div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-md-9 text-center mx-auto note-super">
-                                                            <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
-                                                            <i class="fa fa-user-secret" aria-hidden="true"></i>
-                                                            <p>This user has full limit to use all facilities and functions in
-                                                                your company account in Businessid.net. In addition he can add
-                                                                and manage sub user who can manage your company account. </p>
-                                                            <p>Businessid.net will generate a personal account for this
-                                                                user. </p>
+
+
+                                            <div class="row mt-3">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_first_name" class="field-label">Upload Your
+                                                            Photo</label>
+                                                        <div class="custom-file upload-reg">
+                                                            <input type="file"
+                                                                   class="custom-file-input form-control field-control"
+                                                                   name="company_user_image">
+                                                            <label class="custom-file-label" for="company_user_image">Choose
+                                                                file</label>
                                                         </div>
-                                                        <a name="remove_user" href="javascript:void(0);" data-repeater-delete class="btn"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_first_name" class="field-label">First
+                                                            Name:</label>
+                                                        <input type="text" class="form-control field-control"
+                                                               name="company_user_first_name"
+                                                               value="@if(isset($company_user_info['first_name'])){{$company_user_info['first_name']}}@else{{old('company_user_first_name')}}@endif"
+                                                               placeholder="" data-fv-field="company_user_first_name">
+                                                        @if ($errors->first('company_user_first_name'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_first_name') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_last_name" class="field-label">Last
+                                                            Name:</label>
+                                                        <input type="text" class="form-control field-control"
+                                                               name="company_user_last_name"
+                                                               value="@if(isset($company_user_info['last_name'])){{$company_user_info['last_name']}}@else{{old('company_user_last_name')}}@endif"
+                                                               placeholder="" data-fv-field="company_user_last_name">
+                                                        @if ($errors->first('company_user_last_name'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_last_name') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="field-label">Gender : </label>
+                                                        <div class="custom-radio-wrap">
+                                                            <div class="custom-control custom-radio mr-3">
+                                                                <input type="radio" id="company_user_gender"
+                                                                       name="company_user_gender"
+                                                                       class="custom-control-input" value="Male"
+                                                                       @if(isset($company_user_info['gender'])) @if($company_user_info['gender'] == "Male") checked
+                                                                       @endif @else  @if(old('company_user_gender')== "Male") checked @endif @endif >
+                                                                <label class="custom-control-label"
+                                                                       for="company_user_gender">Male</label>
+                                                            </div>
+                                                            <div class="custom-control custom-radio pull-right">
+                                                                <input type="radio" id="company_user_gender1"
+                                                                       name="company_user_gender"
+                                                                       class="custom-control-input" value="Female"
+                                                                       @if(isset($company_user_info['gender'])) @if($company_user_info['gender'] == "Female") checked
+                                                                       @endif @else @if(old('company_user_gender') == "Female") checked @endif @endif >
+                                                                <label class="custom-control-label"
+                                                                       for="company_user_gender1">Female</label>
+                                                            </div>
+                                                        </div>
+                                                        @if ($errors->first('company_user_gender'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_gender') }}
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="javascript:void(0);"  data-repeater-create class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i> Add New</a>
-                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_designation" class="field-label">Designation:</label>
+                                                        <input type="text" class="form-control field-control"
+                                                               name="company_user_designation"
+                                                               value="@if(isset($company_user_info['designation'])){{$company_user_info['designation']}}@else{{old('company_user_designation')}}@endif"
+                                                               placeholder="" data-fv-field="company_designation">
+                                                        @if ($errors->first('company_user_designation'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_designation') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_dob" class="field-label">DOB:</label>
+                                                        <input type="text" class="form-control field-control"
+                                                               name="company_user_dob"
+                                                               value="@if(isset($company_user_info['birthday'])){{$company_user_info['birthday']}}@else{{old('company_user_dob')}}@endif"
+                                                               placeholder="" data-fv-field="company_user_dob">
+                                                        @if ($errors->first('company_user_dob'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_dob') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_mobile" class="field-label">Mobile
+                                                            Number:</label>
+                                                        <input type="text" class="form-control field-control mobile"
+                                                               name="company_user_mobile"
+                                                               value="@if(isset($company_user_info['mobile'])){{$company_user_info['mobile']}}@else{{old('company_user_mobile')}}@endif"
+                                                               placeholder="" data-fv-field="company_mobile">
+                                                        @if ($errors->first('company_user_mobile'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_mobile') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_phone" class="field-label">Landline
+                                                            Number:</label>
+                                                        <input type="text" class="form-control field-control mobile"
+                                                               name="company_user_phone"
+                                                               value="@if(isset($company_user_info['phone'])){{$company_user_info['phone']}}@else{{old('company_user_phone')}}@endif"
+                                                               placeholder="local number" data-fv-field="company_phone">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_nationality" class="field-label">Nationality:</label>
+                                                        <select class="form-control js-example-basic-single"
+                                                                name="company_user_nationality"
+                                                                title="">
+                                                            <option value="">- Select -</option>
+                                                            @if(!empty($countries))
+                                                                @foreach($countries as $val)
+                                                                    <option value="{{ $val->pk_countries_id }}"
+                                                                            @if(isset($company_user_info['nationality'])) @if($company_user_info['nationality'] == $val->pk_countries_id ) selected
+                                                                            @endif @else  @if(old('company_user_nationality')== $val->pk_countries_id) selected @endif @endif >{{ $val->name }}</option>
+                                                                @endforeach
+                                                            @endif
+                                                        </select>
+                                                        @if ($errors->first('company_user_nationality'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_nationality') }}
+                                                            </div>
+                                                        @endif </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_email"
+                                                               class="field-label">E-mail:</label>
+                                                        <input type="email" class="form-control field-control"
+                                                               name="company_user_email"
+                                                               value="@if(isset($company_user_info['email'])){{$company_user_info['email']}}@else{{old('company_user_email')}}@endif"
+                                                               placeholder="" data-fv-field="company_user_email">
+                                                        @if ($errors->first('company_user_email'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_email') }}
+                                                            </div>
+                                                        @endif </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_email_confirmation"
+                                                               class="field-label">Confirm
+                                                            E-mail:</label>
+                                                        <input type="email" class="form-control field-control"
+                                                               name="company_user_email_confirmation"
+                                                               value="@if(isset($company_user_info['email'])){{$company_user_info['email']}}@else{{old('company_user_email_confirmation')}}@endif"
+                                                               placeholder=""
+                                                               data-fv-field="company_user_email_confirmation">
+                                                        @if ($errors->first('company_user_email_confirmation'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_email_confirmation') }}
+                                                            </div>
+                                                        @endif </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_password"
+                                                               class="field-label">Password:</label>
+                                                        <input type="password" class="form-control field-control"
+                                                               name="company_user_password" value="" placeholder=""
+                                                               data-fv-field="company_user_password">
+                                                        @if ($errors->first('company_user_password'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_password') }}
+                                                            </div>
+                                                        @endif </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="company_user_password_confirmation"
+                                                               class="field-label">Confirm
+                                                            Password:</label>
+                                                        <input type="password" class="form-control field-control"
+                                                               name="company_user_password_confirmation" value=""
+                                                               placeholder="" data-fv-field="confirmpassword">
+                                                        @if ($errors->first('company_user_password_confirmation'))
+                                                            <div class="alert-error">
+                                                                {{ $errors->first('company_user_password_confirmation') }}
+                                                            </div>
+                                                        @endif </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-9 text-center mx-auto note-super">
+                                                    <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
+                                                    <i class="fa fa-user-secret" aria-hidden="true"></i>
+                                                    <p>This user has full limit to use all facilities and functions in
+                                                        your company account in Businessid.net. In addition he can add
+                                                        and manage sub user who can manage your company account. </p>
+                                                    <p>Businessid.net will generate a personal account for this
+                                                        user. </p>
+                                                </div>
+                                                <a name="remove_user" href="javascript:void(0);" data-repeater-delete
+                                                   class="btn"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                     <div class="f1-buttons">
@@ -434,13 +459,15 @@
                                     </div>
                                     {{ Form::close() }}
                                 </fieldset>
-                                <fieldset class="licence" <?php if (@$step == 2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                                <fieldset
+                                        class="licence" <?php if (@$step == 2) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                                     {{ Form::open(array('url' => 'register/insert_licence', 'enctype' => 'multipart/form-data')) }}
                                     <div class="lg-reg reg-form pb-5">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="licence_legal_status" class="field-label">Legal Status:</label>
+                                                    <label for="licence_legal_status" class="field-label">Legal
+                                                        Status:</label>
                                                     <select class="form-control js-example-basic-single"
                                                             id="licence_legal_status" name="licence_legal_status">
                                                         <option value="">Select Legal Status</option>
@@ -478,7 +505,8 @@
                                                     <label for="registration_no" class="field-label"> Registration
                                                         No: </label>
                                                     <input type="text" class="form-control field-control"
-                                                           name="license_registration_number" id="license_registration_number"
+                                                           name="license_registration_number"
+                                                           id="license_registration_number"
                                                            value="@if(isset($licence_info['registration_number'])){{$licence_info['registration_number']}}@else{{old('license_registration_number')}}@endif"
                                                            placeholder=""
                                                            data-fv-field="license_registration_number">
@@ -511,7 +539,8 @@
                                     </div>
                                     {{ Form::close() }}
                                 </fieldset>
-                                <fieldset class="location" <?php if (@$step == 3) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                                <fieldset
+                                        class="location" <?php if (@$step == 3) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                                     {{ Form::open(array('url' => 'register/insert_location', 'enctype' => 'multipart/form-data')) }}
                                     <div class="lg-reg reg-form">
                                         <div class="row">
@@ -549,7 +578,8 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="city" class="field-label">City:</label>
-                                                    <select class="form-control js-example-basic-single" id="location_fk_city_id"
+                                                    <select class="form-control js-example-basic-single"
+                                                            id="location_fk_city_id"
                                                             name="location_fk_city_id" title="Select City">
                                                         <option value="">Select City</option>
                                                     </select>
@@ -564,7 +594,8 @@
                                                 <div class="form-group">
                                                     <label for="location" class="field-label">Area:</label>
                                                     <select class="form-control js-example-basic-single"
-                                                            name="location_fk_area_id" id="location_fk_area_id" title="Select Area">
+                                                            name="location_fk_area_id" id="location_fk_area_id"
+                                                            title="Select Area">
                                                         <option value="">Select Area</option>
                                                     </select>
                                                 </div>
@@ -679,7 +710,8 @@
                                                     <input type="hidden" name="location_latitude" id="location_latitude"
                                                            value="@if(isset($location_info['latitude'])){{$location_info['latitude']}}@else{{old('location_latitude')}}@endif">
 
-                                                    <input type="hidden" name="location_longitude" id="location_longitude"
+                                                    <input type="hidden" name="location_longitude"
+                                                           id="location_longitude"
                                                            value="@if(isset($location_info['longitude'])){{$location_info['longitude']}}@else{{old('location_longitude')}}@endif">
                                                 </div>
                                             </div>
@@ -691,7 +723,8 @@
                                     </div>
                                     {{ Form::close() }}
                                 </fieldset>
-                                <fieldset class="quickregister"  <?php if (@$step == 4) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
+                                <fieldset
+                                        class="quickregister" <?php if (@$step == 4) echo 'style="display:block"'; else echo 'style="display:none !important"';?>>
                                     <div class="lg-reg reg-form">
                                         <div class="row">
                                             <div class="col-md-12 mx-auto">
@@ -961,73 +994,78 @@
                 }
             });
         }
-    $(document).ready(function () {
-        $('#main_users_repeater').repeater({repeaters: [{
-              // (Required)
-              // Specify the jQuery selector for this nested repeater
-              selector: '.inner-repeater'
-          }],
-          show:function(){$(this).slideDown()},
-          hide:function(e){confirm("Are you sure you want to delete this element?")&&$(this).slideUp(e)}
+
+        $(document).ready(function () {
+            $('#main_users_repeater').repeater({
+                repeaters: [{
+                    // (Required)
+                    // Specify the jQuery selector for this nested repeater
+                    selector: '.inner-repeater'
+                }],
+                show: function () {
+                    $(this).slideDown()
+                },
+                hide: function (e) {
+                    confirm("Are you sure you want to delete this element?") && $(this).slideUp(e)
+                }
+            });
+
+            $("#main_user_form").validate({
+                invalidHandler: function (e, r) {
+                    console.log("main_user_form");
+                }
+            })
+            setTimeout(add_main_user_form_roles, 1000);
         });
 
-        $("#main_user_form").validate({
-              invalidHandler: function (e, r) {
-                  console.log("main_user_form");
-              }
-        })
-        setTimeout(add_main_user_form_roles, 1000);
-    });
+        function add_main_user_form_roles() {
+            var oFormData = $('#main_user_form').serializeArray();
+            for (var i = 0; i < oFormData.length; i++) {
 
-    function add_main_user_form_roles(){
-          var oFormData = $('#main_user_form').serializeArray();
-          for (var i = 0; i < oFormData.length; i++){
+                if (oFormData[i]['name'].indexOf('company_user_nationality') > -1) {
+                    var FormElemant_Name = $("select[name='" + oFormData[i]['name'] + "']").attr('name');
+                } else {
+                    var FormElemant_Name = $("input[name='" + oFormData[i]['name'] + "']").attr('name');
+                }
+                var FormElemant = $("input[name='" + oFormData[i]['name'] + "']");
+                FormElemant.rules("remove");
 
-             if (oFormData[i]['name'].indexOf('company_user_nationality') > -1)
-              {
-                  var FormElemant_Name = $( "select[name='"+oFormData[i]['name']+"']" ).attr('name');
-              }else{
-                  var FormElemant_Name = $( "input[name='"+oFormData[i]['name']+"']" ).attr('name');
-              }
-              var FormElemant = $( "input[name='"+oFormData[i]['name']+"']" );
-              FormElemant.rules( "remove" );
-
-              if(FormElemant_Name.indexOf('company_user_first_name') > -1){
-                  FormElemant.rules( "add", {required: true, minlength: 3});
-              }
-              if(FormElemant_Name.indexOf('company_user_last_name') > -1){
-                  FormElemant.rules( "add", {required: true});
-              }
-              if(FormElemant_Name.indexOf('company_user_gender') > -1){
-                  FormElemant.rules( "add", {required: true});
-              }
-              if(FormElemant_Name.indexOf('company_user_designation') > -1){
-                  FormElemant.rules( "add", {required: true});
-              }
-              if(FormElemant_Name.indexOf('company_user_dob') > -1){
-                  FormElemant.rules( "add", {required: true});
-              }
-              if(FormElemant_Name.indexOf('company_user_mobile') > -1){
-                  FormElemant.rules( "add", {required: true});
-              }
-                if(FormElemant_Name.indexOf('company_user_emailcompany_user_email') > -1){
+                if (FormElemant_Name.indexOf('company_user_first_name') > -1) {
+                    FormElemant.rules("add", {required: true, minlength: 3});
+                }
+                if (FormElemant_Name.indexOf('company_user_last_name') > -1) {
+                    FormElemant.rules("add", {required: true});
+                }
+                if (FormElemant_Name.indexOf('company_user_gender') > -1) {
+                    FormElemant.rules("add", {required: true});
+                }
+                if (FormElemant_Name.indexOf('company_user_designation') > -1) {
+                    FormElemant.rules("add", {required: true});
+                }
+                if (FormElemant_Name.indexOf('company_user_dob') > -1) {
+                    FormElemant.rules("add", {required: true});
+                }
+                if (FormElemant_Name.indexOf('company_user_mobile') > -1) {
+                    FormElemant.rules("add", {required: true});
+                }
+                if (FormElemant_Name.indexOf('company_user_emailcompany_user_email') > -1) {
                     var ConfirmEmail = FormElemant_Name.replace("company_user_email", "company_user_email_confirmation");
-                    FormElemant.rules( "add", {required: true,  equalTo:'[name="'+ConfirmEmail+'"]'});
+                    FormElemant.rules("add", {required: true, equalTo: '[name="' + ConfirmEmail + '"]'});
                 }
-                if(FormElemant_Name.indexOf('company_user_email_confirmation') > -1){
+                if (FormElemant_Name.indexOf('company_user_email_confirmation') > -1) {
                     var ConfirmEmail = FormElemant_Name.replace("company_user_email_confirmation", "company_user_email");
-                    FormElemant.rules( "add", {required: true,  equalTo:'[name="'+ConfirmEmail+'"]'});
+                    FormElemant.rules("add", {required: true, equalTo: '[name="' + ConfirmEmail + '"]'});
                 }
-                if(FormElemant_Name.indexOf('company_user_password') > -1){
+                if (FormElemant_Name.indexOf('company_user_password') > -1) {
                     var ConfirmPass = FormElemant_Name.replace("company_user_password", "company_user_password_confirmation");
-                    FormElemant.rules( "add", {required: true,minlength: 6,  equalTo:'[name="'+ConfirmPass+'"]'});
+                    FormElemant.rules("add", {required: true, minlength: 6, equalTo: '[name="' + ConfirmPass + '"]'});
                 }
-                if(FormElemant_Name.indexOf('company_user_password_confirmation') > -1){
-                  var ConfirmPass = FormElemant_Name.replace("company_user_password_confirmation", "company_user_password");
-                  FormElemant.rules( "add", {required: true,minlength: 6,  equalTo:'[name="'+ConfirmPass+'"]'});
+                if (FormElemant_Name.indexOf('company_user_password_confirmation') > -1) {
+                    var ConfirmPass = FormElemant_Name.replace("company_user_password_confirmation", "company_user_password");
+                    FormElemant.rules("add", {required: true, minlength: 6, equalTo: '[name="' + ConfirmPass + '"]'});
                 }
+            }
         }
-    }
 
 
     </script>

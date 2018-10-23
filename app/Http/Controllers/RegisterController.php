@@ -226,7 +226,7 @@ class RegisterController extends BaseController
 
     public function qregister(Request $request)
     {
-        echo $this->AdminPremetion();
+       
         $company_info = $request->session()->get('company_info');
         $complete_step = $request->session()->get('complete_step');
         if ($complete_step < 3) {
